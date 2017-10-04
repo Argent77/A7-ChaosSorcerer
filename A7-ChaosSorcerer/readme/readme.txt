@@ -1,11 +1,11 @@
 Chaos Sorcerer Kit
 ~~~~~~~~~~~~~~~~~~
 
-Version:    
+Version:    Beta 1
 Author:     Argent77
 
-Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases/latest
-Discussion: https://
+Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
+Discussion: https://forums.beamdog.com/discussion/66390/
 
 
 Overview
@@ -73,8 +73,8 @@ Advantages:
 - May cast the 2nd-level spell Unluck (automatically added to spell list).
 - May cast the 3rd-level spell Chaos Mastery (automatically added to spell list).
 - May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
-– Casting level varies slightly whenever <PRO_HESHE> casts a spell—anywhere between five levels 
-  lower and five levels higher than the Chaos Sorcerer's true level.
+– Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower 
+  and five levels higher than the Chaos Sorcerer's true level.
 - 1st level: +1 bonus to Saves vs. Spell.
 - 5th level: +1 bonus to Dexterity.
 - 6th level: +1 bonus to Saves vs. Spell.
@@ -93,7 +93,7 @@ Disadvantages:
 – Upon casting a spell, there is a 5% chance of incurring a wild surge.
 
 WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. 
-Its effects may be either beneficial or detrimental to the Chaos Sorcerer and <PRO_HISHER> allies.
+Its effects may be either beneficial or detrimental to the Chaos Sorcerer and his/her allies.
 
 
 Copyright Notice
