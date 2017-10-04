@@ -1,0 +1,302 @@
+// *** Commonly used functions ***
+
+// Trims whitespace from beginning and end of the specified string.
+DEFINE_PATCH_FUNCTION a7_trim
+STR_VAR line = ~~
+RET line
+BEGIN
+  INNER_PATCH_SAVE line ~%line%~ BEGIN
+    SET max = BUFFER_LENGTH
+
+    // trim start
+    FOR (ofs = 0; ofs < max; ++ofs) BEGIN
+      READ_BYTE ofs value
+      PATCH_IF (value > 0x20) BEGIN
+        DELETE_BYTES 0 ofs
+        SET max -= ofs
+        SET ofs = max
+      END
+    END
+
+    // trim end
+    FOR (ofs = max - 1; ofs >= 0; --ofs) BEGIN
+      READ_BYTE ofs value
+      PATCH_IF (value > 0x20) BEGIN
+        DELETE_BYTES (ofs + 1) (max - ofs - 1)
+        SET ofs = "-1"
+      END
+    END
+  END
+END
+
+
+// Adds a "Select Spell" effect to the specified spell ability
+DEFINE_PATCH_FUNCTION apply_opcode_214
+INT_VAR
+  header   = 0
+  prob_min = 0
+  prob_max = 0
+STR_VAR
+  resource = ~~
+BEGIN
+  PATCH_IF (header > 0 && prob_min >= 0 && prob_max <= 100 && prob_min <= prob_max) BEGIN
+    LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 214    // Select spell
+      target = 1      // Self
+      power = 1
+      parameter2 = 0  // from 2da
+      timing = 1      // instant/permanent
+      probability1 = prob_max
+      probability2 = prob_min
+      header = header
+      insert_point = 0
+    STR_VAR
+      resource = EVAL ~%resource%~
+    END
+  END
+END
+
+// Returns first unoccupied spell slot and resref of specified type and level (as SPELL.IDS code), or -1/"" if not available
+DEFINE_ACTION_FUNCTION a7_find_free_spell_slot
+INT_VAR
+  type  = 2
+  level = 1
+RET
+  slot
+  resref
+BEGIN
+  OUTER_SET slot = "-1"
+  OUTER_TEXT_SPRINT resref ~~
+
+  ACTION_IF (type >= 1 && type <= 4 && level >= 0 && level < 10) BEGIN
+    OUTER_TEXT_SPRINT prefix_1 ~SPPR~
+    OUTER_TEXT_SPRINT prefix_2 ~SPWI~
+    OUTER_TEXT_SPRINT prefix_3 ~SPIN~
+    OUTER_TEXT_SPRINT prefix_4 ~SPCL~
+
+    OUTER_SET range = 50
+    OUTER_SET range_min = type*1000 + level*100 + 1
+    OUTER_SET range_max = range_min + range
+
+    // initializing list of spell slots as unoccupied
+    OUTER_FOR (idx = 1; idx < range; ++idx) BEGIN
+      OUTER_SET EVAL ~slots_%idx%~ = range_min + idx
+    END
+    OUTER_SET slots = range
+
+    // marking occupied spell slots
+    COPY_EXISTING - ~spell.ids~ ~override~
+      READ_2DA_ENTRIES_NOW ~spells~ 2
+      FOR (row = 0; row < spells; ++row) BEGIN
+        READ_2DA_ENTRY_FORMER ~spells~ row 0 value
+        PATCH_IF (IS_AN_INT ~value~ && value >= range_min && value < range_max) BEGIN
+          SET idx = value - range_min
+          SET EVAL ~slots_%idx%~ = "-1"
+        END
+      END
+
+    // scanning for first unoccupied slot
+    OUTER_FOR (idx = 1; idx < range; ++idx) BEGIN
+      ACTION_IF (EVAL ~slots_%idx%~ >= 0) BEGIN
+        OUTER_SET slot = EVAL ~slots_%idx%~
+        OUTER_SET index = slot - range_min
+        OUTER_TEXT_SPRINT resref EVAL ~%prefix_%type%%~
+        ACTION_IF (index < 10) BEGIN
+          OUTER_TEXT_SPRINT resref ~%resref%%level%0%index%~
+        END ELSE BEGIN
+          OUTER_TEXT_SPRINT resref ~%resref%%level%%index%~
+        END
+        OUTER_SET idx = range
+      END
+    END
+  END
+END
+
+
+// Replaces a specific spell code in SPELL.IDS by a new value
+DEFINE_PATCH_FUNCTION a7_update_spell_ids_code
+INT_VAR
+  code      = 0
+  new_code  = 0
+BEGIN
+  PATCH_IF (code >= 1000 && code < 5000 && 
+            new_code >= 1000 && new_code < 5000) BEGIN
+    SET ofs = 0
+    WHILE (ofs >= 0) BEGIN
+      SET ofs = INDEX_BUFFER(~^%code% .*~ ofs)
+      PATCH_IF (ofs >= 0) BEGIN
+        WRITE_ASCIIE ofs ~%new_code%~ (4)
+        SET ofs += 4
+      END
+    END
+  END
+END
+
+// Replaces all resref occurrences in the current buffer
+DEFINE_PATCH_FUNCTION a7_update_resref
+INT_VAR
+  terminate = 0   // whether to terminate with a '\0'
+STR_VAR
+  resref_src = ~~ // search string
+  resref_dst = ~~ // replacement string
+BEGIN
+  PATCH_IF (NOT ~%resref_src%~ STR_EQ ~~) BEGIN
+    SET ofs = 0
+    SET strlen_src = STRING_LENGTH ~%resref_src%~
+    SET strlen_dst = terminate ? 8 : STRING_LENGTH ~%resref_dst%~
+    WHILE (ofs >= 0) BEGIN
+      SET ofs = INDEX_BUFFER(~%resref_src%~ ofs)
+      PATCH_IF (ofs >= 0) BEGIN
+        WRITE_ASCIIE ofs ~%resref_dst%~ (strlen_dst)
+        SET ofs += 1
+      END
+    END
+  END
+END
+
+
+// Replaces resource of all spell effects matching specified opcode
+DEFINE_PATCH_FUNCTION a7_update_spell_effect_params
+INT_VAR
+  match_parameter1  = 0
+  match_parameter2  = 0
+  match_special     = 0
+  match_resource    = 0
+  opcode          = 0   // opcode to match
+  parameter1      = 0   // parameter1 to match (if match_parameter1 = 1)
+  new_parameter1  = 0   // parameter1 replacement if matched
+  parameter2      = 0   // parameter2 to match (if match_parameter2 = 1)
+  new_parameter2  = 0   // parameter2 replacement if matched
+  special         = 0   // special to match (if match_special = 1)
+  new_special     = 0   // special replacement if matched
+STR_VAR
+  resource        = ~~  // resource to match (if match_resource = 1)
+  new_resource    = ~~  // resource replacement if matched
+BEGIN
+  PATCH_IF (NOT ~%match_resource%~ STR_EQ ~%resource%~) BEGIN
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    READ_LONG 0x6a ofsEffects
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET curOfsAbil = ofsAbil + (idx * 0x28)
+      READ_SHORT (curOfsAbil+0x1e) numEffects
+      READ_SHORT (curOfsAbil+0x20) firstEffect
+      FOR (idx2 = 0; idx2 < numEffects; ++idx2) BEGIN
+        SET curOfsEffect = ofsEffects + (idx2+firstEffect)*0x30
+        READ_SHORT (curOfsEffect+0) curOpcode
+        PATCH_IF (curOpcode = opcode) BEGIN
+          // matching parameter1
+          PATCH_IF (match_parameter1) BEGIN
+            READ_LONG (curOfsEffect+0x04) curParameter1
+            PATCH_IF (curParameter1 = parameter1) BEGIN
+              WRITE_LONG (curOfsEffect+0x04) new_parameter1
+            END
+          END
+          // matching parameter2
+          PATCH_IF (match_parameter2) BEGIN
+            READ_LONG (curOfsEffect+0x08) curParameter2
+            PATCH_IF (curParameter2 = parameter2) BEGIN
+              WRITE_LONG (curOfsEffect+0x08) new_parameter2
+            END
+          END
+          // matching special
+          PATCH_IF (match_special) BEGIN
+            READ_LONG (curOfsEffect+0x2c) curSpecial
+            PATCH_IF (curSpecial = special) BEGIN
+              WRITE_LONG (curOfsEffect+0x2c) new_special
+            END
+          END
+          // matching resource
+          PATCH_IF (match_resource) BEGIN
+            READ_ASCII (curOfsEffect+0x14) curResource (8) NULL
+            PATCH_IF (~%curResource%~ STR_EQ ~%resource%~) BEGIN
+              WRITE_ASCIIE (curOfsEffect+0x14) ~%new_resource%~ (8)
+            END
+          END
+        END
+      END
+    END
+  END
+END
+
+
+/**
+ * Adds a new entry to a specified IDS file and returns its IDS value.
+ * (Taken from Golem Construction mod)
+ * 
+ * INT_VAR minValue       Minimum IDS value to consider. (Default: 0)
+ * INT_VAR maxValue       Maximum IDS value to consider. (Default: 255)
+ * INT_VAR preferredValue Try this IDS value first if available. (Default: unset)
+ * INT_VAR hexadecimal    Set to nonzero to add IDS value in hexadecimal notation. (Default: 0)
+ * STR_VAR idsFile        The IDS file to add the entry to.
+ * STR_VAR identifier     The identifier name for the IDS value. Must not contain whitespace.
+ * RET value              The IDS value if entry has been added successfully. -1 if entry could not be added.
+ */
+DEFINE_ACTION_FUNCTION ADD_IDS_ENTRY
+INT_VAR
+  minValue        = 0
+  maxValue        = 255
+  preferredValue  = "-1"
+  hexadecimal     = 0
+STR_VAR
+  idsFile         = ""
+  identifier      = ""
+RET
+  value
+BEGIN
+  OUTER_SET value = "-1"
+
+  ACTION_IF (minValue < 0) BEGIN OUTER_SET minValue = 0 END
+  ACTION_IF (maxValue < minValue) BEGIN OUTER_SET maxValue = minValue END
+
+  ACTION_IF (~%idsFile%~ STRING_MATCHES_REGEXP ~.+\..+~ = 0) BEGIN
+    OUTER_PATCH_SAVE idsFile ~%idsFile%~ BEGIN REPLACE_TEXTUALLY ~\(.+\)\.[^.]+~ ~\1~ END
+  END
+
+  ACTION_IF (FILE_EXISTS_IN_GAME ~%idsFile%.ids~) BEGIN
+    // Try preferred value first
+    OUTER_PATCH ~~ BEGIN
+      PATCH_IF (preferredValue >= minValue AND preferredValue <= maxValue) BEGIN
+        LOOKUP_IDS_SYMBOL_OF_INT retVal ~%idsFile%~ preferredValue
+        PATCH_IF (~%retVal%~ STRING_EQUAL ~%preferredValue%~) BEGIN
+          SET value = preferredValue
+        END
+      END
+    END
+    
+    // Looking for available IDS slot
+    ACTION_IF (value = "-1") BEGIN
+      OUTER_PATCH ~~ BEGIN
+        FOR (v = minValue; v <= maxValue; v += 1) BEGIN
+          LOOKUP_IDS_SYMBOL_OF_INT retVal ~%idsFile%~ v
+          PATCH_IF (~%retVal%~ STRING_EQUAL ~%v%~) BEGIN
+            SET value = v
+            SET v = maxValue + 1
+          END
+        END
+      END
+    END
+
+    // Falling back to preferred value if no free slot found
+    ACTION_IF (value = "-1" AND preferredValue >= minValue AND preferredValue <= maxValue) BEGIN
+      OUTER_SET value = preferredValue
+    END
+
+    // Adding new entry
+    ACTION_IF (value != "-1") BEGIN
+      ACTION_IF (hexadecimal) BEGIN
+        LAF TO_HEX_NUMBER INT_VAR value = value RET hexNumber END
+        OUTER_TEXT_SPRINT idsValue ~0x%hexNumber%~
+      END ELSE BEGIN
+        OUTER_TEXT_SPRINT idsValue ~%value%~
+      END
+
+      APPEND ~%idsFile%.ids~ ~%idsValue% %identifier%~ UNLESS ~%identifier%~
+      OUTER_SET value = IDS_OF_SYMBOL (~%idsFile%~ ~%identifier%~)
+      ACTION_IF (value < minValue OR value > maxValue) BEGIN
+        OUTER_SET value = "-1"
+      END
+    END
+  END
+END

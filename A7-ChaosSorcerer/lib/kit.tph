@@ -1,0 +1,144 @@
+// *** Installs kit "Chaos Sorcerer" ***
+
+INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+
+
+// find first unoccupied Sorcerer lu abbreviation
+OUTER_TEXT_SPRINT lu_ref ~So2~
+OUTER_SET maxRev = 0
+COPY_EXISTING - ~luabbr.2da~ ~override~
+  COUNT_2DA_ROWS 2 numRows
+  FOR (row = 0; row < numRows; ++row) BEGIN
+    READ_2DA_ENTRY row 1 2 value
+    PATCH_IF (~%value%~ STRING_MATCHES_REGEXP ~[Ss][Oo][0-9]+~ = 0) BEGIN
+      INNER_PATCH_SAVE number ~%value%~ BEGIN REPLACE_TEXTUALLY ~[Ss][Oo]\([0-9]+\)~ ~\1~ END
+      PATCH_IF (number > maxRev) BEGIN SET maxRev = number END
+    END
+  END
+  SET maxRev += 1
+IF_EXISTS
+
+ACTION_IF (maxRev > 0) BEGIN
+  OUTER_TEXT_SPRINT lu_ref ~so%maxRev%~
+END
+OUTER_TEXT_SPRINT lu_file ~lu%lu_ref%.2da~
+
+
+// applying base kit properties
+ADD_KIT ~A7_CHAOS_SORCERER~
+        ~A7_CHAOS_SORCERER 1 1 1 1 1 0 0 0~  // clasweap.2da
+        ~A7_CHAOS_SORCERER 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~  // weapprof.2da
+        ~A7_CHAOS_SORCERER 0 12 0 9 0 9~  // abclasrq.2da
+        ~A7_CHAOS_SORCERER -2 0 -2 0 0 0~  // abclsmod.2da
+        ~A7_CHAOS_SORCERER 0 17 0 17 0 17~  // abdcdsrq.2da
+        ~A7_CHAOS_SORCERER 0 15 0 15 0 15~  // abdcscrq.2da
+        ~A7_CHAOS_SORCERER 0 0 0 0 0 0 1 1 1~  // alignmnt.2da
+        ~A7_CHAOS_SORCERER 0 0 0 0 0 0~  // dualclas.2da
+        ~%MOD_FOLDER%/tables/a7_csrc.2da~  // path to kit clabxxx.2da
+        ~K_S_H K_S_D K_S_G K_S_E K_S_HE K_S_HL K_S_HO~  // class/race combinations for kittable.2da
+        ~0x80000000 19~  // unusability and parent class info for kitlist.2da
+        ~%lu_ref%~  // luabbr.2da
+        ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~  // 25stweap.2da
+        SAY @1000   // lower name
+        SAY @1001   // mixed name
+        SAY @1002   // kit description
+
+
+// applying extended kit properties
+ACTION_IF (GAME_IS ~bgee~) BEGIN
+  OUTER_SET biography = 31495
+  OUTER_SET briefdesc = 32300
+END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  OUTER_SET biography = 40284
+  OUTER_SET briefdesc = 102508
+END ELSE BEGIN
+  OUTER_SET biography = "-1"
+  OUTER_SET briefdesc = 102508
+END
+
+LAF fl#add_kit_ee
+INT_VAR
+  biography = biography
+  briefdesc = briefdesc
+STR_VAR
+    kit_name = "A7_CHAOS_SORCERER"
+    clsrcreq = "1 1 1 0 0 0 0"
+    clswpbon = "0 0 5"
+    hpclass = "HPWIZ"
+    numwslot = "2"
+    clascolr = "34 35 34  196 34" // using Wild Mage colors
+END
+
+
+// tables
+COPY ~%MOD_FOLDER%/tables/lusox.2da~ ~override/%lu_file%~
+
+
+// passive abilities
+COPY ~%MOD_FOLDER%/spells/a7_cs01.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs02.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs03.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs04.spl~ ~override~
+
+
+// Updating Wild Mage kit description
+ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  OUTER_SET strref = RESOLVE_STR_REF(@1101)
+END ELSE BEGIN
+  OUTER_SET strref = RESOLVE_STR_REF(@1100)
+END
+
+// Updating enginest.2da
+COPY_EXISTING ~enginest.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  FOR (row = 0; row < numRows; ++row) BEGIN
+    READ_2DA_ENTRY row 0 numCols label
+    PATCH_IF (~%label%~ STR_EQ ~STRREF_GUI_HELP_WILDMAGE~) BEGIN
+      SET_2DA_ENTRY row 1 numCols ~%strref%~
+    END
+  END
+BUT_ONLY IF_EXISTS
+
+// Updating kitlist table
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  FOR (row = 0; row < numRows; ++row) BEGIN
+    READ_2DA_ENTRY row 1 numCols kit
+    PATCH_IF (~%kit%~ STRING_MATCHES_REGEXP ~WILD_?MAGE~ = 0) BEGIN
+      SET_2DA_ENTRY row 4 numCols ~%strref%~
+    END
+  END
+BUT_ONLY IF_EXISTS
+
+// Updating default and campaign-specific class text tables
+OUTER_SET campaigns = 1
+OUTER_TEXT_SPRINT campaigns_0 ~CLASTEXT.2DA~
+COPY_EXISTING - ~campaign.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  PATCH_IF (numCols > 31) BEGIN
+    COUNT_2DA_ROWS numCols numRows
+    FOR (row = 0; row < numRows; ++row) BEGIN
+      READ_2DA_ENTRY row 30 numCols resref
+      PATCH_IF (FILE_EXISTS_IN_GAME ~%resref%.2DA~) BEGIN
+        TEXT_SPRINT EVAL ~campaigns_%campaigns%~ ~%resref%.2DA~
+        SET campaigns += 1
+      END
+    END
+  END
+IF_EXISTS
+
+OUTER_FOR (idx = 0; idx < campaigns; ++idx) BEGIN
+  OUTER_TEXT_SPRINT resref EVAL ~%campaigns_%idx%%~
+  COPY_EXISTING ~%resref%~ ~override~
+    COUNT_2DA_COLS numCols
+    COUNT_2DA_ROWS numCols numRows
+    FOR (row = 0; row < numRows; ++row) BEGIN
+      READ_2DA_ENTRY row 0 numCols kit
+      PATCH_IF (~%kit%~ STRING_MATCHES_REGEXP ~WILD_?MAGE~ = 0) BEGIN
+        SET_2DA_ENTRY row 4 numCols ~%strref%~
+      END
+    END
+  BUT_ONLY IF_EXISTS
+END

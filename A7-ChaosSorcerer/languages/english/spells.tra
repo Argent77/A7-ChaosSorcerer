@@ -1,0 +1,101 @@
+// -*- coding: utf-8 -*- 
+// Spells (index 2000..9999)
+
+@2000 = ~Chaotic Weave~
+@2001 = ~Chaotic Weave
+(Invocation/Evocation)
+
+Level: 1
+Range: Special
+Duration: Special
+Casting Time: Special
+Area of Effect: Special
+Saving Throw: Special
+
+This spell opens a small rift into the Elemental Chaos to draw raw magical energies from, which the sorcerer can attempt to shape into a desired spell effect. The attempt usually fails, but something almost always occurs in the process.
+
+To use Chaotic Weave simply cast it, then choose from a list of randomly selected spells. A burst of magical energy is released, which the Chaos Sorcerer will try to manipulate into the desired form. The actual effect of the spell is determined randomly by a dice roll on the Wild Surge Table (see the manual for more details). The list of available spells becomes larger and more consistent at higher levels.
+
+Because the release of energy is planned by the Sorcerer, <PRO_HISHER> level is added to the dice roll. If the result indicates success, the Sorcerer has shaped the magical energy into the desired effect. More often than not, the effect is completely unexpected. The result might be beneficial to the Sorcerer, or it might be completely disastrous: This is the risk the Sorcerer takes by relying on the energies from the Elemental Chaos.~
+
+
+@2050 = ~Chaos Mastery~
+@2051 = ~Chaos Mastery
+(Abjuration)
+
+Level: 3
+Range: 0
+Duration: 1 turn + 1 turn/5 levels
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+Chaos Mastery allows the caster to stablilize some of the unpredictable effects involved when shaping energies from the Elemental Chaos, which increases the chance of a more favorable result when a Wild Surge occurs. Every time a roll is made on the Wild Surge chart, an extra bonus is added to the dice roll. Bonus starts at +15 and increases to +20 at level 10 and +25 at level 20. When Chaotic Weave is cast, the bonus from Chaos Mastery stacks with the Chaos Sorcerer's level bonus.~
+
+
+@2100 = ~Chaotic Eruption~
+@2101 = ~Chaotic Eruption
+(Evocation)
+
+Level: 10
+Range: 40 ft.
+Duration: 2 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+With this spell the caster creates a rift in the earth beneath the target and connects it with the plane of Elemental Chaos for a brief moment. The process results in a massive implosion of various elemental energies that burn, eletrocute or freeze the target, and holds it for one round. The spell does 10d10 blunt damange and either 10d10 fire or cold damage, with a 50 percent chance of causing additional 10d10 electrical damage. The victim can save vs. spell for half.~
+
+
+// Wild Mage replacement spells
+@2500 = ~Surge Control~
+@2501 = ~Surge Control
+(Abjuration)
+
+Level: 1
+Range: 0
+Duration: Special
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+Surge Control erects an invisible barrier around the caster that attempts to avert the next Wild Surge. The chance to avert a Wild Surge is 10% + 1% per caster level, up to 30% at level 20. A successfully averted Wild Surge will neutralize the barrier, otherwise it will fade after 5 rounds. The barrier does not stack with other spells that increase chances of favorable results when Wild Surges occur.~
+
+@2550 = ~Unluck~
+@2551 = ~Unluck
+(Evocation)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell affects the forces of chance around the target, giving it a stroke of bad luck for the duration of the spell. The target receives a -1 penalty to their Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 7d6 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead. There is no Saving Throw for this spell, although magic resistance may stop it.~
+
+@2600 = ~Nahal's Wildstrike~
+@2601 = ~Nahal's Wildstrike
+(Transmutation)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 5 rounds + 1 round/3 levels
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell surrounds the target with an aura of chaotic energies that latches onto each spell the target attempts to cast. For the duration of the spell, each time the target casts a spell will also trigger a wild surge with unpredictable results. Creatures can save vs. spell to avoid the effect, but do so with a -4 penalty.~
+
+// @2650 = ~Chaos Shield~   // no need to translate
+@2651 = ~Chaos Shield
+(Abjuration)
+
+Level: 3
+Range: 0
+Duration: 1 turn + 1 turn/5 levels
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+Chaos Shield increases a Wild Mage's chance to gain a favorable result when a Wild Surge occurs. Every time a roll is made on the Wild Surge chart, an extra bonus is added to the dice roll. Bonus starts at +15 and increases to +20 at level 10 and +25 at level 20. When Nahal's Reckless Dweomer is cast, the bonus from Chaos Shield stacks with the Wild Mage's level bonus.~

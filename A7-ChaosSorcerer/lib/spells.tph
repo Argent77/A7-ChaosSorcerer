@@ -1,0 +1,116 @@
+// *** Spells for Chaos Sorcerer ***
+
+INCLUDE ~%MOD_FOLDER%/lib/spells_base.tph~
+
+
+// spell: Chaotic Weave
+INCLUDE ~%MOD_FOLDER%/lib/spell_selection.tph~
+COPY ~%MOD_FOLDER%/spells/a7_sp01.spl~ ~override~
+  SAY NAME1 @2000 // Chaotic Weave
+  SAY UNIDENTIFIED_DESC @2001 // Chaotic Weave description
+
+  // applying 1st tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 1 prob_min = 93  prob_max = 100
+  STR_VAR resource = ~A7_SP1D~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 1 prob_min = 73  prob_max = 92
+  STR_VAR resource = ~A7_SP1C~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 1 prob_min = 40  prob_max = 72
+  STR_VAR resource = ~A7_SP1B~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 1 prob_min = 0  prob_max = 39
+  STR_VAR resource = ~A7_SP1A~
+  END
+
+  // applying 2nd tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 2 prob_min = 83  prob_max = 100
+  STR_VAR resource = ~A7_SP2C~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 2 prob_min = 50  prob_max = 82
+  STR_VAR resource = ~A7_SP2B~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 2 prob_min = 0  prob_max = 49
+  STR_VAR resource = ~A7_SP2A~
+  END
+
+  // applying 3rd tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 3 prob_min = 80  prob_max = 100
+  STR_VAR resource = ~A7_SP3C~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 3 prob_min = 40  prob_max = 79
+  STR_VAR resource = ~A7_SP3B~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 3 prob_min = 0  prob_max = 39
+  STR_VAR resource = ~A7_SP3A~
+  END
+
+  // applying 4th tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 4 prob_min = 50  prob_max = 100
+  STR_VAR resource = ~A7_SP4B~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 4 prob_min = 0  prob_max = 49
+  STR_VAR resource = ~A7_SP4A~
+  END
+
+  // applying 5th tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 5 prob_min = 33  prob_max = 100
+  STR_VAR resource = ~A7_SP5B~
+  END
+  LPF apply_opcode_214
+  INT_VAR header = 5 prob_min = 0  prob_max = 32
+  STR_VAR resource = ~A7_SP5A~
+  END
+
+  // applying 6th tier selections
+  LPF apply_opcode_214
+  INT_VAR header = 6 prob_min = 0  prob_max = 100
+  STR_VAR resource = ~A7_SP6A~
+  END
+
+COPY ~%MOD_FOLDER%/spells/a7_sp01b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp01c.bam~ ~override~
+
+
+// spell: Chaos Mastery
+COPY ~%MOD_FOLDER%/spells/a7_sp02.spl~ ~override~
+  SAY NAME1 @2050 // Chaos Mastery
+  SAY UNIDENTIFIED_DESC @2051 // Chaos Mastery description
+  PATCH_IF (NOT FILE_EXISTS_IN_GAME ~splstate.ids~) BEGIN
+    // pre-patch 2.0/1.4 game found
+    LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 328 END
+  END
+
+COPY ~%MOD_FOLDER%/spells/a7_sp02a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp02b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp02c.bam~ ~override~
+
+
+// HLA: Chaotic Eruption
+COPY ~%MOD_FOLDER%/spells/a7_sp10.spl~ ~override~
+  SAY NAME1 @2100 // Chaotic Eruption
+  SAY UNIDENTIFIED_DESC @2101 // Chaotic Eruption description
+
+COPY ~%MOD_FOLDER%/spells/a7_sp10b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp10c.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1b.bmp~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2b.bmp~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1a.vvc~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1b.vvc~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2a.vvc~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2b.vvc~ ~override~
