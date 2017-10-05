@@ -300,3 +300,27 @@ BEGIN
     END
   END
 END
+
+
+// Removes the line where specified column matches "match"
+DEFINE_PATCH_FUNCTION a7_remove_2da_row
+INT_VAR column = 0
+STR_VAR match  = ~~
+BEGIN
+  PATCH_IF (NOT ~%match%~ STR_EQ ~~ && column >= 0) BEGIN
+    COUNT_2DA_COLS numCols
+    PATCH_IF (column < numCols) BEGIN
+      COUNT_2DA_ROWS numCols numRows
+      SET startRow = 0
+      PATCH_IF (numCols < 2) BEGIN SET startRow += 1 END
+      PATCH_IF (numCols < 1) BEGIN SET startRow += 1 END
+      FOR (row = startRow; row < numRows; ++row) BEGIN
+        READ_2DA_ENTRY row column numCols value
+        PATCH_IF (~%value%~ STR_EQ ~%match%~) BEGIN
+          REMOVE_2DA_ROW row numCols
+          SET row = numRows
+        END
+      END
+    END
+  END
+END

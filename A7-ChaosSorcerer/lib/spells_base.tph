@@ -41,8 +41,10 @@ ACTION_IF (slot >= 0) BEGIN
     LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY
 
-  // spell does not appear in character spell selection screens
-  APPEND ~hidespl.2da~ ~%spell_nrd_resref% 1     0          0~ UNLESS ~%spell_nrd_resref%~
+  // spell should appear on character spell selection screen
+  COPY_EXISTING ~hidespl.2da~ ~override~
+    LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_nrd_resref%~ END
+  BUT_ONLY
 END ELSE BEGIN
   FAIL ~Failed to find unoccupied level 1 spell slot.~
 END
@@ -99,9 +101,12 @@ ACTION_IF (slot >= 0) BEGIN
       ADD_KNOWN_SPELL ~%spell_chaos_shield_resref%~ #2 ~wizard~
     END
   BUT_ONLY
+
   
-  // spell does not appear in character spell selection screens
-  APPEND ~hidespl.2da~ ~%spell_chaos_shield_resref% 1     0          0~ UNLESS ~%spell_chaos_shield_resref%~
+  // spell should appear on character spell selection screen
+  COPY_EXISTING ~hidespl.2da~ ~override~
+    LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_chaos_shield_resref%~ END
+  BUT_ONLY
 END ELSE BEGIN
   FAIL ~Failed to find unoccupied level 3 spell slot.~
 END
@@ -124,8 +129,12 @@ COPY ~%MOD_FOLDER%/spells/spwi124.spl~ ~override~
 COPY ~%MOD_FOLDER%/spells/spwi124b.bam~ ~override~
      ~%MOD_FOLDER%/spells/spwi124c.bam~ ~override~
 
-// spell does not appear in character spell selection screens
-APPEND ~hidespl.2da~ ~SPWI124 1     0          0~ UNLESS ~SPWI124~
+// spell does not appear on character spell selection screen
+ACTION_IF (NOT GAME_IS ~iwdee~ || FILE_EXISTS ~engine.lua~) BEGIN
+  APPEND ~hidespl.2da~ ~SPWI124 1     0          0~ UNLESS ~SPWI124~
+END ELSE BEGIN
+  APPEND ~hidespl.2da~ ~SPWI124 1     0~ UNLESS ~SPWI124~
+END
 
 // Updating spellbooks
 COPY_EXISTING_REGEXP ~.+\.cre~ ~override~
@@ -143,8 +152,10 @@ COPY ~%MOD_FOLDER%/spells/spwi222.spl~ ~override~
 COPY ~%MOD_FOLDER%/spells/spwi222b.bam~ ~override~
      ~%MOD_FOLDER%/spells/spwi222c.bam~ ~override~
 
-// spell does not appear in character spell selection screens
-APPEND ~hidespl.2da~ ~SPWI222 1     0          0~ UNLESS ~SPWI222~
+// spell should appear on character spell selection screen
+COPY_EXISTING ~hidespl.2da~ ~override~
+  LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = ~SPWI222~ END
+BUT_ONLY
 
 
 // Install Nahal's Wildstrike (SPWI723)
@@ -161,81 +172,86 @@ COPY ~%MOD_FOLDER%/spells/spwi723b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs3a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs3a.vvc~ ~override~
 
-// spell does not appear in character spell selection screens
-APPEND ~hidespl.2da~ ~SPWI723 1     0          0~ UNLESS ~SPWI723~
+// spell should appear on character spell selection screen
+COPY_EXISTING ~hidespl.2da~ ~override~
+  LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = ~SPWI723~ END
+BUT_ONLY
 
 
 // Update Wild Mage CLAB
-OUTER_TEXT_SPRINT clab_resref ~CLABMA01~  // hardcoded CLAB for Wild Mages and unkitted mages/sorcerers
-ACTION_IF (~%clab_resref%~ STR_EQ ~~ || NOT FILE_EXISTS_IN_GAME ~%clab_resref%.2DA~) BEGIN
-  OUTER_SET numCols = 50
-  COPY_EXISTING - ~clabfi01.2da~ ~override~
-    COUNT_2DA_COLS numCols
-  IF_EXISTS
+// ACTION_IF (NOT GAME_IS ~iwdee~ || FILE_EXISTS ~engine.lua~) BEGIN
+ACTION_IF (0) BEGIN
+  OUTER_TEXT_SPRINT clab_resref ~CLABMA01~  // hardcoded CLAB for Wild Mages and unkitted mages/sorcerers
+  ACTION_IF (~%clab_resref%~ STR_EQ ~~ || NOT FILE_EXISTS_IN_GAME ~%clab_resref%.2DA~) BEGIN
+    OUTER_SET numCols = 50
+    COPY_EXISTING - ~clabfi01.2da~ ~override~
+      COUNT_2DA_COLS numCols
+    IF_EXISTS
 
-  COPY ~%MOD_FOLDER%/tables/clab_stub.2da~ ~override/%clab_resref%.2DA~
+    COPY ~%MOD_FOLDER%/tables/clab_stub.2da~ ~override/%clab_resref%.2DA~
 
-  // writing table header
-  OUTER_TEXT_SPRINT line ~~
-  OUTER_FOR (col = 1; col < numCols; ++col) BEGIN
-    ACTION_IF (col < 10) BEGIN
-      OUTER_TEXT_SPRINT line ~%line%%col%           ~
-    END ELSE BEGIN
-      OUTER_TEXT_SPRINT line ~%line%%col%          ~
-    END
-  END
-  OUTER_PATCH ~~ BEGIN LPF a7_trim STR_VAR line = EVAL ~%line%~ RET line END END
-  OUTER_TEXT_SPRINT line ~            %line%~
-  APPEND ~%clab_resref%.2DA~ ~%line%~
-
-  // generating empty lines
-  OUTER_FOR (row = 1; row < 7; ++row) BEGIN
-    OUTER_TEXT_SPRINT line ~ABILITY%row%    ~
+    // writing table header
+    OUTER_TEXT_SPRINT line ~~
     OUTER_FOR (col = 1; col < numCols; ++col) BEGIN
-      OUTER_TEXT_SPRINT line ~%line%****        ~
+      ACTION_IF (col < 10) BEGIN
+        OUTER_TEXT_SPRINT line ~%line%%col%           ~
+      END ELSE BEGIN
+        OUTER_TEXT_SPRINT line ~%line%%col%          ~
+      END
     END
     OUTER_PATCH ~~ BEGIN LPF a7_trim STR_VAR line = EVAL ~%line%~ RET line END END
+    OUTER_TEXT_SPRINT line ~            %line%~
     APPEND ~%clab_resref%.2DA~ ~%line%~
-  END
-END
 
-COPY ~%MOD_FOLDER%/spells/a7_cs05.eff~ ~override~
-  WRITE_ASCIIE 0x30 ~%spell_nrd_resref%~ (8)
-COPY ~%MOD_FOLDER%/spells/a7_cs06.eff~ ~override~
-  WRITE_ASCIIE 0x30 ~%spell_chaos_shield_resref%~ (8)
-COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
-     ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
-
-COPY_EXISTING ~%clab_resref%.2da~ ~override~
-  SET index = 0
-  TEXT_SPRINT abil_0 ~AP_A7_CS05~
-  TEXT_SPRINT abil_1 ~AP_A7_CS06~
-  SET abil = 2
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 numCols value
-    PATCH_IF (~%value%~ STRING_MATCHES_REGEXP ~\*.*~ = 0) BEGIN
-      TEXT_SPRINT entry EVAL ~%abil_%index%%~
-      SET_2DA_ENTRY row 1 numCols ~%entry%~
-      SET index += 1
-    END
-    PATCH_IF (index = abil) BEGIN
-      SET row = numRows
+    // generating empty lines
+    OUTER_FOR (row = 1; row < 7; ++row) BEGIN
+      OUTER_TEXT_SPRINT line ~ABILITY%row%    ~
+      OUTER_FOR (col = 1; col < numCols; ++col) BEGIN
+        OUTER_TEXT_SPRINT line ~%line%****        ~
+      END
+      OUTER_PATCH ~~ BEGIN LPF a7_trim STR_VAR line = EVAL ~%line%~ RET line END END
+      APPEND ~%clab_resref%.2DA~ ~%line%~
     END
   END
-BUT_ONLY
 
-// if rows have run out before all entries could be added
-OUTER_WHILE (index < abil) BEGIN
-  OUTER_TEXT_SPRINT line ~~
-  OUTER_FOR (col = 0; col < numCols - 2; ++col) BEGIN
-    OUTER_TEXT_SPRINT line ~        ****%line%~
+  COPY ~%MOD_FOLDER%/spells/a7_cs05.eff~ ~override~
+    WRITE_ASCIIE 0x30 ~%spell_nrd_resref%~ (8)
+  COPY ~%MOD_FOLDER%/spells/a7_cs06.eff~ ~override~
+    WRITE_ASCIIE 0x30 ~%spell_chaos_shield_resref%~ (8)
+  COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
+       ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
+
+  COPY_EXISTING ~%clab_resref%.2da~ ~override~
+    SET index = 0
+    TEXT_SPRINT abil_0 ~AP_A7_CS05~
+    TEXT_SPRINT abil_1 ~AP_A7_CS06~
+    SET abil = 2
+    COUNT_2DA_COLS numCols
+    COUNT_2DA_ROWS numCols numRows
+    FOR (row = 0; row < numRows; ++row) BEGIN
+      READ_2DA_ENTRY row 1 numCols value
+      PATCH_IF (~%value%~ STRING_MATCHES_REGEXP ~\*.*~ = 0) BEGIN
+        TEXT_SPRINT entry EVAL ~%abil_%index%%~
+        SET_2DA_ENTRY row 1 numCols ~%entry%~
+        SET index += 1
+      END
+      PATCH_IF (index = abil) BEGIN
+        SET row = numRows
+      END
+    END
+  BUT_ONLY
+
+  // if rows have run out before all entries could be added
+  OUTER_WHILE (index < abil) BEGIN
+    OUTER_TEXT_SPRINT line ~~
+    OUTER_FOR (col = 0; col < numCols - 2; ++col) BEGIN
+      OUTER_TEXT_SPRINT line ~        ****%line%~
+    END
+    OUTER_TEXT_SPRINT entry EVAL ~%abil_%index%%~
+    OUTER_TEXT_SPRINT line ~%entry%  %line%~
+    OUTER_TEXT_SPRINT line ~ABILITY%row%    ~
+    APPEND ~%clab_resref%.2da~ ~%line%~
+    OUTER_SET index += 1
+    OUTER_SET row += 1
   END
-  OUTER_TEXT_SPRINT entry EVAL ~%abil_%index%%~
-  OUTER_TEXT_SPRINT line ~%entry%  %line%~
-  OUTER_TEXT_SPRINT line ~ABILITY%row%    ~
-  APPEND ~%clab_resref%.2da~ ~%line%~
-  OUTER_SET index += 1
-  OUTER_SET row += 1
 END
