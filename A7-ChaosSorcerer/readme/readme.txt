@@ -1,7 +1,7 @@
 Chaos Sorcerer Kit
 ~~~~~~~~~~~~~~~~~~
 
-Version:    Beta 2
+Version:    Beta 3
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases

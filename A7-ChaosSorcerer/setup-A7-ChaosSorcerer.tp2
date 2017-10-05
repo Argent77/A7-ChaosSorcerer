@@ -1,6 +1,6 @@
 BACKUP ~A7-ChaosSorcerer/backup~
 AUTHOR ~Argent77~
-VERSION ~beta 2~
+VERSION ~beta 3~
 
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
