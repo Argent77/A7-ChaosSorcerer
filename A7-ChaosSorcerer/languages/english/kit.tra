@@ -3,7 +3,7 @@
 
 @1000 = ~chaos sorcerer~
 @1001 = ~Chaos Sorcerer~
-@1002 = ~CHAOS SORCERER: Unlike Wild Mages who have learned to shape the unpredictable magics from the damaged and distorted parts of the Weave, Chaos Sorcerers have learned to derive their power from the Elemental Chaos – a plane that is largely unknown to most inhabitants of Toril.
+@1002 = ~CHAOS SORCERER: Unlike Wild Mages who have learned to shape the unpredictable magics from damaged and distorted parts of the Weave, Chaos Sorcerers have learned to derive their power from the Elemental Chaos – a plane that is largely unknown to most inhabitants of Toril.
 
 The Elemental Chaos is filled by chaos and unpredictability. Magic shaped by these forces are unpredictable by nature, even to chaos sorcerers who have learned to bend it to their wills. As a result chaos sorcerers are more dexterous, using their agility and strong reflexes to slip out of the way of their own spells if needed. They have also gained some resistance to all forms or magical energy. A basic understanding of the nature of Chaos is required to walk the path of a Chaos Sorcerer.
 
@@ -12,7 +12,6 @@ Advantages:
 – May cast the 2nd-level spell Unluck (automatically added to spell list).
 – May cast the 3rd-level spell Chaos Mastery (automatically added to spell list).
 – May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
-– Casting level varies slightly whenever <PRO_HESHE> casts a spell—anywhere between five levels lower and five levels higher than the Chaos Sorcerer's true level.
 – 1st level: +1 bonus to Saves vs. Spell.
 – 5th level: +1 bonus to Dexterity.
 – 6th level: +1 bonus to Saves vs. Spell.
@@ -30,7 +29,9 @@ Disadvantages:
 – May cast fewer spells per level per day.
 – Upon casting a spell, there is a 5% chance of incurring a wild surge.
 
-WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Chaos Sorcerer and <PRO_HISHER> allies.~
+WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Chaos Sorcerer and <PRO_HISHER> allies.
+
+– Casting level varies slightly whenever <PRO_HESHE> casts a spell—anywhere between five levels lower and five levels higher than the Chaos Sorcerer's true level.~
 
 // BG:EE/BG2:EE Wild Mage description
 @1100 = ~WILD MAGE: Wild magic is a new type of magic that is characterized by powerful and dangerous surges of unpredictable magic. Generally considered to be an unfortunate byproduct of the Time of Troubles, wild magic has recently begun to attract the attention of many a curious or scholarly wizard.

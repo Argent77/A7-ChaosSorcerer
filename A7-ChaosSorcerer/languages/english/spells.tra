@@ -14,7 +14,7 @@ Saving Throw: Special
 
 This spell opens a small rift into the Elemental Chaos to draw raw magical energies from, which the sorcerer can attempt to shape into a desired spell effect. The attempt usually fails, but something almost always occurs in the process.
 
-To use Chaotic Weave simply cast it, then choose from a list of randomly selected spells. A burst of magical energy is released, which the Chaos Sorcerer will try to manipulate into the desired form. The actual effect of the spell is determined randomly by a dice roll on the Wild Surge Table (see the manual for more details). The list of available spells becomes larger and more consistent at higher levels.
+To use Chaotic Weave simply cast it, then choose from a list of randomly picked spells. A burst of magical energy is released, which the Chaos Sorcerer will try to manipulate into the desired form. The actual effect of the spell is determined randomly by a dice roll on the Wild Surge Table (see the manual for more details). The list of potential spells to choose from becomes larger and more consistent at higher levels.
 
 Because the release of energy is planned by the Sorcerer, <PRO_HISHER> level is added to the dice roll. If the result indicates success, the Sorcerer has shaped the magical energy into the desired effect. More often than not, the effect is completely unexpected. The result might be beneficial to the Sorcerer, or it might be completely disastrous: This is the risk the Sorcerer takes by relying on the energies from the Elemental Chaos.~
 
@@ -44,7 +44,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-With this spell the caster creates a rift in the earth beneath the target and connects it with the plane of Elemental Chaos for a brief moment. The process results in a massive implosion of various elemental energies that burn, eletrocute or freeze the target, and holds it for one round. The spell does 10d10 blunt damange and either 10d10 fire or cold damage, with a 50 percent chance of causing additional 10d10 electrical damage. The victim can save vs. spell for half.~
+With this spell the caster creates a rift in the earth beneath the target and connects it with the Elemental Chaos for a brief moment. The process results in a massive eruption of various elemental energies that burn, eletrocute or freeze the target, and hold it for one round. The spell does 10d10 blunt damange and either 10d10 fire or cold damage, with a 50 percent chance of causing additional 10d10 electrical damage. The victim can save vs. spell for half.~
 
 
 // Wild Mage replacement spells
@@ -59,7 +59,7 @@ Casting Time: 2
 Area of Effect: The caster
 Saving Throw: None
 
-Surge Control erects an invisible barrier around the caster that attempts to avert the next Wild Surge. The chance to avert a Wild Surge is 10% + 1% per caster level, up to 30% at level 20. A successfully averted Wild Surge will neutralize the barrier, otherwise it will fade after 5 rounds. The barrier does not stack with other spells that increase chances of favorable results when Wild Surges occur.~
+Surge Control erects an invisible barrier around the caster that attempts to avert the next Wild Surge. The chance to ward off a Wild Surge is 10% + 1% per caster level, up to 30% at level 20. A successfully averted Wild Surge will neutralize the barrier, otherwise it will fade after 5 rounds. The barrier does not stack with other spells that increase chances of favorable results when Wild Surges occur.~
 
 @2550 = ~Unluck~
 @2551 = ~Unluck

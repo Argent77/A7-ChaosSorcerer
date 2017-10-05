@@ -51,7 +51,7 @@ Dweomer" is replaced by "Chaotic Weave" and "Chaos Shield" is called "Chaos Mast
 This component can be used to recreate the spell selection lists used by "Chaotic Weave", as there 
 is some randomness involved about which spells are included or not.
 It can be safely called even in an ongoing game. It can also be used to update the spell selection 
-lists if other mods installed new spells.
+lists if other mods, installed later, added new spells.
 
 
 Kit Description

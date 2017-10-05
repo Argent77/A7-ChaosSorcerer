@@ -6,4 +6,4 @@
 
 @500 = ~This component requires BG:EE, BG2:EE, EET or IWD:EE to be installed.~
 @501 = ~This component requires the main component to be installed.~
-@502 = ~This component is intended to be called separately if needed.~
+@502 = ~This component is intended to be called independently if needed.~
