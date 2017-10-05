@@ -3,6 +3,7 @@
 
 @0 = ~"Chaos Sorcerer" kit~
 @10 = ~Recreate "Chaos Weave" spell selection lists~
+@20 = ~Make "Wild Mage" kit unavailable for character creation~
 
 @500 = ~This component requires BG:EE, BG2:EE, EET or IWD:EE to be installed.~
 @501 = ~This component requires the main component to be installed.~

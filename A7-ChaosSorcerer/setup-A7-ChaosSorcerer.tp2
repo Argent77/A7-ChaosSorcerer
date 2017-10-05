@@ -41,3 +41,10 @@ BEGIN @10 // Recreate "Chaos Weave" spell selection lists
   DESIGNATED 10
 
   INCLUDE ~%MOD_FOLDER%/lib/spell_selection.tph~
+
+
+BEGIN @20 // Make "Wild Mage" unavailable to character creation
+  REQUIRE_COMPONENT ~setup-A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
+  DESIGNATED 20
+
+  INCLUDE ~%MOD_FOLDER%/lib/disable_wildmage.tph~

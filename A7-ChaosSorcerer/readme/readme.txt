@@ -54,6 +54,13 @@ It can be safely called even in an ongoing game. It can also be used to update t
 lists if other mods, installed later, added new spells.
 
 
+3. Make "Wild Mage" kit unavailable for character creation (requires main component)
+
+Added by request, this component removes the Wild Mage kit from the list of available Mage kits 
+during Character Generation, so that the Chaos Sorcerer remains as the only viable choice for a 
+Wild Magic user.
+
+
 Kit Description
 ~~~~~~~~~~~~~~~
 
