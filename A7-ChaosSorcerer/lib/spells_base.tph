@@ -166,19 +166,7 @@ APPEND ~hidespl.2da~ ~SPWI723 1     0          0~ UNLESS ~SPWI723~
 
 
 // Update Wild Mage CLAB
-OUTER_TEXT_SPRINT clab_resref ~CLABMA01~
-COPY_EXISTING - ~kitlist.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 numCols value
-    PATCH_IF (~%value%~ STRING_MATCHES_REGEXP ~WILD_?MAGE~ = 0) BEGIN
-      READ_2DA_ENTRY row 5 numCols clab_resref
-      SET row = numRows
-    END
-  END
-IF_EXISTS
-
+OUTER_TEXT_SPRINT clab_resref ~CLABMA01~  // hardcoded CLAB for Wild Mages and unkitted mages/sorcerers
 ACTION_IF (~%clab_resref%~ STR_EQ ~~ || NOT FILE_EXISTS_IN_GAME ~%clab_resref%.2DA~) BEGIN
   OUTER_SET numCols = 50
   COPY_EXISTING - ~clabfi01.2da~ ~override~
@@ -211,10 +199,17 @@ ACTION_IF (~%clab_resref%~ STR_EQ ~~ || NOT FILE_EXISTS_IN_GAME ~%clab_resref%.2
   END
 END
 
+COPY ~%MOD_FOLDER%/spells/a7_cs05.eff~ ~override~
+  WRITE_ASCIIE 0x30 ~%spell_nrd_resref%~ (8)
+COPY ~%MOD_FOLDER%/spells/a7_cs06.eff~ ~override~
+  WRITE_ASCIIE 0x30 ~%spell_chaos_shield_resref%~ (8)
+COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
+
 COPY_EXISTING ~%clab_resref%.2da~ ~override~
   SET index = 0
-  TEXT_SPRINT abil_0 ~GA_%spell_nrd_resref%~
-  TEXT_SPRINT abil_1 ~GA_%spell_chaos_shield_resref%~
+  TEXT_SPRINT abil_0 ~AP_A7_CS05~
+  TEXT_SPRINT abil_1 ~AP_A7_CS06~
   SET abil = 2
   COUNT_2DA_COLS numCols
   COUNT_2DA_ROWS numCols numRows
