@@ -70,8 +70,44 @@ STR_VAR
 END
 
 
-// tables
-COPY ~%MOD_FOLDER%/tables/lusox.2da~ ~override/%lu_file%~
+// installing HLA table
+// for max. compatibility table is based on trueclass sorcerer table
+OUTER_TEXT_SPRINT lu_base ~luso0~
+COPY_EXISTING - ~luabbr.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  FOR (row = 0; row < numRows; ++row) BEGIN
+    READ_2DA_ENTRY row 0 numCols value
+    PATCH_IF (~%value%~ STR_EQ ~SORCERER~) BEGIN
+      READ_2DA_ENTRY row 1 numCols value
+      PATCH_IF (FILE_EXISTS_IN_GAME ~lu%value%.2da~) BEGIN
+        TEXT_SPRINT lu_base ~lu%value%~
+        TO_LOWER ~lu_base~
+      END
+      SET row = numRows
+    END
+  END
+COPY_EXISTING ~%lu_base%.2da~ ~override/%lu_file%~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  SET patched = 0
+  FOR (row = 0; row < numRows; ++row) BEGIN
+    READ_2DA_ENTRY row 1 numCols value
+    PATCH_IF (~%value%~ STR_EQ ~*~) BEGIN
+      SET_2DA_ENTRY row 1 numCols ~GA_A7_SP10~
+      SET_2DA_ENTRY row 4 numCols ~1~
+      SET_2DA_ENTRY row 5 numCols ~99~
+      SET_2DA_ENTRY row 6 numCols ~1~
+      SET patched = 1
+      SET row = numRows
+    END
+  END
+  PATCH_IF (NOT patched) BEGIN
+    SET idx = row + 1
+    INSERT_2DA_ROW row numCols ~%idx% GA_A7_SP10 * * 1 99 1 * * *~
+  END
+  PRETTY_PRINT_2DA
+BUT_ONLY
 
 
 // passive abilities
@@ -140,5 +176,6 @@ OUTER_FOR (idx = 0; idx < campaigns; ++idx) BEGIN
         SET_2DA_ENTRY row 4 numCols ~%strref%~
       END
     END
+    PRETTY_PRINT_2DA
   BUT_ONLY IF_EXISTS
 END
