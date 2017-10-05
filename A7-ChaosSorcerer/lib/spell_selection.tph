@@ -124,11 +124,14 @@ BEGIN
 
           SET valid = 0
           INNER_ACTION BEGIN
-            // checking exclusion flags
+            // validating spell properties
             COPY_EXISTING - ~%resref%.spl~ ~override~
-              READ_SHORT 0x1c type
-              READ_LONG 0x1e flags
-              SET valid = (type != 1 || flags BAND BIT14) ? 0 : 1   // Wizard type, Generalist Mage not excluded
+              PATCH_IF ((SHORT_AT 0x1c) == 1 &&             // Wizard spell?
+                        ((LONG_AT 0x1e) BAND BIT14) = 0 &&  // Generalist mage not excluded?
+                        (LONG_AT NAME1) > 0 &&              // valid spell name?
+                        (LONG_AT 0x34) = level) BEGIN       // spell level matches?
+                SET valid = 1
+              END
             IF_EXISTS
           END
 
