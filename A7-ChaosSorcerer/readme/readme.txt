@@ -64,9 +64,9 @@ Wild Magic user.
 Kit Description
 ~~~~~~~~~~~~~~~
 
-CHAOS SORCERER: Unlike Wild Mages who have learned to shape the unpredictable magics from the 
-damaged and distorted parts of the Weave, Chaos Sorcerers have learned to derive their power from 
-the Elemental Chaos – a plane that is largely unknown to most inhabitants of Toril.
+CHAOS SORCERER: Unlike Wild Mages who have learned to shape the unpredictable magics from damaged 
+and distorted parts of the Weave, Chaos Sorcerers have learned to derive their power from the 
+Elemental Chaos – a plane that is largely unknown to most inhabitants of Toril.
 
 The Elemental Chaos is filled by chaos and unpredictability. Magic shaped by these forces are 
 unpredictable by nature, even to chaos sorcerers who have learned to bend it to their wills. 
