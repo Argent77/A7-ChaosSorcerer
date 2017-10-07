@@ -1,0 +1,62 @@
+// Combat script for controllable Chaos Elementals
+
+IF
+  ActionListEmpty()
+  !See([ENEMY])
+  HPPercentLT(Myself, 90)
+THEN
+  RESPONSE #10
+    ForceSpellRES("A7_CEL3", Myself)  // Cure Wounds
+    Continue()
+  RESPONSE #90
+    Continue()
+END
+
+IF
+  ActionListEmpty()
+  !Range(LastSummonerOf(Myself), 20)
+THEN
+  RESPONSE #10
+    MoveToObject(LastSummonerOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  AttackedBy([ENEMY], 0)
+THEN
+  RESPONSE #100
+    AttackOneRound(LastAttackerOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See([ENEMY.0.0.0.0.0.MASK_LAWFUL])
+THEN
+  RESPONSE #25
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackReevaluate(LastSeenBy(Myself), 15)
+  RESPONSE #75
+    AttackReevaluate(LastSeenBy(Myself), 15)
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #10
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackReevaluate(LastSeenBy(Myself), 15)
+  RESPONSE #90
+    AttackReevaluate(LastSeenBy(Myself), 15)
+END
+
+IF
+  ActionListEmpty()
+  !See([ENEMY])
+  Range(LastSummonerOf(Myself), 20)
+THEN
+  RESPONSE #50
+    %RandomWalk_action%
+  RESPONSE #50
+    RandomTurn()
+END

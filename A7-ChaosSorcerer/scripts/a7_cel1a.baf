@@ -1,15 +1,7 @@
-// Combat script for Chaos Elementals
+// Combat script for independent Chaos Elementals
 
 IF
-  Global("init", "LOCALS", 0)
-THEN
-  RESPONSE #100
-    SetGlobal("init", "LOCALS", 1)
-    DisplayStringHead(Myself, @10002) // A Chaos Elemental was able to slip through the rift.
-END
-
-IF
-  AttackedBy([ANYONE],0)
+  AttackedBy([ANYONE], 0)
 THEN
   RESPONSE #100
     AttackOneRound(LastAttackerOf(Myself))
@@ -18,13 +10,15 @@ END
 IF
   !GlobalTimerNotExpired("AttackTimer", "LOCALS")
   RandomNum(4, 1)
-  See(SecondNearest)
+  OR(2)
+    See(NearestEnemyOf(Myself))
+    See(SecondNearest)
 THEN
   RESPONSE #10
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
     AttackOneRound(LastSeenBy(Myself))
-  RESPONSE #100
+  RESPONSE #90
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     AttackOneRound(LastSeenBy(Myself))
 END
@@ -32,13 +26,15 @@ END
 IF
   !GlobalTimerNotExpired("AttackTimer", "LOCALS")
   RandomNum(4, 2)
-  See(ThirdNearest)
+  OR(2)
+    See(SecondNearestEnemyOf(Myself))
+    See(ThirdNearest)
 THEN
   RESPONSE #10
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
     AttackOneRound(LastSeenBy(Myself))
-  RESPONSE #100
+  RESPONSE #90
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     AttackOneRound(LastSeenBy(Myself))
 END
@@ -46,7 +42,9 @@ END
 IF
   !GlobalTimerNotExpired("AttackTimer", "LOCALS")
   RandomNum(4, 3)
-  OR(2)
+  OR(4)
+    See(ThirdNearestEnemyOf(Myself))
+    See(FourthNearestEnemyOf(Myself))
     See(FourthNearest)
     See(FifthNearest)
 THEN
@@ -54,7 +52,7 @@ THEN
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
     AttackOneRound(LastSeenBy(Myself))
-  RESPONSE #100
+  RESPONSE #90
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     AttackOneRound(LastSeenBy(Myself))
 END
@@ -62,7 +60,9 @@ END
 IF
   !GlobalTimerNotExpired("AttackTimer", "LOCALS")
   RandomNum(4, 4)
-  OR(2)
+  OR(4)
+    See(FifthNearestEnemyOf(Myself))
+    See(SixthNearestEnemyOf(Myself))
     See(SeventhNearest)
     See(EighthNearest)
 THEN
@@ -70,14 +70,20 @@ THEN
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
     AttackOneRound(LastSeenBy(Myself))
-  RESPONSE #100
+  RESPONSE #90
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
   !GlobalTimerNotExpired("AttackTimer", "LOCALS")
-  OR(7)
+  OR(13)
+    See(NearestEnemyOf(Myself))
+    See(SecondNearestEnemyOf(Myself))
+    See(ThirdNearestEnemyOf(Myself))
+    See(FourthNearestEnemyOf(Myself))
+    See(FifthNearestEnemyOf(Myself))
+    See(SixthNearestEnemyOf(Myself))
     See(SecondNearest)
     See(ThirdNearest)
     See(FourthNearest)
@@ -90,12 +96,18 @@ THEN
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
     AttackOneRound(LastSeenBy(Myself))
-  RESPONSE #100
+  RESPONSE #90
     SetGlobalTimer("AttackTimer", "LOCALS", 6)
     AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
+  !See(NearestEnemyOf(Myself))
+  !See(SecondNearestEnemyOf(Myself))
+  !See(ThirdNearestEnemyOf(Myself))
+  !See(FourthNearestEnemyOf(Myself))
+  !See(FifthNearestEnemyOf(Myself))
+  !See(SixthNearestEnemyOf(Myself))
   !See(SecondNearest)
   !See(ThirdNearest)
   !See(FourthNearest)

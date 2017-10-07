@@ -115,19 +115,50 @@ COPY ~%MOD_FOLDER%/spells/a7_sp10b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2a.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2b.vvc~ ~override~
 
-COPY ~%MOD_FOLDER%/creatures/a7_cel1.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/a7_cel1a.cre~ ~override~
   SAY NAME1 @10000  // Chaos Elemental
   SAY NAME2 @10000  // Chaos Elemental
 
-COPY ~%MOD_FOLDER%/creatures/a7_cel2.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/a7_cel2a.cre~ ~override~
   SAY NAME1 @10001  // Greater Chaos Elemental
   SAY NAME2 @10001  // Greater Chaos Elemental
 
-COPY ~%MOD_FOLDER%/spells/a7_cel1.eff~ ~override~
-     ~%MOD_FOLDER%/spells/a7_cel2.eff~ ~override~
+COPY ~%MOD_FOLDER%/spells/a7_cel1a.eff~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cel2a.eff~ ~override~
      ~%MOD_FOLDER%/spells/a7_cel1.spl~ ~override~
      ~%MOD_FOLDER%/spells/a7_cel2.spl~ ~override~
      ~%MOD_FOLDER%/spells/a7_cel3.spl~ ~override~
 
-COMPILE ~%MOD_FOLDER%/scripts/a7_cel1.baf~
-        ~%MOD_FOLDER%/scripts/a7_cel2.baf~
+COMPILE ~%MOD_FOLDER%/scripts/a7_cel1a.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel1x.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel2a.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel2x.baf~
+
+
+// Spell: Conjure Chaos Elemental
+COPY ~%MOD_FOLDER%/spells/a7_sp03.spl~ ~override~
+    SAY NAME1 @2700 // Conjure Chaos Elemental
+    SAY UNIDENTIFIED_DESC @2701 // ...
+
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~spin906.spl~) BEGIN
+  COPY ~%MOD_FOLDER%/spells/spin906.spl~ ~override~
+  APPEND ~spell.ids~ ~3906 THREE_ROUND_ENCHANTMENT_IMMUNITY~ UNLESS ~THREE_ROUND_ENCHANTMENT_IMMUNITY~
+END
+
+OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT action ~action~ 411 END
+ACTION_IF (~%action%~ STR_EQ ~411~) BEGIN
+  OUTER_TEXT_SPRINT RandomWalk_action ~RandomWalk()~
+END ELSE BEGIN
+  OUTER_TEXT_SPRINT RandomWalk_action ~RandomWalkContinuousTime(1)~
+END
+COMPILE EVAL ~%MOD_FOLDER%/scripts/a7_cel1b.baf~
+             ~%MOD_FOLDER%/scripts/a7_cel1y.baf~
+
+COPY ~%MOD_FOLDER%/creatures/a7_cel1b.cre~ ~override~
+  SAY NAME1 @10000  // Chaos Elemental
+  SAY NAME2 @10000  // Chaos Elemental
+
+COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp03b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp03c.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp03.eff~ ~override~

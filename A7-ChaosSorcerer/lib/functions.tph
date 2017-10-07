@@ -107,6 +107,7 @@ BEGIN
         END ELSE BEGIN
           OUTER_TEXT_SPRINT resref ~%resref%%level%%index%~
         END
+        OUTER_SET slot = (type * 1000) + (level * 100) + index
         OUTER_SET idx = range
       END
     END

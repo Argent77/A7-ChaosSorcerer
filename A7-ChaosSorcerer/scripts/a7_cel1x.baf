@@ -1,0 +1,9 @@
+// Special script for Chaos Elementals from Chaotic Eruption
+
+IF
+  Global("init", "LOCALS", 0)
+THEN
+  RESPONSE #100
+    SetGlobal("init", "LOCALS", 1)
+    DisplayStringHead(Myself, @10002) // A Chaos Elemental was able to slip through the rift.
+END
