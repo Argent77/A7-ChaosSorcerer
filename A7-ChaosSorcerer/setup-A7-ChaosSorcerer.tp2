@@ -13,6 +13,7 @@ LANGUAGE ~English~
          ~%MOD_FOLDER%/languages/english/setup.tra~
          ~%MOD_FOLDER%/languages/english/kit.tra~
          ~%MOD_FOLDER%/languages/english/spells.tra~
+         ~%MOD_FOLDER%/languages/english/misc.tra~
 
 
 BEGIN @0  // "Chaos Sorcerer" kit

@@ -1,0 +1,7 @@
+// -*- coding: utf-8 -*- 
+// Misc. strings (index 10000..19999)
+
+@10000 = ~Chaos Elemental~
+@10001 = ~Greater Chaos Elemental~
+@10002 = ~A Chaos Elemental was able to slip through the rift.~
+@10003 = ~A Greater Chaos Elemental was able to slip through the rift.~

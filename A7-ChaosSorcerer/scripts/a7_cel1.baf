@@ -1,0 +1,114 @@
+// Combat script for Chaos Elementals
+
+IF
+  Global("init", "LOCALS", 0)
+THEN
+  RESPONSE #100
+    SetGlobal("init", "LOCALS", 1)
+    DisplayStringHead(Myself, @10002) // A Chaos Elemental was able to slip through the rift.
+END
+
+IF
+  AttackedBy([ANYONE],0)
+THEN
+  RESPONSE #100
+    AttackOneRound(LastAttackerOf(Myself))
+END
+
+IF
+  !GlobalTimerNotExpired("AttackTimer", "LOCALS")
+  RandomNum(4, 1)
+  See(SecondNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #100
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  !GlobalTimerNotExpired("AttackTimer", "LOCALS")
+  RandomNum(4, 2)
+  See(ThirdNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #100
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  !GlobalTimerNotExpired("AttackTimer", "LOCALS")
+  RandomNum(4, 3)
+  OR(2)
+    See(FourthNearest)
+    See(FifthNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #100
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  !GlobalTimerNotExpired("AttackTimer", "LOCALS")
+  RandomNum(4, 4)
+  OR(2)
+    See(SeventhNearest)
+    See(EighthNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #100
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  !GlobalTimerNotExpired("AttackTimer", "LOCALS")
+  OR(7)
+    See(SecondNearest)
+    See(ThirdNearest)
+    See(FourthNearest)
+    See(FifthNearest)
+    See(SixthNearest)
+    See(SeventhNearest)
+    See(EighthNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #100
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  !See(SecondNearest)
+  !See(ThirdNearest)
+  !See(FourthNearest)
+  !See(FifthNearest)
+  !See(SixthNearest)
+  !See(SeventhNearest)
+  !See(EighthNearest)
+THEN
+  RESPONSE #10
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    ForceSpellRES("A7_CEL3", Myself)  // Cure Wounds
+    RandomWalk()
+  RESPONSE #90
+    SetGlobalTimer("AttackTimer", "LOCALS", 6)
+    RandomWalk()
+END

@@ -114,3 +114,20 @@ COPY ~%MOD_FOLDER%/spells/a7_sp10b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs1b.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2a.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2b.vvc~ ~override~
+
+COPY ~%MOD_FOLDER%/creatures/a7_cel1.cre~ ~override~
+  SAY NAME1 @10000  // Chaos Elemental
+  SAY NAME2 @10000  // Chaos Elemental
+
+COPY ~%MOD_FOLDER%/creatures/a7_cel2.cre~ ~override~
+  SAY NAME1 @10001  // Greater Chaos Elemental
+  SAY NAME2 @10001  // Greater Chaos Elemental
+
+COPY ~%MOD_FOLDER%/spells/a7_cel1.eff~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cel2.eff~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cel1.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cel2.spl~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cel3.spl~ ~override~
+
+COMPILE ~%MOD_FOLDER%/scripts/a7_cel1.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel2.baf~
