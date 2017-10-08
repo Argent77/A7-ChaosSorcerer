@@ -1,0 +1,70 @@
+// -*- coding: utf-8 -*- 
+// Kit (index 1000..1999)
+
+@1000 = ~chaos hexenmeister~
+@1001 = ~Chaos Hexenmeister~
+@1002 = ~CHAOS HEXENMEISTER: Im Unterschied zum Hasardeur, der gelernt hat, unbändige Magie von verzerrten oder beschädigten Magiefäden zu seinem Vorteil zu nutzen, hat der Chaos Hexenmeister Zugang zum Elementaren Chaos gefunden, um die benötigten Kräfte für seine Zauber zu beziehen. Diese Ebene ist den Bewohnern Torils weitgehend unbekannt.
+
+Das Elementare Chaos ist eine Ebene voller Chaos und Unberechenbarkeit. Magie, die mit Hilfe der Energien aus dieser Ebene geformt wird, ist ebenfalls chaotisch und unberechenbar – selbst für einen Chaos Hexenmeister. Daher sind Chaos Hexenmeister besonders flink und beweglich, um ihren eigenen Zaubern zu entkommen, falls es notwendig sein sollte. Sie haben auch einen gewissen Widerstand gegenüber magischen Energien entwickelt. Ein grundlegendes Verständnis für die Natur des Chaos ist Voraussetzung, um den Pfad des Chaos Hexenmeisters zu folgen.
+
+Vorteile:
+– einzigartige Zauber des 1. Grades: „Chaotisches Gefüge“ und „Wogenbann“
+– einzigartiger Zauber des 2. Grades: „Missgeschick“
+– einzigartiger Zauber des 3. Grades: „Chaosbeherrschung“
+– einzigartiger Zauber des 5. Grades: „Chaoselementar beschwören“
+– einzigartiger Zauber des 7. Grades: „Nahals Wilder Schlag“
+– 1. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
+– 5. Stufe: erhält einen +1 Bonus auf Geschicklichkeit
+– 6. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
+– 8. Stufe: erhält einen Bonus von 5 % auf Widerstand gegen Zauber
+– 11. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
+– 15. Stufe: erhält einen +1 Bonus auf Geschicklichkeit
+– 16. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
+– 16. Stufe: erhält einen Bonus von 5 % auf Widerstand gegen Zauber
+– 21. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
+– 24. Stufe: erhält einen Bonus von 5 % auf Widerstand gegen Zauber
+
+Nachteile:
+– erhält einen Malus von -2 auf Stärke und Konstitution
+– kann nur chaotisch guter, chaotisch neutraler oder chaotisch böser Gesinnung sein
+– kann je Stufe weniger Zauber pro Tag wirken
+– beim Wirken eines Zaubers besteht eine Wahrscheinlichkeit von 5 %, dass es zu einer unbändigen Woge kommt
+
+UNBÄNDIGE WOGE: Eine unbändige Woge sorgt dafür, dass der gewirkte Zauber einen vollkommen unvorhersehbaren Effekt erzielt. Dieser Effekt kann sowohl zum Nutzen als auch zum Schaden des Chaos Hexenmeister und seiner Verbündeten sein.
+
+– bei jedem Wirken eines Zaubers variiert die Zauberstufe des Chaos Hexenmeisters ein wenig – irgendwo zwischen 5 Stufen über und 5 Stufen unter der tatsächlichen Stufe des Chaos Hexenmeisters~
+
+// BG:EE/BG2:EE Wild Mage description
+@1100 = ~HASARDEUR: Unbändige Magie ist eine neue Form der Magie, die sich hauptsächlich dadurch auszeichnet, dass es beim Wirken von Zaubern zu „unbändigen Wogen“ kommen kann. Die Existenz der unbändigen Magie wird als ein Nebenprodukt der Zeit der Sorgen gesehen. In letzter Zeit hat die unbändige Magie das Interesse zahlreicher neugieriger Magier und Gelehrter geweckt.
+
+Hasardeure sind Magier, die sich auf das Gebiet der unbändigen Magie spezialisiert haben. Sie verfügen über Zauber, die es ihnen ermöglichen, die unbändige Magie zu kontrollieren und sich vor den ungewollten Auswirkungen besser zu schützen. Unbändige Magie ist extrem unberechenbar und sollte nur mit Vorsicht eingesetzt werden.
+
+EIGENSCHAFTEN:
+
+– kann sich einen zusätzlichen Zauber pro Grad einprägen
+– einzigartige Zauber des 1. Grades: „Nahals gewagte Hexerei“ und „Wogenbann“
+– einzigartiger Zauber des 2. Grades: „Missgeschick“ (wird automatisch erlernt)
+– einzigartiger Zauber des 3. Grades: „Chaosschild“ (wird automatisch erlernt)
+– einzigartiger Zauber des 7. Grades: „Nahals Wilder Schlag“ (wird automatisch erlernt)
+– beim Wirken eines Zaubers besteht eine Wahrscheinlichkeit von 5 %, dass es zu einer unbändigen Woge kommt
+
+UNBÄNDIGE WOGE: Eine unbändige Woge sorgt dafür, dass der gewirkte Zauber einen vollkommen unvorhersehbaren Effekt erzielt. Dieser Effekt kann sowohl zum Nutzen als auch zum Schaden des Hasardeurs und seiner Verbündeten sein.
+
+– bei jedem Wirken eines Zaubers variiert die Zauberstufe des Hasadeurs ein wenig – irgendwo zwischen 5 Stufen über und 5 Stufen unter der tatsächlichen Stufe des Hasardeurs~
+
+// IWD:EE Wild Mage description
+@1101 = ~HASARDEUR: Unbändige Magie ist eine neue Form der Magie, die sich hauptsächlich dadurch auszeichnet, dass es beim Wirken von Zaubern zu „unbändigen Wogen“ kommen kann. In letzter Zeit hat die unbändige Magie das Interesse zahlreicher neugieriger Magier und Gelehrter geweckt.
+
+Hasardeure sind Magier, die sich auf das Gebiet der unbändigen Magie spezialisiert haben und über Zauber verfügen, die sie vor den ungewollten Auswirkungen besser schützen. Unbändige Magie ist sehr unberechenbar und sollte nur mit Vorsicht angewendet werden.
+
+KLASSENEIGENSCHAFTEN:
+- Kann je Grad einen zusätzlichen Zauber auswendig lernen
+– Kann die Zauber des ersten Grads „Nahals gewagte Hexerei“ und „Wogenbann“ anwenden
+– Kann den Zauber des zweiten Grads „Missgeschick“ anwenden (im Zauberbuch kostenlos enthalten)
+– Kann den Zauber des dritten Grads „Chaosschild“ anwenden (im Zauberbuch kostenlos enthalten)
+– Kann den Zauber des siebten Grads „Nahals Wilder Schlag“ anwenden (im Zauberbuch kostenlos enthalten)
+- Beim Aussprechen jedes Zaubers gibt es eine 5%ige Chance, eine Unbändige Woge auszulösen.
+
+UNBÄNDIGE WOGE: Eine Unbändige Woge ruft einen vollkommen zufälligen magischen Effekt aus dem angewendeten Zauber hervor. Die Wirkung kann für den Hasardeur und seine Gruppe nützlich oder auch schädlich sein.
+
+- Der Grad eines jeden gewirkten Spruches variiert ein wenig und liegt irgendwo zwischen fünf Grade über und fünf Grade unter der tatsächlichen Stufe des Hasardeurs.~

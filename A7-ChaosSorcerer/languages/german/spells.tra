@@ -1,0 +1,120 @@
+// -*- coding: utf-8 -*- 
+// Spells (index 2000..9999)
+
+@2000 = ~Chaotisches Gefüge~
+@2001 = ~Chaotisches Gefüge
+
+Grad: 1
+Schule: Hervorrufung
+Reichweite: Speziell
+Dauer: Speziell
+Zeitaufwand: Speziell
+Bereich: Speziell
+Rettungswurf: Speziell
+
+Dieser Zauber öffnet einen kleinen Spalt in das Elementare Chaos, um aus ihr die benötigte Energie zu beziehen, der für den gewünschten Zauber notwendig ist. Dieser Versuch geht in der Regel schief, aber irgendetwas entsteht im Verlauf des Vorgangs eigentlich immer.
+
+Um den Zauber Chaotisches Gefüge durchzuführen, genügt es, den Zauber zu wirken und danach von einer Liste aus zufällig zusammengestellten Zaubern eine Auswahl zu treffen. Daraufhin wird eine große Menge magischer Energie freigesetzt, die der Chaos Hexenmeister in die gewünschte Form zu bringen versucht. Die tatsächliche Wirkung des Zaubers wird zufällig durch einen Wurf in der Resultate-Tabelle der „Unbändigen Woge“ (siehe Handbuch) bestimmt.
+
+Weil die Energie vom Anwender freigesetzt wird, wird die Stufe des Anwenders dem Würfelergebnis hinzugerechnet. Deutet das Resultat auf einen Erfolg hin, ist es dem Anwender gelungen, die magische Energie in den gewünschten Effekt münden zu lassen. Weitaus wahrscheinlicher jedoch ist eine vollkommen unerwartete Wirkung. Das Ergebnis kann für den Anwender von Vorteil sein, aber genauso gut in einer Katastrophe enden. Dieses Risiko muss man eben eingehen, wenn man „Chaotisches Gefüge“ einsetzt.~
+
+
+@2050 = ~Chaosbeherrschung~
+@2051 = ~Chaosbeherrschung
+
+Grad: 3
+Schule: Bannzauber
+Reichweite: Anwender
+Dauer: 1 Phase + 1 Phase pro 5 Stufen
+Zeitaufwand: 5
+Bereich: Anwender
+Rettungswurf: Nein
+
+Chaosbeherrschung erhöht die Chance des Zauberers auf ein für ihn positives Ergebnis, wenn er versucht, die Energien des Elementaren Chaos zu formen. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Chaos Magier einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 10 und +25 ab Stufe 20. Wenn er zusätzlich „Chaotisches Gefüge“ einsetzt, werden der Bonus von Chaosbeherrschung und der Bonus für die Stufe des Chaos Hexenmeisters addiert.~
+
+
+@2100 = ~Chaotischer Ausbruch~
+@2101 = ~Chaotischer Ausbruch
+
+Grad: 10
+Schule: Hervorrufung
+Reichweite: 12 m
+Dauer: 2 Runden
+Zeitaufwand: 5
+Bereich: 1 Wesen
+Rettungswurf: Speziell (gg. Zauber)
+
+Der Zauber erzeugt eine Spalte unter dem Ziel, die kurz direkt mit dem Elementaren Chaos verbunden wird. Dadurch wird ein massiver Ausbruch verschiedenster elementarer Kräfte provoziert, der das Ziel verbrennt, einfriert oder ihm elektrischen Schaden zufügt. Das Opfer wird 1 Runde lang festgehalten und erleidet 10W10 Schadenspunkte durch die Wucht des Ausbruchs, sowie entweder 10W10 Schaden durch Feuer oder durch Kälte und mit 50 % Wahrscheinlichkeit zusätzlich 10W10 elektrischen Schaden. Gelingt dem Opfer ein Rettungswurf gegen Zauber, erleidet es den halben Schaden.
+
+Die dimensionale Spalte in das Elementare Chaos ruft auch das Interesse einiger dort beheimateter Kreaturen hervor. Daher besteht eine geringe Chance, dass ein Chaoselementar durchschlüpfen kann und jeden in Sichtweite angreift.~
+
+
+// Wild Mage replacement spells
+@2500 = ~Wogenbann~
+@2501 = ~Wogenbann
+
+Grad: 1
+Schule: Bannzauber
+Reichweite: Anwender
+Dauer: Speziell
+Zeitaufwand: 2
+Bereich: Anwender
+Rettungswurf: Nein
+
+Wogenbann errichtet einen unsichtbaren Schutzwall um den Zauberer, der die nächste Unbändige Woge abzuwehren versucht. Die Wahrscheinlichkeit dafür besteht zu 10 % + 1 % pro Stufe des Zauberers, bis zu 30 % auf Stufe 20. Eine erfolgreiche Abwehr hebt den Schutzwall auf. Ansonsten verschwindet er nach 5 Runden. Dieser Zauber kann nicht mit Chaosbeherrschung kombiniert werden.~
+
+@2550 = ~Missgeschick~
+@2551 = ~Missgeschick
+
+Grad: 2
+Schule: Hervorrufung
+Reichweite: 9 m (Sichtfeld)
+Dauer: 5 Runden
+Zeitaufwand: 5
+Bereich: 1 Wesen
+Rettungswurf: Nein
+
+Dieser Zauber verändert die Kräfte des Schicksals zu Ungunsten des Ziels. In den nächsten 5 Runden erhält das Ziel einen Malus von -1 auf Rettungs-, Treffer-, Heilungs- und Schadenswürfe sowie einen Malus von -5 % auf dessen Diebesfähigkeiten. Zudem wird die Anzahl der Würfelseiten für alle Schadenswürfe, die nicht dem Basisschaden einer Waffe entstammen, um 1 erhöht. Zum Beispiel richtet ein Feuerball statt 6W6 nun 6W7 Schadenspunkte an und ein Flammenschwert statt 1W8 +2 (Klinge) und 1W3 (Feuer) Schadenspunkten nun 1W8 +2 (Klinge) und 1W4 (Feuer).~
+
+@2600 = ~Nahals Wilder Schlag~
+@2601 = ~Nahals Wilder Schlag
+
+Grad: 7
+Schule: Verwandlung
+Reichweite: 9 m (Sichtfeld)
+Dauer: 5 Runden + 1 Runde pro 3 Stufen
+Zeitaufwand: 5
+Bereich: 1 Wesen
+Rettungswurf: Ja (gg. Zauber)
+
+Dieser Zauber umgibt das Ziel mit einer Aura chaotischer Kräfte, die sich an die Zauber hängen, welche das Ziel zu wirken versucht. Für die Dauer des Zaubers wird bei jedem Zauberversuch eine Unbändige Woge mit unvorhersehbaren Folgen ausgelöst. Das Ziel kann sich dagegen mit einem erfolgreichen Rettungswurf -4 gegen Zauber wehren.~
+
+// @2650 = ~Chaos Shield~   // no need to translate
+@2651 = ~Chaosschild
+
+Grad: 3
+Schule: Bannzauber
+Reichweite: Anwender
+Dauer: 1 Phase + 1 Phase pro 5 Stufen
+Zeitaufwand: 5
+Bereich: Anwender
+Rettungswurf: Nein
+
+Der Chaosschild erhöht die Chance des Hasardeurs auf ein für ihn positives Ergebnis, wenn es zu einer „Unbändigen Woge“ kommt. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Hasardeur einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 10 und +25 ab Stufe 20. Wenn er zusätzlich „Nahals gewagte Hexerei“ einsetzt, werden der Bonus vom Chaosschild und der Bonus für die Stufe des Hasardeurs addiert.~
+
+@2700 = ~Chaoselementar beschwören~
+@2701 = ~Chaoselementar beschwören
+(Conjuration/Summoning)
+
+Grad: 5
+Schule: Beschwörung
+Reichweite: 13,5 m
+Dauer: 1 Phase + 1 Runde pro Stufe
+Zeitaufwand: 9
+Bereich: Speziell
+Rettungswurf: Nein
+
+Chaos Hexenmeister sind in der Lage, heimische Geschöpfe des Elementaren Chaos herbeizurufen, um all seine Befehle zu befolgen. Ein Chaoselementar ähnelt einem Nebel aus formloser Materie, der ohne erkennbares Schema wild herumwirbelt. Er hat 8 Trefferwürfel und befolgt alle Befehle, bis er gebannt wird, die Wirkungsdauer des Zaubers endet oder der Elementar stirbt.
+Nachdem der Elementar erschienen ist, kann er sich einmalig zu 15 % der geistigen Kontrolle des Anwenders widersetzen. In dem Fall greift er zufällig alle Kreaturen in der unmittelbaren Umgebung an. Der tobende Elementar bleibt auf dieser Ebene, bis er getötet wird oder die Wirkungsdauer endet. Nachdem er beschworen wurde, muss der Anwender all seine geistigen Kräfte fokussieren und der Psyche des Elementars seinen Willen aufzwingen. Der geistige Wettstreit dauert 3 Runden und beginnt direkt, nachdem der Elementar erschienen ist. Gewinnt der Anwender den Wettstreit, dient ihm der Elementar, andernfalls gerät er außer Kontrolle und greift ohne erkennbares Muster alles in seiner Umgebung an.
+
+Selbst ein Chaoselementar unter Kontrolle des Zauberers ist nicht fähig, länger als einen Augenblick stillzustehen und wandert unaufhörlich herum, sofern ihm keine konkreten Befehle gegeben wurde. Allerdings kehrt er immer wieder zum Beschwörer zurück, falls er sich zu weit entfernt hat.~
