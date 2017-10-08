@@ -47,7 +47,7 @@ Die Komponente führt außerdem einige Veränderungen an der Zauberauswahl für 
    Woge ausgelöst.
 
 Diese Änderungen treffen auch auf den Chaos Hexenmeister zu. Allerdings wird „Nahals gewagte 
-Hexerei“ durch „Chaotisches Gefüge“ und „Chaosschild“ durch „Chaosbeherrschung“ ersetzt.
+Hexerei“ durch „Chaotisches Gefüge“.
 
 
 2. Zauberlisten für „Chaotisches Gefüge“ neu erstellen (benötigt die Hauptkomponente)
@@ -85,7 +85,7 @@ ist Voraussetzung, um den Pfad des Chaos Hexenmeisters zu folgen.
 Vorteile:
 – einzigartige Zauber des 1. Grades: „Chaotisches Gefüge“ und „Wogenbann“
 – einzigartiger Zauber des 2. Grades: „Missgeschick“
-– einzigartiger Zauber des 3. Grades: „Chaosbeherrschung“
+– einzigartiger Zauber des 3. Grades: „Chaosschild“
 – einzigartiger Zauber des 5. Grades: „Chaoselementar beschwören“
 – einzigartiger Zauber des 7. Grades: „Nahals Wilder Schlag“
 – bei jedem Wirken eines Zaubers variiert die Zauberstufe des Chaos Hexenmeisters ein wenig – 

@@ -85,20 +85,6 @@ COPY ~%MOD_FOLDER%/spells/a7_sp01b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp01c.bam~ ~override~
 
 
-// spell: Chaos Mastery
-COPY ~%MOD_FOLDER%/spells/a7_sp02.spl~ ~override~
-  SAY NAME1 @2050 // Chaos Mastery
-  SAY UNIDENTIFIED_DESC @2051 // Chaos Mastery description
-  PATCH_IF (NOT FILE_EXISTS_IN_GAME ~splstate.ids~) BEGIN
-    // pre-patch 2.0/1.4 game found
-    LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 328 END
-  END
-
-COPY ~%MOD_FOLDER%/spells/a7_sp02a.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp02b.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp02c.bam~ ~override~
-
-
 // HLA: Chaotic Eruption
 COPY ~%MOD_FOLDER%/spells/a7_sp10.spl~ ~override~
   SAY NAME1 @2100 // Chaotic Eruption
@@ -137,8 +123,8 @@ COMPILE ~%MOD_FOLDER%/scripts/a7_cel1a.baf~
 
 // Spell: Conjure Chaos Elemental
 COPY ~%MOD_FOLDER%/spells/a7_sp03.spl~ ~override~
-    SAY NAME1 @2700 // Conjure Chaos Elemental
-    SAY UNIDENTIFIED_DESC @2701 // ...
+    SAY NAME1 @2050 // Conjure Chaos Elemental
+    SAY UNIDENTIFIED_DESC @2051 // ...
 
 ACTION_IF (NOT FILE_EXISTS_IN_GAME ~spin906.spl~) BEGIN
   COPY ~%MOD_FOLDER%/spells/spin906.spl~ ~override~

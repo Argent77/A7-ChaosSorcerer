@@ -43,7 +43,7 @@ The component does also apply several changes to the Wild Mage spell selection:
    Each time the target casts a spell will trigger a wild surge with unpredictable results.
 
 The Wild Mage additions are also available to the Chaos Sorcerer. However, "Nahal's Reckless 
-Dweomer" is replaced by "Chaotic Weave" and "Chaos Shield" is called "Chaos Mastery".
+Dweomer" is replaced by "Chaotic Weave".
 
 
 2. Recreate spell selection lists (requires main component)
@@ -78,7 +78,7 @@ Chaos Sorcerer.
 Advantages:
 – May cast the 1st-level spells Chaotic Weave and Surge Control (automatically added to spell list).
 – May cast the 2nd-level spell Unluck (automatically added to spell list).
-– May cast the 3rd-level spell Chaos Mastery (automatically added to spell list).
+– May cast the 3rd-level spell Chaos Shield (automatically added to spell list).
 – May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
 – May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
 – Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower 
