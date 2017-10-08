@@ -42,10 +42,14 @@ ACTION_IF (slot >= 0) BEGIN
     LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY
 
-  // spell should appear on character spell selection screen
-  COPY_EXISTING ~hidespl.2da~ ~override~
-    LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_nrd_resref%~ END
-  BUT_ONLY
+  // spell should appear on character spell selection screen, except on pre-2.0 games
+  ACTION_IF (FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
+    COPY_EXISTING ~hidespl.2da~ ~override~
+      LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_nrd_resref%~ END
+    BUT_ONLY
+  END ELSE BEGIN
+    APPEND ~hidespl.2da~ ~%spell_nrd_resref% 1     0          0~ UNLESS ~%spell_nrd_resref%~
+  END
 END ELSE BEGIN
   FAIL ~Failed to find unoccupied level 1 spell slot.~
 END
@@ -130,11 +134,13 @@ COPY ~%MOD_FOLDER%/spells/spwi124.spl~ ~override~
 COPY ~%MOD_FOLDER%/spells/spwi124b.bam~ ~override~
      ~%MOD_FOLDER%/spells/spwi124c.bam~ ~override~
 
-// spell does not appear on character spell selection screen
+// spell does not appear on character spell selection screen, except on pre-2.0 games
 ACTION_IF (FILE_EXISTS ~engine.lua~) BEGIN
   APPEND ~hidespl.2da~ ~SPWI124 1     0          0~ UNLESS ~SPWI124~
 END ELSE BEGIN
-  APPEND ~hidespl.2da~ ~SPWI124 1     0~ UNLESS ~SPWI124~
+  COPY_EXISTING ~hidespl.2da~ ~override~
+    LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = ~SPWI124~ END
+  BUT_ONLY
 END
 
 // Updating spellbooks
@@ -177,3 +183,91 @@ COPY ~%MOD_FOLDER%/spells/spwi723b.bam~ ~override~
 COPY_EXISTING ~hidespl.2da~ ~override~
   LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = ~SPWI723~ END
 BUT_ONLY
+
+
+// pre-2.0 patched specific adjustments
+ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
+  // generating clabma01.2da if needed
+  ACTION_IF (NOT FILE_EXISTS ~clabma01.2da~) BEGIN
+    COPY_EXISTING - ~clabfi01.2da~ ~override~
+      COUNT_2DA_COLS numCols
+
+    COPY ~%MOD_FOLDER%/tables/stub.2da~ ~override/clabma01.2da~
+
+    // table header
+    OUTER_TEXT_SPRINT line ~ ~
+    OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
+      ACTION_IF (idx < 10) BEGIN
+        OUTER_TEXT_SPRINT line ~%line%           %idx%~
+      END ELSE BEGIN
+        OUTER_TEXT_SPRINT line ~%line%          %idx%~
+      END
+    END
+    APPEND ~clabma01.2da~ ~%line%~
+
+    // table content
+    OUTER_FOR (abil = 1; abil < 7; ++abil) BEGIN
+      OUTER_TEXT_SPRINT line ~ABILITY%abil%~
+      OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
+        ACTION_IF (idx = 1) BEGIN
+          OUTER_TEXT_SPRINT line ~%line%    ****~
+        END ELSE BEGIN
+          OUTER_TEXT_SPRINT line ~%line%        ****~
+        END
+      END
+      APPEND ~clabma01.2da~ ~%line%~
+    END
+  END
+
+  COPY ~%MOD_FOLDER%/spells/a7_cs05.eff~ ~override~
+    WRITE_ASCIIE 0x30 ~%spell_nrd_resref%~ (8)
+
+  COPY ~%MOD_FOLDER%/spells/a7_cs06.eff~ ~override~
+    WRITE_ASCIIE 0x30 ~%spell_chaos_shield_resref%~ (8)
+
+  COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
+       ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
+
+  // these spells have to be added manually
+  OUTER_TEXT_SPRINT give_abil_0 ~AP_A7_CS05~
+  OUTER_TEXT_SPRINT give_abil_1 ~AP_A7_CS06~
+  OUTER_SET give_abil = 2
+  OUTER_SET abilIdx = 0
+
+  // Adding custom abilities
+  COPY_EXISTING ~clabma01.2da~ ~override~
+    COUNT_2DA_COLS numCols
+    COUNT_2DA_ROWS numCols numRows
+    FOR (row = 0; row < numRows; ++row) BEGIN
+      READ_2DA_ENTRY row 1 numCols value
+      PATCH_IF (~%value%~ STR_EQ ~****~) BEGIN
+        TEXT_SPRINT resref EVAL ~%give_abil_%abilIdx%%~
+        SET_2DA_ENTRY row 1 numCols ~%resref%~
+        SET abilIdx += 1
+      END
+      PATCH_IF (abilIdx = give_abil) BEGIN
+        SET row = numRows
+      END
+    END
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+
+  // In the unlikely case all slots are occupied already
+  OUTER_WHILE (abilIdx < give_abil) BEGIN
+    OUTER_SET idx = numRows + 1
+    OUTER_TEXT_SPRINT line ~ABILITY%idx%~
+    OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
+      ACTION_IF (idx = 1) BEGIN
+        OUTER_TEXT_SPRINT resref EVAL ~%give_abil_%abilIdx%%~
+        OUTER_TEXT_SPRINT line ~%line%    %resref%~
+      END ELSE ACTION_IF (idx = 2) BEGIN
+        OUTER_TEXT_SPRINT line ~%line%  ****~
+      END ELSE BEGIN
+        OUTER_TEXT_SPRINT line ~%line%        ****~
+      END
+    END
+    APPEND ~clabma01.2da~ ~%line%~
+    OUTER_SET abilIdx += 1
+    OUTER_SET numRows += 1
+  END
+END
