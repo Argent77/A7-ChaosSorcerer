@@ -48,7 +48,7 @@ ACTION_IF (slot >= 0) BEGIN
       LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_nrd_resref%~ END
     BUT_ONLY
   END ELSE BEGIN
-    APPEND ~hidespl.2da~ ~%spell_nrd_resref% 1     0          0~ UNLESS ~%spell_nrd_resref%~
+    APPEND ~hidespl.2da~ ~%spell_nrd_resref% 1     0~ UNLESS ~%spell_nrd_resref%~
   END
 END ELSE BEGIN
   FAIL ~Failed to find unoccupied level 1 spell slot.~
@@ -185,9 +185,9 @@ COPY_EXISTING ~hidespl.2da~ ~override~
 BUT_ONLY
 
 
-// pre-2.0 patched specific adjustments
-ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
-  // generating clabma01.2da if needed
+// Pre-2.0 patched specific adjustments
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
+  // Generate clabma01.2da if needed
   ACTION_IF (NOT FILE_EXISTS ~clabma01.2da~) BEGIN
     COPY_EXISTING - ~clabfi01.2da~ ~override~
       COUNT_2DA_COLS numCols
@@ -228,7 +228,7 @@ ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
   COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
        ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
 
-  // these spells have to be added manually
+  // These spells have to be added manually
   OUTER_TEXT_SPRINT give_abil_0 ~AP_A7_CS05~
   OUTER_TEXT_SPRINT give_abil_1 ~AP_A7_CS06~
   OUTER_SET give_abil = 2
@@ -241,15 +241,14 @@ ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
     FOR (row = 0; row < numRows; ++row) BEGIN
       READ_2DA_ENTRY row 1 numCols value
       PATCH_IF (~%value%~ STR_EQ ~****~) BEGIN
-        TEXT_SPRINT resref EVAL ~%give_abil_%abilIdx%%~
-        SET_2DA_ENTRY row 1 numCols ~%resref%~
+        TEXT_SPRINT entry EVAL ~%give_abil_%abilIdx%%~
+        SET_2DA_ENTRY row 1 numCols ~%entry%~
         SET abilIdx += 1
       END
       PATCH_IF (abilIdx = give_abil) BEGIN
         SET row = numRows
       END
     END
-    PRETTY_PRINT_2DA
   BUT_ONLY
 
   // In the unlikely case all slots are occupied already
@@ -258,8 +257,8 @@ ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
     OUTER_TEXT_SPRINT line ~ABILITY%idx%~
     OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
       ACTION_IF (idx = 1) BEGIN
-        OUTER_TEXT_SPRINT resref EVAL ~%give_abil_%abilIdx%%~
-        OUTER_TEXT_SPRINT line ~%line%    %resref%~
+        OUTER_TEXT_SPRINT entry EVAL ~%give_abil_%abilIdx%%~
+        OUTER_TEXT_SPRINT line ~%line%    %entry%~
       END ELSE ACTION_IF (idx = 2) BEGIN
         OUTER_TEXT_SPRINT line ~%line%  ****~
       END ELSE BEGIN
@@ -270,4 +269,8 @@ ACTION_IF (/*GAME_IS ~iwdee~ &&*/ NOT FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
     OUTER_SET abilIdx += 1
     OUTER_SET numRows += 1
   END
+
+  COPY_EXISTING ~clabma01.2da~ ~override~
+    PRETTY_PRINT_2DA
+  BUT_ONLY
 END
