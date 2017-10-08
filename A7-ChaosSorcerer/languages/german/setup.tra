@@ -2,10 +2,10 @@
 // Setup (index 0..999)
 
 @0 = ~Klasse "Chaos Hexenmeister"~
-@10 = ~Zauberlisten für "Chaotisches Gefuege" neu erstellen~
+@10 = ~Zauberlisten fuer "Chaotisches Gefuege" neu erstellen~
 @20 = ~Hasardeur aus der Klassenliste fuer Charaktererstellung entfernen~
 
 @500 = ~Diese Komponente benoetigt BG:EE, BG2:EE, EET oder IWD:EE.~
 @501 = ~Diese Option benoetigt die Hauptkomponente der Mod.~
-@502 = ~Diese Komponente ist dazu gedacht, falls noetig zu einem späteren Zeitpunkt installiert zu werden.~
+@502 = ~Diese Komponente ist dazu gedacht, falls noetig zu einem spaeteren Zeitpunkt installiert zu werden.~
 @503 = ~Diese Option wird vom Spiel nicht unterstuetzt.~
