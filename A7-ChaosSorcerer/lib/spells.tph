@@ -162,3 +162,99 @@ COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03c.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03.eff~ ~override~
+
+
+// Adding Chaos Sorcerer specific wild surges
+ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
+  OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)
+
+  COPY_EXISTING - ~wildmag.2da~ ~override~
+    COUNT_2DA_COLS numCols
+    COUNT_2DA_ROWS numCols numRows
+    PATCH_IF (numRows > 54) BEGIN
+      READ_2DA_ENTRY 49 1 numCols resref_surge_50
+      READ_2DA_ENTRY 49 2 numCols strref_surge_50
+      READ_2DA_ENTRY 53 1 numCols resref_surge_54
+      READ_2DA_ENTRY 53 2 numCols strref_surge_54
+    END ELSE BEGIN
+      TEXT_SPRINT resref_surge_50 ~~
+      SET strref_surge_50 = "-1"
+      TEXT_SPRINT resref_surge_54 ~~
+      SET strref_surge_54 = "-1"
+    END
+
+  ACTION_IF (NOT ~%resref_surge_50%~ STR_EQ ~~) BEGIN
+    // Specific Wild Surge 50: Summon Chaos Elemental (controllable)
+    COPY ~%MOD_FOLDER%/spells/a7_wm01.spl~ ~override~
+      LPF a7_update_spell_effect_params
+      INT_VAR 
+        opcode            = 177
+        match_parameter1  = 1
+        parameter1        = 9999
+        new_parameter1    = kit_id
+      END
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1a.eff~ ~override~
+      WRITE_LONG 0x1c strref_surge_50
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1b.eff~ ~override~
+      WRITE_ASCIIE 0x30 ~%resref_surge_50%~ (8)
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1c.eff~ ~override~
+      SAY 0x1c @10004 // Chaos Elemental summoned
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1d.eff~ ~override~
+
+    COPY ~%MOD_FOLDER%/creatures/a7_cel1c.cre~ ~override~
+      SAY NAME1 @10000  // Chaos Elemental
+      SAY NAME2 @10000  // Chaos Elemental
+
+    COPY_EXISTING ~wildmag.2da~ ~override~
+      SET_2DA_ENTRY 49 1 numCols ~A7_WM01~
+      SET_2DA_ENTRY 49 2 numCols ~-1~
+    BUT_ONLY
+  END
+
+
+  ACTION_IF (NOT ~%resref_surge_54%~ STR_EQ ~~) BEGIN
+    // Specific Wild Surge 54: Call forth Greater Chaos Elemental (hostile)
+    COPY ~%MOD_FOLDER%/spells/a7_wm02.spl~ ~override~
+      LPF a7_update_spell_effect_params
+      INT_VAR 
+        opcode            = 177
+        match_parameter1  = 1
+        parameter1        = 9999
+        new_parameter1    = kit_id
+      END
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1a.eff~ ~override/a7_wm2a.eff~
+      WRITE_LONG 0x1c strref_surge_54
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1b.eff~ ~override/a7_wm2b.eff~
+      WRITE_ASCIIE 0x30 ~%resref_surge_54%~ (8)
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm1c.eff~ ~override/a7_wm2c.eff~
+      SAY 0x1c @10005 // Oops, a rift... Is that a chaos creature?!
+
+    COPY ~%MOD_FOLDER%/spells/a7_wm2d.eff~ ~override~
+
+    COPY ~%MOD_FOLDER%/creatures/a7_cel2c.cre~ ~override~
+      SAY NAME1 @10001  // Greater Chaos Elemental
+      SAY NAME2 @10001  // Greater Chaos Elemental
+
+    COPY_EXISTING ~wildmag.2da~ ~override~
+      SET_2DA_ENTRY 53 1 numCols ~A7_WM02~
+      SET_2DA_ENTRY 53 2 numCols ~-1~
+    BUT_ONLY
+  END
+
+  // For debugging purposes only:
+  // COPY_EXISTING ~wildmag.2da~ ~override~
+    // FOR (row = 0; row < numRows; ++row) BEGIN
+      // READ_2DA_ENTRY row 1 numCols value
+      // PATCH_IF (NOT ~%value%~ STR_EQ ~*~) BEGIN
+        // SET_2DA_ENTRY row 1 numCols ~A7_WM01~
+        // SET_2DA_ENTRY row 2 numCols ~-1~
+      // END
+    // END
+END

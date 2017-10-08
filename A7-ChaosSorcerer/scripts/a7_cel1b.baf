@@ -55,8 +55,8 @@ IF
   !See([ENEMY])
   Range(LastSummonerOf(Myself), 20)
 THEN
-  RESPONSE #50
+  RESPONSE #75
     %RandomWalk_action%
-  RESPONSE #50
+  RESPONSE #25
     RandomTurn()
 END
