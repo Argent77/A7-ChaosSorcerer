@@ -1,7 +1,9 @@
 // Combat script for controllable Chaos Elementals
 
 IF
-  ActionListEmpty()
+  OR(2)
+    ActionListEmpty()
+    GlobalTimerExpired("Busy", "LOCALS")
   !See([ENEMY])
   HPPercentLT(Myself, 90)
 THEN
@@ -13,10 +15,13 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  OR(2)
+    ActionListEmpty()
+    GlobalTimerExpired("Busy", "LOCALS")
   !Range(LastSummonerOf(Myself), 20)
 THEN
   RESPONSE #10
+    SetGlobalTimer("Busy", "LOCALS", 5)
     MoveToObject(LastSummonerOf(Myself))
 END
 
@@ -51,12 +56,27 @@ THEN
 END
 
 IF
-  ActionListEmpty()
+  OR(2)
+    ActionListEmpty()
+    GlobalTimerExpired("Busy", "LOCALS")
   !See([ENEMY])
   Range(LastSummonerOf(Myself), 20)
+  RandomNumLT(4, 4)
 THEN
-  RESPONSE #75
-    %RandomWalk_action%
-  RESPONSE #25
+  RESPONSE #100
+    SetGlobalTimer("Busy", "LOCALS", 5)
+    RandomWalkContinuous()
+END
+
+IF
+  OR(2)
+    ActionListEmpty()
+    GlobalTimerExpired("Busy", "LOCALS")
+  !See([ENEMY])
+  Range(LastSummonerOf(Myself), 20)
+  RandomNum(4, 4)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("Busy", "LOCALS", 5)
     RandomTurn()
 END

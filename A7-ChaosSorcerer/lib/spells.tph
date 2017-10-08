@@ -146,13 +146,8 @@ ACTION_IF (NOT FILE_EXISTS_IN_GAME ~spin906.spl~) BEGIN
 END
 
 OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT action ~action~ 411 END
-ACTION_IF (~%action%~ STR_EQ ~411~) BEGIN
-  OUTER_TEXT_SPRINT RandomWalk_action ~RandomWalk()~
-END ELSE BEGIN
-  OUTER_TEXT_SPRINT RandomWalk_action ~RandomWalkContinuousTime(1)~
-END
-COMPILE EVAL ~%MOD_FOLDER%/scripts/a7_cel1b.baf~
-             ~%MOD_FOLDER%/scripts/a7_cel1y.baf~
+COMPILE ~%MOD_FOLDER%/scripts/a7_cel1b.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel1y.baf~
 
 COPY ~%MOD_FOLDER%/creatures/a7_cel1b.cre~ ~override~
   SAY NAME1 @10000  // Chaos Elemental
@@ -168,10 +163,11 @@ COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
 ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
   OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)
 
+  // Reading original surges from table
   COPY_EXISTING - ~wildmag.2da~ ~override~
     COUNT_2DA_COLS numCols
     COUNT_2DA_ROWS numCols numRows
-    PATCH_IF (numRows > 54) BEGIN
+    PATCH_IF (numRows > 53) BEGIN
       READ_2DA_ENTRY 49 1 numCols resref_surge_50
       READ_2DA_ENTRY 49 2 numCols strref_surge_50
       READ_2DA_ENTRY 53 1 numCols resref_surge_54
