@@ -12,8 +12,9 @@ Diskussion: https://forums.beamdog.com/discussion/66390/
 ~~~~~~~~~
 
 Dies ist eine Mod für BG:EE, BG2:EE, EET (Enhanced Edition Trilogy) und IWD:EE, die dem Spiel die 
-Klasse des Chaos Hexenmeisters hinzufügt. Genaueres kann man im Abschnitt „Klassenbeschreibung“ 
-weiter unten finden.
+Klasse des Chaos Hexenmeisters hinzufügt. Anwender diese Klasse haben Zugriff auf „Unbändige Magie“ 
+und können als das Gegenstück zum Hasardeur angesehen werden. Genaueres kann man im Abschnitt 
+„Klassenbeschreibung“ weiter unten finden.
 
 Die Mod führt außerdem leichte Veränderungen an der Zauberauswahl für Hasardeure durch (siehe 
 Abschnitt „Komponenten“).
@@ -62,9 +63,9 @@ ausgeführt werden.
 
 3. „Hasardeur“ aus der Klassenliste für Charaktererstellung entfernen (benötigt die Hauptkomponente)
 
-Auf Wunsch einiger Tester hinzugefügt, kann diese Komponente genutzt werden, um den Hasardeur aus 
+Auf Wunsch einiger Spieler hinzugefügt, kann diese Komponente genutzt werden, um den Hasardeur aus 
 der Liste der Magierklassen während der Characktererstellung zu entfernen. Damit bleibt der Chaos 
-Hexenmeister die einzig legitime Option, eine Klasse mit Zugriff auf Unbändige Magie zu spielen.
+Hexenmeister die einzig legitime Option, eine Klasse mit Zugriff auf „Unbändige Magie“ zu spielen.
 
 
 Klassenbeschreibung
@@ -121,3 +122,6 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+1.0
+- Initial release

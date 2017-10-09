@@ -1,5 +1,5 @@
-Chaos Sorcerer Kit
-~~~~~~~~~~~~~~~~~~
+The Chaos Sorcerer: A Wild Magic Kit for Sorcerers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Version:    Beta 5
 Author:     Argent77
@@ -11,8 +11,9 @@ Discussion: https://forums.beamdog.com/discussion/66390/
 Overview
 ~~~~~~~~
 
-A mod for BG:EE, BG2:EE, EET (Enhanced Edition Trilogy) and IWD:EE that introduces the new 
-Sorcerer kit "Chaos Sorcerer". For more details see the "Kit Description" section below.
+A mod for BG:EE, BG2:EE, EET (Enhanced Edition Trilogy) and IWD:EE that introduces the new kit 
+"Chaos Sorcerer" which can be seen as the Wild Mage counterpart for the Sorcerer class. For more 
+details see the "Kit Description" section below.
 
 The mod will also somewhat change the spell selection of Wild Mages. More information can be found 
 in the "Components" section below.
@@ -113,3 +114,6 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+1.0
+- Initial release
