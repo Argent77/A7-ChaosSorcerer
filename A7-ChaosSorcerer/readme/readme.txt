@@ -6,6 +6,7 @@ Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
 Discussion: https://forums.beamdog.com/discussion/66390/
+            http://www.shsforums.net/topic/59482-mod-the-chaos-sorcerer-a-wild-magic-kit-for-sorcerers/
 
 
 Overview
