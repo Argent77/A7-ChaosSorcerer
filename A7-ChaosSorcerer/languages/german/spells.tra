@@ -34,7 +34,7 @@ Rettungswurf: Nein
 Chaos Hexenmeister sind in der Lage, heimische Geschöpfe des Elementaren Chaos herbeizurufen. Ein Chaoselementar ähnelt einem Nebel aus formloser Materie, der ohne erkennbares Schema wild herumwirbelt. Er hat 8 Trefferwürfel und befolgt alle Befehle, bis er gebannt wird, die Wirkungsdauer des Zaubers endet oder der Elementar stirbt.
 Nachdem der Elementar erschienen ist, kann er sich einmalig zu 15 % der geistigen Kontrolle des Anwenders widersetzen. In dem Fall greift er zufällig alle Kreaturen in der unmittelbaren Umgebung an. Der tobende Elementar bleibt auf dieser Ebene, bis er getötet wird oder die Wirkungsdauer endet. Nachdem er beschworen wurde, muss der Anwender all seine geistigen Kräfte fokussieren und der Psyche des Elementars seinen Willen aufzwingen. Der geistige Wettstreit dauert 3 Runden und beginnt direkt, nachdem der Elementar erschienen ist. Gewinnt der Anwender den Wettstreit, dient ihm der Elementar, andernfalls gerät er außer Kontrolle und greift ohne erkennbares Muster alles in seiner Umgebung an.
 
-Selbst ein Chaoselementar unter Kontrolle des Zauberers ist nicht fähig, länger als einen Augenblick stillzustehen und wandert unaufhörlich herum, sofern ihm keine konkreten Befehle gegeben wurde. Allerdings kehrt er immer wieder zum Beschwörer zurück, falls er sich zu weit entfernt hat.~
+Selbst ein Chaoselementar unter Kontrolle des Zauberers ist nicht fähig, länger als einen Augenblick stillzustehen und wandert unaufhörlich herum, sofern ihm keine konkreten Befehle gegeben wurden. Allerdings kehrt er immer wieder zum Beschwörer zurück, wenn er sich zu weit entfernt hat.~
 
 
 @2100 = ~Chaotischer Ausbruch~
@@ -48,7 +48,7 @@ Zeitaufwand: 5
 Bereich: 1 Wesen
 Rettungswurf: Speziell (gg. Zauber)
 
-Der Zauber erzeugt eine Spalte unter dem Ziel, die kurz direkt mit dem Elementaren Chaos verbunden wird. Dadurch wird ein massiver Ausbruch verschiedenster elementarer Kräfte provoziert, der das Ziel verbrennt, einfriert oder ihm elektrischen Schaden zufügt. Das Opfer wird 1 Runde lang festgehalten und erleidet 10W10 Schadenspunkte durch die Wucht des Ausbruchs, sowie entweder 10W10 Schaden durch Feuer oder durch Kälte und mit 50 % Wahrscheinlichkeit zusätzlich 10W10 elektrischen Schaden. Gelingt dem Opfer ein Rettungswurf gegen Zauber, erleidet es den halben Schaden.
+Der Zauber erzeugt eine Spalte unter dem Ziel, die kurz direkt mit dem Elementaren Chaos verbunden ist. Dadurch wird ein massiver Ausbruch verschiedenster elementarer Kräfte provoziert, der das Ziel verbrennt, einfriert oder ihm elektrischen Schaden zufügt. Das Opfer wird 1 Runde lang festgehalten und erleidet 10W10 Schadenspunkte durch die Wucht des Ausbruchs, sowie entweder 10W10 Schaden durch Feuer oder durch Kälte und mit 50 % Wahrscheinlichkeit zusätzlich 10W10 elektrischen Schaden. Gelingt dem Opfer ein Rettungswurf gegen Zauber, erleidet es den halben Schaden.
 
 Die dimensionale Spalte in das Elementare Chaos ruft auch das Interesse einiger dort beheimateter Kreaturen hervor. Daher besteht eine geringe Chance, dass ein Chaoselementar durchschlüpfen kann und jeden in Sichtweite angreift.~
 
@@ -65,7 +65,7 @@ Zeitaufwand: 2
 Bereich: Anwender
 Rettungswurf: Nein
 
-Wogenbann errichtet einen unsichtbaren Schutzwall um den Zauberer, der die nächste Unbändige Woge abzuwehren versucht. Die Wahrscheinlichkeit dafür besteht zu 10 % + 1 % pro Stufe des Zauberers, bis zu 30 % auf Stufe 20. Eine erfolgreiche Abwehr hebt den Schutzwall auf. Ansonsten verschwindet er nach 5 Runden. Dieser Zauber kann nicht mit Chaosbeherrschung kombiniert werden.~
+Wogenbann errichtet einen unsichtbaren Schutzwall um den Zauberer, der die nächste „Unbändige Woge“ abzuwehren versucht. Die Wahrscheinlichkeit dafür besteht zu 10 % + 1 % pro Stufe des Zauberers, bis zu 30 % auf Stufe 20. Eine erfolgreiche Abwehr hebt den Schutzwall auf. Ansonsten verschwindet er nach 5 Runden. Dieser Zauber kann nicht mit Chaosschild kombiniert werden.~
 
 @2550 = ~Missgeschick~
 @2551 = ~Missgeschick
@@ -91,7 +91,7 @@ Zeitaufwand: 5
 Bereich: 1 Wesen
 Rettungswurf: Ja (gg. Zauber)
 
-Dieser Zauber umgibt das Ziel mit einer Aura chaotischer Kräfte, die sich an die Zauber hängen, welche das Ziel zu wirken versucht. Für die Dauer des Zaubers wird bei jedem Zauberversuch eine Unbändige Woge mit unvorhersehbaren Folgen ausgelöst. Das Ziel kann sich dagegen mit einem erfolgreichen Rettungswurf -4 gegen Zauber wehren.~
+Dieser Zauber umgibt das Ziel mit einer Aura chaotischer Kräfte, die sich an die Zauber hängen, welche das Ziel zu wirken versucht. Für die Dauer des Zaubers wird bei jedem Zauberversuch eine „Unbändige Woge“ mit unvorhersehbaren Folgen ausgelöst. Das Ziel kann sich dagegen mit einem erfolgreichen Rettungswurf -4 gegen Zauber wehren.~
 
 // @2650 = ~Chaos Shield~   // no need to translate
 @2651 = ~Chaosschild
