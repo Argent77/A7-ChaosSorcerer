@@ -122,17 +122,27 @@ BEGIN
         PATCH_IF (value > 0 && value < 50) BEGIN
           SPRINT resref ~SPWI%code%~
 
-          SET valid = 0
-          INNER_ACTION BEGIN
-            // validating spell properties
-            COPY_EXISTING - ~%resref%.spl~ ~override~
-              PATCH_IF ((SHORT_AT 0x1c) == 1 &&             // Wizard spell?
-                        ((LONG_AT 0x1e) BAND BIT14) = 0 &&  // Generalist mage not excluded?
-                        (LONG_AT NAME1) > 0 &&              // valid spell name?
-                        (LONG_AT 0x34) = level) BEGIN       // spell level matches?
-                SET valid = 1
-              END
-            IF_EXISTS
+          SET valid = 1
+
+          // exclude fixed list of spells
+          PATCH_FOR_EACH name IN ~SPWI110~ BEGIN  // Identify
+            PATCH_IF (~%name%~ STR_EQ ~%resref%~) BEGIN
+              SET valid = 0
+            END
+          END
+
+          PATCH_IF (valid) BEGIN
+            // validate spell properties
+            INNER_ACTION BEGIN
+              COPY_EXISTING - ~%resref%.spl~ ~override~
+                PATCH_IF ((SHORT_AT 0x1c) != 1 ||             // Wizard spell?
+                          (LONG_AT 0x1e) BAND BIT14 ||        // Generalist mage not excluded?
+                          (LONG_AT NAME1) <= 0 ||             // valid spell name?
+                          (LONG_AT 0x34) != level) BEGIN      // spell level matches?
+                  SET valid = 0
+                END
+              IF_EXISTS
+            END
           END
 
           // check if resref already exists
