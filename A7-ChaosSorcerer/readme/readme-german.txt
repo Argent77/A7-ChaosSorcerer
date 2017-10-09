@@ -1,7 +1,7 @@
 Der Chaos Hexenmeister
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    Beta 5
+Version:    1.0
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
