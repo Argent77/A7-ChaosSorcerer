@@ -13,11 +13,11 @@ Diskussion: https://forums.beamdog.com/discussion/66390/
 ~~~~~~~~~
 
 Dies ist eine Mod für BG:EE, BG2:EE, EET (Enhanced Edition Trilogy) und IWD:EE, die dem Spiel die 
-Klasse des Chaos Hexenmeisters hinzufügt. Anwender diese Klasse haben Zugriff auf „Unbändige Magie“ 
+Klasse des Chaos Hexenmeisters hinzufügt. Anwender dieser Klasse haben Zugriff auf „Unbändige Magie“ 
 und können als das Gegenstück zum Hasardeur angesehen werden. Genaueres kann man im Abschnitt 
 „Klassenbeschreibung“ weiter unten finden.
 
-Die Mod führt außerdem leichte Veränderungen an der Zauberauswahl für Hasardeure durch (siehe 
+Die Mod führt außerdem leichte Veränderungen bei der Zauberauswahl für Hasardeure durch (siehe 
 Abschnitt „Komponenten“).
 
 
@@ -27,6 +27,16 @@ Installation
 Dies ist eine WeiDU Mod. Das bedeutet, sie ist sehr einfach zu installieren. Entpackt die 
 heruntergeladene Zipdatei in das Spieleverzeichnis und startet „setup-A7-ChaosSorcerer.exe“.
 Folgt den Anweisungen des Programms und die Mod ist startbereit.
+
+
+Kompatibilität
+~~~~~~~~~~~~~~
+
+Die Mod sollte mit allen anderen Mods auskommen, sofern sie keinen tiefgreifenden Änderungen an 
+den Zaubern für Hasadeure vornehmen.
+
+Die Komponente "Revised Specialists" von "Tome and Blood" verursacht Probleme mit der Verfügbarkeit 
+des Zaubers „Nahals gewagte Hexerei“.
 
 
 Komponenten

@@ -28,6 +28,16 @@ into your game directory and run "setup-A7-ChaosSorcerer.exe". Follow the instru
 ready to start.
 
 
+Compatibility
+~~~~~~~~~~~~~
+
+This mod should be compatible with all other mods as long as they don't make substantial changes to 
+Wild Magic spells.
+
+The component "Revised Specialists" of "Tome and Blood" is known to interfere with the availability 
+of the spell "Nahal's Reckless Dweomer".
+
+
 Components
 ~~~~~~~~~~
 
