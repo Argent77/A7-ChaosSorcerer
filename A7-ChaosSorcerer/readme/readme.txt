@@ -64,16 +64,16 @@ Wild Magic user.
 Kit Description
 ~~~~~~~~~~~~~~~
 
-CHAOS SORCERER: Unlike Wild Mages who have learned to shape the unpredictable magics from damaged 
-and distorted parts of the Weave, Chaos Sorcerers have learned to derive their power from the 
-Elemental Chaos – a plane that is largely unknown to most inhabitants of Toril.
+CHAOS SORCERER: Unlike Wild Mages, who struggle to comprehend the chaotic magic of damaged and 
+distorted parts of the Weave, Chaos Sorcerers learned to derive their power from the Elemental 
+Chaos itself – a plane that is largely unknown to most inhabitants of Toril.
 
-The Elemental Chaos is filled by chaos and unpredictability. Magic shaped by these forces are 
-unpredictable by nature, even to chaos sorcerers who have learned to bend it to their wills. 
-As a result chaos sorcerers are more dexterous, using their agility and strong reflexes to slip 
-out of the way of their own spells if needed. They have also gained some resistance to all forms 
-or magical energy. A basic understanding of the nature of Chaos is required to walk the path of a 
-Chaos Sorcerer.
+The Elemental Chaos is a place of primeval entropy and discord, and not even the most seasoned 
+practitioners can account for the inherent unpredictability of such forces. As a result chaos 
+sorcerers have to rely on their agility and strong reflexes to slip out of the way of their own, 
+often unpredictable, spells. Being exposed to this particular type of magic gradually increases 
+the caster's resistance to all forms or magical energy. A basic understanding of the nature of 
+Chaos is required to walk this most dangerous of paths.
 
 Advantages:
 – May cast the 1st-level spells Chaotic Weave and Surge Control (automatically added to spell list).
