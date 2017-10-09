@@ -15,28 +15,28 @@ This mod introduces the new kit "Chaos Sorcerer" which can be seen as the Wild M
 The Elemental Chaos is a place of primeval entropy and discord, and not even the most seasoned practitioners can account for the inherent unpredictability of such forces. As a result chaos sorcerers have to rely on their agility and strong reflexes to slip out of the way of their own, often unpredictable, spells. Being exposed to this particular type of magic gradually increases the caster's resistance to all forms or magical energy. A basic understanding of the nature of Chaos is required to walk this most dangerous of paths.
 
 Advantages:
-– May cast the 1st-level spells Chaotic Weave and Surge Control (automatically added to spell list).
-– May cast the 2nd-level spell Unluck (automatically added to spell list).
-– May cast the 3rd-level spell Chaos Shield (automatically added to spell list).
-– May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
-– May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
-– Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower and five levels higher than the Chaos Sorcerer's true level.
-– 1st level: +1 bonus to Saves vs. Spell.
-– 5th level: +1 bonus to Dexterity.
-– 6th level: +1 bonus to Saves vs. Spell.
-– 8th level: +5% Magic Resistance.
-– 11th level: +1 bonus to Saves vs. Spell.
-– 15th level: +1 bonus to Dexterity.
-– 16th level: +1 bonus to Saves vs. Spell.
-– 16th level: +5% Magic Resistance.
-– 21st level: +1 bonus to Saves vs. Spell.
-– 24th level: +5% Magic Resistance.
+- May cast the 1st-level spells Chaotic Weave and Surge Control (automatically added to spell list).
+- May cast the 2nd-level spell Unluck (automatically added to spell list).
+- May cast the 3rd-level spell Chaos Shield (automatically added to spell list).
+- May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
+- May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
+- Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower and five levels higher than the Chaos Sorcerer's true level.
+- 1st level: +1 bonus to Saves vs. Spell.
+- 5th level: +1 bonus to Dexterity.
+- 6th level: +1 bonus to Saves vs. Spell.
+- 8th level: +5% Magic Resistance.
+- 11th level: +1 bonus to Saves vs. Spell.
+- 15th level: +1 bonus to Dexterity.
+- 16th level: +1 bonus to Saves vs. Spell.
+- 16th level: +5% Magic Resistance.
+- 21st level: +1 bonus to Saves vs. Spell.
+- 24th level: +5% Magic Resistance.
 
 Disadvantages:
-– Incurs a -2 penalty to Strength and Constitution.
-– Alignment restricted to chaotic good, chaotic neutral and chaotic evil.
-– May cast fewer spells per level per day.
-– Upon casting a spell, there is a 5% chance of incurring a wild surge.
+- Incurs a -2 penalty to Strength and Constitution.
+- Alignment restricted to chaotic good, chaotic neutral and chaotic evil.
+- May cast fewer spells per level per day.
+- Upon casting a spell, there is a 5% chance of incurring a wild surge.
 
 WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Chaos Sorcerer and his/her allies.
 
