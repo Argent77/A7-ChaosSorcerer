@@ -199,7 +199,11 @@ ACTION_IF (NOT FILE_EXISTS ~clabma01.2da~) BEGIN
   COPY_EXISTING - ~clabfi01.2da~ ~override~
     COUNT_2DA_COLS numCols
 
-  COPY ~%MOD_FOLDER%/tables/stub.2da~ ~override/clabma01.2da~
+<<<<<<<< .../inlined/tables/stub.2da
+2DA V1.0
+****
+>>>>>>>>
+  COPY ~.../inlined/tables/stub.2da~ ~override/clabma01.2da~
 
   // table header
   OUTER_TEXT_SPRINT line ~ ~
