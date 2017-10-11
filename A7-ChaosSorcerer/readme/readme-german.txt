@@ -134,5 +134,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 History
 ~~~~~~~
 
+1.1
+- Added compatibility section to readme
+- Changed spell description of Chaos Shield to be more universal
+- Fixed an issue with Spell Revisions that made NRD a forced spell choice for Chaos Sorcerers
+
 1.0
 - Initial release

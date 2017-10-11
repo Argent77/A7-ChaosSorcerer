@@ -10,7 +10,7 @@ ACTION_IF (slot >= 0) BEGIN
 
   COPY_EXISTING ~SPWI124.SPL~ ~override/%spell_nrd_resref%.SPL~
     WRITE_BYTE 0x25 10  // Primary type: Wild Mage
-    WRITE_LONG 0x1e (THIS | 0b111111111000000)  // Exlude generalist/specialist mages except Wild Mage
+    WRITE_LONG 0x1e (THIS | 0b111111111000000)  // Exclude generalist/specialist mages except Wild Mage
     LPF a7_update_resref STR_VAR resref_src = ~SPWI124B~ resref_dst = EVAL ~A7_SP04B~ END
     LPF a7_update_resref STR_VAR resref_src = ~SPWI124C~ resref_dst = EVAL ~A7_SP04C~ END
     LPF ADD_SPELL_EFFECT
