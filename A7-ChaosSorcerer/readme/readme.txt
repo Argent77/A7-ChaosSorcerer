@@ -1,7 +1,7 @@
 The Chaos Sorcerer: A Wild Magic Kit for Sorcerers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    1.0
+Version:    1.1
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
