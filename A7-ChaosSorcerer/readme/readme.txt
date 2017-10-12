@@ -130,6 +130,7 @@ History
 - Added compatibility section to readme
 - Changed spell description of Chaos Shield to be more universal
 - Fixed an issue with Spell Revisions that made NRD a forced spell choice for Chaos Sorcerers
+- DEX bonus doesn't show as green number in Record Screen anymore
 
 1.0
 - Initial release
