@@ -157,63 +157,72 @@ BEGIN
 END
 
 
-// Replaces resource of all spell effects matching specified opcode
-DEFINE_PATCH_FUNCTION a7_update_spell_effect_params
+// Replaces matching parameters of all spell or item effects
+DEFINE_PATCH_FUNCTION a7_update_effect_params
 INT_VAR
-  match_parameter1  = 0
-  match_parameter2  = 0
-  match_special     = 0
-  match_resource    = 0
-  opcode          = 0   // opcode to match
-  parameter1      = 0   // parameter1 to match (if match_parameter1 = 1)
-  new_parameter1  = 0   // parameter1 replacement if matched
-  parameter2      = 0   // parameter2 to match (if match_parameter2 = 1)
-  new_parameter2  = 0   // parameter2 replacement if matched
-  special         = 0   // special to match (if match_special = 1)
-  new_special     = 0   // special replacement if matched
+  update_global     = 1   // whether to update global effects
+  update_ability    = 1   // whether to update effects in ability structures
+  match_parameter1  = 0   // whether to update parameter1 field
+  match_parameter2  = 0   // whether to update parameter2 field
+  match_special     = 0   // whether to update special field
+  match_resource    = 0   // whether to update resource field
+  opcode            = 0   // opcode to match
+  parameter1        = 0   // parameter1 to match (if match_parameter1 = 1)
+  new_parameter1    = 0   // parameter1 replacement if matched
+  parameter2        = 0   // parameter2 to match (if match_parameter2 = 1)
+  new_parameter2    = 0   // parameter2 replacement if matched
+  special           = 0   // special to match (if match_special = 1)
+  new_special       = 0   // special replacement if matched
 STR_VAR
-  resource        = ~~  // resource to match (if match_resource = 1)
-  new_resource    = ~~  // resource replacement if matched
+  resource          = ~~  // resource to match (if match_resource = 1)
+  new_resource      = ~~  // resource replacement if matched
 BEGIN
-  PATCH_IF (NOT ~%match_resource%~ STR_EQ ~%resource%~) BEGIN
-    READ_LONG 0x64 ofsAbil
-    READ_SHORT 0x68 numAbil
-    READ_LONG 0x6a ofsEffects
-    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
-      SET curOfsAbil = ofsAbil + (idx * 0x28)
-      READ_SHORT (curOfsAbil+0x1e) numEffects
-      READ_SHORT (curOfsAbil+0x20) firstEffect
-      FOR (idx2 = 0; idx2 < numEffects; ++idx2) BEGIN
-        SET curOfsEffect = ofsEffects + (idx2+firstEffect)*0x30
-        READ_SHORT (curOfsEffect+0) curOpcode
-        PATCH_IF (curOpcode = opcode) BEGIN
-          // matching parameter1
-          PATCH_IF (match_parameter1) BEGIN
-            READ_LONG (curOfsEffect+0x04) curParameter1
-            PATCH_IF (curParameter1 = parameter1) BEGIN
-              WRITE_LONG (curOfsEffect+0x04) new_parameter1
-            END
+  READ_ASCII 0x00 sig (4)
+  SET sizeAbil = (~%sig%~ STR_EQ ~ITM ~) ? 0x38 : 0x28
+  READ_LONG 0x64 ofsAbil
+  SET numAbil = update_ability ? (SHORT_AT 0x68) : 0
+  READ_LONG 0x6a ofsEffects
+  SET idx = update_global ? "-1" : 0
+  FOR (idx = idx; idx < numAbil; ++idx) BEGIN
+    // negative index indicates global effects
+    PATCH_IF (idx < 0) BEGIN
+      READ_SHORT 0x6e firstEffect
+      READ_SHORT 0x70 numEffects
+    END ELSE BEGIN
+      SET curOfsAbil = ofsAbil + (idx * sizeAbil)
+      READ_SHORT (curOfsAbil + 0x1e) numEffects
+      READ_SHORT (curOfsAbil + 0x20) firstEffect
+    END
+    FOR (idx2 = 0; idx2 < numEffects; ++idx2) BEGIN
+      SET curOfsEffect = ofsEffects + (idx2 + firstEffect) * 0x30
+      READ_SHORT (curOfsEffect + 0) curOpcode
+      PATCH_IF (curOpcode = opcode) BEGIN
+        // matching parameter1
+        PATCH_IF (match_parameter1) BEGIN
+          READ_LONG (curOfsEffect + 0x04) curParameter1
+          PATCH_IF (curParameter1 = parameter1) BEGIN
+            WRITE_LONG (curOfsEffect + 0x04) new_parameter1
           END
-          // matching parameter2
-          PATCH_IF (match_parameter2) BEGIN
-            READ_LONG (curOfsEffect+0x08) curParameter2
-            PATCH_IF (curParameter2 = parameter2) BEGIN
-              WRITE_LONG (curOfsEffect+0x08) new_parameter2
-            END
+        END
+        // matching parameter2
+        PATCH_IF (match_parameter2) BEGIN
+          READ_LONG (curOfsEffect + 0x08) curParameter2
+          PATCH_IF (curParameter2 = parameter2) BEGIN
+            WRITE_LONG (curOfsEffect + 0x08) new_parameter2
           END
-          // matching special
-          PATCH_IF (match_special) BEGIN
-            READ_LONG (curOfsEffect+0x2c) curSpecial
-            PATCH_IF (curSpecial = special) BEGIN
-              WRITE_LONG (curOfsEffect+0x2c) new_special
-            END
+        END
+        // matching special
+        PATCH_IF (match_special) BEGIN
+          READ_LONG (curOfsEffect + 0x2c) curSpecial
+          PATCH_IF (curSpecial = special) BEGIN
+            WRITE_LONG (curOfsEffect + 0x2c) new_special
           END
-          // matching resource
-          PATCH_IF (match_resource) BEGIN
-            READ_ASCII (curOfsEffect+0x14) curResource (8) NULL
-            PATCH_IF (~%curResource%~ STR_EQ ~%resource%~) BEGIN
-              WRITE_ASCIIE (curOfsEffect+0x14) ~%new_resource%~ (8)
-            END
+        END
+        // matching resource
+        PATCH_IF (match_resource) BEGIN
+          READ_ASCII (curOfsEffect + 0x14) curResource (8) NULL
+          PATCH_IF (~%curResource%~ STR_EQ ~%resource%~) BEGIN
+            WRITE_ASCIIE (curOfsEffect + 0x14) ~%new_resource%~ (8)
           END
         END
       END

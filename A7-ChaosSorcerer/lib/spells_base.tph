@@ -106,7 +106,7 @@ ACTION_IF (slot >= 0) BEGIN
     WRITE_LONG NAME1 strref_name  // use original name
     SAY UNIDENTIFIED_DESC @2651   // new Chaos Shield description
     // opcode 321: resource SPWI222 -> new resref
-    LPF a7_update_spell_effect_params
+    LPF a7_update_effect_params
     INT_VAR
       match_resource = 1
       opcode = 321
@@ -163,7 +163,7 @@ COPY ~%MOD_FOLDER%/spells/spwi124.spl~ ~override~
   SAY NAME1 @2500 // Surge Control
   SAY UNIDENTIFIED_DESC @2501 // Surge Control description
   // opcode 321: resource SPWI222 -> new resref
-  LPF a7_update_spell_effect_params
+  LPF a7_update_effect_params
   INT_VAR
     match_resource = 1
     opcode = 321
