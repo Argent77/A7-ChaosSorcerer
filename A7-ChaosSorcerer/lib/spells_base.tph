@@ -1,18 +1,37 @@
 // *** Spells for all Wild Magic related kits and classes ***
 
-// Relocate Nahal's Reckless Dweomer (SPWI124)
-LAF a7_find_free_spell_slot INT_VAR type = 2 level = 1 RET slot resref END
-OUTER_TEXT_SPRINT spell_nrd_resref ~%resref%~
-ACTION_IF (slot >= 0) BEGIN
-  // updating SPELL.IDS entries
-  COPY_EXISTING ~SPELL.IDS~ ~override~
-    LPF a7_update_spell_ids_code INT_VAR code = 2124 new_code = slot END
+// Relocate Nahal's Reckless Dweomer (SPWI124 by default)
+// Spell slot might have been changed by another mod
+OUTER_SET old_slot = 2124
+ACTION_FOR_EACH symbol IN ~WIZARD_NAHALS_RECKLESS_DWEOMER~ ~WIZARD_ALARM~ BEGIN
+  OUTER_SET code = IDS_OF_SYMBOL(~spell~ ~%symbol%~)
+  ACTION_IF (code > 0 && code != old_slot) BEGIN
+    OUTER_SET old_slot = code
+  END
+END
+LAF a7_resref_of_spell_code INT_VAR code = old_slot RET resref END
+OUTER_TEXT_SPRINT old_spell_nrd_resref ~%resref%~
 
-  COPY_EXISTING ~SPWI124.SPL~ ~override/%spell_nrd_resref%.SPL~
+ACTION_IF (old_slot = 2124 || old_slot < 2100 || old_slot >= 2200) BEGIN
+  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 1 RET slot resref END
+  OUTER_TEXT_SPRINT spell_nrd_resref ~%resref%~
+END ELSE BEGIN
+  OUTER_SET slot = old_slot
+  OUTER_TEXT_SPRINT spell_nrd_resref ~%old_spell_nrd_resref%~
+END
+
+ACTION_IF (slot >= 0) BEGIN
+  ACTION_IF (slot != old_slot) BEGIN
+    // updating SPELL.IDS entries
+    COPY_EXISTING ~SPELL.IDS~ ~override~
+      LPF a7_update_spell_ids_code INT_VAR code = old_slot new_code = slot END
+  END
+
+  COPY_EXISTING ~%old_spell_nrd_resref%.SPL~ ~override/%spell_nrd_resref%.SPL~
     WRITE_BYTE 0x25 10  // Primary type: Wild Mage
     WRITE_LONG 0x1e (THIS | 0b111111111000000)  // Exclude generalist/specialist mages except Wild Mage
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124B~ resref_dst = EVAL ~A7_SP04B~ END
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124C~ resref_dst = EVAL ~A7_SP04C~ END
+    LPF a7_update_resref STR_VAR resref_src = ~SPWI124B~ resref_dst = ~A7_SP04B~ END
+    LPF a7_update_resref STR_VAR resref_src = ~SPWI124C~ resref_dst = ~A7_SP04C~ END
     LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 321  // Remove effects by resource
@@ -28,19 +47,19 @@ ACTION_IF (slot >= 0) BEGIN
   // updating references in game resources
   COPY_EXISTING ~CONTINGX.2DA~ ~override~
                 ~BGEE.LUA~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_nrd_resref%~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY IF_EXISTS
 
   COPY_EXISTING_REGEXP ~.+\.bcs~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_nrd_resref%~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY
 
   COPY_EXISTING_REGEXP ~.+\.dlg~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_nrd_resref%~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY
 
   COPY_EXISTING_REGEXP ~.+\.cre~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124~ resref_dst = EVAL ~%spell_nrd_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_nrd_resref%~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY
 
   // spell should appear on character spell selection screen, except on pre-2.0 games
@@ -57,16 +76,30 @@ END
 
 
 // Install new revision of Chaos Shield (former SPWI222)
-LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET slot resref END
-OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%resref%~
+// Spell slots might have been changed by another mod
+OUTER_SET old_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_CHAOS_SHIELD~)
+LAF a7_resref_of_spell_code INT_VAR code = old_slot RET resref END
+OUTER_TEXT_SPRINT old_spell_chaos_shield_resref ~%resref%~
+OUTER_SET old_slot2 = IDS_OF_SYMBOL(~spell~ ~WIZARD_IMPROVED_CHAOS_SHIELD~)
+LAF a7_resref_of_spell_code INT_VAR code = old_slot2 RET resref END
+OUTER_TEXT_SPRINT old_spell_improved_chaos_shield_resref ~%resref%~
+
+ACTION_IF (old_slot < 2300 || old_slot >= 2400) BEGIN
+  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET slot resref END
+  OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%resref%~
+END ELSE BEGIN
+  OUTER_SET slot = old_slot
+  OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%old_spell_chaos_shield_resref%~
+END
+
 ACTION_IF (slot >= 0) BEGIN
   // updating SPELL.IDS entries
   COPY_EXISTING ~SPELL.IDS~ ~override~
-    LPF a7_update_spell_ids_code INT_VAR code = 2222 new_code = slot END
+    LPF a7_update_spell_ids_code INT_VAR code = old_slot new_code = slot END
     // Improved Chaos Shield is redirected to Chaos Shield
-    LPF a7_update_spell_ids_code INT_VAR code = 2723 new_code = slot END
+    LPF a7_update_spell_ids_code INT_VAR code = old_slot2 new_code = slot END
 
-  COPY_EXISTING - ~spwi222.spl~ ~override~
+  COPY_EXISTING - ~%old_spell_chaos_shield_resref%.spl~ ~override~
     READ_LONG NAME1 strref_name
 
   COPY ~%MOD_FOLDER%/spells/spwi2xx.spl~ ~override/%spell_chaos_shield_resref%.SPL~
@@ -78,7 +111,7 @@ ACTION_IF (slot >= 0) BEGIN
       match_resource = 1
       opcode = 321
     STR_VAR
-      resource = ~SPWI222~
+      resource = EVAL ~%old_spell_chaos_shield_resref%~
       new_resource = EVAL ~%spell_chaos_shield_resref%~
     END
     PATCH_IF (NOT FILE_EXISTS_IN_GAME ~splstate.ids~) BEGIN
@@ -92,22 +125,22 @@ ACTION_IF (slot >= 0) BEGIN
 
   // updating references in game resources
   COPY_EXISTING ~BGEE.LUA~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI222~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI723~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_improved_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
   BUT_ONLY IF_EXISTS
 
   COPY_EXISTING_REGEXP ~.+\.bcs~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI222~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI723~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_improved_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
   BUT_ONLY
 
   COPY_EXISTING_REGEXP ~.+\.dlg~ ~override~
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI222~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI723~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
+    LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_improved_chaos_shield_resref%~ resref_dst = EVAL ~%spell_chaos_shield_resref%~ END
   BUT_ONLY
 
   COPY_EXISTING_REGEXP ~.+\.cre~ ~override~
-    PATCH_IF (INDEX_BUFFER(~SPWI222~) > 0) BEGIN
+    PATCH_IF (INDEX_BUFFER(~%old_spell_chaos_shield_resref%~) > 0) BEGIN
       ADD_KNOWN_SPELL ~%spell_chaos_shield_resref%~ #2 ~wizard~
     END
   BUT_ONLY
@@ -135,7 +168,7 @@ COPY ~%MOD_FOLDER%/spells/spwi124.spl~ ~override~
     match_resource = 1
     opcode = 321
   STR_VAR
-    resource = ~SPWI222~
+    resource = EVAL ~%old_spell_chaos_shield_resref%~
     new_resource = EVAL ~%spell_chaos_shield_resref%~
   END
 

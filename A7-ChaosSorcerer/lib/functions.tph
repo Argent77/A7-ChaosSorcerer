@@ -325,3 +325,27 @@ BEGIN
     END
   END
 END
+
+
+// Returns resref of SPELL.IDS code (e.g. SPWI123), or empty string if not available.
+DEFINE_ACTION_FUNCTION a7_resref_of_spell_code
+INT_VAR code = 0
+RET resref
+BEGIN
+  OUTER_TEXT_SPRINT resref ~~
+  ACTION_IF (code >= 1000 && code < 5000) BEGIN
+    OUTER_SET type = code / 1000
+    OUTER_SET code = code - (type * 1000)
+    ACTION_DEFINE_ARRAY prefix BEGIN ~~ ~SPPR~ ~SPWI~ ~SPIN~ ~SPCL~ END
+    OUTER_TEXT_SPRINT resref EVAL ~%prefix_%type%%%code%~
+  END
+END
+
+DEFINE_PATCH_FUNCTION a7_resref_of_spell_code
+INT_VAR code = 0
+RET resref
+BEGIN
+  INNER_ACTION BEGIN
+    LAF a7_resref_of_spell_code INT_VAR code = code RET resref END
+  END
+END
