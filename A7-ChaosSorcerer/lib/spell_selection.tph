@@ -1,12 +1,4 @@
 // *** Generates lists of spell selections for spell "Chaotic Weave" ***
-/*
-Plan:
-- Pregenerate hardcoded list of preferred spells that have a higher chance of being added to the spell lists
-- Generate a structure containing all available wizard spells for each level (derived from SPELL.IDS)
-- 
-*/
-
-OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0
 
 // Initializes array "preset" from values of the file "%ini_file%"
 DEFINE_ACTION_MACRO a7_load_presets
