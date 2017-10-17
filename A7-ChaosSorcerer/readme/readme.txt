@@ -92,7 +92,8 @@ Advantages:
 – May cast the 2nd-level spell Unluck (automatically added to spell list).
 – May cast the 3rd-level spell Chaos Shield (automatically added to spell list).
 – May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
-– May cast the 7th-level spell Nahal's Wildstrike (automatically added to spell list).
+– May cast the 7th-level spells Nahal's Wildstrike and Conjure Greater Chaos Elemental 
+  (automatically added to spell list).
 – Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower 
   and five levels higher than the Chaos Sorcerer's true level.
 – 1st level: +1 bonus to Saves vs. Spell.

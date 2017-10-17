@@ -21,7 +21,6 @@ Weil die Energie vom Anwender freigesetzt wird, wird die Stufe des Anwenders dem
 
 @2050 = ~Chaoselementar beschwören~
 @2051 = ~Chaoselementar beschwören
-(Conjuration/Summoning)
 
 Grad: 5
 Schule: Beschwörung
@@ -34,7 +33,7 @@ Rettungswurf: Nein
 Chaos Hexenmeister sind in der Lage, heimische Geschöpfe des Elementaren Chaos herbeizurufen. Ein Chaoselementar ähnelt einem Nebel aus formloser Materie, der ohne erkennbares Schema wild herumwirbelt. Er hat 8 Trefferwürfel und befolgt alle Befehle, bis er gebannt wird, die Wirkungsdauer des Zaubers endet oder der Elementar stirbt.
 Nachdem der Elementar erschienen ist, kann er sich einmalig zu 15 % der geistigen Kontrolle des Anwenders widersetzen. In dem Fall greift er zufällig alle Kreaturen in der unmittelbaren Umgebung an. Der tobende Elementar bleibt auf dieser Ebene, bis er getötet wird oder die Wirkungsdauer endet. Nachdem er beschworen wurde, muss der Anwender all seine geistigen Kräfte fokussieren und der Psyche des Elementars seinen Willen aufzwingen. Der geistige Wettstreit dauert 3 Runden und beginnt direkt, nachdem der Elementar erschienen ist. Gewinnt der Anwender den Wettstreit, dient ihm der Elementar, andernfalls gerät er außer Kontrolle und greift ohne erkennbares Muster alles in seiner Umgebung an.
 
-Chaoselementar (8 Trefferwürfe):
+Chaoselementar (8 Trefferwürfel):
 Stärke 14, Gesch. 10, Konst. 9, Int. 10, Weish. 11, Cha. 10; Chaotisch Neutral
 TP 64, RK 4, ETW0 10, Rettungswürfe 9/12/8/12/10
 2 Angriffe pro Runde, 1W12 Wucht (Faust +3)
@@ -66,6 +65,38 @@ Rettungswurf: Speziell (gg. Zauber)
 Der Zauber erzeugt eine Spalte unter dem Ziel, die kurz direkt mit dem Elementaren Chaos verbunden ist. Dadurch wird ein massiver Ausbruch verschiedenster elementarer Kräfte provoziert, der das Ziel verbrennt, einfriert oder ihm elektrischen Schaden zufügt. Das Opfer wird 1 Runde lang festgehalten und erleidet 10W10 Schadenspunkte durch die Wucht des Ausbruchs, sowie entweder 10W10 Schaden durch Feuer oder durch Kälte und mit 50 % Wahrscheinlichkeit zusätzlich 10W10 elektrischen Schaden. Gelingt dem Opfer ein Rettungswurf gegen Zauber, erleidet es den halben Schaden.
 
 Die dimensionale Spalte in das Elementare Chaos ruft auch das Interesse einiger dort beheimateter Kreaturen hervor. Daher besteht eine geringe Chance, dass ein Chaoselementar durchschlüpfen kann und jeden in Sichtweite angreift.~
+
+
+@2150 = ~Höheren Chaoselementar beschwören~
+@2151 = ~Höheren Chaoselementar beschwören
+
+Grad: 7
+Schule: Beschwörung
+Reichweite: 13,5 m
+Dauer: 1 Phase + 1 Runde pro Stufe
+Zeitaufwand: 9
+Bereich: Speziell
+Rettungswurf: Nein
+
+Chaos Hexenmeister sind in der Lage, heimische Geschöpfe des Elementaren Chaos herbeizurufen. Ein Höherer Chaoselementar ähnelt einem Nebel aus formloser Materie, der ohne erkennbares Schema wild herumwirbelt. Er hat 16 Trefferwürfel und befolgt alle Befehle, bis er gebannt wird, die Wirkungsdauer des Zaubers endet oder der Elementar stirbt.
+Nachdem der Elementar erschienen ist, kann er sich einmalig zu 15 % der geistigen Kontrolle des Anwenders widersetzen. In dem Fall greift er zufällig alle Kreaturen in der unmittelbaren Umgebung an. Der tobende Elementar bleibt auf dieser Ebene, bis er getötet wird oder die Wirkungsdauer endet. Nachdem er beschworen wurde, muss der Anwender all seine geistigen Kräfte fokussieren und der Psyche des Elementars seinen Willen aufzwingen. Der geistige Wettstreit dauert 3 Runden und beginnt direkt, nachdem der Elementar erschienen ist. Gewinnt der Anwender den Wettstreit, dient ihm der Elementar, andernfalls gerät er außer Kontrolle und greift ohne erkennbares Muster alles in seiner Umgebung an.
+
+Höherer Chaoselementar (16 Trefferwürfel):
+Stärke 18, Gesch. 10, Konst. 12, Int. 10, Weish. 11, Cha. 10; Chaotisch Neutral
+TP 128, RK 2, ETW0 6, Rettungswürfe 6/9/5/9/7
+3 Angriffe pro Runde, 1W12 Wucht (Faust +3)
+
+Spezialfähigkeiten:
+Chaos: Verwirrt alle Wesen in 9m Radius für zwei Runden (Rettungswurf -2 gg. Zauber)
+
+Eigenschaften:
+Bewegt sich mit erhöhter Geschwindigkeit
+Kann eigene Verletzungen heilen
+Immun gegen Bezauberung, Verwirrung, Festhalten, Gift, Schlaf, Furcht, Verwandlung und Betäubung
+Widerstand gegen Feuer, Kälte, Elektrizität und Säure: 100%; gegen Magie: 25%
+Widerstand gegen Stich- und Geschosswaffen: 100%; gegen Klingenwaffen: 50%
+
+Selbst ein Höherer Chaoselementar unter Kontrolle des Zauberers ist nicht fähig, länger als einen Augenblick stillzustehen und wandert unaufhörlich herum, sofern ihm keine konkreten Befehle gegeben wurden. Allerdings kehrt er immer wieder zum Beschwörer zurück, wenn er sich zu weit entfernt hat.~
 
 
 // Wild Mage replacement spells
@@ -120,3 +151,12 @@ Bereich: Anwender
 Rettungswurf: Nein
 
 Der Chaosschild erhöht die Chance des Zauberers auf ein für ihn positives Ergebnis, wenn es zu einer „Unbändigen Woge“ kommt. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Zauberer einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 10 und +25 ab Stufe 20. Der Bonus vom Chaosschild wird zum Bonus für die Stufe des Zauberers hinzuaddiert.~
+
+
+@5000 = ~Verwirrung~
+@5001 = ~Verwirrung
+Diese Fähigkeit führt bei dem Ziel zu Verwirrung. Es wird unschlüssig und kann nicht mehr effektiv agieren. Das Ziel erhält einen Rettungswurf gegen Zauber, um den Auswirkungen des Effekts zu entgehen. Scheitert der Rettungswurf, dann gerät das Ziel in einen Berserkerrausch, steht verwirrt herum oder irrt für die Dauer des Zaubers ziellos umher. Ein verwirrtes Wesen, das angegriffen wird, sieht in dem Angreifer einen Feind und handelt gemäß seinen Instinkten, um sich zu verteidigen. Der Effekt hält für 2 Runden an.~
+
+@5050 = ~Massenverwirrung~
+@5051 = ~Massenverwirrung
+Diese Fähigkeit führt bei einem oder mehreren Wesen zu Verwirrung. Sie werden unschlüssig und können nicht mehr effektiv agieren. Alle Wesen im Wirkungsbereich erhalten einen Rettungswurf -2 gegen Zauber, um den Auswirkungen des Effekts zu entgehen. Scheitert der Rettungswurf, dann geraten die Wesen in einen Berserkerrausch, steht verwirrt herum oder irrt für die Dauer des Zaubers ziellos umher. Ein verwirrtes Wesen, das angegriffen wird, sieht in dem Angreifer einen Feind und handelt gemäß seinen Instinkten, um sich zu verteidigen. Der Effekt hält für 2 Runden an.~

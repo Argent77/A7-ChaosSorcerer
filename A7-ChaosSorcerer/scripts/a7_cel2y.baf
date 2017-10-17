@@ -1,0 +1,42 @@
+// Special script for conjured Greater Chaos Elementals
+
+IF
+  Die()
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  Allegiance(LastSummonerOf(Myself), ENEMY)
+  !Allegiance(Myself, ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobal("Elementalcontrol", "LOCALS", 1)
+    ChangeAIScript("A7_CEL2A", DEFAULT)
+    Enemy()
+END
+
+IF
+  Global("Elementalcontrol", "LOCALS", 0)
+THEN
+  RESPONSE #15
+    SetInterrupt(FALSE)
+    FaceObject(LastSummonerOf(Myself))
+    ApplySpell(Myself, THREE_ROUND_ENCHANTMENT_IMMUNITY)
+    Wait(17)
+    PlaySound("EFF_M72D")
+    Enemy()
+    ChangeAIScript("A7_CEL2A", DEFAULT)
+    SetGlobal("Elementalcontrol", "LOCALS", 2)
+    SetInterrupt(FALSE)
+  RESPONSE #85
+    SetInterrupt(TRUE)
+    FaceObject(LastSummonerOf(Myself))
+    ApplySpell(Myself, THREE_ROUND_ENCHANTMENT_IMMUNITY)
+    Wait(17)
+    PlaySound("EFF_M72C")
+    Ally()
+    SetGlobal("Elementalcontrol", "LOCALS", 1)
+    SetInterrupt(FALSE)
+END

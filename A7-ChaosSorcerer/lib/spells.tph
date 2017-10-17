@@ -111,9 +111,15 @@ COPY ~%MOD_FOLDER%/creatures/a7_cel2a.cre~ ~override~
 
 COPY ~%MOD_FOLDER%/spells/a7_cel1a.eff~ ~override~
      ~%MOD_FOLDER%/spells/a7_cel2a.eff~ ~override~
-     ~%MOD_FOLDER%/spells/a7_cel1.spl~ ~override~
-     ~%MOD_FOLDER%/spells/a7_cel2.spl~ ~override~
      ~%MOD_FOLDER%/spells/a7_cel3.spl~ ~override~
+
+COPY ~%MOD_FOLDER%/spells/a7_cel1.spl~ ~override~
+  SAY NAME1 @5000 // Confusion
+  SAY UNIDENTIFIED_DESC @5001 // ...
+
+COPY ~%MOD_FOLDER%/spells/a7_cel2.spl~ ~override~
+  SAY NAME1 @5050 // Mass Confusion
+  SAY UNIDENTIFIED_DESC @5051 // ...
 
 COMPILE ~%MOD_FOLDER%/scripts/a7_cel1a.baf~
         ~%MOD_FOLDER%/scripts/a7_cel1x.baf~
@@ -131,7 +137,6 @@ ACTION_IF (NOT FILE_EXISTS_IN_GAME ~spin906.spl~) BEGIN
   APPEND ~spell.ids~ ~3906 THREE_ROUND_ENCHANTMENT_IMMUNITY~ UNLESS ~THREE_ROUND_ENCHANTMENT_IMMUNITY~
 END
 
-OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT action ~action~ 411 END
 COMPILE ~%MOD_FOLDER%/scripts/a7_cel1b.baf~
         ~%MOD_FOLDER%/scripts/a7_cel1y.baf~
 
@@ -143,6 +148,29 @@ COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03c.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03.eff~ ~override~
+
+
+// Spell: Conjure Greater Chaos Elemental
+COPY ~%MOD_FOLDER%/spells/a7_sp04.spl~ ~override~
+    SAY NAME1 @2150 // Conjure Greater Chaos Elemental
+    SAY UNIDENTIFIED_DESC @2151 // ...
+
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~spin906.spl~) BEGIN
+  COPY ~%MOD_FOLDER%/spells/spin906.spl~ ~override~
+  APPEND ~spell.ids~ ~3906 THREE_ROUND_ENCHANTMENT_IMMUNITY~ UNLESS ~THREE_ROUND_ENCHANTMENT_IMMUNITY~
+END
+
+COMPILE ~%MOD_FOLDER%/scripts/a7_cel2b.baf~
+        ~%MOD_FOLDER%/scripts/a7_cel2y.baf~
+
+COPY ~%MOD_FOLDER%/creatures/a7_cel2b.cre~ ~override~
+  SAY NAME1 @10001  // Greater Chaos Elemental
+  SAY NAME2 @10001  // Greater Chaos Elemental
+
+COPY ~%MOD_FOLDER%/spells/a7_sp04a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp04b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp04c.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp04.eff~ ~override~
 
 
 // Adding Chaos Sorcerer specific wild surges

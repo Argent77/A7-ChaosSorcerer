@@ -1,4 +1,4 @@
-// Combat script for controllable Chaos Elementals
+// Combat script for controllable Greater Chaos Elementals
 
 IF
   OR(2)
@@ -6,7 +6,7 @@ IF
     GlobalTimerExpired("Busy", "LOCALS")
   !See([ENEMY])
   HPPercentLT(Myself, 90)
-  RandomNum(10, 1)
+  RandomNum(4, 1)
 THEN
   RESPONSE #100
     ForceSpellRES("A7_CEL3", Myself)  // Cure Wounds
@@ -37,7 +37,7 @@ IF
   See([ENEMY.0.0.0.0.0.MASK_LAWFUL])
 THEN
   RESPONSE #25
-    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    ForceSpellRES("A7_CEL2", LastSeenBy(Myself))  // Chaos
     AttackReevaluate(LastSeenBy(Myself), 15)
   RESPONSE #75
     AttackReevaluate(LastSeenBy(Myself), 15)
@@ -48,7 +48,7 @@ IF
   See(NearestEnemyOf(Myself))
 THEN
   RESPONSE #10
-    ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
+    ForceSpellRES("A7_CEL2", LastSeenBy(Myself))  // Chaos
     AttackReevaluate(LastSeenBy(Myself), 15)
   RESPONSE #90
     AttackReevaluate(LastSeenBy(Myself), 15)
