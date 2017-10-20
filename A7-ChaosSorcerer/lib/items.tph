@@ -42,10 +42,14 @@ COPY_EXISTING ~tooltip.2da~ ~override~
 BUT_ONLY
 
 
+// BG1->SoD item import
+ACTION_IF (GAME_IS ~eet~ || GAME_INCLUDES ~sod~) BEGIN
+  EXTEND_TOP ~bd0120.bcs~ ~%MOD_FOLDER%/scripts/bd0120_top.baf~
+  EXTEND_TOP ~bd0130.bcs~ ~%MOD_FOLDER%/scripts/bd0130_top.baf~
+END
+
 // BG1->BG2 item import
 ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
-  COPY ~%MOD_FOLDER%/tables/a7_impt2.2da~ ~override~
-
   EXTEND_TOP ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602_top.baf~
   EXTEND_TOP ~ar0603.bcs~ ~%MOD_FOLDER%/scripts/ar0603_top.baf~
 END

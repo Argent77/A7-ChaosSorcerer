@@ -1,0 +1,18 @@
+// Item import: SoD opening dungeon, upper level
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_InitCSItems", "MYAREA", 1)
+    Continue()
+END
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+  !PartyHasItem("a7_clck1")
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ImportCloakSOD", "GLOBAL", 1)
+    Continue()
+END
