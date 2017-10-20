@@ -30,8 +30,8 @@ ACTION_IF (slot >= 0) BEGIN
   COPY_EXISTING ~%old_spell_nrd_resref%.SPL~ ~override/%spell_nrd_resref%.SPL~
     WRITE_BYTE 0x25 10  // Primary type: Wild Mage
     WRITE_LONG 0x1e (THIS | 0b111111111000000)  // Exclude generalist/specialist mages except Wild Mage
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124B~ resref_dst = ~A7_SP04B~ END
-    LPF a7_update_resref STR_VAR resref_src = ~SPWI124C~ resref_dst = ~A7_SP04C~ END
+    LPF a7_update_resref STR_VAR resref_src = ~SPWI124B~ resref_dst = ~A7_SP01B~ END
+    LPF a7_update_resref STR_VAR resref_src = ~SPWI124C~ resref_dst = ~A7_SP01C~ END
     LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 321  // Remove effects by resource
@@ -40,9 +40,9 @@ ACTION_IF (slot >= 0) BEGIN
       resource = ~SPWI124~
     END
 
-  COPY_EXISTING ~SPWI124A.BAM~ ~override/A7_SP04A.BAM~
-                ~SPWI124B.BAM~ ~override/A7_SP04B.BAM~
-                ~SPWI124C.BAM~ ~override/A7_SP04C.BAM~
+  COPY_EXISTING ~SPWI124A.BAM~ ~override/A7_SP01A.BAM~
+                ~SPWI124B.BAM~ ~override/A7_SP01B.BAM~
+                ~SPWI124C.BAM~ ~override/A7_SP01C.BAM~
 
   // updating references in game resources
   COPY_EXISTING ~CONTINGX.2DA~ ~override~

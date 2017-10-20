@@ -84,7 +84,7 @@ Hinweis: Diese Komponente ist nur für Spiele ab Version 2.0 verfügbar.
 
 4. „Artefakte der Urtitanen“ hinzufügen (benötigt die Hauptkomponente)
 
-Diese Komponente fügt dem Spiel vier magische Gegenständen speziell für den Chaos Hexenmeister 
+Diese Komponente fügt dem Spiel vier magische Gegenstände speziell für den Chaos Hexenmeister 
 hinzu. Diese Gegenstände können miteinander kombiniert werden, um weitere verborgene Fähigkeiten 
 freizusetzen.
 BG(2)EE: Die Gegenstände sind über die gesamte Spieleserie verteilt: BG1, BG1:SoD, BG2:SvA und 
