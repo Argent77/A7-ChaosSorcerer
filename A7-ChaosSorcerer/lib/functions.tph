@@ -364,7 +364,8 @@ END
 // Code format per effect: "name1=value1,name2=value2;...second effect..."
 // Supported parameters:   op (Opcode), tgt (Target), tmg (Timing), pwr (Power), p1 (Parameter1), p2 (Parameter2), 
 //                         rd (Resist/Dispel), dur (Duration), pro1 (Probability1), pro2 (Probability2), res (Resource), 
-//                         dnum (Dice Number), dsize (Dice Size), stype (Save Type), sbonus (Save Bonus), spec (Special), ip (Insert Point)
+//                         dnum (Dice Number), dsize (Dice Size), stype (Save Type), sbonus (Save Bonus), spec (Special), 
+//                         ip (Insert Point), hdr (Header), type (Type)
 //                         All parameters except opcode are optional.
 // Example:                "op=139,tgt=2,tmg=1,p1=8203;op=215,tgt=2,tmg=1,dur=2,p2=1,res=ICARMOR" adds two effects (139 and 215 with their respective parameters)
 DEFINE_PATCH_FUNCTION a7_auto_apply_spl_effect
@@ -385,6 +386,8 @@ INT_VAR
   def_savebonus     = 0
   def_special       = 0
   def_insertpoint   = "-1"
+  def_header        = 0
+  def_type          = 3   // ADD_ITEM_EFFECT only
 STR_VAR
   // Supported functions: ADD_SPELL_EFFECT, ADD_SPELL_CFEFFECT, ADD_ITEM_EFFECT, ADD_ITEM_EQEFFECT and (limited) ADD_CRE_EFFECT
   function_name     = ~~
@@ -451,6 +454,7 @@ BEGIN
       SET savebonus = (VARIABLE_IS_SET EVAL ~effects_%idx%_sbonus~) ? EVAL ~effects_%idx%_sbonus~ : def_savebonus
       SET special = (VARIABLE_IS_SET EVAL ~effects_%idx%_spec~) ? EVAL ~effects_%idx%_spec~ : def_special
       SET insertpoint = (VARIABLE_IS_SET EVAL ~effects_%idx%_ip~) ? EVAL ~effects_%idx%_ip~ : def_insertpoint
+      SET header = (VARIABLE_IS_SET EVAL ~effects_%idx%_hdr~) ? EVAL ~effects_%idx%_hdr~ : def_header
       PATCH_IF (VARIABLE_IS_SET EVAL ~effects_%idx%_res~) BEGIN
         TEXT_SPRINT resource EVAL ~%effects_%idx%_res%~
       END ELSE BEGIN
@@ -475,6 +479,7 @@ BEGIN
           savebonus     = savebonus
           special       = special
           insert_point  = insertpoint
+          header        = header
         STR_VAR
           resource      = EVAL ~%resource%~
         END

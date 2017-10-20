@@ -9,7 +9,7 @@ WITH_SCOPE BEGIN
        ~%MOD_FOLDER%/items/a7_clckb.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_clckd.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_clckf.itm~ ~override~
-    SAY NAME2 @20000  // Akadi's Cloak of Truth
+    SAY NAME2 @20000  // Akadi's Cloak of Rapid Motion
     SAY IDENTIFIED_DESC @20001  // ...
     LPF a7_update_effect_params
     INT_VAR
@@ -36,18 +36,33 @@ WITH_SCOPE BEGIN
         new_parameter1    = newType
       END
     END
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=215,tmg=1,res=ALTERH;op=174,tmg=1,res=#EFF_M08;op=174,tmg=4,dur=60,res=#EFF_E01~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=141,tmg=1,p2=4;op=174,tmg=1,res=EFF_M28;op=174,tmg=4,dur=60,res=EFF_M29~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1        // Self
+      def_resist_dispel = 3 // Dispel/Bypass resistance
+      def_header = 1        // first ability header
+    STR_VAR
+      function_name = ~ADD_ITEM_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
 
   OUTER_SET strref1 = RESOLVE_STR_REF(@22051) // Transform into Circlet
   OUTER_SET strref2 = RESOLVE_STR_REF(@22052) // Transform into Buckler
   OUTER_SET strref3 = RESOLVE_STR_REF(@22053) // Transform into Dagger
-  APPEND ~tooltip.2da~ ~A7_CLCK1 25633 %ability_strref%~
-  APPEND ~tooltip.2da~ ~A7_CLCK3 25633 %ability_strref% %strref1%~
-  APPEND ~tooltip.2da~ ~A7_CLCK5 25633 %ability_strref% %strref2%~
-  APPEND ~tooltip.2da~ ~A7_CLCK7 25633 %ability_strref% %strref1% %strref2%~
-  APPEND ~tooltip.2da~ ~A7_CLCK9 25633 %ability_strref% %strref3%~
-  APPEND ~tooltip.2da~ ~A7_CLCKB 25633 %ability_strref% %strref1% %strref3%~
-  APPEND ~tooltip.2da~ ~A7_CLCKD 25633 %ability_strref% %strref2% %strref3%~
-  APPEND ~tooltip.2da~ ~A7_CLCKF 25633 %ability_strref% %strref1% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCK1 12080 %ability_strref%~
+  APPEND ~tooltip.2da~ ~A7_CLCK3 12080 %ability_strref% %strref1%~
+  APPEND ~tooltip.2da~ ~A7_CLCK5 12080 %ability_strref% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_CLCK7 12080 %ability_strref% %strref1% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_CLCK9 12080 %ability_strref% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKB 12080 %ability_strref% %strref1% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKD 12080 %ability_strref% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKF 12080 %ability_strref% %strref1% %strref2% %strref3%~
 
   COPY ~%MOD_FOLDER%/items/a7_cclck.bam~ ~override~
        ~%MOD_FOLDER%/items/a7_iclck.bam~ ~override~

@@ -2,8 +2,8 @@
 // Items (index 20000..29999)
 
 // Items
-@20000 = ~Akadi's Cloak of Truth~
-@20001 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to see things that are otherwise hidden from their sight.
+@20000 = ~Akadi's Cloak of Rapid Motion~
+@20001 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, twice per day.
 
 A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It is rumored that there are more artifacts of similar origin, which can be combined to create even more powerful enchantments.
 
@@ -13,7 +13,7 @@ Equipped abilities:
 – Electrical Resistance: +25%
 
 Charge abilities:
-– True Sight twice per day
+– Haste on self twice per day
 
 – Primeval Outburst one or more times per day
   Number of charges and effects depends on how many artifacts of primeval origin have been combined.

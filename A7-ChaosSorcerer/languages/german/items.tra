@@ -2,14 +2,14 @@
 // Items (index 20000..29999)
 
 // Items
-@20000 = ~Akadis Umhang der Wahrheit~
-@20001 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, auch "Königin der Lüfte" genannt, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und erlaubt ihm Dinge zu sehen, die normalerweise außerhalb seiner Sinne liegen.
+@20000 = ~Akadis Umhang des Eilgangs~
+@20001 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, auch "Königin der Lüfte" genannt, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm zweimal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
 
 Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
 
 EIGENSCHAFTEN:
 
-Wahrer Blick (2x täglich)
+Hast auf sich selbst (2x täglich)
 
 Urtümlicher Ausbruch (ein- oder mehrmals täglich)
   Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Umhang kombiniert wurde.
