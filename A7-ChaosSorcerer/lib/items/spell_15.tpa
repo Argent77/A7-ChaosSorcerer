@@ -1,0 +1,35 @@
+// *** Installs item-related spell: Armageddon ***
+
+WITH_SCOPE BEGIN
+  // installing projectiles
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1ef1.pro~
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1ef2.pro~
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1ef3.pro~
+
+  COPY ~%MOD_FOLDER%/items/projectiles/a7_i1efa.vvc~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efb.vvc~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efc.vvc~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efa.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efb.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efc.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efa.wav~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efb.wav~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1efc.wav~ ~override~
+
+ // updating projectile references
+ COPY_EXISTING ~a7_i1ef1.pro~ ~override~
+  WRITE_SHORT 0x214 (a7_i1ef2 - 1)
+ COPY_EXISTING ~a7_i1ef2.pro~ ~override~
+  WRITE_SHORT 0x214 (a7_i1ef3 - 1)
+
+ COPY ~%MOD_FOLDER%/items/a7_i1ef.spl~ ~override~
+    SAY NAME1 @21310  // Armageddon
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET ofs = ofsAbil + (idx * 0x28)
+      WRITE_SHORT (ofs + 0x26) a7_i1ef1
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_ispfb.bam~ ~override~
+END

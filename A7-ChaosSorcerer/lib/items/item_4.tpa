@@ -1,0 +1,123 @@
+// *** Item: Kossuth's Stinger +5 ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_dagg8.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagg9.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagga.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggb.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggc.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggd.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagge.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggf.itm~ ~override~
+    SAY NAME2 @20150  // Kossuth's Stinger +5
+    SAY IDENTIFIED_DESC @20151  // ...
+    LPF a7_update_effect_params
+    INT_VAR
+      match_parameter1  = 1
+      match_special     = 1
+      opcode            = 319
+      parameter1        = 0x80000000
+      new_parameter1    = kit_id
+      special           = 0
+      new_special       = kit_strref
+    END
+    SET strref0 = RESOLVE_STR_REF(@22060)
+    SET strref1 = RESOLVE_STR_REF(@22061)
+    SET strref2 = RESOLVE_STR_REF(@22062)
+    SET strref3 = RESOLVE_STR_REF(@22063)
+    FOR (idx = 0; idx < 4; ++idx) BEGIN
+      SET type = 1 << idx
+      SET newType = EVAL ~strref%idx%~
+      LPF a7_update_effect_params
+      INT_VAR
+        match_parameter1  = 1
+        opcode            = 139
+        parameter1        = type
+        new_parameter1    = newType
+      END
+    END
+
+  OUTER_SET strref = RESOLVE_STR_REF(@20155)  // Summon Greater Fire Elemental
+  OUTER_SET strref1 = RESOLVE_STR_REF(@22050) // Transform into Cloak
+  OUTER_SET strref2 = RESOLVE_STR_REF(@22051) // Transform into Circlet
+  OUTER_SET strref3 = RESOLVE_STR_REF(@22052) // Transform into Buckler
+  APPEND ~tooltip.2da~ ~A7_DAGG8 -1 %strref% %ability_strref%~
+  APPEND ~tooltip.2da~ ~A7_DAGG9 -1 %strref% %ability_strref% %strref1%~
+  APPEND ~tooltip.2da~ ~A7_DAGGA -1 %strref% %ability_strref% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_DAGGB -1 %strref% %ability_strref% %strref1% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_DAGGC -1 %strref% %ability_strref% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_DAGGD -1 %strref% %ability_strref% %strref1% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_DAGGE -1 %strref% %ability_strref% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_DAGGF -1 %strref% %ability_strref% %strref1% %strref2% %strref3%~
+
+  COPY ~%MOD_FOLDER%/items/a7_cdagg.bam~ ~override~
+       ~%MOD_FOLDER%/items/a7_idagg.bam~ ~override~
+       ~%MOD_FOLDER%/items/a7_dgab1.bam~ ~override~
+       ~%MOD_FOLDER%/tables/a7_dagg9.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_dagga.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_daggb.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_daggc.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_daggd.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_dagge.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_daggf.2da~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagg9.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagga.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggb.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggc.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggd.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_dagge.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_daggf.eff~ ~override~
+
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_dagg8.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_dagg9.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_dagga.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_daggb.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_daggc.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_daggd.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_dagge.d~ ~override~
+
+  OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
+  APPEND ~itemdial.2da~ ~A7_DAGG8      %strref%  A7_DAGG8~
+  APPEND ~itemdial.2da~ ~A7_DAGG9      %strref%  A7_DAGG9~
+  APPEND ~itemdial.2da~ ~A7_DAGGA      %strref%  A7_DAGGA~
+  APPEND ~itemdial.2da~ ~A7_DAGGB      %strref%  A7_DAGGB~
+  APPEND ~itemdial.2da~ ~A7_DAGGC      %strref%  A7_DAGGC~
+  APPEND ~itemdial.2da~ ~A7_DAGGD      %strref%  A7_DAGGD~
+  APPEND ~itemdial.2da~ ~A7_DAGGE      %strref%  A7_DAGGE~
+
+  // Ability: Summon Greater Fire Elemental
+  COPY ~%MOD_FOLDER%/creatures/a7_dgfe1.cre~ ~override~
+    SAY NAME1 @20156  // Greater Fire Elemental
+    SAY NAME2 @20156  // Greater Fire Elemental
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      // IWD uses different fire elemental animation
+      SET id = IDS_OF_SYMBOL(~animate~ ~ELEMENTAL_FIRE_IWD~)
+      PATCH_IF (id > 0) BEGIN
+        WRITE_LONG 0x28 id
+      END
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_dgfe1.eff~ ~override~
+
+  COMPILE ~%MOD_FOLDER%/scripts/a7_dgfe1.baf~ ~override~
+          ~%MOD_FOLDER%/scripts/a7_dgfe2.baf~ ~override~
+
+  // Adding item to game
+  ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+    COPY_EXISTING ~hgber01.cre~ ~override~
+      ADD_CRE_ITEM ~A7_DAGG8~ #1 #0 #0 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+    BUT_ONLY
+  END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+    COPY_EXISTING ~ar8011.are~ ~override~
+      LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 2
+        charges1 = 0
+        charges2 = 1
+        charges3 = 1
+      STR_VAR
+        item_to_add = ~A7_DAGG8~
+      END
+    BUT_ONLY
+  END
+END

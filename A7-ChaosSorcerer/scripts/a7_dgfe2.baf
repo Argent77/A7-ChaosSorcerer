@@ -1,0 +1,40 @@
+// Combat script for Fire Elementals from dagger ability
+
+IF
+  OR(2)
+    StateCheck(Myself,STATE_IMMOBILE)
+    StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  !Allegiance(Myself,EVILCUTOFF)
+  !InActiveArea(Myself)
+  !Range(NearestEnemyOf(Myself),30)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  StateCheck(Myself,STATE_PANIC)
+THEN
+  RESPONSE #100
+    RandomWalkContinuous()
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  AttackedBy([ANYONE],DEFAULT)
+THEN
+  RESPONSE #100
+    Attack(LastAttackerOf(Myself))
+END

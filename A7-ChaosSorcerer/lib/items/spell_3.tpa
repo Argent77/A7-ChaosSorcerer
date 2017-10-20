@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Poison Mist ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1e3.spl~ ~override~
+    SAY NAME1 @21110  // Poison Mist
+
+  COPY ~%MOD_FOLDER%/items/a7_isp3b.bam~ ~override~
+END

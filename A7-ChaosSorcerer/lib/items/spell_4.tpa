@@ -1,0 +1,22 @@
+// *** Installs item-related spell: Earthquake ***
+
+WITH_SCOPE BEGIN
+  // installing projectile
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1e4.pro~
+
+  COPY ~%MOD_FOLDER%/items/projectiles/a7_i1e4s.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e4t.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e4a.wav~ ~override~
+
+  COPY ~%MOD_FOLDER%/items/a7_i1e4.spl~ ~override~
+    SAY NAME1 @21030  // Stone Spikes
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET ofs = ofsAbil + (idx * 0x28)
+      WRITE_SHORT (ofs + 0x26) a7_i1e4
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_i1e4.vvc~ ~override~
+       ~%MOD_FOLDER%/items/a7_isp4b.bam~ ~override~
+END

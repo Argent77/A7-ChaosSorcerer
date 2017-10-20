@@ -1,0 +1,19 @@
+// *** Installs item-related spell: Sandstorm ***
+
+WITH_SCOPE BEGIN
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1e5.pro~
+
+  COPY ~%MOD_FOLDER%/items/projectiles/a7_i1e5s.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e5a.wav~ ~override~
+
+  COPY ~%MOD_FOLDER%/items/a7_i1e5.spl~ ~override~
+    SAY NAME1 @21120  // Sandstorm
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET ofs = ofsAbil + (idx * 0x28)
+      WRITE_SHORT (ofs + 0x26) a7_i1e5
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_isp5b.bam~ ~override~
+END

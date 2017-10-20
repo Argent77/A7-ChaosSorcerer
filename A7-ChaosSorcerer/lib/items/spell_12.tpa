@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Inferno ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1ec.spl~ ~override~
+    SAY NAME1 @21160  // Inferno
+
+  COPY ~%MOD_FOLDER%/items/a7_ispcb.bam~ ~override~
+END

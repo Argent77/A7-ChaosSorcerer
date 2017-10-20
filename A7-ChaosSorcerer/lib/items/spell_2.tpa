@@ -1,0 +1,24 @@
+// *** Installs item-related spell: Frozen Mist ***
+
+WITH_SCOPE BEGIN
+  // installing projectile
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1e2.pro~
+
+  COPY ~%MOD_FOLDER%/items/projectiles/a7_i1e2m.vvc~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e2r.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e2t.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e2x.bam~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e2a.wav~ ~override~
+       ~%MOD_FOLDER%/items/projectiles/a7_i1e2b.wav~ ~override~
+
+  COPY ~%MOD_FOLDER%/items/a7_i1e2.spl~ ~override~
+    SAY NAME1 @21020  // Frozen Spray
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET ofs = ofsAbil + (idx * 0x28)
+      WRITE_SHORT (ofs + 0x26) a7_i1e2
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_isp2b.bam~ ~override~
+END

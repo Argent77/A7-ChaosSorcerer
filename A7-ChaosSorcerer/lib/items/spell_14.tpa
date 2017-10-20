@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Magma Blast ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1ee.spl~ ~override~
+    SAY NAME1 @21240  // Magma Blast
+
+  COPY ~%MOD_FOLDER%/items/a7_ispeb.bam~ ~override~
+END

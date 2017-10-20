@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Fireball ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1e8.spl~ ~override~
+    SAY NAME1 @21040  // Fire Blast
+
+  COPY ~%MOD_FOLDER%/items/a7_isp8b.bam~ ~override~
+END

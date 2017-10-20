@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Acid Explosion ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1eb.spl~ ~override~
+    SAY NAME1 @21220  // Acid Explosion
+
+  COPY ~%MOD_FOLDER%/items/a7_ispbb.bam~ ~override~
+END

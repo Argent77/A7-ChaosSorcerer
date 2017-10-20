@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Corrosive Shards ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1e7.spl~ ~override~
+    SAY NAME1 @21210  // Corrosive Shards
+
+  COPY ~%MOD_FOLDER%/items/a7_isp7b.bam~ ~override~
+END

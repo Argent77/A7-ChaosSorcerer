@@ -1,0 +1,47 @@
+// Item import: Irenicus Dungeon, Lower Level
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_InitCSItems", "MYAREA", 1)
+    Continue()
+END
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+  !PartyHasItem("a7_helm3")
+  !PartyHasItem("a7_clck3")
+THEN
+  RESPONSE #100
+    ActionOverride("Drawer1", CreateItem("A7_HELM2", 1, 0, 0))
+    Continue()
+END
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+  PartyHasItem("a7_helm3")
+THEN
+  RESPONSE #100
+    ActionOverride("Drawer1", CreateItem("A7_HELM3", 2, 0, 0))
+    Continue()
+END
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+  !PartyHasItem("a7_helm3")
+  !PartyHasItem("a7_clck3")
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ImportCloak", "GLOBAL", 1)
+    Continue()
+END
+
+IF
+  Global("A7_InitCSItems", "MYAREA", 0)
+  PartyHasItem("a7_clck3")
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ImportCloak", "GLOBAL", 2)
+    Continue()
+END

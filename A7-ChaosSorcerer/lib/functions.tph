@@ -482,3 +482,65 @@ BEGIN
     END
   END
 END
+
+
+// Fixes malformed 2DA files. Can also be used to add new columns.
+DEFINE_PATCH_FUNCTION a7_fill_2da_cols
+INT_VAR
+  expand_header = 1     // Whether to expand header row
+  num_cols       = "-1" // Default: Count table columns
+STR_VAR
+  def_value     = ~~    // Default: Read from table
+BEGIN
+  PATCH_IF (num_cols < 0) BEGIN
+    COUNT_2DA_COLS num_cols
+  END
+
+  READ_2DA_ENTRIES_NOW ~tooltip~ 1
+
+  PATCH_IF (~%def_value%~ STR_EQ ~~) BEGIN
+    READ_2DA_ENTRY_FORMER ~tooltip~ 1 0 def_value
+  END
+
+  PATCH_IF (expand_header) BEGIN
+    // processing header
+    FOR (col = 0; col < num_cols; ++col) BEGIN
+      PATCH_IF (NOT VARIABLE_IS_SET EVAL ~tooltip_2_%col%~) BEGIN
+        SET col = num_cols
+        READ_2DA_ENTRY_FORMER ~tooltip~ 2 0 line
+        FOR (col = 1; col < num_cols - 1; ++col) BEGIN
+          PATCH_IF (VARIABLE_IS_SET EVAL ~tooltip_2_%col%~) BEGIN
+            READ_2DA_ENTRY_FORMER ~tooltip~ 2 col value
+          END ELSE BEGIN
+            SET value = col + 1
+          END
+          TEXT_SPRINT line ~%line% %value%~
+        END
+        REMOVE_2DA_ROW 2 1
+        INSERT_2DA_ROW 2 1 ~%line%~
+        SET col = num_cols
+      END
+    END
+  END
+
+  // processing data
+  FOR (row = 3; row < tooltip; ++row) BEGIN
+    FOR (col = 0; col < num_cols; ++col) BEGIN
+      PATCH_IF (NOT VARIABLE_IS_SET EVAL ~tooltip_%row%_%col%~) BEGIN
+        READ_2DA_ENTRY_FORMER ~tooltip~ row 0 line
+        FOR (col = 1; col < num_cols; ++col) BEGIN
+          PATCH_IF (VARIABLE_IS_SET EVAL ~tooltip_%row%_%col%~) BEGIN
+            READ_2DA_ENTRY_FORMER ~tooltip~ row col value
+          END ELSE BEGIN
+            TEXT_SPRINT value ~%def_value%~
+          END
+          TEXT_SPRINT line ~%line% %value%~
+        END
+        REMOVE_2DA_ROW row 1
+        INSERT_2DA_ROW row 1 ~%line%~
+        SET col = num_cols
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+END

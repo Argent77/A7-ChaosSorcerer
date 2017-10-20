@@ -1,0 +1,51 @@
+// *** Item set for Chaos Sorcerers ***
+
+// Preparing tooltip.2da (expand number of columns)
+// OUTER_SET numColsTooltip = 7
+// COPY_EXISTING ~tooltip.2da~ ~override~
+  // COUNT_2DA_COLS numCols
+  // COUNT_2DA_ROWS (numCols - 1) numRows
+// BUT_ONLY
+
+// OUTER_FOR (col = numCols; col < numColsTooltip; ++col) BEGIN
+  // OUTER_TEXT_SPRINT line ~$ $ %col% ~
+  // OUTER_FOR (row = 1; row < numRows; ++row) BEGIN
+    // OUTER_TEXT_SPRINT line ~%line% -1~
+  // END
+  // APPEND_COL ~tooltip.2da~ ~%line%~
+// END
+
+
+// Effect spells
+INCLUDE ~%MOD_FOLDER%/lib/items/spells_status.tpa~
+OUTER_FOR (idx = 1; idx < 16; ++idx) BEGIN
+  INCLUDE ~%MOD_FOLDER%/lib/items/spell_%idx%.tpa~
+END
+
+
+// Items
+OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)
+OUTER_SET kit_strref = RESOLVE_STR_REF(@1001)
+OUTER_SET ability_strref = RESOLVE_STR_REF(@21000)  // Primeval Outburst
+
+COPY ~%MOD_FOLDER%/items/a7_ipri.bam~ ~override~
+
+INCLUDE ~%MOD_FOLDER%/lib/items/item_1.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/items/item_2.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/items/item_3.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/items/item_4.tpa~
+
+
+// Finalizing tooltip.2da
+COPY_EXISTING ~tooltip.2da~ ~override~
+  LPF a7_fill_2da_cols END
+BUT_ONLY
+
+
+// BG1->BG2 item import
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+  COPY ~%MOD_FOLDER%/tables/a7_impt2.2da~ ~override~
+
+  EXTEND_TOP ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602_top.baf~
+  EXTEND_TOP ~ar0603.bcs~ ~%MOD_FOLDER%/scripts/ar0603_top.baf~
+END

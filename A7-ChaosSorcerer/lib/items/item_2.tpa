@@ -1,0 +1,120 @@
+// *** Item: Istishia's Mind Shield ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_helm2.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm3.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm6.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm7.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helma.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helmb.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helme.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_helmf.itm~ ~override~
+    SAY NAME1 @20052  // Circlet
+    SAY NAME2 @20050  // Istishia's Mind Shield
+    SAY UNIDENTIFIED_DESC @20053  // ...
+    SAY IDENTIFIED_DESC @20051  // ...
+    LPF a7_update_effect_params
+    INT_VAR
+      match_parameter1  = 1
+      match_special     = 1
+      opcode            = 319
+      parameter1        = 0x80000000
+      new_parameter1    = kit_id
+      special           = 0
+      new_special       = kit_strref
+    END
+    SET strref0 = RESOLVE_STR_REF(@22060)
+    SET strref1 = RESOLVE_STR_REF(@22061)
+    SET strref2 = RESOLVE_STR_REF(@22062)
+    SET strref3 = RESOLVE_STR_REF(@22063)
+    FOR (idx = 0; idx < 4; ++idx) BEGIN
+      SET type = 1 << idx
+      SET newType = EVAL ~strref%idx%~
+      LPF a7_update_effect_params
+      INT_VAR
+        match_parameter1  = 1
+        opcode            = 139
+        parameter1        = type
+        new_parameter1    = newType
+      END
+    END
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206;op=296,res=SPCONFUS;op=267,p1=14791;op=267,p1=14782;op=267,p1=25807~
+    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801;op=296,res=SPCONFUS;op=296,res=CONFUSH;op=267,p1=37603;op=267,p1=37604~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780;op=296,res=SPCONFUS;op=267,p1=14782;op=267,p1=14791~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1  // Self
+      def_timing = 2  // Instant/While Equipped
+    STR_VAR
+      function_name = ~ADD_ITEM_EQEFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  OUTER_SET strref1 = RESOLVE_STR_REF(@22050) // Transform into Cloak
+  OUTER_SET strref2 = RESOLVE_STR_REF(@22052) // Transform into Buckler
+  OUTER_SET strref3 = RESOLVE_STR_REF(@22053) // Transform into Dagger
+  APPEND ~tooltip.2da~ ~A7_HELM2 %ability_strref%~
+  APPEND ~tooltip.2da~ ~A7_HELM3 %ability_strref% %strref1%~
+  APPEND ~tooltip.2da~ ~A7_HELM6 %ability_strref% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_HELM7 %ability_strref% %strref1% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_HELMA %ability_strref% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_HELMB %ability_strref% %strref1% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_HELME %ability_strref% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_HELMF %ability_strref% %strref1% %strref2% %strref3%~
+
+  COPY ~%MOD_FOLDER%/items/a7_chelm.bam~ ~override~
+       ~%MOD_FOLDER%/items/a7_ihelm.bam~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helm3.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helm6.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helm7.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helma.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helmb.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helme.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_helmf.2da~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm3.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm6.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helm7.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helma.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helmb.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helme.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_helmf.eff~ ~override~
+
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_helm2.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helm3.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helm6.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helm7.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helma.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helmb.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_helme.d~ ~override~
+
+  OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
+  APPEND ~itemdial.2da~ ~A7_HELM2      %strref%  A7_HELM2~
+  APPEND ~itemdial.2da~ ~A7_HELM3      %strref%  A7_HELM3~
+  APPEND ~itemdial.2da~ ~A7_HELM6      %strref%  A7_HELM6~
+  APPEND ~itemdial.2da~ ~A7_HELM7      %strref%  A7_HELM7~
+  APPEND ~itemdial.2da~ ~A7_HELMA      %strref%  A7_HELMA~
+  APPEND ~itemdial.2da~ ~A7_HELMB      %strref%  A7_HELMB~
+  APPEND ~itemdial.2da~ ~A7_HELME      %strref%  A7_HELME~
+
+  // Adding item to game
+  ACTION_IF (GAME_IS ~eet~ || GAME_INCLUDES ~sod~) BEGIN
+    COPY_EXISTING ~bd0062.are~ ~override~
+      LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 0
+        charges1 = 1
+      STR_VAR
+        item_to_add = ~A7_HELM2~
+      END
+    BUT_ONLY
+  END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+    COPY_EXISTING ~kontik.cre~ ~override~
+      ADD_CRE_ITEM ~A7_HELM2~ #1 #0 #0 ~none~ ~helmet inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+    BUT_ONLY
+  END
+END

@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Corrosive Cloud ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1ea.spl~ ~override~
+    SAY NAME1 @21150  // Corrosive Cloud
+
+  COPY ~%MOD_FOLDER%/items/a7_ispab.bam~ ~override~
+END

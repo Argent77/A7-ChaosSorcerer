@@ -79,6 +79,13 @@ der Liste der Magierklassen während der Characktererstellung zu entfernen. Dami
 Hexenmeister die einzig legitime Option, eine Klasse mit Zugriff auf „Unbändige Magie“ zu spielen.
 
 
+4. „Artefakte der Urtitanen“ hinzufügen (benötigt die Hauptkomponente)
+
+Diese Komponente fügt dem Spiel eine Reihe von magischen Gegenständen speziell für den Chaos 
+Hexenmeister hinzu. Diese Gegenstände können miteinander kombiniert werden, um weitere verborgene  
+Fähigkeiten freizusetzen.
+
+
 Klassenbeschreibung
 ~~~~~~~~~~~~~~~~~~~
 

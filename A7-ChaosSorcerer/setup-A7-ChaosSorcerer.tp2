@@ -15,12 +15,14 @@ LANGUAGE ~English~
          ~%MOD_FOLDER%/languages/english/kit.tra~
          ~%MOD_FOLDER%/languages/english/spells.tra~
          ~%MOD_FOLDER%/languages/english/misc.tra~
+         ~%MOD_FOLDER%/languages/english/items.tra~
 LANGUAGE ~Deutsch~
          ~german~
          ~%MOD_FOLDER%/languages/german/setup.tra~
          ~%MOD_FOLDER%/languages/german/kit.tra~
          ~%MOD_FOLDER%/languages/german/spells.tra~
          ~%MOD_FOLDER%/languages/german/misc.tra~
+         ~%MOD_FOLDER%/languages/german/items.tra~
 
 
 BEGIN @0  // "Chaos Sorcerer" kit
@@ -57,3 +59,10 @@ BEGIN @20 // Make "Wild Mage" unavailable to character creation
   DESIGNATED 20
 
   INCLUDE ~%MOD_FOLDER%/lib/disable_wildmage.tph~
+
+
+BEGIN @30 // Add "Primordial Artifacts"
+  REQUIRE_COMPONENT ~setup-A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
+  DESIGNATED 30
+
+  INCLUDE ~%MOD_FOLDER%/lib/items.tph~

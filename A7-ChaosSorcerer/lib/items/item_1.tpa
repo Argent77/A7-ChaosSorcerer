@@ -1,0 +1,103 @@
+// *** Item: Akadi's Cloak of Truth ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_clck1.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck3.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck5.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck7.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck9.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckb.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckd.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckf.itm~ ~override~
+    SAY NAME2 @20000  // Akadi's Cloak of Truth
+    SAY IDENTIFIED_DESC @20001  // ...
+    LPF a7_update_effect_params
+    INT_VAR
+      match_parameter1  = 1
+      match_special     = 1
+      opcode            = 319
+      parameter1        = 0x80000000
+      new_parameter1    = kit_id
+      special           = 0
+      new_special       = kit_strref
+    END
+    SET strref0 = RESOLVE_STR_REF(@22060)
+    SET strref1 = RESOLVE_STR_REF(@22061)
+    SET strref2 = RESOLVE_STR_REF(@22062)
+    SET strref3 = RESOLVE_STR_REF(@22063)
+    FOR (idx = 0; idx < 4; ++idx) BEGIN
+      SET type = 1 << idx
+      SET newType = EVAL ~strref%idx%~
+      LPF a7_update_effect_params
+      INT_VAR
+        match_parameter1  = 1
+        opcode            = 139
+        parameter1        = type
+        new_parameter1    = newType
+      END
+    END
+
+  OUTER_SET strref1 = RESOLVE_STR_REF(@22051) // Transform into Circlet
+  OUTER_SET strref2 = RESOLVE_STR_REF(@22052) // Transform into Buckler
+  OUTER_SET strref3 = RESOLVE_STR_REF(@22053) // Transform into Dagger
+  APPEND ~tooltip.2da~ ~A7_CLCK1 25633 %ability_strref%~
+  APPEND ~tooltip.2da~ ~A7_CLCK3 25633 %ability_strref% %strref1%~
+  APPEND ~tooltip.2da~ ~A7_CLCK5 25633 %ability_strref% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_CLCK7 25633 %ability_strref% %strref1% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_CLCK9 25633 %ability_strref% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKB 25633 %ability_strref% %strref1% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKD 25633 %ability_strref% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_CLCKF 25633 %ability_strref% %strref1% %strref2% %strref3%~
+
+  COPY ~%MOD_FOLDER%/items/a7_cclck.bam~ ~override~
+       ~%MOD_FOLDER%/items/a7_iclck.bam~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clck3.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clck5.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clck7.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clck9.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clckb.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clckd.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_clckf.2da~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck3.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck5.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck7.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck9.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckb.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckd.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckf.eff~ ~override~
+
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_clck1.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clck3.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clck5.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clck7.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clck9.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clckb.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_clckd.d~ ~override~
+
+  OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
+  APPEND ~itemdial.2da~ ~A7_CLCK1      %strref%  A7_CLCK1~
+  APPEND ~itemdial.2da~ ~A7_CLCK3      %strref%  A7_CLCK3~
+  APPEND ~itemdial.2da~ ~A7_CLCK5      %strref%  A7_CLCK5~
+  APPEND ~itemdial.2da~ ~A7_CLCK7      %strref%  A7_CLCK7~
+  APPEND ~itemdial.2da~ ~A7_CLCK9      %strref%  A7_CLCK9~
+  APPEND ~itemdial.2da~ ~A7_CLCKB      %strref%  A7_CLCKB~
+  APPEND ~itemdial.2da~ ~A7_CLCKD      %strref%  A7_CLCKD~
+
+  // Adding item to game
+  ACTION_IF (GAME_IS ~bgee eet~) BEGIN
+    COPY_EXISTING ~airaspec.cre~ ~override~
+      ADD_CRE_ITEM ~A7_CLCK1~ #2 #1 #0 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+    BUT_ONLY
+  END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+    COPY_EXISTING ~ar5404.are~ ~override~
+      LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 1
+        charges1 = 2
+        charges2 = 1
+      STR_VAR
+        item_to_add = ~A7_CLCK1~
+      END
+    BUT_ONLY
+  END
+END

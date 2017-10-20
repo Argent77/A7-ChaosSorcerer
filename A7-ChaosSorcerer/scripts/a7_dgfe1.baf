@@ -1,0 +1,16 @@
+// Special script for Fire Elementals from dagger ability
+
+IF
+  Die()
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  Allegiance(LastSummonerOf(Myself),ENEMY)
+  !Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    Enemy()
+END

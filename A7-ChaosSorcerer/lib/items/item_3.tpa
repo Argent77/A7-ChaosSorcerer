@@ -1,0 +1,104 @@
+// *** Item: Grumbar's Defense +2 ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_shld4.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld5.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld6.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld7.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldc.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldd.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shlde.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldf.itm~ ~override~
+    SAY NAME2 @20100  // Grumbar's Defense +2
+    SAY IDENTIFIED_DESC @20101  // ...
+    LPF a7_update_effect_params
+    INT_VAR
+      match_parameter1  = 1
+      match_special     = 1
+      opcode            = 319
+      parameter1        = 0x80000000
+      new_parameter1    = kit_id
+      special           = 0
+      new_special       = kit_strref
+    END
+    SET strref0 = RESOLVE_STR_REF(@22060)
+    SET strref1 = RESOLVE_STR_REF(@22061)
+    SET strref2 = RESOLVE_STR_REF(@22062)
+    SET strref3 = RESOLVE_STR_REF(@22063)
+    FOR (idx = 0; idx < 4; ++idx) BEGIN
+      SET type = 1 << idx
+      SET newType = EVAL ~strref%idx%~
+      LPF a7_update_effect_params
+      INT_VAR
+        match_parameter1  = 1
+        opcode            = 139
+        parameter1        = type
+        new_parameter1    = newType
+      END
+    END
+
+  OUTER_SET strref1 = RESOLVE_STR_REF(@22050) // Transform into Cloak
+  OUTER_SET strref2 = RESOLVE_STR_REF(@22051) // Transform into Circlet
+  OUTER_SET strref3 = RESOLVE_STR_REF(@22053) // Transform into Dagger
+  APPEND ~tooltip.2da~ ~A7_SHLD4 %ability_strref%~
+  APPEND ~tooltip.2da~ ~A7_SHLD5 %ability_strref% %strref1%~
+  APPEND ~tooltip.2da~ ~A7_SHLD6 %ability_strref% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_SHLD7 %ability_strref% %strref1% %strref2%~
+  APPEND ~tooltip.2da~ ~A7_SHLDC %ability_strref% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_SHLDD %ability_strref% %strref1% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_SHLDE %ability_strref% %strref2% %strref3%~
+  APPEND ~tooltip.2da~ ~A7_SHLDF %ability_strref% %strref1% %strref2% %strref3%~
+
+  COPY ~%MOD_FOLDER%/items/a7_cshld.bam~ ~override~
+       ~%MOD_FOLDER%/items/a7_ishld.bam~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shld5.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shld6.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shld7.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shldc.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shldd.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shlde.2da~ ~override~
+       ~%MOD_FOLDER%/tables/a7_shldf.2da~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld5.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld6.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shld7.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldc.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldd.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shlde.eff~ ~override~
+       ~%MOD_FOLDER%/items/a7_shldf.eff~ ~override~
+
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_shld4.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shld5.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shld6.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shld7.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shldc.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shldd.d~ ~override~
+          ~%MOD_FOLDER%/dialogs/a7_shlde.d~ ~override~
+
+  OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
+  APPEND ~itemdial.2da~ ~A7_SHLD4      %strref%  A7_SHLD4~
+  APPEND ~itemdial.2da~ ~A7_SHLD5      %strref%  A7_SHLD5~
+  APPEND ~itemdial.2da~ ~A7_SHLD6      %strref%  A7_SHLD6~
+  APPEND ~itemdial.2da~ ~A7_SHLD7      %strref%  A7_SHLD7~
+  APPEND ~itemdial.2da~ ~A7_SHLDC      %strref%  A7_SHLDC~
+  APPEND ~itemdial.2da~ ~A7_SHLDD      %strref%  A7_SHLDD~
+  APPEND ~itemdial.2da~ ~A7_SHLDE      %strref%  A7_SHLDE~
+
+  // Adding item to game
+  ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+    // Additional reward from Svirvneblin armorer (otherwise, steal or loot to get item)
+    COPY_EXISTING ~udsvir05.cre~ ~override~
+      ADD_CRE_ITEM ~A7_SHLD4~ #1 #0 #0 ~none~ ~shield inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+    BUT_ONLY
+    COMPILE ~%MOD_FOLDER%/dialogs/udsvir05.d~
+  END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+    COPY_EXISTING ~ar6006.are~ ~override~
+      LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 4
+        charges1 = 1
+      STR_VAR
+        item_to_add = ~A7_SHLD4~
+      END
+    BUT_ONLY
+  END
+END

@@ -1,0 +1,171 @@
+// *** Installs item-related sub-spells ***
+
+WITH_SCOPE BEGIN
+  // Blindness
+  COPY ~%MOD_FOLDER%/items/a7_ist1.spl~ ~override~
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=74,dur=60;op=139,tmg=1,p1=14674;op=142,p2=8,dur=60;op=174,tmg=4,dur=60,res=#EFF_M01;op=215,tmg=1,res=ILLUSH~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=74,dur=60;op=50,p1=2139062016,p2=1310720,dur=1;op=139,tmg=1,p1=14674;op=142,p2=8,dur=60;op=174,tmg=4,dur=60,res=EFF_E07;op=215,p2=1,dur=3,res=SPH1HI01;op=215,p2=1,dur=3,res=SPHLHI02~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+
+  // Confusion
+  COPY ~%MOD_FOLDER%/items/a7_ist2.spl~ ~override~
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=174,tmg=4,dur=30,res=#EFF_E05~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=174,tmg=3,dur=30,res=EFF_E05;op=50,p1=223109120,p2=1310720,dur=1~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+
+  // Stun
+  COPY ~%MOD_FOLDER%/items/a7_ist3.spl~ ~override~
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=139,p1=26050~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=139,p1=1280~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+      def_timing        = 1   // Instant/Permanent until death
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+
+  // Unconsciousness
+  COPY ~%MOD_FOLDER%/items/a7_ist4.spl~ ~override~
+
+
+  // Slow
+  COPY ~%MOD_FOLDER%/items/a7_ist5.spl~ ~override~
+    SET slow_array = 0
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=324,p1=20,p2=105,dr=0,dur=1,res=A7_IST5;op=321,res=SPWI312;op=321,res=SPWISH25;op=321,res=SPIN146;op=321,res=SPIN977;op=321,res=SPWM164;op=321,res=A7_IST5;op=40,dur=60;op=0,p1=-4,dur=60;op=54,p1=-4,dur=60;op=139,tmg=1,p1=14668;op=174,res=#EFF_M08;op=174,tmg=4,dur=60,res=#EFF_E02;op=215,tmg=1,res=ALTERH;op=142,p2=41,dur=60~
+      // slow spells to update
+      PATCH_FOR_EACH resref IN ~SPWI312~ ~SPWISH25~ ~SPIN146~ ~SPIN977~ ~SPWM164~ BEGIN TEXT_SPRINT EVAL ~slow_array_%slow_array%~ ~%resref%~ SET slow_array += 1 END
+    END ELSE BEGIN
+      PATCH_IF (SPELL_REV) BEGIN
+        // secondary type can vary
+        SET msectype = 15
+        INNER_ACTION BEGIN
+          COPY_EXISTING ~msectype.2da~ ~override~
+            COUNT_2DA_ROWS 2 numRows
+            FOR (row = 1; row < numRows; ++row) BEGIN
+              READ_2DA_ENTRY row 0 2 value
+              PATCH_IF (~%value%~ STR_EQ ~k1#Haste~) BEGIN
+                SET msectype = row - 1
+                SET row = numRows
+              END
+            END
+          BUT_ONLY
+        END
+        TEXT_SPRINT codes ~op=324,p1=29,p2=110,dr=0,dur=1,res=A7_IST5;op=221,p1=3,p2=12,tmg=1;op=240,tmg=1,p2=38;op=221,p1=9,p2=%msectype%,dur=60,stype=16,sbonus=-2;op=40,dur=60,stype=16,sbonus=-2;op=0,p1=-2,dur=60,stype=16,sbonus=-2;op=278,p1=-2,dur=60,stype=16,sbonus=-2;op=36,p1=-2,dur=60,stype=16,sbonus=-2;op=141,tmg=1,p2=6,stype=16,sbonus=-2;op=174,res=EFF_M29,stype=16,sbonus=-2;op=174,tmg=4,dur=60,res=EFF_M28,stype=16,sbonus=-2;op=142,p2=41,dur=60,stype=16,sbonus=-2;op=139,tmg=1,p1=14668,stype=16,sbonus=-2~
+        WRITE_BYTE 0x27 msectype  // update secondary type
+      END ELSE BEGIN
+        TEXT_SPRINT codes ~op=321,res=SPIN977;op=321,res=SPWISH25;op=321,res=SPWM164;op=321,res=SPIN983;op=321,res=SPIN575;op=321,res=SPWI312;op=321,res=A7_IST5;op=40,dur=60;op=0,p1=-4,dur=60;op=54,p1=-4,dur=60;op=141,tmg=1,p2=6;op=139,tmg=1,p1=14668;op=174,res=EFF_M29;op=174,tmg=4,dur=60,res=EFF_M28;op=142,p2=41,dur=60;op=240,tmg=1,p2=38~
+        // slow spells to update
+        PATCH_FOR_EACH resref IN ~SPIN977~ ~SPWISH25~ ~SPWM164~ ~SPIN983~ ~SPIN575~ ~SPWI312~ BEGIN TEXT_SPRINT EVAL ~slow_array_%slow_array%~ ~%resref%~ SET slow_array += 1 END
+      END
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+      def_power         = 3
+      def_resist_dispel = 1   // Dispel/Not bypass resistance
+      def_savetype      = 1   // Save vs. Spell
+      def_savebonus     = "-4"
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  // updating slow spells
+  OUTER_FOR (idx = 0; idx < slow_array; ++idx) BEGIN
+    OUTER_TEXT_SPRINT resref EVAL ~%slow_array_%idx%%~
+    COPY_EXISTING ~%resref%.SPL~ ~override~
+      READ_LONG 0x34 power
+      LPF ADD_SPELL_EFFECT
+      INT_VAR
+        opcode = 321
+        power = power
+        target = 2
+        resist_dispel = 1
+        savingthrow = 1
+        savebonus = "-4"
+        insert_point = 1
+      STR_VAR
+        resource = ~A7_IST5~
+      END
+    BUT_ONLY IF_EXISTS
+  END
+
+
+  // Fear
+  COPY ~%MOD_FOLDER%/items/a7_ist6.spl~ ~override~
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=324,p2=1,dur=1,res=A7_I1EF;op=24,dur=30;op=139,tmg=1,p1=14007;op=142,p2=36,dur=30;op=174,tmg=1,res=#EFF_M07~
+    END ELSE BEGIN
+      PATCH_IF (SPELL_REV) BEGIN
+        TEXT_SPRINT codes ~op=324,p1=106,p2=110,dur=1,res=A7_IST6;p=324,p2=1,dur=1,res=A7_IST6;op=24,dur=30;op=139,tmg=1,p1=14007;op=142,p2=36,dur=30;op=50,p1=4227072,p2=1310720,dur=1;op=174,tmg=4,dur=30,res=EFF_E05~
+      END ELSE BEGIN
+        TEXT_SPRINT codes ~op=24,dur=30;op=139,tmg=1,p1=14007;op=142,p2=36,dur=30;op=215,p2=1,dur=30,res=CDHORROR;op=50,p1=4227072,p2=1310720,dur=1;op=174,tmg=4,dur=30,res=EFF_E05~
+      END
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+
+  // Death
+  COPY ~%MOD_FOLDER%/items/a7_ist7.spl~ ~override~
+    PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=13,tmg=1,p2=512;op=174,tmg=1,res=#EFF_M07;op=215,tmg=1,res=FODEATH~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=324,tmg=1,dur=1,p1=8,p2=110,res=A7_IST7;op=55,p2=2,tmg=1;op=174,tmg=1,res=EFF_M07;op=141,tmg=1,p2=39~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target        = 2   // Preset target
+    STR_VAR
+      function_name = ~ADD_SPELL_EFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+
+  // Poison
+  COPY ~%MOD_FOLDER%/items/a7_ist8.spl~ ~override~
+    PATCH_IF (GAME_IS ~iwdee~ || FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
+      LPF a7_auto_apply_spl_effect
+      INT_VAR
+        def_target      = 2   // Preset target
+        def_duration    = 1
+        def_insertpoint = 0
+      STR_VAR
+        def_resource    = ~A7_IST8~
+        function_name   = ~ADD_SPELL_EFFECT~
+        effect_codes    = ~op=324,p2=77;op=324,p2=55~
+      END
+    END
+END

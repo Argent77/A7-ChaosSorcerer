@@ -1,0 +1,153 @@
+// -*- coding: utf-8 -*- 
+// Items (index 20000..29999)
+
+// Items
+@20000 = ~Akadis Umhang der Wahrheit~
+@20001 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, auch "Königin der Lüfte" genannt, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und erlaubt ihm Dinge zu sehen, die normalerweise außerhalb seiner Sinne liegen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Wahrer Blick (2x täglich)
+
+Urtümlicher Ausbruch (ein- oder mehrmals täglich)
+  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Umhang kombiniert wurde.
+
+Elektrizitätswiderstand: +25 %
+
+Gewicht: 3~
+
+@20050 = ~Istishias Gedankenschirm~
+@20051 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen verschiedenen Arten der Gedankenmanipulation.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (ein- oder mehrmals täglich)
+  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Reif kombiniert wurde.
+
+Kältewiderstand: +40 %
+Der Träger ist immun gegen Bezauberung und Verwirrung.
+
+Gewicht: 1~
+@20052 = ~Reif~
+@20053 = ~Dieser einfache Reif wirkt zu schmucklos, um als Krone durchzugehen. Die kryptischen, magischen Zeichen, die sich auf seiner Oberfläche entlang ziehen, lassen vermuten, dass er in Wahrheit über große Kräfte verfügt.
+
+EIGENSCHAFTEN:
+
+Gewicht: 1~
+
+@20100 = ~Grumbars Abwehr +2~
+@20101 = ~Auf dem ersten Blick sieht diese Tartsche unauffällig aus. In Wahrheit ist es ein sehr ungewöhnlicher Gegenstand. Die Überlieferungen sprechen von einer Zwergensippe, die von Abeir, dem Zwillingsplaneten Torils, in die Tiefen dieser Welt gereist sind. Diese Geschichte scheint nicht so abwegig zu sein, da der Schild mit den Kräften des Urtitans Grumbar, dem Herrn der Erde, ausgestattet ist. Obwohl der Schild äußerst klein und leicht ist, gewährt er dem Träger einen außergewöhnlich guten Schutz gegen physische Angriffe und absorbiert einen Teil der Wucht von großflächigen Gegenständen, wie Felsbrocken oder stumpfen Waffen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (ein- oder mehrmals täglich)
+  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen diese Tartsche kombiniert wurde.
+
+RK-Bonus: -2
+Widerstand gg. Wuchtwaffen: +50 %
+(kein Schutz vor Stich- und Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+
+@20150 = ~Kossuths Stachel +5~
+@20151 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlich beträchtlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Höheren Feuerelementar herbeirufen (1x täglich)
+  Ruft einen, mit 50 % Wahrscheinlichkeit einen zweiten, höheren Feuerelementar herbei.
+  Reichweite: 9 m
+  Dauer: 1 Phase
+
+Urtümlicher Ausbruch (ein- oder mehrmals täglich)
+  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Dolch kombiniert wurde.
+
+Feuerwiderstand: +50 %
+
+Schaden: 2W4 +5 (Stich)
+Schadensbonus: +1W6 (Feuer)
+ETW0-Bonus: -5
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Gewicht: 1~
+@20155 = ~Höheren Feuerelementar herbeirufen~
+@20156 = ~Höherer Feuerelementar~
+
+
+// Spell effects
+@21000 = ~Urzeitlicher Ausbruch~
+
+@21010 = ~Static Charges~
+@21020 = ~Frozen Mist~
+@21030 = ~Earthquake~
+@21040 = ~Fireball~
+
+@21110 = ~Poison Mist~
+@21120 = ~Sandstorm~
+@21130 = ~Fire Storm~
+@21140 = ~Mudslide~
+@21150 = ~Corrosive Cloud~
+@21160 = ~Inferno~
+
+@21210 = ~Corrosive Shards~
+@21220 = ~Acid Explosion~
+@21230 = ~Charged Heat Lance~
+@21240 = ~Magma Blast~
+
+@21310 = ~Armageddon~
+
+
+// Conversation lines
+@22000 = ~(Ihr haltet den Umhang in den Händen und seht Euch nach weiteren Gegenständen um, die man damit kombinieren kann...)~
+@22001 = ~(Ihr haltet den Reif in den Händen und seht Euch nach weiteren Gegenständen um, die man damit kombinieren kann...)~
+@22002 = ~(Ihr haltet den Schild in den Händen und seht Euch nach weiteren Gegenständen um, die man damit kombinieren kann...)~
+@22003 = ~(Ihr haltet den Dolch in den Händen und seht Euch nach weiteren Gegenständen um, die man damit kombinieren kann...)~
+@22006 = ~(Ohne die Gabe, auf das Elementare Chaos zuzugreifen, seid Ihr nicht in der Lage, das wahre Potenzial des Gegenstands zu erschließen...)~
+@22007 = ~(Vom Gegenstand scheint eine unwirkliche Aura auszugehen, und Ihr habt das Gefühl, als ob sich darin ungeahnte Kräfte verbergen...)~
+@22008 = ~Untersuchen~
+
+@22010 = ~(Umhang mit Reif kombinieren.)~
+@22011 = ~(Umhang mit Schild kombinieren.)~
+@22012 = ~(Umhang mit Dolch kombinieren.)~
+
+@22015 = ~(Reif mit Umhang kombinieren.)~
+@22016 = ~(Reif mit Schild kombinieren.)~
+@22017 = ~(Reif mit Dolch kombinieren.)~
+
+@22020 = ~(Schild mit Umhang kombinieren.)~
+@22021 = ~(Schild mit Reif kombinieren.)~
+@22022 = ~(Schild mit Dolch kombinieren.)~
+
+@22025 = ~(Dolch mit Umhang kombinieren.)~
+@22026 = ~(Dolch mit Reif kombinieren.)~
+@22027 = ~(Dolch mit Schild kombinieren.)~
+
+@22030 = ~(Ihr nehmt den Umhang und konzentriert Euch auf Eure Aufgabe.)~
+@22031 = ~(Ihr nehmt den Reif und konzentriert Euch auf Eure Aufgabe.)~
+@22032 = ~(Ihr nehmt den Schild und konzentriert Euch auf Eure Aufgabe.)~
+@22033 = ~(Ihr nehmt den Dolch und konzentriert Euch auf Eure Aufgabe.)~
+
+@22040 = ~(Aktion abbrechen.)~
+@22041 = ~(Als Ihr die Kräfte des Elementaren Chaos direkt in die Gegenstände leitet, verlieren sie ihre Form, nur um wenig später wieder als ein vereinter, noch mächtigerer Gegenstand aufzutauchen.)~
+
+@22050 = ~In Umnhang verwandeln~
+@22051 = ~In Reif verwandeln~
+@22052 = ~In Schild verwandeln~
+@22053 = ~In Dolch verwandeln~
+
+@22060 = ~In Umnhang verwandelt~
+@22061 = ~In Reif verwandelt~
+@22062 = ~In Schild verwandelt~
+@22063 = ~In Dolch verwandelt~

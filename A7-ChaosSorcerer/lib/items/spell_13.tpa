@@ -1,0 +1,8 @@
+// *** Installs item-related spell: Charged Heat Lance ***
+
+WITH_SCOPE BEGIN
+  COPY ~%MOD_FOLDER%/items/a7_i1ed.spl~ ~override~
+    SAY NAME1 @21230  // Charged Heat Lance
+
+  COPY ~%MOD_FOLDER%/items/a7_ispdb.bam~ ~override~
+END

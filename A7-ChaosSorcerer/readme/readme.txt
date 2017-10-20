@@ -73,6 +73,12 @@ during Character Generation, so that the Chaos Sorcerer remains as the only viab
 Wild Magic user.
 
 
+4. Add "Primordial Artifacts" (requires main component)
+
+This component adds a set of artifacts specifically for Chaos Sorcerers to the game. The items can 
+be combined to unlock more hidden abilities.
+
+
 Kit Description
 ~~~~~~~~~~~~~~~
 

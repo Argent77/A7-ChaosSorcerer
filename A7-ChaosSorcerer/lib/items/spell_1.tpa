@@ -1,0 +1,17 @@
+// *** Installs item-related spell: xxx ***
+
+WITH_SCOPE BEGIN
+  // installing projectile
+  ADD_PROJECTILE ~%MOD_FOLDER%/items/projectiles/a7_i1e1.pro~
+
+  COPY ~%MOD_FOLDER%/items/a7_i1e1.spl~ ~override~
+    SAY NAME1 @21010  // Charged Wave
+    READ_LONG 0x64 ofsAbil
+    READ_SHORT 0x68 numAbil
+    FOR (idx = 0; idx < numAbil; ++idx) BEGIN
+      SET ofs = ofsAbil + (idx * 0x28)
+      WRITE_SHORT (ofs + 0x26) a7_i1e1
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_isp1b.bam~ ~override~
+END
