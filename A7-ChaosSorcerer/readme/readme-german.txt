@@ -32,6 +32,8 @@ Folgt den Anweisungen des Programms und die Mod ist startbereit.
 Kompatibilität
 ~~~~~~~~~~~~~~
 
+Spielversionen v1.3 und höher von BG:EE, BG2:EE und IWD:EE werden unterstützt.
+
 Die Mod sollte mit allen anderen Mods auskommen, sofern sie keinen tiefgreifenden Änderungen an 
 den Zaubern für Hasadeure vornehmen.
 
@@ -77,13 +79,18 @@ ausgeführt werden.
 Auf Wunsch einiger Spieler hinzugefügt, kann diese Komponente genutzt werden, um den Hasardeur aus 
 der Liste der Magierklassen während der Characktererstellung zu entfernen. Damit bleibt der Chaos 
 Hexenmeister die einzig legitime Option, eine Klasse mit Zugriff auf „Unbändige Magie“ zu spielen.
+Hinweis: Diese Komponente ist nur für Spiele ab Version 2.0 verfügbar.
 
 
 4. „Artefakte der Urtitanen“ hinzufügen (benötigt die Hauptkomponente)
 
-Diese Komponente fügt dem Spiel eine Reihe von magischen Gegenständen speziell für den Chaos 
-Hexenmeister hinzu. Diese Gegenstände können miteinander kombiniert werden, um weitere verborgene  
-Fähigkeiten freizusetzen.
+Diese Komponente fügt dem Spiel vier magische Gegenständen speziell für den Chaos Hexenmeister 
+hinzu. Diese Gegenstände können miteinander kombiniert werden, um weitere verborgene Fähigkeiten 
+freizusetzen.
+BG(2)EE: Die Gegenstände sind über die gesamte Spieleserie verteilt: BG1, BG1:SoD, BG2:SvA und 
+         BG2:TdB. Die Gegenstände aus BG1/SoD werden automatisch im Verließ von Irenicus platziert, 
+         wenn ein neues BG2EE-Spiel angefangen wird, ohne einen Charakter aus BG1EE zu importieren.
+IWDEE:   Die Gegenstände sind über alle Gebiete der Haupthandlung des Spiels verteilt.
 
 
 Klassenbeschreibung
@@ -140,6 +147,12 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.0
+- Added new subcomponent: Add "Primordial Artifacts"
+- Added new spell 'Conjure Greater Chaos Elemental'
+- Added (Improved) Chaos Elemental creature stats to spell descriptions
+- Various optimizations to improve compatibility with other mods
 
 1.1
 - Added compatibility section to readme

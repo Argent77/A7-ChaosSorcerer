@@ -31,6 +31,8 @@ ready to start.
 Compatibility
 ~~~~~~~~~~~~~
 
+Patch versions v1.3 and higher of BG:EE, BG2:EE and IWD:EE are supported.
+
 This mod should be compatible with all other mods as long as they don't make substantial changes to 
 Wild Magic spells.
 
@@ -71,12 +73,18 @@ lists if other mods, installed later, added new spells.
 Added by request, this component removes the Wild Mage kit from the list of available Mage kits 
 during Character Generation, so that the Chaos Sorcerer remains as the only viable choice for a 
 Wild Magic user.
+Note: This component is only available for games since patch version 2.0
 
 
 4. Add "Primordial Artifacts" (requires main component)
 
-This component adds a set of artifacts specifically for Chaos Sorcerers to the game. The items can 
-be combined to unlock more hidden abilities.
+This component adds a set of four artifacts specifically for Chaos Sorcerers to the game. The 
+items can be combined to unlock more hidden abilities.
+BG(2)EE: The items are scattered over the whole series - BG1, BG1:SoD, BG2:SoA and BG2:ToB.
+         The BG1/SoD items can be found in the opening dungeon of BG2:SoA when starting a new 
+         BG2EE game.
+IWDEE:   The items are scattered all over the locations you can visit in the course of the main 
+         story.
 
 
 Kit Description
@@ -132,6 +140,12 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.0
+- Added new subcomponent: Add "Primordial Artifacts"
+- Added new spell 'Conjure Greater Chaos Elemental'
+- Added (Improved) Chaos Elemental creature stats to spell descriptions
+- Various optimizations to improve compatibility with other mods
 
 1.1
 - Added compatibility section to readme
