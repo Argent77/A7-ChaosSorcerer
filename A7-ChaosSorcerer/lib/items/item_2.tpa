@@ -106,7 +106,7 @@ WITH_SCOPE BEGIN
     COPY_EXISTING ~bd0062.are~ ~override~
       LPF ADD_AREA_ITEM
       INT_VAR
-        container_to_add_to = 0
+        container_to_add_to = 1
         charges1 = 1
       STR_VAR
         item_to_add = ~A7_HELM2~
