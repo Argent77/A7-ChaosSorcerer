@@ -1,7 +1,7 @@
 Der Chaos Hexenmeister
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    1.1
+Version:    2.0
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -152,7 +152,7 @@ History
 - Added new subcomponent: Add "Primordial Artifacts"
 - Added new spell 'Conjure Greater Chaos Elemental'
 - Added (Improved) Chaos Elemental creature stats to spell descriptions
-- Various optimizations to improve compatibility with other mods
+- Various optimizations and bug fixes
 
 1.1
 - Added compatibility section to readme

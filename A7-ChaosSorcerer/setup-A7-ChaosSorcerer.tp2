@@ -1,6 +1,6 @@
 BACKUP ~A7-ChaosSorcerer/backup~
 AUTHOR ~Argent77~
-VERSION ~1.1~
+VERSION ~2.0~
 
 ALWAYS
   OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0
