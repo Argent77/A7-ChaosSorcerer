@@ -72,8 +72,8 @@ Urtümlicher Ausbruch (ein- oder mehrmals täglich)
 
 Feuerwiderstand: +50 %
 
-Schaden: 2W4 +5 (Stich)
-Schadensbonus: +1W6 (Feuer)
+Schaden: 1W4 +5 (Stich)
+Schadensbonus: +1W4 (Feuer)
 ETW0-Bonus: -5
 Gewicht: 1
 Initiativefaktor: 0
@@ -89,22 +89,22 @@ Gewicht: 1~
 // Spell effects
 @21000 = ~Urzeitlicher Ausbruch~
 
-@21010 = ~Static Charges~
-@21020 = ~Frozen Mist~
-@21030 = ~Earthquake~
-@21040 = ~Fireball~
+@21010 = ~Geladene Welle~
+@21020 = ~Frostspray~
+@21030 = ~Granitstacheln~
+@21040 = ~Feuerstoß~
 
-@21110 = ~Poison Mist~
-@21120 = ~Sandstorm~
-@21130 = ~Fire Storm~
-@21140 = ~Mudslide~
-@21150 = ~Corrosive Cloud~
+@21110 = ~Giftnebel~
+@21120 = ~Sandsturm~
+@21130 = ~Feuersturm~
+@21140 = ~Schlammlawine~
+@21150 = ~Ätznebel~
 @21160 = ~Inferno~
 
-@21210 = ~Corrosive Shards~
-@21220 = ~Acid Explosion~
-@21230 = ~Charged Heat Lance~
-@21240 = ~Magma Blast~
+@21210 = ~Ätzscherben~
+@21220 = ~Säureexplosion~
+@21230 = ~Geladener Hitzespeer~
+@21240 = ~Magmastoß~
 
 @21310 = ~Armageddon~
 
