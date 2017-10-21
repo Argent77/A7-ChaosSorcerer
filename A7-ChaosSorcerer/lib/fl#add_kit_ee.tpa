@@ -100,6 +100,47 @@ BEGIN
   END
 END
 
+DEFINE_ACTION_FUNCTION fl#add_kit_ee#swap_columns
+  STR_VAR
+    file = ""
+    column_name1 = ""
+    column_name2 = ""
+BEGIN
+  ACTION_IF NOT "%column_name1%" STR_EQ "" &&
+            NOT "%column_name1%" STR_EQ "%column_name2%" BEGIN
+    COPY_EXISTING "%file%.2da" override
+      COUNT_2DA_COLS num_col
+      READ_2DA_ENTRIES_NOW file num_col - 1
+      SET col1 = "-1"
+      SET col2 = "-1"
+      FOR (i = 0; i < num_col - 1; ++i) BEGIN
+        READ_2DA_ENTRY_FORMER file 0 i label
+        PATCH_IF "%label%" STR_EQ "%column_name1%" BEGIN
+          SET col1 = i
+        END ELSE PATCH_IF "%label%" STR_EQ "%column_name2%" BEGIN
+          SET col2 = i
+        END
+      END
+      PATCH_IF (col1 >= 0 && col2 >= 0) BEGIN
+        READ_2DA_ENTRY_FORMER file 0 col1 value1
+        READ_2DA_ENTRY_FORMER file 0 col2 value2
+        SET_2DA_ENTRY_LATER file_out 0 col1 ~%value2%~
+        SET_2DA_ENTRY_LATER file_out 0 col2 ~%value1%~
+
+        SET col1 += 1
+        SET col2 += 1
+        FOR (j = 1; j < file; ++j) BEGIN
+          READ_2DA_ENTRY_FORMER file j col1 value1
+          READ_2DA_ENTRY_FORMER file j col2 value2
+          SET_2DA_ENTRY_LATER file_out j col1 ~%value2%~
+          SET_2DA_ENTRY_LATER file_out j col2 ~%value1%~
+        END
+        SET_2DA_ENTRIES_NOW file_out num_col - 1
+      END
+    BUT_ONLY
+  END
+END
+
 DEFINE_ACTION_FUNCTION fl#add_kit_ee#validate
   INT_VAR
     kit_number = 0
@@ -411,6 +452,13 @@ BEGIN
           kit_name
           input = EVAL "%bdstweap%"
           file = EVAL "%sod_stweapon%"
+      END
+      // DEFAULT must be last column!
+      LAF fl#add_kit_ee#swap_columns
+        STR_VAR
+          file = EVAL "%sod_stweapon%"
+          column_name1 = "DEFAULT"
+          column_name2 = EVAL "%kit_name%"
       END
     END
 
