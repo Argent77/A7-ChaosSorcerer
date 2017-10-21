@@ -94,7 +94,7 @@ WITH_SCOPE BEGIN
     COPY_EXISTING ~ar6006.are~ ~override~
       LPF ADD_AREA_ITEM
       INT_VAR
-        container_to_add_to = 4
+        container_to_add_to = 5
         charges1 = 1
       STR_VAR
         item_to_add = ~A7_SHLD4~
