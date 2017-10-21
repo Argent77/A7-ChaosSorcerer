@@ -1,7 +1,7 @@
 Der Chaos Hexenmeister
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    2.0
+Version:    2.1
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -147,6 +147,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.1
+- Fixed a primordial artifact that was not correctly added to an SoD area
+- Fixed default starting equipment when starting a new SoD or ToB game
 
 2.0
 - Added new subcomponent: Add "Primordial Artifacts"
