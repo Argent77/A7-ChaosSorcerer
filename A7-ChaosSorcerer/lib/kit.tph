@@ -25,15 +25,15 @@ OUTER_TEXT_SPRINT lu_file ~lu%lu_ref%.2da~
 
 
 // applying base kit properties
-ADD_KIT ~%kit_name%~
-        ~%kit_name% 1 1 1 1 1 0 0 0~  // clasweap.2da
-        ~%kit_name% 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~  // weapprof.2da
-        ~%kit_name% 0 12 0 9 0 9~  // abclasrq.2da
-        ~%kit_name% -2 0 -2 0 0 0~  // abclsmod.2da
-        ~%kit_name% 0 17 0 17 0 17~  // abdcdsrq.2da
-        ~%kit_name% 0 15 0 15 0 15~  // abdcscrq.2da
-        ~%kit_name% 0 0 0 0 0 0 1 1 1~  // alignmnt.2da
-        ~%kit_name% 0 0 0 0 0 0~  // dualclas.2da
+ADD_KIT ~A7_CHAOS_SORCERER~
+        ~A7_CHAOS_SORCERER 1 1 1 1 1 0 0 0~  // clasweap.2da
+        ~A7_CHAOS_SORCERER 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~  // weapprof.2da
+        ~A7_CHAOS_SORCERER 0 12 0 9 0 9~  // abclasrq.2da
+        ~A7_CHAOS_SORCERER -2 0 -2 0 0 0~  // abclsmod.2da
+        ~A7_CHAOS_SORCERER 0 17 0 17 0 17~  // abdcdsrq.2da
+        ~A7_CHAOS_SORCERER 0 15 0 15 0 15~  // abdcscrq.2da
+        ~A7_CHAOS_SORCERER 0 0 0 0 0 0 1 1 1~  // alignmnt.2da
+        ~A7_CHAOS_SORCERER 0 0 0 0 0 0~  // dualclas.2da
         ~%MOD_FOLDER%/tables/a7_csrc.2da~  // path to kit clabxxx.2da
         ~K_S_H K_S_D K_S_G K_S_E K_S_HE K_S_HL K_S_HO~  // class/race combinations for kittable.2da
         ~0x80000000 19~  // unusability and parent class info for kitlist.2da
@@ -61,44 +61,13 @@ INT_VAR
   biography = biography
   briefdesc = briefdesc
 STR_VAR
-    kit_name = EVAL "%kit_name%"
+    kit_name = "A7_CHAOS_SORCERER"
     clsrcreq = "1 1 1 0 0 0 0"
     clswpbon = "0 0 5"
     hpclass = "HPWIZ"
     numwslot = "2"
     clascolr = "34 35 34  196 34" // using Wild Mage colors
-END
-
-// Adding SoD starting equipment
-ACTION_IF (GAME_IS ~eet~ || GAME_INCLUDES ~sod~) BEGIN
-  OUTER_TEXT_SPRINT stweap ~~
-  COPY_EXISTING ~campaign.2da~ ~override~
-    COUNT_2DA_COLS numCols
-    PATCH_IF (numCols > 18) BEGIN
-      COUNT_2DA_ROWS numCols numRows
-      FOR (row = 0; row < numRows; ++row) BEGIN
-        READ_2DA_ENTRY row 0 numCols name
-        PATCH_IF (~%name%~ STR_EQ ~sod~) BEGIN
-          READ_2DA_ENTRY row 17 numCols stweap
-          SET row = numRows
-        END
-      END
-    END
-  BUT_ONLY
-
-  ACTION_IF (NOT ~%stweap%~ STR_EQ ~~ && FILE_EXISTS_IN_GAME ~%stweap%.2DA~) BEGIN
-    OUTER_SET equipment_count = 20
-    OUTER_TEXT_SPRINT equipment ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02~
-    COPY_EXISTING ~%stweap%.2DA~ ~override~
-      COUNT_2DA_COLS numCols
-      COUNT_2DA_ROWS numCols numRows
-      WHILE (equipment_count < numRows) BEGIN
-        TEXT_SPRINT equipment ~%equipment% *~
-        SET equipment_count += 1
-      END
-    BUT_ONLY
-    APPEND_COL ~%stweap%.2DA~ ~$ $ %kit_name% %equipment%~ UNLESS ~%kit_name%~
-  END
+    bdstweap = "CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02"
 END
 
 

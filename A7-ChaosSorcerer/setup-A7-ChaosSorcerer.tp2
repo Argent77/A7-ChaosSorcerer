@@ -4,7 +4,6 @@ VERSION ~2.0~
 
 ALWAYS
   OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0
-  OUTER_TEXT_SPRINT kit_name ~A7_CHAOS_SORCERER~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
 END
 

@@ -175,7 +175,7 @@ COPY ~%MOD_FOLDER%/spells/a7_sp04a.bam~ ~override~
 
 // Adding Chaos Sorcerer specific wild surges
 ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
-  OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~%kit_name%~)
+  OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)
 
   // Reading original surges from table
   COPY_EXISTING - ~wildmag.2da~ ~override~

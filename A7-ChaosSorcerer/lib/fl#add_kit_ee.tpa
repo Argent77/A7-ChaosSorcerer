@@ -118,6 +118,7 @@ DEFINE_ACTION_FUNCTION fl#add_kit_ee#validate
     thiefscl = ""
     sneakatt = ""
     crippstr = ""
+    bdstweap = ""
   RET
     backstab
     thiefskl
@@ -224,6 +225,7 @@ DEFINE_ACTION_FUNCTION fl#add_kit_ee
     thiefscl = ""
     sneakatt = ""
     crippstr = ""
+    bdstweap = ""
 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME monkfist.2da BEGIN // "Rule" file as-of-yet unique to EE games
     PRINT "Doing EE-type kit extensions for kit %kit_name%"
@@ -264,6 +266,7 @@ BEGIN
         thiefscl
         sneakatt
         crippstr
+        bdstweap
       RET
         backstab
         thiefskl
@@ -318,6 +321,30 @@ BEGIN
       BUT_ONLY
     END
 
+    OUTER_SPRINT sod_clastext ""
+    OUTER_SPRINT sod_stweapon ""
+    ACTION_IF FILE_EXISTS_IN_GAME ~campaign.2da~ BEGIN
+      COPY_EXISTING ~campaign.2da~ ~override~
+        COUNT_2DA_COLS num_col
+        COUNT_2DA_ROWS num_col num_row
+        COUNT_2DA_ROWS (num_col - 1) num_row2
+        PATCH_IF num_row2 > num_row BEGIN
+          FOR (i = 0; i < num_row; ++i) BEGIN
+            READ_2DA_ENTRY i 0 num_col name
+            PATCH_IF ~%name%~ STRING_EQUAL_CASE ~sod~ BEGIN
+              PATCH_IF num_col > 17 BEGIN
+                READ_2DA_ENTRY i 17 num_col sod_stweapon
+              END
+              PATCH_IF num_col > 30 BEGIN
+                READ_2DA_ENTRY i 30 num_col sod_clastext
+              END
+              SET i = num_row
+            END
+          END
+        END
+      BUT_ONLY
+    END
+
     OUTER_SPRINT clastext "%kit_name% %kit_class% %kit_number% %kit_lower% %kit_desc% %kit_mixed% %biography% %fallen% %briefdesc%"
 
     ACTION_IF FILE_CONTAINS_EVALUATED (clastext.2da "FALLEN_NOTICE") BEGIN
@@ -326,8 +353,8 @@ BEGIN
 
     APPEND clastext.2da "%clastext%" UNLESS "%kit_name%"
     
-    ACTION_IF FILE_EXISTS_IN_GAME ~sodcltxt.2da~ BEGIN
-      APPEND sodcltxt.2da "%clastext%" UNLESS "%kit_name%"
+    ACTION_IF FILE_EXISTS_IN_GAME ~%sod_clastext%.2da~ BEGIN
+      APPEND ~%sod_clastext%.2da~ "%clastext%" UNLESS "%kit_name%"
     END
 
     ACTION_DEFINE_ARRAY row_files BEGIN
@@ -378,6 +405,15 @@ BEGIN
       END
     END
 
+    ACTION_IF FILE_EXISTS_IN_GAME ~%sod_stweapon%.2da~ BEGIN
+      LAF fl#add_kit_ee#add_column
+        STR_VAR
+          kit_name
+          input = EVAL "%bdstweap%"
+          file = EVAL "%sod_stweapon%"
+      END
+    END
+
     ACTION_DEFINE_ARRAY cleanup BEGIN kitlist END
     OUTER_SET index = 1
 
@@ -389,6 +425,8 @@ BEGIN
       OUTER_SPRINT $cleanup("%index%") "%file%"
       OUTER_SET ++index
     END
+    OUTER_SPRINT $cleanup("%index%") "%sod_stweapon%"
+    OUTER_SET ++index
 
     ACTION_PHP_EACH cleanup AS _ => file BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME "%file%.2da" BEGIN

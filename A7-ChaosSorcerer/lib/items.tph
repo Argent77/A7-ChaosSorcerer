@@ -24,7 +24,7 @@ END
 
 
 // Items
-OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~%kit_name%~)
+OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)
 OUTER_SET kit_strref = RESOLVE_STR_REF(@1001)
 OUTER_SET ability_strref = RESOLVE_STR_REF(@21000)  // Primeval Outburst
 
