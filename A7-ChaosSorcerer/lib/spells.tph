@@ -257,14 +257,4 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
       SET_2DA_ENTRY 53 2 numCols ~-1~
     BUT_ONLY
   END
-
-  // For debugging purposes only:
-  // COPY_EXISTING ~wildmag.2da~ ~override~
-    // FOR (row = 0; row < numRows; ++row) BEGIN
-      // READ_2DA_ENTRY row 1 numCols value
-      // PATCH_IF (NOT ~%value%~ STR_EQ ~*~) BEGIN
-        // SET_2DA_ENTRY row 1 numCols ~A7_WM01~
-        // SET_2DA_ENTRY row 2 numCols ~-1~
-      // END
-    // END
 END
