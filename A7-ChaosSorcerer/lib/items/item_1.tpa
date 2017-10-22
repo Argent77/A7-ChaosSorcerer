@@ -2,15 +2,33 @@
 
 WITH_SCOPE BEGIN
   COPY ~%MOD_FOLDER%/items/a7_clck1.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clck3.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clck5.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clck7.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clck9.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clckb.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clckd.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_clckf.itm~ ~override~
     SAY NAME2 @20000  // Akadi's Cloak of Rapid Motion
     SAY IDENTIFIED_DESC @20001  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_clck3.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck5.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clck9.itm~ ~override~
+    SAY NAME2 @20000  // Akadi's Cloak of Rapid Motion
+    SAY IDENTIFIED_DESC @20002  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_clck7.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckb.itm~ ~override~
+       ~%MOD_FOLDER%/items/a7_clckd.itm~ ~override~
+    SAY NAME2 @20000  // Akadi's Cloak of Rapid Motion
+    SAY IDENTIFIED_DESC @20003  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_clckf.itm~ ~override~
+    SAY NAME2 @20000  // Akadi's Cloak of Rapid Motion
+    SAY IDENTIFIED_DESC @20004  // ...
+
+  COPY_EXISTING ~a7_clck1.itm~ ~override~
+                ~a7_clck3.itm~ ~override~
+                ~a7_clck5.itm~ ~override~
+                ~a7_clck7.itm~ ~override~
+                ~a7_clck9.itm~ ~override~
+                ~a7_clckb.itm~ ~override~
+                ~a7_clckd.itm~ ~override~
+                ~a7_clckf.itm~ ~override~
     LPF a7_update_effect_params
     INT_VAR
       match_parameter1  = 1
@@ -101,14 +119,14 @@ WITH_SCOPE BEGIN
   // Adding item to game
   ACTION_IF (GAME_IS ~bgee eet~) BEGIN
     COPY_EXISTING ~airaspec.cre~ ~override~
-      ADD_CRE_ITEM ~A7_CLCK1~ #2 #1 #0 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+      ADD_CRE_ITEM ~A7_CLCK1~ #1 #1 #0 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
     BUT_ONLY
   END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
     COPY_EXISTING ~ar5404.are~ ~override~
       LPF ADD_AREA_ITEM
       INT_VAR
         container_to_add_to = 1
-        charges1 = 2
+        charges1 = 1
         charges2 = 1
       STR_VAR
         item_to_add = ~A7_CLCK1~

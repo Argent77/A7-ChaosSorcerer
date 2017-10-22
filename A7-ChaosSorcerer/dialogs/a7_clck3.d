@@ -22,24 +22,24 @@ END
 IF ~~ Combine.0111
   SAY @22032 /* (You take the buckler and concentrate on your task.) */
   = @22041 /* (Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.) */
-  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_shld4") CreateItem("a7_clck7", 2, 3, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
+  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_shld4") CreateItem("a7_clck7", 3, 3, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
 END
 
 IF ~~ Combine.1011
   SAY @22033 /* (You take the dagger and concentrate on your task.) */
   = @22041 /* (Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.) */
-  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_dagg8") CreateItem("a7_clckB", 2, 3, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
+  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_dagg8") CreateItem("a7_clckB", 3, 3, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
 END
 
 IF ~~ Combine.1111.a
   SAY @22032 /* (You take the buckler and concentrate on your task.) */
   = @22041 /* (Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.) */
-  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_shldC") CreateItem("a7_clckF", 2, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
+  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_shldC") CreateItem("a7_clckF", 4, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
 END
 
 IF ~~ Combine.1111.b
   SAY @22033 /* (You take the dagger and concentrate on your task.) */
   = @22041 /* (Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.) */
-  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_daggC") CreateItem("a7_clckF", 2, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
+  IF ~~ DO ~DestroyItem("a7_clck3") DestroyItem("a7_daggC") CreateItem("a7_clckF", 4, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
 END
 

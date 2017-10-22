@@ -2,17 +2,105 @@
 
 WITH_SCOPE BEGIN
   COPY ~%MOD_FOLDER%/items/a7_helm2.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_helm3.itm~ ~override~
+    SAY NAME1 @20060  // Circlet
+    SAY NAME2 @20050  // Istishia's Mind Shield
+    SAY UNIDENTIFIED_DESC @20061  // ...
+    SAY IDENTIFIED_DESC @20051  // ...
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206~
+    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1  // Self
+      def_timing = 2  // Instant/While Equipped
+    STR_VAR
+      function_name = ~ADD_ITEM_EQEFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_helm3.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_helm6.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_helm7.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_helma.itm~ ~override~
+    SAY NAME1 @20060  // Circlet
+    SAY NAME2 @20050  // Istishia's Mind Shield
+    SAY UNIDENTIFIED_DESC @20061  // ...
+    SAY IDENTIFIED_DESC @20052  // ...
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206;op=296,res=SPCONFUS;op=267,p1=14791;op=267,p1=14782;op=267,p1=25807~
+    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801;op=296,res=SPCONFUS;op=296,res=CONFUSH;op=267,p1=37603;op=267,p1=37604~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780;op=296,res=SPCONFUS;op=267,p1=14782;op=267,p1=14791~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1  // Self
+      def_timing = 2  // Instant/While Equipped
+    STR_VAR
+      function_name = ~ADD_ITEM_EQEFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_helm7.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_helmb.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_helme.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_helmf.itm~ ~override~
-    SAY NAME1 @20052  // Circlet
+    SAY NAME1 @20060  // Circlet
     SAY NAME2 @20050  // Istishia's Mind Shield
-    SAY UNIDENTIFIED_DESC @20053  // ...
-    SAY IDENTIFIED_DESC @20051  // ...
+    SAY UNIDENTIFIED_DESC @20061  // ...
+    SAY IDENTIFIED_DESC @20053  // ...
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206;op=296,res=SPCONFUS;op=267,p1=14791;op=267,p1=14782;op=267,p1=25807~
+    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801;op=296,res=SPCONFUS;op=296,res=CONFUSH;op=267,p1=37603;op=267,p1=37604~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780;op=296,res=SPCONFUS;op=267,p1=14782;op=267,p1=14791~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1  // Self
+      def_timing = 2  // Instant/While Equipped
+    STR_VAR
+      function_name = ~ADD_ITEM_EQEFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  COPY ~%MOD_FOLDER%/items/a7_helmf.itm~ ~override~
+    SAY NAME1 @20060  // Circlet
+    SAY NAME2 @20050  // Istishia's Mind Shield
+    SAY UNIDENTIFIED_DESC @20061  // ...
+    SAY IDENTIFIED_DESC @20054  // ...
+    // adding game-dependent effects to item
+    PATCH_IF (GAME_IS ~bgee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206;op=296,res=SPCONFUS;op=267,p1=14791;op=267,p1=14782;op=267,p1=25807;op=267,p1=25862;op=267,p1=26050;op=267,p1=14650;op=267,p1=31799;op=267,p1=31799;op=296,res=SPMINDAT;op=296,res=SPFLAYER~
+    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801;op=296,res=SPCONFUS;op=296,res=CONFUSH;op=267,p1=37603;op=267,p1=37604;op=267,p1=35567;op=267,p1=35568;op=267,p1=14102;op=267,p1=35542;op=267,p1=35606;op=296,res=PARALH;op=296,res=SPFLAYER;op=296,res=SPMINDAT~
+    END ELSE BEGIN
+      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780;op=296,res=SPCONFUS;op=267,p1=14782;op=267,p1=14791;op=267,p1=14043;op=267,p1=1280;op=267,p1=14102;op=296,res=SPMINDAT~
+    END
+    LPF a7_auto_apply_spl_effect
+    INT_VAR
+      def_target = 1  // Self
+      def_timing = 2  // Instant/While Equipped
+    STR_VAR
+      function_name = ~ADD_ITEM_EQEFFECT~
+      effect_codes  = EVAL ~%codes%~
+    END
+
+  COPY_EXISTING ~a7_helm2.itm~ ~override~
+                ~a7_helm3.itm~ ~override~
+                ~a7_helm6.itm~ ~override~
+                ~a7_helm7.itm~ ~override~
+                ~a7_helma.itm~ ~override~
+                ~a7_helmb.itm~ ~override~
+                ~a7_helme.itm~ ~override~
+                ~a7_helmf.itm~ ~override~
     LPF a7_update_effect_params
     INT_VAR
       match_parameter1  = 1
@@ -37,22 +125,6 @@ WITH_SCOPE BEGIN
         parameter1        = type
         new_parameter1    = newType
       END
-    END
-    // adding game-dependent effects to item
-    PATCH_IF (GAME_IS ~bgee~) BEGIN
-      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=14672;op=267,p1=14780;op=267,p1=26206;op=296,res=SPCONFUS;op=267,p1=14791;op=267,p1=14782;op=267,p1=25807~
-    END ELSE PATCH_IF (GAME_IS ~iwdee~) BEGIN
-      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=267,p1=35544;op=267,p1=37801;op=296,res=SPCONFUS;op=296,res=CONFUSH;op=267,p1=37603;op=267,p1=37604~
-    END ELSE BEGIN
-      TEXT_SPRINT codes ~op=296,res=SPNWCHRM;op=296,res=SPFLAYER;op=267,p1=8364;op=267,p1=14672;op=267,p1=14780;op=296,res=SPCONFUS;op=267,p1=14782;op=267,p1=14791~
-    END
-    LPF a7_auto_apply_spl_effect
-    INT_VAR
-      def_target = 1  // Self
-      def_timing = 2  // Instant/While Equipped
-    STR_VAR
-      function_name = ~ADD_ITEM_EQEFFECT~
-      effect_codes  = EVAL ~%codes%~
     END
 
   OUTER_SET strref1 = RESOLVE_STR_REF(@22050) // Transform into Cloak

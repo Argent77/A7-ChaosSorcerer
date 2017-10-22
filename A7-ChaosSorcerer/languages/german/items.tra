@@ -3,62 +3,250 @@
 
 // Items
 @20000 = ~Akadis Umhang des Eilgangs~
-@20001 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, auch "Königin der Lüfte" genannt, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm zweimal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
+@20001 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, der Königin der Lüfte, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm einmal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
 
 Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Hast auf sich selbst (1x täglich)
+
+Urtümlicher Ausbruch (1x täglich)
+  Geladene Welle: Blitzschaden auf alle in 9 m Umkreis.
+
+Elektrizitätswiderstand: +25 %
+
+Gewicht: 3~
+@20002 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, der Königin der Lüfte, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm zweimal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
 
 EIGENSCHAFTEN:
 
 Hast auf sich selbst (2x täglich)
 
-Urtümlicher Ausbruch (ein- oder mehrmals täglich)
-  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Umhang kombiniert wurde.
+Urtümlicher Ausbruch (2x täglich)
+  Wahl zwischen Geladene Welle und einem weiteren Zauber. Zauber hängt von der Art des kombinierten Artefakts ab.
+  Geladene Welle: Blitzschaden auf alle in 9 m Umkreis.
 
-Elektrizitätswiderstand: +25 %
+Elektrizitätswiderstand: +33 %
+
+Gewicht: 3~
+@20003 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, der Königin der Lüfte, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm dreimal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Hast auf sich selbst (3x täglich)
+
+Urtümlicher Ausbruch (3x täglich)
+  Wahl zwischen Geladene Welle und drei weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Geladene Welle: Blitzschaden auf alle in 9 m Umkreis.
+
+Elektrizitätswiderstand: +50 %
+
+Gewicht: 3~
+@20004 = ~Die Ursprünge dieses Umhangs sind in Vergessenheit geraten. Die benutzten Materialen scheinen allerdings nicht von dieser Welt zu sein. Auch die Verzauberungen verstärken diesen Eindruck, da sie von den Kräften der Urtitanin Akadis, der Königin der Lüfte, aufrecht gehalten werden. Der Umhang spiegelt ihre Natur wider. Er schützt den Träger vor Blitzschaden und gewährt ihm viermal täglich für eine Phase mit gesteigerter Geschwindigkeit zu agieren.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht.
+
+EIGENSCHAFTEN:
+
+Hast auf sich selbst (4x täglich)
+
+Urtümlicher Ausbruch (4x täglich)
+  Wahl zwischen Geladene Welle und sieben weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Geladene Welle: Blitzschaden auf alle in 9 m Umkreis.
+
+Elektrizitätswiderstand: +66 %
 
 Gewicht: 3~
 
 @20050 = ~Istishias Gedankenschirm~
-@20051 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen verschiedenen Arten der Gedankenmanipulation.
+@20051 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen Gedankenmanipulation.
 
 Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
 
 EIGENSCHAFTEN:
 
-Urtümlicher Ausbruch (ein- oder mehrmals täglich)
-  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Reif kombiniert wurde.
+Urtümlicher Ausbruch (1x täglich)
+  Frostspray: Kälteschaden auf alle in 9 m Umkreis.
 
-Kältewiderstand: +40 %
+Kältewiderstand: +33 %
+Der Träger ist immun gegen Bezauberung.
+
+Gewicht: 1~
+@20052 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen verschiedenen Arten der Gedankenmanipulation.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (2x täglich)
+  Wahl zwischen Frostspray und einem weiteren Zauber. Zauber hängt von der Art des kombinierten Artefakts ab.
+  Frostspray: Kälteschaden auf alle in 9 m Umkreis.
+
+Kältewiderstand: +50 %
 Der Träger ist immun gegen Bezauberung und Verwirrung.
 
 Gewicht: 1~
-@20052 = ~Reif~
-@20053 = ~Dieser einfache Reif wirkt zu schmucklos, um als Krone durchzugehen. Die kryptischen, magischen Zeichen, die sich auf seiner Oberfläche entlang ziehen, lassen vermuten, dass er in Wahrheit über große Kräfte verfügt.
+@20053 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen verschiedenen Arten der Gedankenmanipulation.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (3x täglich)
+  Wahl zwischen Frostspray und drei weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Frostspray: Kälteschaden auf alle in 9 m Umkreis.
+
+Kältewiderstand: +66 %
+Der Träger ist immun gegen Bezauberung und Verwirrung.
+
+Gewicht: 1~
+@20054 = ~Dieser Reif vereint die Kräfte des Urtitanen Istishia, Herr des Wassers. Es ist nicht viel über seinen Ursprung bekannt. Es ist aber wahrscheinlich, dass er auf Abeir, dem Zwillingsplaneten von Toril und Heimat der Urtitanen, erschaffen wurde. Der Reif selbst gewährt dem Träger Widerstand gegen Kälte und Schutz gegen verschiedenen Arten der Gedankenmanipulation und Psi-Schläge.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (4x täglich)
+  Wahl zwischen Frostspray und sieben weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Frostspray: Kälteschaden auf alle in 9 m Umkreis.
+
+Kältewiderstand: +75 %
+Der Träger ist immun gegen Bezauberung, Verwirrung und Psi-Schläge.
+
+Gewicht: 1~
+
+@20060 = ~Reif~
+@20061 = ~Dieser einfache Reif wirkt zu schmucklos, um als Krone durchzugehen. Die kryptischen, magischen Zeichen, die sich auf seiner Oberfläche entlang ziehen, lassen vermuten, dass er in Wahrheit über große Kräfte verfügt.
 
 EIGENSCHAFTEN:
 
 Gewicht: 1~
 
-@20100 = ~Grumbars Abwehr +2~
+@20100 = ~Grumbars Abwehr +1~
 @20101 = ~Auf dem ersten Blick sieht diese Tartsche unauffällig aus. In Wahrheit ist es ein sehr ungewöhnlicher Gegenstand. Die Überlieferungen sprechen von einer Zwergensippe, die von Abeir, dem Zwillingsplaneten Torils, in die Tiefen dieser Welt gereist sind. Diese Geschichte scheint nicht so abwegig zu sein, da der Schild mit den Kräften des Urtitans Grumbar, dem Herrn der Erde, ausgestattet ist. Obwohl der Schild äußerst klein und leicht ist, gewährt er dem Träger einen außergewöhnlich guten Schutz gegen physische Angriffe und absorbiert einen Teil der Wucht von großflächigen Gegenständen, wie Felsbrocken oder stumpfen Waffen.
 
 Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
 
 EIGENSCHAFTEN:
 
-Urtümlicher Ausbruch (ein- oder mehrmals täglich)
-  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen diese Tartsche kombiniert wurde.
+Urtümlicher Ausbruch (1x täglich)
+  Granitstacheln: Wuchtschaden auf alle in 9 m Umkreis.
 
 RK-Bonus: -2
+Widerstand gg. Wuchtwaffen: +33 %
+(kein Schutz vor Stich- und Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+@20102 = ~Auf dem ersten Blick sieht diese Tartsche unauffällig aus. In Wahrheit ist es ein sehr ungewöhnlicher Gegenstand. Die Überlieferungen sprechen von einer Zwergensippe, die von Abeir, dem Zwillingsplaneten Torils, in die Tiefen dieser Welt gereist sind. Diese Geschichte scheint nicht so abwegig zu sein, da der Schild mit den Kräften des Urtitans Grumbar, dem Herrn der Erde, ausgestattet ist. Obwohl der Schild äußerst klein und leicht ist, gewährt er dem Träger einen außergewöhnlich guten Schutz gegen physische Angriffe und absorbiert einen Teil der Wucht von großflächigen Gegenständen, wie Felsbrocken oder stumpfen Waffen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (2x täglich)
+  Wahl zwischen Granitstacheln und einem weiteren Zauber. Zauber hängt von der Art des kombinierten Artefakts ab.
+  Granitstacheln: Wuchtschaden auf alle in 9 m Umkreis.
+
+RK-Bonus: -3
 Widerstand gg. Wuchtwaffen: +50 %
 (kein Schutz vor Stich- und Geschosswaffen)
 Gewicht: 2
 Mindeststärke: 4~
+@20103 = ~Auf dem ersten Blick sieht diese Tartsche unauffällig aus. In Wahrheit ist es ein sehr ungewöhnlicher Gegenstand. Die Überlieferungen sprechen von einer Zwergensippe, die von Abeir, dem Zwillingsplaneten Torils, in die Tiefen dieser Welt gereist sind. Diese Geschichte scheint nicht so abwegig zu sein, da der Schild mit den Kräften des Urtitans Grumbar, dem Herrn der Erde, ausgestattet ist. Obwohl der Schild äußerst klein und leicht ist, gewährt er dem Träger einen außergewöhnlich guten Schutz gegen physische Angriffe und absorbiert einen Teil der Wucht von großflächigen Gegenständen, wie Felsbrocken oder stumpfen Waffen.
 
-@20150 = ~Kossuths Stachel +5~
-@20151 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlich beträchtlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (3x täglich)
+  Wahl zwischen Granitstacheln und drei weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Granitstacheln: Wuchtschaden auf alle in 9 m Umkreis.
+
+RK-Bonus: -3
+Widerstand gg. Wuchtwaffen: +66 %
+(kein Schutz vor Stich- und Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+@20104 = ~Auf dem ersten Blick sieht diese Tartsche unauffällig aus. In Wahrheit ist es ein sehr ungewöhnlicher Gegenstand. Die Überlieferungen sprechen von einer Zwergensippe, die von Abeir, dem Zwillingsplaneten Torils, in die Tiefen dieser Welt gereist sind. Diese Geschichte scheint nicht so abwegig zu sein, da der Schild mit den Kräften des Urtitans Grumbar, dem Herrn der Erde, ausgestattet ist. Obwohl der Schild äußerst klein und leicht ist, gewährt er dem Träger einen außergewöhnlich guten Schutz gegen physische Angriffe und absorbiert einen Teil der Wucht von großflächigen Gegenständen, wie Felsbrocken oder stumpfen Waffen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht.
+
+EIGENSCHAFTEN:
+
+Urtümlicher Ausbruch (4x täglich)
+  Wahl zwischen Granitstacheln und sieben weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Granitstacheln: Wuchtschaden auf alle in 9 m Umkreis.
+
+RK-Bonus: -4
+Widerstand gg. Wuchtwaffen: +75 %
+(kein Schutz vor Stich- und Geschosswaffen)
+Gewicht: 2
+Mindeststärke: 4~
+@20105 = ~Grumbars Abwehr +2~
+@20106 = ~Grumbars Abwehr +3~
+
+@20150 = ~Kossuths Stachel +3~
+@20151 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
 
 Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Es geht das Gerücht um, dass es verschiedene Artefakte der Urtitanen gibt, die man miteinander kombinieren kann, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Höheren Feuerelementar herbeirufen (1x täglich)
+  Ruft einen höheren Feuerelementar herbei.
+  Reichweite: 9 m
+  Dauer: 1 Phase
+
+Urtümlicher Ausbruch (1x täglich)
+  Feuerstoß: Feuerschaden auf alle in 9 m Umkreis.
+
+Feuerwiderstand: +50 %
+
+Schaden: 1W4 +3 (Stich)
+Schadensbonus: +1W2 (Feuer)
+ETW0-Bonus: -3
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Gewicht: 1~
+@20152 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlich beträchtlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
+
+EIGENSCHAFTEN:
+
+Höheren Feuerelementar herbeirufen (1x täglich)
+  Ruft einen, mit 25 % Wahrscheinlichkeit einen zweiten, höheren Feuerelementar herbei.
+  Reichweite: 9 m
+  Dauer: 1 Phase
+
+Urtümlicher Ausbruch (2x täglich)
+  Wahl zwischen Feuerstoß und einem weiteren Zauber. Zauber hängt von der Art des kombinierten Artefakts ab.
+  Feuerstoß: Feuerschaden auf alle in 9 m Umkreis.
+
+Feuerwiderstand: +66 %
+
+Schaden: 1W4 +4 (Stich)
+Schadensbonus: +1W4 (Feuer)
+ETW0-Bonus: -4
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Gewicht: 1~
+@20153 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlich beträchtlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht. Er kann außerdem mit anderen Artefakten der Urtitanen kombiniert werden, um noch mächtigere Kombinationszauber mit den vereinten Kräften mehrerer Urtitanen zu wirken.
 
 EIGENSCHAFTEN:
 
@@ -67,13 +255,14 @@ Höheren Feuerelementar herbeirufen (1x täglich)
   Reichweite: 9 m
   Dauer: 1 Phase
 
-Urtümlicher Ausbruch (ein- oder mehrmals täglich)
-  Anzahl der Ladungen und Zauber hängen davon ab, mit welchen anderen Gegenständen dieser Dolch kombiniert wurde.
+Urtümlicher Ausbruch (3x täglich)
+  Wahl zwischen Feuerstoß und drei weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Feuerstoß: Feuerschaden auf alle in 9 m Umkreis.
 
-Feuerwiderstand: +50 %
+Feuerwiderstand: +75 %
 
 Schaden: 1W4 +5 (Stich)
-Schadensbonus: +1W4 (Feuer)
+Schadensbonus: +1W6 (Feuer)
 ETW0-Bonus: -5
 Gewicht: 1
 Initiativefaktor: 0
@@ -82,8 +271,38 @@ Fertigkeit: Dolch
 Typ: 1-händig
 
 Gewicht: 1~
-@20155 = ~Höheren Feuerelementar herbeirufen~
-@20156 = ~Höherer Feuerelementar~
+@20154 = ~Kossuth ist der Herrscher über die Flammen, und wahrscheinlich der bekannteste Urtitan auf Faerûn. Dieser Dolch scheint mit den Kräften des Feuers regelrecht überzulaufen. Die Waffe fügt Gegnern bei jedem Treffer zusätzlich beträchtlichen Feuerschaden hinzu. Außerdem kann die Waffe einmal pro Tag mächtige Wesen des Feuers herbeirufen.
+
+Ein Anwender der arkanen Künste mit Zugriff auf das Elementare Chaos kann außerdem seine Kräfte durch die Verzauberungen leiten, um einen Zauber auszulösen, welcher der Natur des Gegenstands entspricht.
+
+EIGENSCHAFTEN:
+
+Höheren Feuerelementar herbeirufen (1x täglich)
+  Ruft zwei höhere Feuerelementare herbei.
+  Reichweite: 9 m
+  Dauer: 1 Phase
+
+Urtümlicher Ausbruch (4x täglich)
+  Wahl zwischen Feuerstoß und sieben weiteren Zaubern. Zauber hängen von der Art der kombinierten Artefakte ab.
+  Feuerstoß: Feuerschaden auf alle in 9 m Umkreis.
+
+Feuerwiderstand: +95 %
+
+Schaden: 1W4 +5 (Stich)
+Schadensbonus: +1W8 (Feuer)
+ETW0-Bonus: -5
+Gewicht: 1
+Initiativefaktor: 0
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Gewicht: 1~
+@20155 = ~Kossuths Stachel +4~
+@20156 = ~Kossuths Stachel +5~
+
+@20160 = ~Höheren Feuerelementar herbeirufen~
+@20161 = ~Höherer Feuerelementar~
 
 
 // Spell effects

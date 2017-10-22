@@ -2,15 +2,33 @@
 
 WITH_SCOPE BEGIN
   COPY ~%MOD_FOLDER%/items/a7_dagg8.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_dagg9.itm~ ~override~
+    SAY NAME2 @20150  // Kossuth's Stinger +3
+    SAY IDENTIFIED_DESC @20151  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_dagg9.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_dagga.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_daggb.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_daggc.itm~ ~override~
+    SAY NAME2 @20155  // Kossuth's Stinger +4
+    SAY IDENTIFIED_DESC @20152  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_daggb.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_daggd.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_dagge.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_daggf.itm~ ~override~
-    SAY NAME2 @20150  // Kossuth's Stinger +5
-    SAY IDENTIFIED_DESC @20151  // ...
+    SAY NAME2 @20156  // Kossuth's Stinger +5
+    SAY IDENTIFIED_DESC @20153  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_daggf.itm~ ~override~
+    SAY NAME2 @20156  // Kossuth's Stinger +5
+    SAY IDENTIFIED_DESC @20154  // ...
+
+  COPY_EXISTING ~a7_dagg8.itm~ ~override~
+                ~a7_dagg9.itm~ ~override~
+                ~a7_dagga.itm~ ~override~
+                ~a7_daggb.itm~ ~override~
+                ~a7_daggc.itm~ ~override~
+                ~a7_daggd.itm~ ~override~
+                ~a7_dagge.itm~ ~override~
+                ~a7_daggf.itm~ ~override~
     LPF a7_update_effect_params
     INT_VAR
       match_parameter1  = 1
@@ -37,7 +55,7 @@ WITH_SCOPE BEGIN
       END
     END
 
-  OUTER_SET strref = RESOLVE_STR_REF(@20155)  // Summon Greater Fire Elemental
+  OUTER_SET strref = RESOLVE_STR_REF(@20160)  // Summon Greater Fire Elemental
   OUTER_SET strref1 = RESOLVE_STR_REF(@22050) // Transform into Cloak
   OUTER_SET strref2 = RESOLVE_STR_REF(@22051) // Transform into Circlet
   OUTER_SET strref3 = RESOLVE_STR_REF(@22052) // Transform into Buckler
@@ -87,8 +105,8 @@ WITH_SCOPE BEGIN
 
   // Ability: Summon Greater Fire Elemental
   COPY ~%MOD_FOLDER%/creatures/a7_dgfe1.cre~ ~override~
-    SAY NAME1 @20156  // Greater Fire Elemental
-    SAY NAME2 @20156  // Greater Fire Elemental
+    SAY NAME1 @20161  // Greater Fire Elemental
+    SAY NAME2 @20161  // Greater Fire Elemental
     PATCH_IF (GAME_IS ~iwdee~) BEGIN
       // IWD uses different fire elemental animation
       SET id = IDS_OF_SYMBOL(~animate~ ~ELEMENTAL_FIRE_IWD~)
@@ -105,7 +123,7 @@ WITH_SCOPE BEGIN
   // Adding item to game
   ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
     COPY_EXISTING ~hgber01.cre~ ~override~
-      ADD_CRE_ITEM ~A7_DAGG8~ #1 #0 #0 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
+      ADD_CRE_ITEM ~A7_DAGG8~ #0 #1 #1 ~none~ ~inv1 inv2 inv3 inv4 inv5 inv6 inv7 inv8 inv9 inv10 inv11 inv12 inv13 inv14 inv15 inv16~
     BUT_ONLY
   END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
     COPY_EXISTING ~ar8011.are~ ~override~

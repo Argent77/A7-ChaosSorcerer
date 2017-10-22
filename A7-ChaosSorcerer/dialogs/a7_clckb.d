@@ -18,6 +18,6 @@ END
 IF ~~ Combine.1111
   SAY @22032 /* (You take the buckler and concentrate on your task.) */
   = @22041 /* (Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.) */
-  IF ~~ DO ~DestroyItem("a7_clckB") DestroyItem("a7_shld4") CreateItem("a7_clckF", 2, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
+  IF ~~ DO ~DestroyItem("a7_clckB") DestroyItem("a7_shld4") CreateItem("a7_clckF", 4, 4, 0) CreateVisualEffectObject("SPCRTWPN", LastTalkedToBy)~ EXIT
 END
 

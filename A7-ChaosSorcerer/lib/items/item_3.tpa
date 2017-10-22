@@ -2,15 +2,33 @@
 
 WITH_SCOPE BEGIN
   COPY ~%MOD_FOLDER%/items/a7_shld4.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_shld5.itm~ ~override~
+    SAY NAME2 @20100  // Grumbar's Defense +1
+    SAY IDENTIFIED_DESC @20101  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_shld5.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_shld6.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_shld7.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_shldc.itm~ ~override~
+    SAY NAME2 @20105  // Grumbar's Defense +2
+    SAY IDENTIFIED_DESC @20102  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_shld7.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_shldd.itm~ ~override~
        ~%MOD_FOLDER%/items/a7_shlde.itm~ ~override~
-       ~%MOD_FOLDER%/items/a7_shldf.itm~ ~override~
-    SAY NAME2 @20100  // Grumbar's Defense +2
-    SAY IDENTIFIED_DESC @20101  // ...
+    SAY NAME2 @20105  // Grumbar's Defense +2
+    SAY IDENTIFIED_DESC @20103  // ...
+
+  COPY ~%MOD_FOLDER%/items/a7_shldf.itm~ ~override~
+    SAY NAME2 @20106  // Grumbar's Defense +3
+    SAY IDENTIFIED_DESC @20104  // ...
+
+  COPY_EXISTING ~a7_shld4.itm~ ~override~
+                ~a7_shld5.itm~ ~override~
+                ~a7_shld6.itm~ ~override~
+                ~a7_shld7.itm~ ~override~
+                ~a7_shldc.itm~ ~override~
+                ~a7_shldd.itm~ ~override~
+                ~a7_shlde.itm~ ~override~
+                ~a7_shldf.itm~ ~override~
     LPF a7_update_effect_params
     INT_VAR
       match_parameter1  = 1

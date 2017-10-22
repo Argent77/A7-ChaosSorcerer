@@ -3,7 +3,7 @@
 
 // Items
 @20000 = ~Akadi's Cloak of Rapid Motion~
-@20001 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, twice per day.
+@20001 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, once per day.
 
 A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It is rumored that there are more artifacts of similar origin, which can be combined to create even more powerful enchantments.
 
@@ -13,10 +13,61 @@ Equipped abilities:
 – Electrical Resistance: +25%
 
 Charge abilities:
+– Haste on self once per day
+
+– Primeval Outburst once per day
+  Charged Wave: Electrical damage on anyone in 30' radius.
+
+Weight: 3~
+@20002 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, twice per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +33%
+
+Charge abilities:
 – Haste on self twice per day
 
-– Primeval Outburst one or more times per day
-  Number of charges and effects depends on how many artifacts of primeval origin have been combined.
+– Primeval Outburst twice per day
+  Choose from Charged Wave and another spell. Type depends on the origin of the combined artifact.
+  Charged Wave: Electrical damage on anyone in 30' radius.
+
+Weight: 3~
+@20003 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, three times per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +50%
+
+Charge abilities:
+– Haste on self three times per day
+
+– Primeval Outburst three times per day
+  Choose from Charged Wave and three other spells. Types depend on the origin of the combined artifacts.
+  Charged Wave: Electrical damage on anyone in 30' radius.
+
+Weight: 3~
+@20004 = ~The origins of this cloak have been lost in the mists of time. However, the materials of the item seem to possess an otherworldly appearance. In fact, the item itself has most likely been created on another plane of existence, since the primary enchantments are fueled by the powers of Akadi, the Queen of Air – and a primordial by nature. The cloak itself reflects the nature of Akadi. It protects against lightning damage and allows the wearer to move and act at improved speed for one turn, four times per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +66%
+
+Charge abilities:
+– Haste on self four times per day
+
+– Primeval Outburst four times per day
+  Choose from Charged Wave and seven other spells. Types depend on the origin of the combined artifacts.
+  Charged Wave: Electrical damage on anyone in 30' radius.
 
 Weight: 3~
 
@@ -28,25 +79,93 @@ A practitioner of the arcane arts, who is capable to access the Elemental Chaos,
 STATISTICS:
 
 Equipped abilities:
-– Cold Resistance: +40%
+– Cold Resistance: +33%
+– Immunity to Charm
+
+Charge abilities:
+– Primeval Outburst once per day
+  Frozen Spray: Cold damage on anyone in 30' radius.
+
+Weight: 1~
+@20052 = ~This artifact appears to hold some power of the primordial Istishia, also known as The Water Lord. Not much is known about the origins of this item. It is likely that it has been created on Abeir – the twin planet of Toril and home of the primordials, that is largely unknown to the inhabitants of this world. The circlet itself offers some resistance against cold and protection from various manipulations of the mind. 
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +50%
 – Immunity to Charm and Confusion
 
 Charge abilities:
-– Primeval Outburst one or more times per day
-  Number of charges and effects depends on how many artifacts of primeval origin have been combined.
+– Primeval Outburst twice per day
+  Choose from Frozen Spray and another spell. Type depends on the origin of the combined artifact.
+  Frozen Spray: Cold damage on anyone in 30' radius.
 
 Weight: 1~
-@20052 = ~Circlet~
-@20053 = ~This thin circlet appears too simple and plain to be a crown. There are arcane and cryptic symbols etched along the surface—hinting at hidden power within the circlet.
+@20053 = ~This artifact appears to hold some power of the primordial Istishia, also known as The Water Lord. Not much is known about the origins of this item. It is likely that it has been created on Abeir – the twin planet of Toril and home of the primordials, that is largely unknown to the inhabitants of this world. The circlet itself offers some resistance against cold and protection from various manipulations of the mind. 
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +66%
+– Immunity to Charm and Confusion
+
+Charge abilities:
+– Primeval Outburst three times per day
+  Choose from Frozen Spray and three other spells. Types depend on the origin of the combined artifacts.
+  Frozen Spray: Cold damage on anyone in 30' radius.
+
+Weight: 1~
+@20054 = ~This artifact appears to hold some power of the primordial Istishia, also known as The Water Lord. Not much is known about the origins of this item. It is likely that it has been created on Abeir – the twin planet of Toril and home of the primordials, that is largely unknown to the inhabitants of this world. The circlet itself offers some resistance against cold and protection from various manipulations of the mind. 
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +75%
+– Immunity to Charm, Confusion and Psionic Blast
+
+Charge abilities:
+– Primeval Outburst four times per day
+  Choose from Frozen Spray and seven other spells. Types depend on the origin of the combined artifacts.
+  Frozen Spray: Cold damage on anyone in 30' radius.
+
+Weight: 1~
+
+@20060 = ~Circlet~
+@20061 = ~This thin circlet appears too simple and plain to be a crown. There are arcane and cryptic symbols etched along the surface—hinting at hidden power within the circlet.
 
 STATISTICS:
 
 Weight: 1~
 
-@20100 = ~Grumbar's Defense +2~
-@20101 = ~At first glance this shield looks rather ordinary, but in truth it is an item of unusual origin. It is rumored that it has been created ages ago by a clan of dwarves that moved from Abeir, the twin planet of Toril, to the deep caverns of this world. The tales don't seem to be far-fetched, since it is indeed fueled by the powers of Grumbar, the Earthlord, and a being of primordial origin. The shield, despite of being light and small, offers exceptional protection against physical hits, especially from large rocks and blunt weapons.
+@20100 = ~Grumbar's Defense +1~
+@20101 = ~At first glance this shield looks rather ordinary, but in truth it is an item of unusual origin. It is rumored that it has been created ages ago by a clan of dwarves that moved from Abeir, the twin planet of Toril, to the deep caverns of this world. The tales don't seem to be far-fetched, since it is indeed fueled by the powers of Grumbar, the Earthlord, and a being of primordial origin. The shield, despite of being light and small, offers exceptional protection against physical damage, especially from large rocks and blunt weapons.
 
 A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It is rumored that there are more artifacts of similar origin, which can be combined to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– +33% resistance to crushing damage
+– No protection against missile and piercing attacks
+
+Charge abilities:
+– Primeval Outburst once per day
+  Stone Spikes: Crushing damage on anyone in 30' radius.
+
+Requires:
+ 4 Strength
+
+Weight: 2~
+@20102 = ~At first glance this shield looks rather ordinary, but in truth it is an item of unusual origin. It is rumored that it has been created ages ago by a clan of dwarves that moved from Abeir, the twin planet of Toril, to the deep caverns of this world. The tales don't seem to be far-fetched, since it is indeed fueled by the powers of Grumbar, the Earthlord, and a being of primordial origin. The shield, despite of being light and small, offers exceptional protection against physical damage, especially from large rocks and blunt weapons.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
 
 STATISTICS:
 
@@ -56,15 +175,58 @@ Equipped abilities:
 – No protection against missile and piercing attacks
 
 Charge abilities:
-– Primeval Outburst one or more times per day
-  Number of charges and effects depends on how many artifacts of primeval origin have been combined.
+– Primeval Outburst twice per day
+  Choose from Stone Spikes and another spell. Type depends on the origin of the combined artifact.
+  Stone Spikes: Crushing damage on anyone in 30' radius.
 
 Requires:
  4 Strength
 
 Weight: 2~
+@20103 = ~At first glance this shield looks rather ordinary, but in truth it is an item of unusual origin. It is rumored that it has been created ages ago by a clan of dwarves that moved from Abeir, the twin planet of Toril, to the deep caverns of this world. The tales don't seem to be far-fetched, since it is indeed fueled by the powers of Grumbar, the Earthlord, and a being of primordial origin. The shield, despite of being light and small, offers exceptional protection against physical damage, especially from large rocks and blunt weapons.
 
-@20150 = ~Kossuth's Stinger +5~
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– +66% resistance to crushing damage
+– No protection against missile and piercing attacks
+
+Charge abilities:
+– Primeval Outburst three times per day
+  Choose from Stone Spikes and three other spells. Types depend on the origin of the combined artifacts.
+  Stone Spikes: Crushing damage on anyone in 30' radius.
+
+Requires:
+ 4 Strength
+
+Weight: 2~
+@20104 = ~At first glance this shield looks rather ordinary, but in truth it is an item of unusual origin. It is rumored that it has been created ages ago by a clan of dwarves that moved from Abeir, the twin planet of Toril, to the deep caverns of this world. The tales don't seem to be far-fetched, since it is indeed fueled by the powers of Grumbar, the Earthlord, and a being of primordial origin. The shield, despite of being light and small, offers exceptional protection against physical damage, especially from large rocks and blunt weapons.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +4
+– +75% resistance to crushing damage
+– No protection against missile and piercing attacks
+
+Charge abilities:
+– Primeval Outburst four times per day
+  Choose from Stone Spikes and seven other spells. Types depend on the origin of the combined artifacts.
+  Stone Spikes: Crushing damage on anyone in 30' radius.
+
+Requires:
+ 4 Strength
+
+Weight: 2~
+@20105 = ~Grumbar's Defense +2~
+@20106 = ~Grumbar's Defense +3~
+
+@20150 = ~Kossuth's Stinger +3~
 @20151 = ~Kossuth, the Lord of Flames, is probably the best known primordial on Faerûn. This dagger seems to brim with the power of fire. Not only does the weapon burn everything it hits, the wielder is also able to call forth powerful minions of the Firelord himself once per day.
 
 A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It is rumored that there are more artifacts of similar origin, which can be combined to create even more powerful enchantments.
@@ -76,13 +238,13 @@ Equipped abilities:
 
 Charge abilities:
 – Summon Greater Fire Elemental once per day
-  Summons one Greater Fire Elementals and with 50% chance a second Greater Fire Elementals for one turn.
+  Summons a Greater Fire Elemental for one turn.
 
-– Primeval Outburst one or more times per day
-  Number of charges and effects depends on how many artifacts of primeval origin have been combined.
+– Primeval Outburst once per day
+  Fire Blast: Fire damage on anyone in 30' radius.
 
-THAC0: +5
-Damage: 2d4+5, +1d6 fire damage
+THAC0: +3
+Damage: 1d4+3, +1d2 fire damage
 Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
@@ -91,8 +253,92 @@ Requires:
  3 Strength
 
 Weight: 1~
-@20155 = ~Summon Greater Fire Elemental~
-@20156 = ~Greater Fire Elemental~
+@20152 = ~Kossuth, the Lord of Flames, is probably the best known primordial on Faerûn. This dagger seems to brim with the power of fire. Not only does the weapon burn everything it hits, the wielder is also able to call forth powerful minions of the Firelord himself once per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +66%
+
+Charge abilities:
+– Summon Greater Fire Elemental once per day
+  Summons one Greater Fire Elemental and with 25% chance a second Greater Fire Elemental for one turn.
+
+– Primeval Outburst twice per day
+  Choose from Fire Blast and another spell. Type depends on the origin of the combined artifact.
+  Fire Blast: Fire damage on anyone in 30' radius.
+
+THAC0: +4
+Damage: 1d4+4, +1d4 fire damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@20153 = ~Kossuth, the Lord of Flames, is probably the best known primordial on Faerûn. This dagger seems to brim with the power of fire. Not only does the weapon burn everything it hits, the wielder is also able to call forth powerful minions of the Firelord himself once per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact. It can be combined with artifacts of similar origin to create even more powerful enchantments.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +75%
+
+Charge abilities:
+– Summon Greater Fire Elemental once per day
+  Summons one Greater Fire Elemental and with 50% chance a second Greater Fire Elemental for one turn.
+
+– Primeval Outburst three times per day
+  Choose from Fire Blast and three other spells. Types depend on the origin of the combined artifacts.
+  Fire Blast: Fire damage on anyone in 30' radius.
+
+THAC0: +5
+Damage: 1d4+5, +1d6 fire damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@20154 = ~Kossuth, the Lord of Flames, is probably the best known primordial on Faerûn. This dagger seems to brim with the power of fire. Not only does the weapon burn everything it hits, the wielder is also able to call forth powerful minions of the Firelord himself once per day.
+
+A practitioner of the arcane arts, who is capable to access the Elemental Chaos, may also channel some energy through the enchantments to produce an effect that reflects the nature of the artifact.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +95%
+
+Charge abilities:
+– Summon Greater Fire Elemental once per day
+  Summons two Greater Fire Elementals for one turn.
+
+– Primeval Outburst four times per day
+  Choose from Fire Blast and seven other spells. Types depend on the origin of the combined artifacts.
+  Fire Blast: Fire damage on anyone in 30' radius.
+
+THAC0: +5
+Damage: 1d4+5, +1d8 fire damage
+Damage type: Piercing
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+@20155 = ~Kossuth's Stinger +4~
+@20156 = ~Kossuth's Stinger +5~
+
+@20160 = ~Summon Greater Fire Elemental~
+@20161 = ~Greater Fire Elemental~
 
 
 // Spell effects
