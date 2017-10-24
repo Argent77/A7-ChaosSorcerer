@@ -99,13 +99,13 @@ WITH_SCOPE BEGIN
        ~%MOD_FOLDER%/items/a7_clckd.eff~ ~override~
        ~%MOD_FOLDER%/items/a7_clckf.eff~ ~override~
 
-  COMPILE ~%MOD_FOLDER%/dialogs/a7_clck1.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clck3.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clck5.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clck7.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clck9.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clckb.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_clckd.d~ ~override~
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_clck1.d~
+          ~%MOD_FOLDER%/dialogs/a7_clck3.d~
+          ~%MOD_FOLDER%/dialogs/a7_clck5.d~
+          ~%MOD_FOLDER%/dialogs/a7_clck7.d~
+          ~%MOD_FOLDER%/dialogs/a7_clck9.d~
+          ~%MOD_FOLDER%/dialogs/a7_clckb.d~
+          ~%MOD_FOLDER%/dialogs/a7_clckd.d~
 
   OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
   APPEND ~itemdial.2da~ ~A7_CLCK1      %strref%  A7_CLCK1~

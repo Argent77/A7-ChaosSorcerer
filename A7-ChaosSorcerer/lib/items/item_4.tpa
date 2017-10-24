@@ -86,13 +86,13 @@ WITH_SCOPE BEGIN
        ~%MOD_FOLDER%/items/a7_dagge.eff~ ~override~
        ~%MOD_FOLDER%/items/a7_daggf.eff~ ~override~
 
-  COMPILE ~%MOD_FOLDER%/dialogs/a7_dagg8.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_dagg9.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_dagga.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_daggb.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_daggc.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_daggd.d~ ~override~
-          ~%MOD_FOLDER%/dialogs/a7_dagge.d~ ~override~
+  COMPILE ~%MOD_FOLDER%/dialogs/a7_dagg8.d~
+          ~%MOD_FOLDER%/dialogs/a7_dagg9.d~
+          ~%MOD_FOLDER%/dialogs/a7_dagga.d~
+          ~%MOD_FOLDER%/dialogs/a7_daggb.d~
+          ~%MOD_FOLDER%/dialogs/a7_daggc.d~
+          ~%MOD_FOLDER%/dialogs/a7_daggd.d~
+          ~%MOD_FOLDER%/dialogs/a7_dagge.d~
 
   OUTER_SET strref = RESOLVE_STR_REF(@22008)  // Examine
   APPEND ~itemdial.2da~ ~A7_DAGG8      %strref%  A7_DAGG8~
@@ -117,8 +117,8 @@ WITH_SCOPE BEGIN
 
   COPY ~%MOD_FOLDER%/items/a7_dgfe1.eff~ ~override~
 
-  COMPILE ~%MOD_FOLDER%/scripts/a7_dgfe1.baf~ ~override~
-          ~%MOD_FOLDER%/scripts/a7_dgfe2.baf~ ~override~
+  COMPILE ~%MOD_FOLDER%/scripts/a7_dgfe1.baf~
+          ~%MOD_FOLDER%/scripts/a7_dgfe2.baf~
 
   // Adding item to game
   ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
