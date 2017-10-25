@@ -148,6 +148,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 History
 ~~~~~~~
 
+2.2
+- Overall power of primordial artifacts increases when combined
+- Fixed an installation bug in the "Add Primordial Artifacts" component
+
 2.1
 - Fixed a primordial artifact that was not correctly added to an SoD area
 - Fixed default starting equipment when starting a new SoD or ToB game

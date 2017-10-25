@@ -81,8 +81,8 @@ Note: This component is only available for games since patch version 2.0
 This component adds a set of four artifacts specifically for Chaos Sorcerers to the game. The 
 items can be combined to unlock more hidden abilities.
 BG(2)EE: The items are scattered over the whole series - BG1, BG1:SoD, BG2:SoA and BG2:ToB.
-         The BG1/SoD items can be found in the opening dungeon of BG2:SoA when starting a new 
-         BG2EE game.
+         The BG1/SoD items can also be found in the opening dungeon of BG2:SoA when starting a 
+         new BG2EE game.
 IWDEE:   The items are scattered all over the locations you can visit in the course of the main 
          story.
 
@@ -140,6 +140,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.2
+- Overall power of primordial artifacts increases when combined
+- Fixed an installation bug in the "Add Primordial Artifacts" component
 
 2.1
 - Fixed a primordial artifact that was not correctly added to an SoD area
