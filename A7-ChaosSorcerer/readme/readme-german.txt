@@ -150,6 +150,7 @@ History
 
 2.2
 - Overall power of primordial artifacts increases when combined
+- Improved spell "Surge Control" to work exactly as outlined in spell description
 - Fixed an installation bug in the "Add Primordial Artifacts" component
 
 2.1

@@ -172,7 +172,8 @@ COPY ~%MOD_FOLDER%/spells/spwi124.spl~ ~override~
     new_resource = EVAL ~%spell_chaos_shield_resref%~
   END
 
-COPY ~%MOD_FOLDER%/spells/spwi124b.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/spwi124d.spl~ ~override~
+     ~%MOD_FOLDER%/spells/spwi124b.bam~ ~override~
      ~%MOD_FOLDER%/spells/spwi124c.bam~ ~override~
 
 // spell does not appear on character spell selection screen, except on pre-2.0 games
