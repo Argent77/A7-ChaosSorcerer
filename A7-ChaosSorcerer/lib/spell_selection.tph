@@ -102,6 +102,16 @@ BEGIN
     OUTER_SET EVAL ~%struct%_%level%~ = 0
   END
 
+  // adding special spells
+  ACTION_FOR_EACH resref IN ~SPWI222~ ~A7_SP03~ ~SPWI723~ ~A7_SP04~ BEGIN
+    COPY - ~%MOD_FOLDER%/spells/%resref%.spl~ ~override~
+      READ_LONG 0x34 level
+    BUT_ONLY
+    OUTER_SET index = EVAL ~%struct%_%level%~
+    OUTER_TEXT_SPRINT EVAL ~%struct%_%level%_%index%~ ~%resref%~
+    OUTER_SET EVAL ~%struct%_%level%~ = index + 1
+  END
+
   // scanning available spells
   COPY_EXISTING - ~spell.ids~ ~override~
     READ_2DA_ENTRIES_NOW table 2
