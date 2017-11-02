@@ -9,76 +9,88 @@ COPY ~%MOD_FOLDER%/spells/a7_sp01.spl~ ~override~
   SAY NAME1 @2000 // Chaotic Weave
   SAY UNIDENTIFIED_DESC @2001 // Chaotic Weave description
 
-  // applying 1st tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 1 prob_min = 93  prob_max = 100
-  STR_VAR resource = ~A7_SP1D~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 1 prob_min = 73  prob_max = 92
-  STR_VAR resource = ~A7_SP1C~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 1 prob_min = 40  prob_max = 72
-  STR_VAR resource = ~A7_SP1B~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 1 prob_min = 0  prob_max = 39
-  STR_VAR resource = ~A7_SP1A~
+  // Adding spell selection lists
+  // Order of entries: ability header, prob_min, prob_max => table name
+  PATCH_DEFINE_ASSOCIATIVE_ARRAY tiers BEGIN
+    // Tier 1
+    ~1~, ~98~, ~100~ => ~A7_SP1N~
+    ~1~, ~96~, ~97~ => ~A7_SP1M~
+    ~1~, ~93~, ~95~ => ~A7_SP1L~
+    ~1~, ~89~, ~92~ => ~A7_SP1K~
+    ~1~, ~83~, ~88~ => ~A7_SP1J~
+    ~1~, ~76~, ~82~ => ~A7_SP1I~
+    ~1~, ~67~, ~75~ => ~A7_SP1H~
+    ~1~, ~58~, ~66~ => ~A7_SP1G~
+    ~1~, ~50~, ~57~ => ~A7_SP1F~
+    ~1~, ~42~, ~49~ => ~A7_SP1E~
+    ~1~, ~33~, ~41~ => ~A7_SP1D~
+    ~1~, ~22~, ~32~ => ~A7_SP1C~
+    ~1~, ~11~, ~21~ => ~A7_SP1B~
+    ~1~, ~0~, ~10~ => ~A7_SP1A~
+    // Tier 2
+    ~2~, ~98~, ~100~ => ~A7_SP2N~
+    ~2~, ~96~, ~97~ => ~A7_SP2M~
+    ~2~, ~93~, ~95~ => ~A7_SP2L~
+    ~2~, ~89~, ~92~ => ~A7_SP2K~
+    ~2~, ~83~, ~88~ => ~A7_SP2J~
+    ~2~, ~76~, ~82~ => ~A7_SP2I~
+    ~2~, ~67~, ~75~ => ~A7_SP2H~
+    ~2~, ~58~, ~66~ => ~A7_SP2G~
+    ~2~, ~50~, ~57~ => ~A7_SP2F~
+    ~2~, ~42~, ~49~ => ~A7_SP2E~
+    ~2~, ~33~, ~41~ => ~A7_SP2D~
+    ~2~, ~22~, ~32~ => ~A7_SP2C~
+    ~2~, ~11~, ~21~ => ~A7_SP2B~
+    ~2~, ~0~, ~10~ => ~A7_SP2A~
+    // Tier 3
+    ~3~, ~98~, ~100~ => ~A7_SP3N~
+    ~3~, ~96~, ~97~ => ~A7_SP3M~
+    ~3~, ~93~, ~95~ => ~A7_SP3L~
+    ~3~, ~89~, ~92~ => ~A7_SP3K~
+    ~3~, ~83~, ~88~ => ~A7_SP3J~
+    ~3~, ~76~, ~82~ => ~A7_SP3I~
+    ~3~, ~67~, ~75~ => ~A7_SP3H~
+    ~3~, ~58~, ~66~ => ~A7_SP3G~
+    ~3~, ~50~, ~57~ => ~A7_SP3F~
+    ~3~, ~42~, ~49~ => ~A7_SP3E~
+    ~3~, ~33~, ~41~ => ~A7_SP3D~
+    ~3~, ~22~, ~32~ => ~A7_SP3C~
+    ~3~, ~11~, ~21~ => ~A7_SP3B~
+    ~3~, ~0~, ~10~ => ~A7_SP3A~
+    // Tier 4
+    ~4~, ~98~, ~100~ => ~A7_SP4N~
+    ~4~, ~96~, ~97~ => ~A7_SP4M~
+    ~4~, ~93~, ~95~ => ~A7_SP4L~
+    ~4~, ~89~, ~92~ => ~A7_SP4K~
+    ~4~, ~83~, ~88~ => ~A7_SP4J~
+    ~4~, ~76~, ~82~ => ~A7_SP4I~
+    ~4~, ~67~, ~75~ => ~A7_SP4H~
+    ~4~, ~58~, ~66~ => ~A7_SP4G~
+    ~4~, ~50~, ~57~ => ~A7_SP4F~
+    ~4~, ~42~, ~49~ => ~A7_SP4E~
+    ~4~, ~33~, ~41~ => ~A7_SP4D~
+    ~4~, ~22~, ~32~ => ~A7_SP4C~
+    ~4~, ~11~, ~21~ => ~A7_SP4B~
+    ~4~, ~0~, ~10~ => ~A7_SP4A~
+    // Tier 5
+    ~5~, ~82~, ~100~ => ~A7_SP5E~
+    ~5~, ~67~, ~81~ => ~A7_SP5D~
+    ~5~, ~50~, ~66~ => ~A7_SP5C~
+    ~5~, ~25~, ~49~ => ~A7_SP5B~
+    ~5~, ~0~, ~24~ => ~A7_SP5A~
+    // Tier 6
+    ~6~, ~0~, ~100~ => ~A7_SP6A~
   END
 
-  // applying 2nd tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 2 prob_min = 83  prob_max = 100
-  STR_VAR resource = ~A7_SP2C~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 2 prob_min = 50  prob_max = 82
-  STR_VAR resource = ~A7_SP2B~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 2 prob_min = 0  prob_max = 49
-  STR_VAR resource = ~A7_SP2A~
-  END
-
-  // applying 3rd tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 3 prob_min = 80  prob_max = 100
-  STR_VAR resource = ~A7_SP3C~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 3 prob_min = 40  prob_max = 79
-  STR_VAR resource = ~A7_SP3B~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 3 prob_min = 0  prob_max = 39
-  STR_VAR resource = ~A7_SP3A~
-  END
-
-  // applying 4th tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 4 prob_min = 50  prob_max = 100
-  STR_VAR resource = ~A7_SP4B~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 4 prob_min = 0  prob_max = 49
-  STR_VAR resource = ~A7_SP4A~
-  END
-
-  // applying 5th tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 5 prob_min = 33  prob_max = 100
-  STR_VAR resource = ~A7_SP5B~
-  END
-  LPF apply_opcode_214
-  INT_VAR header = 5 prob_min = 0  prob_max = 32
-  STR_VAR resource = ~A7_SP5A~
-  END
-
-  // applying 6th tier selections
-  LPF apply_opcode_214
-  INT_VAR header = 6 prob_min = 0  prob_max = 100
-  STR_VAR resource = ~A7_SP6A~
+  PATCH_PHP_EACH tiers AS numbers => resref BEGIN
+    LPF apply_opcode_214
+    INT_VAR
+      header = numbers_0
+      prob_min = numbers_1
+      prob_max = numbers_2
+    STR_VAR
+      resource = EVAL ~%resref%~
+    END
   END
 
 COPY ~%MOD_FOLDER%/spells/a7_sp01b.bam~ ~override~

@@ -282,242 +282,99 @@ LAM a7_create_spell_list
 // generate spell lists for each tier
 RANDOM_SEED ~now~   // force to use current time
 
-// Tier 1a: 1:100, 2:100, 3:75, 4:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 75
-  level_4 = 25
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp1a.2da~
+// Order of entries: table name, level 1 percentage, level 2 percentage, ... => dummy name
+ACTION_DEFINE_ASSOCIATIVE_ARRAY spell_def BEGIN
+  // Tier 1
+  ~a7_sp1a~, ~75~, ~50~, ~25~ => ~1~
+  ~a7_sp1b~, ~75~, ~50~, ~25~ => ~2~
+  ~a7_sp1c~, ~75~, ~50~, ~25~ => ~3~
+  ~a7_sp1d~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp1e~, ~100~, ~75~, ~50~, ~25~ => ~5~
+  ~a7_sp1f~, ~100~, ~75~, ~50~, ~25~ => ~6~
+  ~a7_sp1g~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp1h~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp1i~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp1j~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp1k~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp1l~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp1m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
+  ~a7_sp1n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  // Tier 2
+  ~a7_sp2a~, ~100~, ~75~, ~50~, ~25~ => ~1~
+  ~a7_sp2b~, ~100~, ~75~, ~50~, ~25~ => ~2~
+  ~a7_sp2c~, ~100~, ~75~, ~50~, ~25~ => ~3~
+  ~a7_sp2d~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp2e~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~5~
+  ~a7_sp2f~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~6~
+  ~a7_sp2g~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp2h~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp2i~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp2j~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp2k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp2l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp2m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
+  ~a7_sp2n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  // Tier 3
+  ~a7_sp3a~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~1~
+  ~a7_sp3b~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~2~
+  ~a7_sp3c~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~3~
+  ~a7_sp3d~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp3e~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~5~
+  ~a7_sp3f~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~6~
+  ~a7_sp3g~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp3h~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp3i~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp3j~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp3k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp3l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp3m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~13~
+  ~a7_sp3n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~14~
+  // Tier 4
+  ~a7_sp4a~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~1~
+  ~a7_sp4b~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~2~
+  ~a7_sp4c~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~3~
+  ~a7_sp4d~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~4~
+  ~a7_sp4e~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~5~
+  ~a7_sp4f~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~6~
+  ~a7_sp4g~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~7~
+  ~a7_sp4h~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~8~
+  ~a7_sp4i~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~9~
+  ~a7_sp4j~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~10~
+  ~a7_sp4k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~11~
+  ~a7_sp4l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~12~
+  ~a7_sp4m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~ => ~13~
+  // Tier 5
+  ~a7_sp5a~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~25~ => ~1~
+  ~a7_sp5b~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~25~ => ~2~
+  ~a7_sp5c~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~3~
+  ~a7_sp5d~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~4~
+  ~a7_sp5e~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~ => ~5~
+  // Tier 6
+  ~a7_sp6a~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~ => ~1~
 END
 
-// Tier 1b: 1:100, 2:100, 3:100, 4:75, 5:67, 6:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 75
-  level_5 = 67
-  level_6 = 25
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp1b.2da~
-END
-
-// Tier 1c: 1:50, 2:50, 3:100, 4:100, 5:100, 6:75, 7:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 50
-  level_2 = 50
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 75
-  level_7 = 25
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp1c.2da~
-END
-
-// Tier 1d: 1:33, 2:33, 3:50, 4:75, 5:100, 6:100, 7:100, 8:75, 9:50
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 25
-  level_2 = 33
-  level_3 = 50
-  level_4 = 75
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 75
-  level_9 = 50
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp1d.2da~
-END
-
-// Tier 2a: 1:100, 2:100, 3:100, 4:75, 5:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 75
-  level_5 = 75
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp2a.2da~
-END
-
-// Tier 2b: 1:100, 2:100, 3:100, 4:100, 5:100, 6:75, 7:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 75
-  level_7 = 25
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp2b.2da~
-END
-
-// Tier 2c: 1:50, 2:75, 3:100, 4:100, 5:100, 6:100, 7:100, 8:100, 9:75
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 50
-  level_2 = 75
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 100
-  level_9 = 75
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp2c.2da~
-END
-
-// Tier 3a: 1:100, 2:100, 3:100, 4:100, 5:50
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 50
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp3a.2da~
-END
-
-// Tier 3b: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:75, 8:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 75
-  level_8 = 25
-STR_VAR
-  fixed_table = ~preset~
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp3b.2da~
-END
-
-// Tier 3c: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:100, 8:100, 9:100
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 100
-  level_9 = 100
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp3c.2da~
-END
-
-// Tier 4a: 1:100, 2:100, 3:100, 4:100, 5:100, 6:50, 7:25
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 50
-  level_7 = 25
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp4a.2da~
-END
-
-// Tier 4b: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:100, 8:100, 9:100
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 100
-  level_9 = 100
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp4b.2da~
-END
-
-// Tier 5a: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:75, 8:50
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 75
-  level_8 = 50
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp5a.2da~
-END
-
-// Tier 5b: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:100, 8:100, 9:100
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 100
-  level_9 = 100
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp5b.2da~
-END
-
-// Tier 6: 1:100, 2:100, 3:100, 4:100, 5:100, 6:100, 7:100, 8:100, 9:100
-LAF a7_create_spell_list_file
-INT_VAR
-  level_1 = 100
-  level_2 = 100
-  level_3 = 100
-  level_4 = 100
-  level_5 = 100
-  level_6 = 100
-  level_7 = 100
-  level_8 = 100
-  level_9 = 100
-STR_VAR
-  spell_table = ~spellTable~
-  file_name   = ~a7_sp6a.2da~
+ACTION_PHP_EACH spell_def AS data => _ BEGIN
+  OUTER_FOR (idx = 1; idx <= 9; ++idx) BEGIN
+    ACTION_IF (VARIABLE_IS_SET EVAL ~data_%idx%~) BEGIN
+      OUTER_SET EVAL ~l_%idx%~ = EVAL ~data_%idx%~
+    END ELSE BEGIN
+      OUTER_SET EVAL ~l_%idx%~ = 0
+    END
+  END
+  LAF a7_create_spell_list_file
+  INT_VAR
+    level_1 = l_1
+    level_2 = l_2
+    level_3 = l_3
+    level_4 = l_4
+    level_5 = l_5
+    level_6 = l_6
+    level_7 = l_7
+    level_8 = l_8
+    level_9 = l_9
+  STR_VAR
+    fixed_table = ~preset~
+    spell_table = ~spellTable~
+    file_name   = EVAL ~%data_0%.2da~
+  END
 END
