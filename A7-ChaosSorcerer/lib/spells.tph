@@ -156,9 +156,14 @@ COPY ~%MOD_FOLDER%/creatures/a7_cel1b.cre~ ~override~
   SAY NAME1 @10000  // Chaos Elemental
   SAY NAME2 @10000  // Chaos Elemental
 
+ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  COPY ~%MOD_FOLDER%/spells/iwdee/a7_sp03b.bam~ ~override~
+       ~%MOD_FOLDER%/spells/iwdee/a7_sp03c.bam~ ~override~
+END ELSE BEGIN
+  COPY ~%MOD_FOLDER%/spells/a7_sp03b.bam~ ~override~
+       ~%MOD_FOLDER%/spells/a7_sp03c.bam~ ~override~
+END
 COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp03b.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp03c.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03.eff~ ~override~
 
 
@@ -179,9 +184,14 @@ COPY ~%MOD_FOLDER%/creatures/a7_cel2b.cre~ ~override~
   SAY NAME1 @10001  // Greater Chaos Elemental
   SAY NAME2 @10001  // Greater Chaos Elemental
 
+ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  COPY ~%MOD_FOLDER%/spells/iwdee/a7_sp04b.bam~ ~override~
+       ~%MOD_FOLDER%/spells/iwdee/a7_sp04c.bam~ ~override~
+END ELSE BEGIN
+  COPY ~%MOD_FOLDER%/spells/a7_sp04b.bam~ ~override~
+       ~%MOD_FOLDER%/spells/a7_sp04c.bam~ ~override~
+END
 COPY ~%MOD_FOLDER%/spells/a7_sp04a.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp04b.bam~ ~override~
-     ~%MOD_FOLDER%/spells/a7_sp04c.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp04.eff~ ~override~
 
 
