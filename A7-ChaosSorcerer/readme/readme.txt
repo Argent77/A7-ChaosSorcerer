@@ -131,6 +131,73 @@ WILD SURGE: A wild surge generates a completely random magical effect from the s
 Its effects may be either beneficial or detrimental to the Chaos Sorcerer and his/her allies.
 
 
+Spell Description: Chaotic Weave
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Chaotic Weave is the basis of the Chaos Sorcerer's exceptional power. The spell opens a small 
+rift into the Elemental Chaos to draw raw magical energies from, which the sorcerer can attempt 
+to shape into a desired spell effect. The attempt usually fails, but something almost always 
+occurs in the process.
+
+To use Chaotic Weave simply cast it, then choose from a list of randomly picked spells. A burst 
+of magical energy is released, which the Chaos Sorcerer will try to manipulate into the desired 
+form. The actual effect of the spell is determined randomly by a dice roll on the Wild Surge 
+Table (see the manual for more details). The list of potential spells to choose from becomes 
+larger and more consistent at higher levels.
+
+Because the release of energy is planned by the Sorcerer, his or her level is added to the dice 
+roll. If the result indicates success, the Sorcerer has shaped the magical energy into the desired 
+effect. More often than not, the effect is completely unexpected. The result might be beneficial 
+to the Sorcerer, or it might be completely disastrous: This is the risk the Sorcerer takes by 
+relying on the energies from the Elemental Chaos.
+
+The list of spells to choose from is based on character level and chance. With higher levels the 
+list will become more stable and complete.
+
+The following list shows the odds for all available spell selection lists. The numbers separated 
+by slashes indicate percentage of existing spells for each spell level (1 to 9).
+
+Sorcerer level 1 to 3:
+– 33% chance to get 75/50/25/0/0/0/0/0/0 percent of spells per level
+– 25% chance to get 100/75/50/25/0/0/0/0/0 percent of spells per level
+– 18% chance to get 100/100/75/50/25/0/0/0/0 percent of spells per level
+– 13% chance to get 100/100/100/75/50/25/0/0/0 percent of spells per level
+– 7% chance to get 100/100/100/100/75/50/25/0/0 percent of spells per level
+– 4% chance to get 100/100/100/100/100/75/50/25/0 percent of spells per level
+
+Sorcerer level 4 to 7:
+– 33% chance to get 100/75/50/25/0/0/0/0/0 percent of spells per level
+– 25% chance to get 100/100/75/50/25/0/0/0/0 percent of spells per level
+– 18% chance to get 100/100/100/75/50/25/0/0/0 percent of spells per level
+– 13% chance to get 100/100/100/100/75/50/25/0/0 percent of spells per level
+– 7% chance to get 100/100/100/100/100/75/50/25/0 percent of spells per level
+– 4% chance to get 100/100/100/100/100/100/75/50/25 percent of spells per level
+
+Sorcerer level 8 to 11:
+– 33% chance to get 100/100/75/50/25/0/0/0/0 percent of spells per level
+– 25% chance to get 100/100/100/75/50/25/0/0/0 percent of spells per level
+– 18% chance to get 100/100/100/100/75/50/25/0/0 percent of spells per level
+– 13% chance to get 100/100/100/100/100/75/50/25/0 percent of spells per level
+– 7% chance to get 100/100/100/100/100/100/75/50/25 percent of spells per level
+– 4% chance to get 100/100/100/100/100/100/100/75/50 percent of spells per level
+
+Sorcerer level 12 to 15:
+– 33% chance to get 100/100/100/100/75/50/25/0/0 percent of spells per level
+– 25% chance to get 100/100/100/100/100/50/25/0/0 percent of spells per level
+– 18% chance to get 100/100/100/100/100/100/50/25/0 percent of spells per level
+– 13% chance to get 100/100/100/100/100/100/100/50/25 percent of spells per level
+– 7% chance to get 100/100/100/100/100/100/100/75/50 percent of spells per level
+– 4% chance to get 100/100/100/100/100/100/100/100/75 percent of spells per level
+
+Sorcerer level 16 to 19:
+– 50% chance to get 100/100/100/100/100/100/100/75/25 percent of spells per level
+– 33% chance to get 100/100/100/100/100/100/100/100/50 percent of spells per level
+– 17% chance to get 100/100/100/100/100/100/100/100/100 percent of spells per level
+
+Sorcerer level 20 or higher:
+– 100% chance to get 100/100/100/100/100/100/100/100/100 percent of spells per level
+
+
 Copyright Notice
 ~~~~~~~~~~~~~~~~
 

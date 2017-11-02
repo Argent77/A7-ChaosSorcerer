@@ -138,6 +138,76 @@ unvorhersehbaren Effekt erzielt. Dieser Effekt kann sowohl zum Nutzen als auch z
 Chaos Hexenmeister und seiner Verbündeten sein.
 
 
+Zauberbeschreibung: Chaotisches Gefüge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Chaotisches Gefüge ist die Basis für die außergewöhnliche Macht, die einem Chaos Hexenmeister 
+innewohnt. Der Zauber öffnet einen kleinen Spalt in das Elementare Chaos, um aus ihr die benötigte 
+Energie zu beziehen, der für den gewünschten Zauber notwendig ist. Dieser Versuch geht in der 
+Regel schief, aber irgendetwas entsteht im Verlauf des Vorgangs eigentlich immer.
+
+Um den Zauber Chaotisches Gefüge durchzuführen, genügt es, den Zauber zu wirken und danach von 
+einer Liste aus zufällig zusammengestellten Zaubern eine Auswahl zu treffen. Daraufhin wird eine 
+große Menge magischer Energie freigesetzt, die der Chaos Hexenmeister in die gewünschte Form zu 
+bringen versucht. Die tatsächliche Wirkung des Zaubers wird zufällig durch einen Wurf in der 
+Resultate-Tabelle der „Unbändigen Woge“ (siehe Handbuch) bestimmt.
+
+Weil die Energie vom Anwender freigesetzt wird, wird die Stufe des Anwenders dem Würfelergebnis 
+hinzugerechnet. Deutet das Resultat auf einen Erfolg hin, ist es dem Anwender gelungen, die 
+magische Energie in den gewünschten Effekt münden zu lassen. Weitaus wahrscheinlicher jedoch ist 
+eine vollkommen unerwartete Wirkung. Das Ergebnis kann für den Anwender von Vorteil sein, aber 
+genauso gut in einer Katastrophe enden. Dieses Risiko muss man eben eingehen, wenn man 
+„Chaotisches Gefüge“ einsetzt.
+
+Die Anzahl der Zauber, aus der der Hexenmeister auswählen kann, basiert auf Wahrscheinlichkeit und 
+der Charakterstufe des Magiers. Höherstufige Magier können im Allgemeinen aus vollständigeren 
+Zauberlisten wählen.
+
+Die folgende Übersicht listet alle verfügbaren Zauberlisten und die Wahrscheinlichkeit ihrer 
+Auswahl pro Charakterstufe. Die durch Schrägstriche getrennten Werte geben den prozentualen Anteil 
+aller existierender Zauber für den jeweiligen Zaubergrad an (1 bis 9).
+
+Hexenmeister Stufe 1 bis 3:
+– 33% Chance auf 75/50/25/0/0/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 25% Chance auf 100/75/50/25/0/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 18% Chance auf 100/100/75/50/25/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 13% Chance auf 100/100/100/75/50/25/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 7% Chance auf 100/100/100/100/75/50/25/0/0 Prozent aller Zauber pro Zaubergrad
+– 4% Chance auf 100/100/100/100/100/75/50/25/0 Prozent aller Zauber pro Zaubergrad
+
+Hexenmeister Stufe 4 bis 7:
+– 33% Chance auf 100/75/50/25/0/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 25% Chance auf 100/100/75/50/25/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 18% Chance auf 100/100/100/75/50/25/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 13% Chance auf 100/100/100/100/75/50/25/0/0 Prozent aller Zauber pro Zaubergrad
+– 7% Chance auf 100/100/100/100/100/75/50/25/0 Prozent aller Zauber pro Zaubergrad
+– 4% Chance auf 100/100/100/100/100/100/75/50/25 Prozent aller Zauber pro Zaubergrad
+
+Hexenmeister Stufe 8 bis 11:
+– 33% Chance auf 100/100/75/50/25/0/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 25% Chance auf 100/100/100/75/50/25/0/0/0 Prozent aller Zauber pro Zaubergrad
+– 18% Chance auf 100/100/100/100/75/50/25/0/0 Prozent aller Zauber pro Zaubergrad
+– 13% Chance auf 100/100/100/100/100/75/50/25/0 Prozent aller Zauber pro Zaubergrad
+– 7% Chance auf 100/100/100/100/100/100/75/50/25 Prozent aller Zauber pro Zaubergrad
+– 4% Chance auf 100/100/100/100/100/100/100/75/50 Prozent aller Zauber pro Zaubergrad
+
+Hexenmeister Stufe 12 bis 15:
+– 33% Chance auf 100/100/100/100/75/50/25/0/0 Prozent aller Zauber pro Zaubergrad
+– 25% Chance auf 100/100/100/100/100/50/25/0/0 Prozent aller Zauber pro Zaubergrad
+– 18% Chance auf 100/100/100/100/100/100/50/25/0 Prozent aller Zauber pro Zaubergrad
+– 13% Chance auf 100/100/100/100/100/100/100/50/25 Prozent aller Zauber pro Zaubergrad
+– 7% Chance auf 100/100/100/100/100/100/100/75/50 Prozent aller Zauber pro Zaubergrad
+– 4% Chance auf 100/100/100/100/100/100/100/100/75 Prozent aller Zauber pro Zaubergrad
+
+Hexenmeister Stufe 16 bis 19:
+– 50% Chance auf 100/100/100/100/100/100/100/75/25 Prozent aller Zauber pro Zaubergrad
+– 33% Chance auf 100/100/100/100/100/100/100/100/50 Prozent aller Zauber pro Zaubergrad
+– 17% Chance auf 100/100/100/100/100/100/100/100/100 Prozent aller Zauber pro Zaubergrad
+
+Hexenmeister Stufe 20 und höher:
+– 100% Chance auf 100/100/100/100/100/100/100/100/100 Prozent aller Zauber pro Zaubergrad
+
+
 Copyright Notice
 ~~~~~~~~~~~~~~~~
 
