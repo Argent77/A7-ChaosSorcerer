@@ -1,9 +1,8 @@
 // Combat script for controllable Greater Chaos Elementals
 
 IF
-  OR(2)
-    ActionListEmpty()
-    GlobalTimerExpired("Busy", "LOCALS")
+  ActionListEmpty()
+  !GlobalTimerNotExpired("Busy", "LOCALS")
   !See([ENEMY])
   HPPercentLT(Myself, 90)
   RandomNum(4, 1)
@@ -14,10 +13,11 @@ THEN
 END
 
 IF
-  OR(2)
-    ActionListEmpty()
-    GlobalTimerExpired("Busy", "LOCALS")
-  !Range(LastSummonerOf(Myself), 20)
+  ActionListEmpty()
+  !GlobalTimerNotExpired("Busy", "LOCALS")
+  !See([ENEMY])
+  !Range([PC], 20)
+  !Range([FAMILIAR], 20)
 THEN
   RESPONSE #10
     SetGlobalTimer("Busy", "LOCALS", 5)
@@ -55,11 +55,12 @@ THEN
 END
 
 IF
-  OR(2)
-    ActionListEmpty()
-    GlobalTimerExpired("Busy", "LOCALS")
+  ActionListEmpty()
+  !GlobalTimerNotExpired("Busy", "LOCALS")
   !See([ENEMY])
-  Range(LastSummonerOf(Myself), 20)
+  OR(2)
+    Range([PC], 20)
+    Range([FAMILIAR], 20)
   RandomNumLT(4, 4)
 THEN
   RESPONSE #100
@@ -68,11 +69,12 @@ THEN
 END
 
 IF
-  OR(2)
-    ActionListEmpty()
-    GlobalTimerExpired("Busy", "LOCALS")
+  ActionListEmpty()
+  !GlobalTimerNotExpired("Busy", "LOCALS")
   !See([ENEMY])
-  Range(LastSummonerOf(Myself), 20)
+  OR(2)
+    Range([PC], 20)
+    Range([FAMILIAR], 20)
   RandomNum(4, 4)
 THEN
   RESPONSE #100
