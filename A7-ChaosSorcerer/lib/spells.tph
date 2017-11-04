@@ -165,6 +165,7 @@ END ELSE BEGIN
 END
 COPY ~%MOD_FOLDER%/spells/a7_sp03a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp03.eff~ ~override~
+     ~%MOD_FOLDER%/items/a7_ring1.itm~ ~override~
 
 
 // Spell: Conjure Greater Chaos Elemental
