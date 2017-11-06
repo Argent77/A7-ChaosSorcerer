@@ -1,7 +1,7 @@
 Der Chaos Hexenmeister
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    2.2
+Version:    2.3
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -227,6 +227,17 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.3
+- Added Polish translation (thanks Cahir)
+- Increased duration of spell "Conjure Greater Chaos Elemental"
+- Improved IWD:EE spell icons for "Conjure (Greater) Chaos Elemental"
+- Improved combat scripts of (Greater) Chaos Elementals and fixed some bugs
+- Innate effects and immunities of (Greater) Chaos Elementals should not be dispellable
+- Greatly improved and rebalanced spell "Chaotic Weave"
+- Added odds for all available spell lists of "Chaotic Weave" to readme
+- Added a number of Chaos Sorcerer-specific spells to "Chaotic Weave" spell lists
+- Fixed magic school of Nahal's Wildstrike
 
 2.2
 - Overall power of primordial artifacts increases when combined
