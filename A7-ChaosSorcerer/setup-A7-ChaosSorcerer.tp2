@@ -23,6 +23,13 @@ LANGUAGE ~Deutsch~
          ~%MOD_FOLDER%/languages/german/spells.tra~
          ~%MOD_FOLDER%/languages/german/misc.tra~
          ~%MOD_FOLDER%/languages/german/items.tra~
+LANGUAGE ~Polski (tlumaczenie: Cahir)~
+         ~polish~
+         ~%MOD_FOLDER%/languages/polish/setup.tra~
+         ~%MOD_FOLDER%/languages/polish/kit.tra~
+         ~%MOD_FOLDER%/languages/polish/spells.tra~
+         ~%MOD_FOLDER%/languages/polish/misc.tra~
+         ~%MOD_FOLDER%/languages/polish/items.tra~
 
 
 BEGIN @0  // "Chaos Sorcerer" kit

@@ -1,0 +1,161 @@
+// -*- coding: utf-8 -*- 
+// Spells (index 2000..9999)
+
+@2000 = ~Fala chaosu~
+@2001 = ~Fala chaosu
+(Inwokacje/Wywoływanie)
+
+Poziom: 1
+Zasięg: specjalny
+Czas działania: specjalny
+Czas rzucania: specjalny
+Obszar działania: specjalny
+Rzut obronny: specjalny
+
+Zaklęcie to otwiera niewielką szczelinę prowadzącą do Chaosu Żywiołów, dzięki czemu czarownik może zaczerpnąć stamtąd czystą energię magiczną, a następnie spróbować ukształtować ją w pożądany sposób. Starania te zazwyczaj spełzają na niczym, niemniej jednak w ich wyniku zawsze generowany jest jakiś efekt magiczny.
+
+Aby użyć zaklęcia Fala chaosu, wystarczy rzucić je w normalny sposób, a następnie wybrać czar z listy losowych czarów. Uwalniana jest wówczas eksplozja magicznej energii, którą czarownik chaosu stara się uformować w pożądany dla siebie sposób. Faktyczny efekt zaklęcia określany jest losowym rzutem kością, którego wynik odczytywany jest z Tabeli dzikiej energii znajdującej się w instrukcji do gry. Lista potencjalnych zaklęć, z których można wybierać, powiększa się i staje bardziej spójna wraz z awansem czarownika na wyższe poziomy.
+
+Ponieważ uwolnienie dzikiej energii jest następstwem planowanego działania maga, jego poziom dodawany jest do powyższego rzutu kostką. Jeżeli wynik okazał się sukcesem, czarownikowi udało się ukształtować magiczną energię wedle własnych potrzeb, jednak znacznie częściej efekt działania zaklęcia jest zupełnie nieoczekiwany. Rezultat może być dla rzucającego korzystny lub okazać się całkowitą katastrofą, jest to jednak ryzyko, które musi ponieść każdy czarownik, decydujący się polegać na energii zaczerpniętej z Chaosu Żywiołów.~
+
+
+@2050 = ~Sprowadzenie żywiołaka chaosu~
+@2051 = ~Sprowadzenie żywiołaka chaosu
+(Sprowadzanie/Przywoływanie)
+
+Poziom: 5
+Zasięg: 15 metrów
+Czas działania: 1 tura + 1 runda/poziom
+Czas rzucania: 9
+Obszar działania: specjalny
+Rzut obronny: brak
+
+Czarownicy chaosu są w stanie przywołać istoty zamieszkujące Chaos Żywiołów, by te spełniały ich rozkazy. Żywiołak chaosu jest bezkształtną masą, wirującą w chaotyczny i nieprzewidywalny sposób. Istota ma 8 Kostek Wytrzymałości i będzie spełniała każdą zachciankę osoby rzucającej zaklęcie, aż do chwili odesłania do swej macierzystej sfery, zakończenia działania czaru, lub swojej śmierci. Jednak za każdym razem, gdy to zaklęcie jest rzucane, istnieje 15% szans na to, że żywiołak nie usłucha poleceń i wpadnie w szał, atakując wszystkich w pobliżu. Będzie się tak zachowywać, dopóki nie zginie lub dopóki nie skończy się działanie czaru. 
+
+Przez trzy rundy po przyzwaniu, żywiołak będzie walczył z czarownikiem chaosu w umysłowym pojedynku. Jeśli czarownik wygra, zyskuje panowanie nad żywiołakiem. Jeśli jednak przegra, żywiołak wpada w szał i będzie próbował zabić wszystkich w pobliżu.
+
+Żywiołak chaosu (8 Kostek Wytrzymałości):
+S 14, ZR 10, KON 9, INT 10, MDR 11, CHA 10; CHAR: chaotyczny neutralny
+PŻ 64, KP 4, TraK0 10, Rzuty obronne 9/12/8/12/10
+2 ataki na rundę, 1k12 obuchowe (Pięść +3)
+
+Zdolności bojowe:
+Chaos: Wprawia w zamęt pojedynczy cel na dwie rundy (rzut obronny przeciw czarom neguje)
+
+Zdolności specjalne:
+Porusza się ze zwiększoną prędkością
+Może uzdrowić się, jeśli zostanie ranny
+Niewrażliwość na zauroczenie, zamęt, unieruchomienie, trucizny, sen, strach, polimorfię i ogłuszenie 
+Odporność na ogień 100%; Odporność na zimno: 100%; Odporność na elektryczność: 100%; Odporność na kwas: 100%
+Odporność na obrażenia kłute: 75%; Odporność na pociski: 75%; Odporność na obrażenia sieczne: 25%
+
+Nawet w pełni kontrolowany żywiołak chaosu nie jest w stanie stać bezczynnie choćby przez chwilę i będzie nieustannie się poruszał, chyba że otrzyma wyraźne rozkazy. Jeśli jednak zdarzy mu się oddalić zbytnio od czarującego, natychmiast do niego powraca.~
+
+@2100 = ~Wybuch chaosu~
+@2101 = ~Wybuch chaosu
+(Wywoływanie)
+
+Poziom: 10
+Zasięg: 13 metrów
+Czas działania: 2 rundy
+Czas rzucania: 5
+Obszar działania: 1 istota
+Rzut obronny: specjalny
+
+Zaklęcie to tworzy szczelinę w ziemi tuż pod nogami ofiary, łącząc ją na moment z Chaosem Żywiołów. W efekcie następuje potężna eksplozja energii żywiołów, która pali, razi prądem lub zamraża cel, jednocześnie unieruchamiając go na jedną rundę. Czar zadaje 10k10 obrażeń obuchowych oraz 10k10 obrażeń od ognia lub zimna, jak również istnieje 50% szans na dodatkowe 10k10 obrażeń od elektryczności. Ofiara może wykonać rzut obronny przeciw czarom, by otrzymać jedynie połowę obrażeń.
+
+Ponadto, powstała szczelina prowadząca do Chaosu Żywiołów przyciąga uwagę istot zamieszkujących tę sferę egzystencji. Istnieje niewielka szansa, że prześlizgnie się przez nią żywiołak chaosu, atakując wszystkich, którzy znajdą się w zasięgu jego wzroku.~
+
+@2150 = ~Sprowadzenie większego żywiołaka chaosu~
+@2151 = ~Sprowadzenie większego żywiołaka chaosu
+(Sprowadzanie/Przywoływanie)
+
+Poziom: 7
+Zasięg: 15 metrów
+Czas działania: 1 tura/poziom
+Czas rzucania: 9
+Obszar działania: specjalny
+Rzut obronny: brak
+
+Czarownicy chaosu są w stanie przywołać istoty zamieszkujące Chaos Żywiołów, by te spełniały ich rozkazy. Większy żywiołak chaosu jest bezkształtną masą, wirującą w chaotyczny i nieprzewidywalny sposób. Istota ma 16 Kostek Wytrzymałości i będzie spełniała każdą zachciankę osoby rzucającej zaklęcie, aż do chwili odesłania do swej macierzystej sfery, zakończenia działania czaru, lub swojej śmierci. Jednak za każdym razem, gdy to zaklęcie jest rzucane, istnieje 15% szans na to, że żywiołak nie usłucha poleceń i wpadnie w szał, atakując wszystkich w pobliżu. Będzie się tak zachowywać, dopóki nie zginie lub dopóki nie skończy się działanie czaru. 
+
+Przez trzy rundy po przyzwaniu, żywiołak będzie walczył z czarownikiem chaosu w umysłowym pojedynku. Jeśli czarownik wygra, zyskuje panowanie nad żywiołakiem. Jeśli jednak przegra, żywiołak wpada w szał i będzie próbował zabić wszystkich w pobliżu.
+
+Większy żywiołak chaosu (16 Kostek Wytrzymałości):
+S 18, ZR 10, KON 12, INT 10, MDR 11, CHA 10; CHAR: chaotyczny neutralny
+PŻ 128, KP 1, TraK0 6, Rzuty obronne 6/9/5/9/7
+3 ataki na rundę, 1d12 obuchowe (Pięść +3)
+
+Zdolności bojowe:
+Chaos: Wprawia w zamęt wszystkie cele znajdujące się w promieniu 10 metrów na dwie rundy (rzut obronny przeciw czarom z modyfikatorem -2 neguje)
+
+Zdolności specjalne:
+Porusza się ze zwiększoną prędkością
+Może uzdrowić się, jeśli zostanie ranny
+Niewrażliwość na niemagiczne bronie
+Niewrażliwość na zauroczenie, zamęt, unieruchomienie, trucizny, sen, strach, polimorfię i ogłuszenie 
+Odporność na ogień 100%; Odporność na zimno: 100%; Odporność na elektryczność: 100%; Odporność na kwas: 100%; Odporność na magię: 25%
+Odporność na obrażenia kłute: 100%; Odporność na pociski: 100%; Odporność na obrażenia sieczne: 50%
+
+Nawet w pełni kontrolowany większy żywiołak chaosu nie jest w stanie stać bezczynnie choćby przez chwilę i będzie nieustannie się poruszał, chyba że otrzyma wyraźne rozkazy. Jeśli jednak zdarzy mu się oddalić zbytnio od czarującego, natychmiast do niego powraca.~
+
+// Wild Mage replacement spells
+@2500 = ~Kontrolowanie fali dzikiej energii~
+@2501 = ~Kontrolowanie fali dzikiej energii
+(Odrzucanie)
+
+Poziom: 1
+Zasięg: 0
+Czas działania: specjalny
+Czas rzucania: 2
+Obszar działania: rzucający czar
+Rzut obronny: brak
+
+Zaklęcie to wznosi wokół czarującego niewidzialną barierę, mającą za zadanie powstrzymać kolejną falę dzikiej energii. Szansa na to wynosi 10% + 1% na poziom czarującego, aż do maksimum 30% na 20. poziomie. Powstrzymana fala dzikiej energii neutralizuje barierę, w przeciwnym wypadku ta zanika samoczynnie po pięciu rundach. Działanie bariery nie kumuluje się z innymi zaklęciami, które zwiększają szansę na korzystny rezultat w przypadku wystąpienia fali dzikiej energii.~
+
+@2550 = ~Nieszczęście~
+@2551 = ~Nieszczęście
+(Wywoływanie)
+
+Poziom: 2
+Zasięg: pole widzenia rzucającego czar 
+Czas działania: 5 rund
+Czas rzucania: 5
+Obszar działania: 1 istota
+Rzut obronny: brak
+
+Czar ten manipuluje siłami przypadku, sprowadzając na ofiarę przysłowiowego pecha, który utrzymuje się przez cały czas działania zaklęcia. Cel otrzymuje karę -1 do rzutów obronnych, testów ataku, minimalnej liczby zadawanych lub odzyskiwanych obrażeń, a także -5% do wszystkich umiejętności złodziejskich. Ponadto, kostka obrażeń dla wszystkich efektów poza bazowymi obrażeniami od broni wzrasta o 1. Przykładowo, ognista kula zadająca 6k6 obrażeń będzie zadawać 7k6 obrażeń, a płonący miecz długi zadający 1k8 +2 obrażenia sieczne oraz 1k3 obrażenia od ognia będzie zadawał 1k8 +2 obrażenia sieczne oraz 1k4 obrażenia od ognia. Przed czarem tym nie chroni rzut obronny, aczkolwiek odporność na magię może powstrzymać jego działanie.~
+
+@2600 = ~Dzikie uderzenie Nahala~
+@2601 = ~Dzikie uderzenie Nahala
+(Przemiany)
+
+Poziom: 7
+Zasięg: pole widzenia rzucającego czar 
+Czas działania: 5 rund + 1 runda/3 poziomy
+Czas rzucania: 5
+Obszar działania: 1 istota
+Rzut obronny: neguje
+
+Zaklęcie to otacza ofiarę aurą chaotycznej energii, która wnika w każdy rzucany przez nią czar. Na czas działania zaklęcia, za każdym razem, gdy ofiara rzuci czar, wyzwalana zostaje również fala dzikiej energii, wywołująca nieoczekiwane rezultaty. Stworzenia mogą wykonać rzut obronny przeciw czarom z modyfikatorem -4, aby uniknąć działania efektu.~
+
+// @2650 = ~Chaos Shield~   // no need to translate
+@2651 = ~Tarcza chaosu
+(Odrzucanie)
+
+Poziom: 3
+Zasięg: 0
+Czas działania: 1 tura + 1 tura/5 poziomów
+Czas rzucania: 5
+Obszar działania: rzucający czar
+Rzut obronny: brak
+
+Tarcza chaosu zwiększa szansę osoby posługującej się dziką magią na osiągnięcie korzystnego rezultatu w przypadku wystąpienia fali dzikiej energii. Do każdego rzutu kostką w tabeli dzikiej energii dodawana jest premia. Wynosi ona na początku 15 punktów i wzrasta do 20 punktów na 10. poziomie i 25 punktów na 20. poziomie. Premia pochodząca z Tarczy chaosu dodawana jest do premii związanej z poziomem rzucającego czar.~
+
+@5000 = ~Zamęt~
+@5001 = ~Zamęt
+Zdolność ta wywołuje zamęt u istoty będącej celem, sprawiając, że staje się ona niezdecydowana i nie jest w stanie podjąć efektywnych działań. Ofiara może wykonać rzut obronny przeciw czarom, by uniknąć działania efektu, w przeciwnym razie wpadnie w szał, będzie stać bezczynnie lub chodzić w kółko przez cały czas trwania efektu. Jeśli będąca pod wpływem zamętu istota zostanie zaatakowana, będzie ona postrzegać atakującego za wroga i zareaguje zgodnie z pierwotnymi instynktami. Zdolność ta działa przez dwie rundy.~
+
+@5050 = ~Grupowy zamęt~
+@5051 = ~Grupowy zamęt
+Zdolność ta wywołuje zamęt u jednej lub więcej istot znajdujących się w obszarze jej działania, sprawiając, że stają się one niezdecydowane i nie są w stanie podjąć efektywnych działań. Wszystkie ofiary mogą wykonać rzut obronny przeciw czarom z modyfikatorem -2, by uniknąć działania efektu. Istoty, którym się on nie powiedzie, wpadną w szał, będą stały bezczynnie lub chodziły w kółko przez cały czas trwania efektu. Jeśli któraś z będących pod wpływem zamętu istot zostanie zaatakowana, będzie ona postrzegać atakującego za wroga i zareaguje zgodnie z pierwotnymi instynktami. Zdolność ta działa przez dwie rundy.~

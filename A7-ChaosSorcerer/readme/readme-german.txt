@@ -208,6 +208,16 @@ Hexenmeister Stufe 20 und höher:
 – 100% Chance auf 100/100/100/100/100/100/100/100/100 Prozent aller Zauber pro Zaubergrad
 
 
+Credits
+~~~~~~~
+
+Writing, coding and testing: Argent77
+
+Polish translation: Cahir
+
+Additional help with projectiles: kjeron
+
+
 Copyright Notice
 ~~~~~~~~~~~~~~~~
 

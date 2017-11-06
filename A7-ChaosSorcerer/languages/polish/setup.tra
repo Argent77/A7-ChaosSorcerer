@@ -1,0 +1,12 @@
+// -*- coding: us-ascii -*- 
+// Setup (index 0..999)
+
+@0 = ~Podklasa "Czarownik chaosu"~
+@10 = ~Odtworz listy wyboru czarow dla zaklecia "Fala chaosu"~
+@20 = ~Zablokuj mozliwosc wyboru podklasy "Dziki mag" na etapie tworzenia postaci~
+@30 = ~Dodaj "Artefakty przedwiecznych"~
+
+@500 = ~Komponent ten wymaga uprzedniego zainstalowania BG:EE, BG2:EE, EET lub IWD:EE.~
+@501 = ~Komponent ten wymaga uprzedniego zainstalowania komponentu glownego.~
+@502 = ~Komponent ten moze byc uruchomiony niezaleznie, jesli zajdzie taka potrzeba.~
+@503 = ~Komponent ten nie jest wspierany przez gre.~

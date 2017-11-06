@@ -1,0 +1,71 @@
+// -*- coding: utf-8 -*- 
+// Kit (index 1000..1999)
+
+@1000 = ~czarownik chaosu~
+@1001 = ~Czarownik chaosu~
+@1002 = ~CZAROWNIK CHAOSU: W przeciwieństwie do dzikich magów, którzy starają się zrozumieć działanie chaotycznej magii na podstawie uszkodzonych i zniekształconych fragmentów Splotu, czarownicy chaosu nauczyli się czerpać moc wprost z Chaosu Żywiołów, sfery niemal zupełnie nieznanej mieszkańcom Torilu.
+
+Chaos Żywiołów jest miejscem przedwiecznej entropii i dysharmonii i nawet osoby biegle władające pochodzącą stamtąd mocą regularnie doświadczają jej nieprzewidywalności. W związku z tym czarownicy chaosu muszą polegać na swej zręczności i refleksie, by uniknąć nieprzyjemnych skutków własnych, często nieprzewidywalnych zaklęć. Bycie narażonym na działanie tego rodzaju magii wykształca z czasem u czarującego rosnącą odporność na wszelkie formy energii magicznej. Do kroczenia tą niebezpieczną ścieżką niezbędna jest podstawowa znajomość natury Chaosu.
+
+Zalety:
+– Może rzucić 1. poziomowe czary Fala chaosu oraz Kontrolowanie fali dzikiej energii (automatycznie dodawane do listy czarów).
+– Może rzucić 2. poziomowy czar Nieszczęście (automatycznie dodawany do listy czarów).
+– Może rzucić 3. poziomowy czar Tarcza chaosu (automatycznie dodawany do listy czarów).
+– Może rzucić 5. poziomowy czar Sprowadzenie żywiołaka chaosu (automatycznie dodawany do listy czarów).
+– Może rzucić 7. poziomowe czary Dzikie uderzenie Nahala oraz CSprowadzenie większego żywiołaka chaosu (automatycznie dodawane do listy czarów).
+– 1. poziom: +1 do rzutów obronnych przeciw czarom.
+– 5. poziom: +1 zo Zręczności.
+– 6. poziom: +1 do rzutów obronnych przeciw czarom.
+– 8. poziom: +5% do odporności na magię.
+– 11. poziom: +1 do rzutów obronnych przeciw czarom.
+– 15. poziom: +1 zo Zręczności.
+– 16. poziom: +1 do rzutów obronnych przeciw czarom.
+– 16. poziom: +5% do odporności na magię.
+– 21. poziom: +1 do rzutów obronnych przeciw czarom.
+– 24. poziom: +5% do odporności na magię.
+
+Wady:
+– Kara -2 do Siły i Kondycji.
+– Musi mieć charakter chaotyczny dobry, chaotyczny neutralny lub chaotyczny zły.
+– Może rzucić mniej czarów dziennie.
+– Istnieje 5% szans wywołania fali dzikiej energii po rzuceniu czaru.
+
+FALA DZIKIEJ ENERGII: Fala dzikiej energii sprawia, że rzucony czar tworzy całkowicie losowy magiczny efekt. Jego działanie może być zarówno korzystne, jak i szkodliwe dla czarownika chaosu lub jego sojuszników.
+
+– Za każdym razem, gdy czarownik chaosu rzuca zaklęcie, poziom tego zaklęcia nieznacznie się różni. Może on być niższy lub wyższy maksymalnie o pięć od aktualnego poziomu czarownika chaosu.~
+
+// BG:EE/BG2:EE Wild Mage description
+@1100 = ~DZIKI MAG: Dzika magia to nowy typ wiedzy tajemnej, korzystający z potężnych i niebezpiecznych wahań mocy i nieprzewidywalnej magii. Uznawana powszechnie za produkt uboczny Czasu Niepokojów, dzika magia zaczęła niedawno przyciągać uwagę wielu poważnych i uczonych czarodziejów.
+
+Dzicy magowie to czarodzieje specjalizujący się w badaniach nad dziką magią, posiadający dostęp do zaklęć, które chronią ich przed jej wpływem i pozwalają im naginać ją do swych potrzeb. Dzika magia jest nad wyraz nieprzewidywalna i powinno się przy jej używać z niebywałą ostrożnością.
+
+CECHY KLASOWE:
+
+– Może zapamiętać jeden dodatkowy czar na poziom.
+– Może rzucić 1. poziomowy czar Lekkomyślne zaklęcie Nahala oraz Kontrolowanie fali dzikiej energii (uwzględnione premiowo w księdze czarów).
+– Może rzucić 2. poziomowy czar Nieszczęście (uwzględniony premiowo w księdze czarów).
+– Może rzucić 3. poziomowy czar Tarcza chaosu (uwzględniony premiowo w księdze czarów).
+– Może rzucić 7. poziomowy czar Dzikie uderzenie Nahala (uwzględniony premiowo w księdze czarów).
+– Istnieje 5% szans wywołania fali dzikiej energii po rzuceniu czaru.
+
+FALA DZIKIEJ ENERGII: Fala dzikiej energii sprawia, że rzucony czar tworzy całkowicie losowy magiczny efekt. Jego działanie może być zarówno korzystne, jak i szkodliwe dla dzikiego maga lub jego sojuszników.
+
+– Za każdym razem, gdy dziki mag rzuca zaklęcie, poziom tego zaklęcia nieznacznie się różni. Może on być niższy lub wyższy maksymalnie o pięć od aktualnego poziomu dzikiego maga.~
+
+// IWD:EE Wild Mage description
+@1101 = ~DZIKI MAG: Dzika magia to nowy typ wiedzy tajemnej, korzystający z potężnych i niebezpiecznych wahań mocy i nieprzewidywalnej magii. Dzika magia niedawno zaczęła przyciągać uwagę wielu poważnych i uczonych czarodziejów.
+
+Dzicy magowie to czarodzieje specjalizujący się w badaniach nad dziką magią, posiadający dostęp do zaklęć, które chronią ich przed jej wpływem i pozwalają im naginać ją do swych potrzeb. Dzika magia jest nad wyraz nieprzewidywalna i powinno się przy jej używać z niebywałą ostrożnością.
+
+CECHY KLASOWE:
+
+– Może zapamiętać jeden dodatkowy czar na poziom.
+– Może rzucić 1. poziomowy czar Lekkomyślne zaklęcie Nahala oraz Kontrolowanie fali dzikiej energii (uwzględnione premiowo w księdze czarów).
+– Może rzucić 2. poziomowy czar Nieszczęście (uwzględniony premiowo w księdze czarów).
+– Może rzucić 3. poziomowy czar Tarcza chaosu (uwzględniony premiowo w księdze czarów).
+– Może rzucić 7. poziomowy czar Dzikie uderzenie Nahala (uwzględniony premiowo w księdze czarów).
+– Istnieje 5% szans wywołania fali dzikiej energii po rzuceniu czaru.
+
+FALA DZIKIEJ ENERGII: Fala dzikiej energii sprawia, że rzucony czar tworzy całkowicie losowy magiczny efekt. Jego działanie może być zarówno korzystne, jak i szkodliwe dla dzikiego maga lub jego sojuszników.
+
+– Za każdym razem, gdy dziki mag rzuca zaklęcie, poziom tego zaklęcia nieznacznie się różni. Może on być niższy lub wyższy maksymalnie o pięć od aktualnego poziomu dzikiego maga.~

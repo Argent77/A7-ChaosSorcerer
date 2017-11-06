@@ -198,6 +198,16 @@ Sorcerer level 20 or higher:
 – 100% chance to get 100/100/100/100/100/100/100/100/100 percent of spells per level
 
 
+Credits
+~~~~~~~
+
+Writing, coding and testing: Argent77
+
+Polish translation: Cahir
+
+Additional help with projectiles: kjeron
+
+
 Copyright Notice
 ~~~~~~~~~~~~~~~~
 

@@ -1,0 +1,412 @@
+// -*- coding: utf-8 -*- 
+// Items (index 20000..29999)
+
+// Items
+@20000 = ~Płaszcz błyskawicznych ruchów Akadi~
+@20001 = ~Pochodzenie tego płaszcza jest nieznane, lecz materiały, z których go uszyto, wydają się nie pochodzić z tego świata. Sam przedmiot wykonano najprawdopodobniej na innej sferze egzystencji, gdyż większość zaklęć, jakie nań nałożono, zasilane jest mocą przedwiecznego bytu o imieniu Akadi, znaną również jako Królowa Powietrza. Płaszcz sam w sobie jest odzwierciedleniem natury Akadi, chroni bowiem noszącą go osobę przed obrażeniami od elektryczności i pozwala jej raz dziennie na poruszanie się ze zwiększoną prędkością przez jedną turę.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na elektryczność: +25%
+
+Właściwości ładunków:
+– Przyspieszenie ruchów na siebie, raz dziennie
+
+– Wybuch pierwotnych sił, raz dziennie
+Naładowana fala: zadaje obrażenia od elektryczności wszystkim w promieniu 10 metrów.
+
+Waga: 3~
+@20002 = ~Pochodzenie tego płaszcza jest nieznane, lecz materiały, z których go uszyto, wydają się nie pochodzić z tego świata. Sam przedmiot wykonano najprawdopodobniej na innej sferze egzystencji, gdyż większość zaklęć, jakie nań nałożono, zasilane jest mocą przedwiecznego bytu o imieniu Akadi, znaną również jako Królowa Powietrza. Płaszcz sam w sobie jest odzwierciedleniem natury Akadi, chroni bowiem noszącą go osobę przed obrażeniami od elektryczności i pozwala jej dwa razy dziennie na poruszanie się ze zwiększoną prędkością przez jedną turę.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na elektryczność: +33%
+
+Właściwości ładunków:
+– Przyspieszenie ruchów na siebie, dwa razy dziennie
+
+– Wybuch pierwotnych sił, dwa razy dziennie
+Wybierz czar. Może to być Naładowana fala lub inne zaklęcie, którego rodzaj zależy od pochodzenia stworzonego artefaktu.
+Naładowana fala: zadaje obrażenia od elektryczności wszystkim w promieniu 10 metrów.
+
+Waga: 3~
+@20003 = ~Pochodzenie tego płaszcza jest nieznane, lecz materiały, z których go uszyto, wydają się nie pochodzić z tego świata. Sam przedmiot wykonano najprawdopodobniej na innej sferze egzystencji, gdyż większość zaklęć, jakie nań nałożono, zasilane jest mocą przedwiecznego bytu o imieniu Akadi, znaną również jako Królowa Powietrza. Płaszcz sam w sobie jest odzwierciedleniem natury Akadi, chroni bowiem noszącą go osobę przed obrażeniami od elektryczności i pozwala jej trzy razy dziennie na poruszanie się ze zwiększoną prędkością przez jedną turę.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na elektryczność: +50%
+
+Właściwości ładunków:
+– Przyspieszenie ruchów na siebie, trzy razy dziennie
+
+– Wybuch pierwotnych sił, trzy razy dziennie
+Wybierz czar. Może to być Naładowana fala lub jedno z trzech innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Naładowana fala: zadaje obrażenia od elektryczności wszystkim w promieniu 10 metrów.
+
+Waga: 3~
+@20004 = ~Pochodzenie tego płaszcza jest nieznane, lecz materiały, z których go uszyto, wydają się nie pochodzić z tego świata. Sam przedmiot wykonano najprawdopodobniej na innej sferze egzystencji, gdyż większość zaklęć, jakie nań nałożono, zasilane jest mocą przedwiecznego bytu o imieniu Akadi, znaną również jako Królowa Powietrza. Płaszcz sam w sobie jest odzwierciedleniem natury Akadi, chroni bowiem noszącą go osobę przed obrażeniami od elektryczności i pozwala jej trzy razy dziennie na poruszanie się ze zwiększoną prędkością przez jedną turę.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na elektryczność: +66%
+
+Właściwości ładunków:
+– Przyspieszenie ruchów na siebie, cztery razy dziennie
+
+– Wybuch pierwotnych sił, cztery razy dziennie
+Wybierz czar. Może to być Naładowana fala lub jedno z siedmiu innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Naładowana fala: zadaje obrażenia od elektryczności wszystkim w promieniu 10 metrów.
+
+Waga: 3~
+
+@20050 = ~Ochrona umysłowa Istishii~
+@20051 = ~Artefakt ten mieści w sobie część mocy przedwiecznego bytu o imieniu Istishia, zwanego również Władcą Wody. Niewiele wiadomo na temat pochodzenia tego przedmiotu, poza tym, że stworzono go najprawdopodobniej na Abeir, bliźniaczej planecie Torilu. Miejsce to stanowi dom dla przedwiecznych i jest w głównej mierze nieznane mieszkańcom tego świata. Diadem zapewnia częściową odporność na zimno i chroni przed różnego rodzaju efektami wpływającymi na umysł. 
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na zimno: +33%
+– Niewrażliwość na zauroczenie
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, raz dziennie
+Rozprysk zimna: zadaje obrażenia od zimna wszystkim w promieniu 10 metrów.
+
+Waga: 1~
+@20052 = ~Artefakt ten mieści w sobie część mocy przedwiecznego bytu o imieniu Istishia, zwanego również Władcą Wody. Niewiele wiadomo na temat pochodzenia tego przedmiotu, poza tym, że stworzono go najprawdopodobniej na Abeir, bliźniaczej planecie Torilu. Miejsce to stanowi dom dla przedwiecznych i jest w głównej mierze nieznane mieszkańcom tego świata. Diadem zapewnia częściową odporność na zimno i chroni przed różnego rodzaju efektami wpływającymi na umysł. 
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na zimno: +50%
+– Niewrażliwość na zauroczenie i zamęt
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, dwa razy dziennie
+Wybierz czar. Może to być Rozprysk zimna lub inne zaklęcie, którego rodzaj zależy od pochodzenia stworzonego artefaktu.
+Rozprysk zimna: zadaje obrażenia od zimna wszystkim w promieniu 10 metrów.
+
+Waga: 1~
+@20053 = ~Artefakt ten mieści w sobie część mocy przedwiecznego bytu o imieniu Istishia, zwanego również Władcą Wody. Niewiele wiadomo na temat pochodzenia tego przedmiotu, poza tym, że stworzono go najprawdopodobniej na Abeir, bliźniaczej planecie Torilu. Miejsce to stanowi dom dla przedwiecznych i jest w głównej mierze nieznane mieszkańcom tego świata. Diadem zapewnia częściową odporność na zimno i chroni przed różnego rodzaju efektami wpływającymi na umysł. 
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na zimno: +66%
+– Niewrażliwość na zauroczenie i zamęt
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, trzy razy dziennie
+Wybierz czar. Może to być Rozprysk zimna lub jedno z trzech innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Rozprysk zimna: zadaje obrażenia od zimna wszystkim w promieniu 10 metrów.
+
+Waga: 1~
+@20054 = ~Artefakt ten mieści w sobie część mocy przedwiecznego bytu o imieniu Istishia, zwanego również Władcą Wody. Niewiele wiadomo na temat pochodzenia tego przedmiotu, poza tym, że stworzono go najprawdopodobniej na Abeir, bliźniaczej planecie Torilu. Miejsce to stanowi dom dla przedwiecznych i jest w głównej mierze nieznane mieszkańcom tego świata. Diadem zapewnia częściową odporność na zimno i chroni przed różnego rodzaju efektami wpływającymi na umysł. 
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na zimno: +75%
+– Niewrażliwość na zauroczenie, zamęt i Psioniczny wybuch
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, cztery razy dziennie
+Wybierz czar. Może to być Rozprysk zimna lub jedno z siedmiu innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Rozprysk zimna: zadaje obrażenia od zimna wszystkim w promieniu 10 metrów.
+
+Waga: 1~
+
+@20060 = ~Diadem~
+@20061 = ~Ten cienki diadem wygląda zbyt zwyczajnie, by mógł być koroną. Na jego powierzchni wygrawerowano tajemnicze magiczne symbole, sugerujące ukrytą moc zawartą w diademie.
+
+PARAMETRY:
+
+Waga: 1~
+
+@20100 = ~Obrona Grumbara +1~
+@20101 = ~Na pierwszy rzut oka tarcza ta wygląda na zupełnie zwyczajną, ale w rzeczywistości jej pochodzenie jest niezwykłe. Krążą legendy, że została wykonana wieki temu przez klan krasnoludów, którzy przywędrowali do głębokich jaskiń tego świata prosto z Abeir, bliźniaczej planety Torilu. Opowieści te nie wydają się przesadzone, gdyż przedmiot ten zasilany jest mocami Grumbara, przedwiecznej istoty znanej również jako Władca Ziemi. Pomimo niewielkich rozmiarów i wagi, tarcza ta zapewnia niezwykłą ochronę przed obrażeniami fizycznymi, zwłaszcza ogromnymi głazami i broniami obuchowymi.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +2
+– Odporność na obrażenia obuchowe: +33%
+– Nie chroni przed obrażeniami kłutymi i pociskami
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, raz dziennie
+Kamienne kolce: zadaje obrażenia obuchowe wszystkim w promieniu 10 metrów.
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~
+@20102 = ~Na pierwszy rzut oka tarcza ta wygląda na zupełnie zwyczajną, ale w rzeczywistości jej pochodzenie jest niezwykłe. Krążą legendy, że została wykonana wieki temu przez klan krasnoludów, którzy przywędrowali do głębokich jaskiń tego świata prosto z Abeir, bliźniaczej planety Torilu. Opowieści te nie wydają się przesadzone, gdyż przedmiot ten zasilany jest mocami Grumbara, przedwiecznej istoty znanej również jako Władca Ziemi. Pomimo niewielkich rozmiarów i wagi, tarcza ta zapewnia niezwykłą ochronę przed obrażeniami fizycznymi, zwłaszcza ogromnymi głazami i broniami obuchowymi.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +3
+– Odporność na obrażenia obuchowe: +50%
+– Nie chroni przed obrażeniami kłutymi i pociskami
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, dwa razy dziennie
+Wybierz czar. Może to być Kamienne kolce lub inne zaklęcie, którego rodzaj zależy od pochodzenia stworzonego artefaktu.
+Kamienne kolce: zadaje obrażenia obuchowe wszystkim w promieniu 10 metrów.
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~
+@20103 = ~Na pierwszy rzut oka tarcza ta wygląda na zupełnie zwyczajną, ale w rzeczywistości jej pochodzenie jest niezwykłe. Krążą legendy, że została wykonana wieki temu przez klan krasnoludów, którzy przywędrowali do głębokich jaskiń tego świata prosto z Abeir, bliźniaczej planety Torilu. Opowieści te nie wydają się przesadzone, gdyż przedmiot ten zasilany jest mocami Grumbara, przedwiecznej istoty znanej również jako Władca Ziemi. Pomimo niewielkich rozmiarów i wagi, tarcza ta zapewnia niezwykłą ochronę przed obrażeniami fizycznymi, zwłaszcza ogromnymi głazami i broniami obuchowymi.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +3
+– Odporność na obrażenia obuchowe: +66%
+– Nie chroni przed obrażeniami kłutymi i pociskami
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, trzy razy dziennie
+Wybierz czar. Mogą to być Kamienne kolce lub jedno z trzech innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Kamienne kolce: zadaje obrażenia obuchowe wszystkim w promieniu 10 metrów.
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~
+@20104 = ~Na pierwszy rzut oka tarcza ta wygląda na zupełnie zwyczajną, ale w rzeczywistości jej pochodzenie jest niezwykłe. Krążą legendy, że została wykonana wieki temu przez klan krasnoludów, którzy przywędrowali do głębokich jaskiń tego świata prosto z Abeir, bliźniaczej planety Torilu. Opowieści te nie wydają się przesadzone, gdyż przedmiot ten zasilany jest mocami Grumbara, przedwiecznej istoty znanej również jako Pan Ziemi. Pomimo niewielkich rozmiarów i wagi, tarcza ta zapewnia niezwykłą ochronę przed obrażeniami fizycznymi, zwłaszcza ogromnymi głazami i broniami obuchowymi.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu.
+
+PARAMETRY:
+
+Specjalne:
+– Klasa Pancerza: +4
+– Odporność na obrażenia obuchowe: +75%
+– Nie chroni przed obrażeniami kłutymi i pociskami
+
+Właściwości ładunków:
+– Wybuch pierwotnych sił, cztery razy dziennie
+Wybierz czar. Mogą to być Kamienne kolce lub jedno z siedmiu innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Kamienne kolce: zadaje obrażenia obuchowe wszystkim w promieniu 10 metrów.
+
+Wymagania:
+– Siła: 4
+
+Waga: 2~
+@20105 = ~Obrona Grumbara +2~
+@20106 = ~Obrona Grumbara +3~
+
+@20150 = ~Żądło Kossutha +3~
+@20151 = ~Kossuth, Władca Płomieni jest prawdopodobnie najbardziej znanym spośród wszystkich przedwiecznych w Faerûnie. Sztylet ten aż iskrzy od zawartej w nim potęgi ognia. Broń ta nie tylko podpala wszystko, co trafi, ale pozwala również raz dziennie dzierżącej go osobie na przyzwanie potężnych sług Ognistego Pana.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na ogień: +50%
+
+Właściwości ładunków:
+– Sprowadzenie większego żywiołaka ognia, raz dziennie
+Przywołuje większego żywiołaka ognia na jedną turę.
+
+– Wybuch pierwotnych sił, raz dziennie
+Ognisty podmuch: zadaje obrażenia od ognia wszystkim w promieniu 10 metrów.
+
+TraK0: +3
+Obrażenia: 1k4 +3, +1k2 obrażeń od ognia
+Typ obrażeń: kłute
+Opóźnienie: 0
+Rodzaj biegłości: sztylet
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 3
+
+Waga: 1~
+@20152 = ~Kossuth, Władca Płomieni jest prawdopodobnie najbardziej znanym spośród wszystkich przedwiecznych w Faerûnie. Sztylet ten aż iskrzy od zawartej w nim potęgi ognia. Broń ta nie tylko podpala wszystko, co trafi, ale pozwala również raz dziennie dzierżącej go osobie na przyzwanie potężnych sług Ognistego Pana.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na ogień: +66%
+
+Właściwości ładunków:
+– Sprowadzenie większego żywiołaka ognia, raz dziennie
+Przywołuje jednego większego żywiołaka ognia na jedną turę. Istnieje 25% szans na przywołanie drugiego większego żywiołaka ognia.
+
+– Wybuch pierwotnych sił, dwa razy dziennie
+Wybierz czar. Może to być Ognisty podmuch lub inne zaklęcie, którego rodzaj zależy od pochodzenia stworzonego artefaktu.
+Ognisty podmuch: zadaje obrażenia od ognia wszystkim w promieniu 10 metrów.
+
+TraK0: +4
+Obrażenia: 1k4 +4, +1k4 obrażeń od ognia
+Typ obrażeń: kłute
+Opóźnienie: 0
+Rodzaj biegłości: sztylet
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 3
+
+Waga: 1~
+@20153 = ~Kossuth, Władca Płomieni jest prawdopodobnie najbardziej znanym spośród wszystkich przedwiecznych w Faerûnie. Sztylet ten aż iskrzy od zawartej w nim potęgi ognia. Broń ta nie tylko podpala wszystko, co trafi, ale pozwala również raz dziennie dzierżącej go osobie na przyzwanie potężnych sług Ognistego Pana.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu. Chodzą słuchy, że istnieje więcej podobnych artefaktów, które połączone ze sobą, mogą stworzyć przedmiot o jeszcze potężniejszych właściwościach.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na ogień: +75%
+
+Właściwości ładunków:
+– Sprowadzenie większego żywiołaka ognia, raz dziennie
+Przywołuje jednego większego żywiołaka ognia na jedną turę. Istnieje 50% szans na przywołanie drugiego większego żywiołaka ognia.
+
+– Wybuch pierwotnych sił, trzy razy dziennie
+Wybierz czar. Może to być Ognisty podmuch lub jedno z trzech innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Ognisty podmuch: zadaje obrażenia od ognia wszystkim w promieniu 10 metrów.
+
+TraK0: +5
+Obrażenia: 1k4 +5, +1k6 obrażeń od ognia
+Typ obrażeń: kłute
+Opóźnienie: 0
+Rodzaj biegłości: sztylet
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 3
+
+Waga: 1~
+@20154 = ~Kossuth, Władca Płomieni jest prawdopodobnie najbardziej znanym spośród wszystkich przedwiecznych w Faerûnie. Sztylet ten aż iskrzy od zawartej w nim potęgi ognia. Broń ta nie tylko podpala wszystko, co trafi, ale pozwala również raz dziennie dzierżącej go osobie na przyzwanie potężnych sług Ognistego Pana.
+
+Osoba posługująca się magią, która potrafi sięgnąć po moc Chaosu Żywiołów, może wyzwolić część tej mocy poprzez nałożone na płaszcz zaklęcia, wywołując efekt odzwierciedlający naturę artefaktu.
+
+PARAMETRY:
+
+Specjalne:
+– Odporność na ogień: +95%
+
+Właściwości ładunków:
+– Sprowadzenie większego żywiołaka ognia, raz dziennie
+Przywołuje dwa większe żywiołaki ognia na jedną turę.
+
+– Wybuch pierwotnych sił, cztery razy dziennie
+Wybierz czar. Może to być Ognisty podmuch lub jedno z siedmiu innych zaklęć, których rodzaj zależy od pochodzenia stworzonego artefaktu.
+Ognisty podmuch: zadaje obrażenia od ognia wszystkim w promieniu 10 metrów.
+
+TraK0: +5
+Obrażenia: 1k4 +5, +1k8 obrażeń od ognia
+Typ obrażeń: kłute
+Opóźnienie: 0
+Rodzaj biegłości: sztylet
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła: 3
+
+Waga: 1~
+@20155 = ~Żądło Kossutha +4~
+@20156 = ~Żądło Kossutha +5~
+
+@20160 = ~Sprowadzenie większego żywiołaka ognia~
+@20161 = ~Większy żywiołak ognia~
+
+
+// Spell effects
+@21000 = ~Wybuch pierwotnych sił~
+
+@21010 = ~Naładowana fala~
+@21020 = ~Rozprysk zimna~
+@21030 = ~Kamienne kolce~
+@21040 = ~Ognisty podmuch~
+
+@21110 = ~Trująca mgła~
+@21120 = ~Burza piaskowa~
+@21130 = ~Burza ognia~
+@21140 = ~Lawina błotna~
+@21150 = ~Korozyjna chmura~
+@21160 = ~Morze ognia~
+
+@21210 = ~Korozyjne odłamki~
+@21220 = ~Wybuch kwasu~
+@21230 = ~Naładowana lanca cieplna~
+@21240 = ~Wybuch magmy~
+
+@21310 = ~Armagedon~
+
+
+// Conversation lines
+@22000 = ~(Trzymasz w rękach płaszcz, rozglądając się jednocześnie za innym przedmiotem, z którym można go połączyć...)~
+@22001 = ~(Trzymasz w rękach diadem, rozglądając się jednocześnie za innym przedmiotem, z którym można go połączyć...)~
+@22002 = ~(Trzymasz w rękach puklerz, rozglądając się jednocześnie za innym przedmiotem, z którym można go połączyć...)~
+@22003 = ~(Trzymasz w rękach sztylet, rozglądając się jednocześnie za innym przedmiotem, z którym można go połączyć...)~
+@22006 = ~(Bez możliwości sięgnięcia po moc Chaosu Żywiołów, nie jesteś w stanie odblokować pełni mocy tego przedmiotu...)~
+@22007 = ~(Przedmiot ten aż skrzy się od mocy niepochodzących z tego świata, kryjących się za starożytnymi zaklęciami...)~
+@22008 = ~Zbadaj~
+
+@22010 = ~(Połącz płaszcz z diademem).~
+@22011 = ~(Połącz płaszcz z puklerzem).~
+@22012 = ~(Połącz płaszcz ze sztyletem).~
+
+@22015 = ~(Połącz diadem z płaszczem).~
+@22016 = ~(Połącz diadem z puklerzem).~
+@22017 = ~(Połącz diadem ze sztyletem).~
+
+@22020 = ~(Połącz puklerz z płaszczem).~
+@22021 = ~(Połącz puklerz z diademem).~
+@22022 = ~(Połącz puklerz ze sztyletem).~
+
+@22025 = ~(Połącz sztylet z płaszczem).~
+@22026 = ~(Połącz sztylet z diademem).~
+@22027 = ~(Połącz sztylet z puklerzem).~
+
+@22030 = ~(Bierzesz do ręki płaszcz i koncentrujesz się na swoim zadaniu).~
+@22031 = ~(Bierzesz do ręki diadem i koncentrujesz się na swoim zadaniu).~
+@22032 = ~(Bierzesz do ręki puklerz i koncentrujesz się na swoim zadaniu).~
+@22033 = ~(Bierzesz do ręki sztylet i koncentrujesz się na swoim zadaniu).~
+
+@22040 = ~(Nie rób nic).~
+@22041 = ~(Skierowanie czystej energii Chaosu Żywiołów bezpośrednio na przedmioty powoduje, że tracą one kształt, by za chwilę przybrać postać nowego, jeszcze potężniejszego artefaktu.)~
+
+@22050 = ~Przekształć w płaszcz~
+@22051 = ~Przekształć w diadem~
+@22052 = ~Przekształć w puklerz~
+@22053 = ~Przekształć w sztylet~
+
+@22060 = ~Przekształcone w płaszcz~
+@22061 = ~Przekształcone w diadem~
+@22062 = ~Przekształcone w puklerz~
+@22063 = ~Przekształcone w sztylet~
