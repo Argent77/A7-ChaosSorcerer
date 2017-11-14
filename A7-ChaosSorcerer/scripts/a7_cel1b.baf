@@ -35,6 +35,7 @@ END
 IF
   ActionListEmpty()
   See([ENEMY.0.0.0.0.0.MASK_LAWFUL])
+  !StateCheck(LastSeenBy(Myself), STATE_CHARMED)
 THEN
   RESPONSE #25
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
@@ -46,6 +47,7 @@ END
 IF
   ActionListEmpty()
   See(NearestEnemyOf(Myself))
+  !StateCheck(LastSeenBy(Myself), STATE_CHARMED)
 THEN
   RESPONSE #10
     ForceSpellRES("A7_CEL1", LastSeenBy(Myself))  // Chaos
@@ -57,7 +59,9 @@ END
 IF
   ActionListEmpty()
   !GlobalTimerNotExpired("Busy", "LOCALS")
-  !See([ENEMY])
+  OR(2)
+    !See([ENEMY])
+    StateCheck([ENEMY], STATE_CHARMED)
   OR(2)
     Range([PC], 20)
     Range([FAMILIAR], 20)
@@ -71,7 +75,9 @@ END
 IF
   ActionListEmpty()
   !GlobalTimerNotExpired("Busy", "LOCALS")
-  !See([ENEMY])
+  OR(2)
+    !See([ENEMY])
+    StateCheck([ENEMY], STATE_CHARMED)
   OR(2)
     Range([PC], 20)
     Range([FAMILIAR], 20)
