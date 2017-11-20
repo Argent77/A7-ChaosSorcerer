@@ -145,12 +145,12 @@ Zaklęcie to otacza ofiarę aurą chaotycznej energii, która wnika w każdy rzu
 
 Poziom: 3
 Zasięg: 0
-Czas działania: 1 tura + 1 tura/5 poziomów
+Czas działania: 1 tura + 1 runda/3 poziomy
 Czas rzucania: 5
 Obszar działania: rzucający czar
 Rzut obronny: brak
 
-Tarcza chaosu zwiększa szansę osoby posługującej się dziką magią na osiągnięcie korzystnego rezultatu w przypadku wystąpienia fali dzikiej energii. Do każdego rzutu kostką w tabeli dzikiej energii dodawana jest premia. Wynosi ona na początku 15 punktów i wzrasta do 20 punktów na 10. poziomie i 25 punktów na 20. poziomie. Premia pochodząca z Tarczy chaosu dodawana jest do premii związanej z poziomem rzucającego czar.~
+Tarcza chaosu zwiększa szansę osoby posługującej się dziką magią na osiągnięcie korzystnego rezultatu w przypadku wystąpienia fali dzikiej energii. Do każdego rzutu kostką w tabeli dzikiej energii dodawana jest premia. Wynosi ona na początku 15 punktów i wzrasta do 20 punktów na 12. poziomie i 25 punktów na 18. poziomie. Premia pochodząca z Tarczy chaosu dodawana jest do premii związanej z poziomem rzucającego czar.~
 
 @5000 = ~Zamęt~
 @5001 = ~Zamęt

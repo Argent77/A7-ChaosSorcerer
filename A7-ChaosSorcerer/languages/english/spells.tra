@@ -146,12 +146,12 @@ This spell surrounds the target with an aura of chaotic energies that latches on
 
 Level: 3
 Range: 0
-Duration: 1 turn + 1 turn/5 levels
+Duration: 1 turn + 1 round/3 levels
 Casting Time: 5
 Area of Effect: The caster
 Saving Throw: None
 
-Chaos Shield increases the chance of a Wild Magic practitioner to gain a favorable result when a Wild Surge occurs. Every time a roll is made on the Wild Surge chart, an extra bonus is added to the dice roll. Bonus starts at +15 and increases to +20 at level 10 and +25 at level 20. The bonus from Chaos Shield stacks with the caster's level bonus.~
+Chaos Shield increases the chance of a Wild Magic practitioner to gain a favorable result when a Wild Surge occurs. Every time a roll is made on the Wild Surge chart, an extra bonus is added to the dice roll. Bonus starts at +15 and increases to +20 at level 12 and +25 at level 18. The bonus from Chaos Shield stacks with the caster's level bonus.~
 
 
 @5000 = ~Confusion~

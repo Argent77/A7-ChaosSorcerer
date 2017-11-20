@@ -146,12 +146,12 @@ Dieser Zauber umgibt das Ziel mit einer Aura chaotischer Kräfte, die sich an di
 Grad: 3
 Schule: Bannzauber
 Reichweite: Anwender
-Dauer: 1 Phase + 1 Phase pro 5 Stufen
+Dauer: 1 Phase + 1 Runde pro 3 Stufen
 Zeitaufwand: 5
 Bereich: Anwender
 Rettungswurf: Nein
 
-Der Chaosschild erhöht die Chance des Zauberers auf ein für ihn positives Ergebnis, wenn es zu einer „Unbändigen Woge“ kommt. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Zauberer einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 10 und +25 ab Stufe 20. Der Bonus vom Chaosschild wird zum Bonus für die Stufe des Zauberers hinzuaddiert.~
+Der Chaosschild erhöht die Chance des Zauberers auf ein für ihn positives Ergebnis, wenn es zu einer „Unbändigen Woge“ kommt. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Zauberer einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 12 und +25 ab Stufe 18. Der Bonus vom Chaosschild wird zum Bonus für die Stufe des Zauberers hinzuaddiert.~
 
 
 @5000 = ~Verwirrung~
