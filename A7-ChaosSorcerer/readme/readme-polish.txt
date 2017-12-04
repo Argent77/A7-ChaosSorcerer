@@ -1,7 +1,7 @@
 Czarownik chaosu: podklasa dla czarowników posługujących się dziką magią
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wersja:     2.3
+Wersja:     2.4
 Autor:      Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -232,6 +232,13 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.4
+- Rebalanced duration of "Chaos Shield"
+- Improved combat scripts of (Improved) Chaos Elementals
+- Removed unneeded spell table from "Chaotic Weave"
+- Fixed script references to "Nahal's Reckless Dweomer", which caused issues with Neera's 
+  ToB quest line
 
 2.3
 - Added Polish translation (thanks Cahir)
