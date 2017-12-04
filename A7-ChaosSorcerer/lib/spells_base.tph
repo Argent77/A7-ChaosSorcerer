@@ -22,6 +22,16 @@ END
 
 ACTION_IF (slot >= 0) BEGIN
   ACTION_IF (slot != old_slot) BEGIN
+    // updating symbolic spell references in scripts
+    OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT spell_name ~spell~ old_slot END
+    ACTION_IF (NOT ~%spell_name%~ STR_EQ ~%old_slot%~) BEGIN
+      COPY_EXISTING_REGEXP ~.+\.bcs~ ~override~
+        DECOMPILE_AND_PATCH BEGIN
+          REPLACE_TEXTUALLY ~%spell_name%~ ~%slot%~
+        END
+      BUT_ONLY
+    END
+
     // updating SPELL.IDS entries
     COPY_EXISTING ~SPELL.IDS~ ~override~
       LPF a7_update_spell_ids_code INT_VAR code = old_slot new_code = slot END
