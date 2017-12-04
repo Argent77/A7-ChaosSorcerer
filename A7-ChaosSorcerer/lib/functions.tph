@@ -75,12 +75,12 @@ BEGIN
     OUTER_TEXT_SPRINT prefix_3 ~SPIN~
     OUTER_TEXT_SPRINT prefix_4 ~SPCL~
 
-    OUTER_SET range = 50
-    OUTER_SET range_min = type*1000 + level*100 + 1
+    OUTER_SET range = 49
+    OUTER_SET range_min = type * 1000 + level * 100 + 1
     OUTER_SET range_max = range_min + range
 
     // initializing list of spell slots as unoccupied
-    OUTER_FOR (idx = 1; idx < range; ++idx) BEGIN
+    OUTER_FOR (idx = 0; idx < range; ++idx) BEGIN
       OUTER_SET EVAL ~slots_%idx%~ = range_min + idx
     END
     OUTER_SET slots = range
@@ -97,17 +97,16 @@ BEGIN
       END
 
     // scanning for first unoccupied slot
-    OUTER_FOR (idx = 1; idx < range; ++idx) BEGIN
+    OUTER_FOR (idx = 0; idx < range; ++idx) BEGIN
       ACTION_IF (EVAL ~slots_%idx%~ >= 0) BEGIN
         OUTER_SET slot = EVAL ~slots_%idx%~
-        OUTER_SET index = slot - range_min
+        OUTER_SET index = slot - (type * 1000 + level * 100)
         OUTER_TEXT_SPRINT resref EVAL ~%prefix_%type%%~
         ACTION_IF (index < 10) BEGIN
           OUTER_TEXT_SPRINT resref ~%resref%%level%0%index%~
         END ELSE BEGIN
           OUTER_TEXT_SPRINT resref ~%resref%%level%%index%~
         END
-        OUTER_SET slot = (type * 1000) + (level * 100) + index
         OUTER_SET idx = range
       END
     END
