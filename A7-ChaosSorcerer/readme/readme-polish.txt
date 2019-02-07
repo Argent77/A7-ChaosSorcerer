@@ -36,7 +36,8 @@ Modyfikacja działa na następujących grach w wersji 1.3 i wyższej: BG:EE, BG2
 Modyfikacja ta powinna być kompatybilna z innymi, o ile nie zmieniają one w znaczący sposób 
 działania dzikiej magii.
 
-Komponent „Revised Specialists” z modyfikacji „Tome and Blood” ma wpływ na dostępność czaru 
+The component "Spell Select Dialog" of "Tome and Blood" is known to be incompatible with this mod.
+Komponent „Level 1 Cantrips” z modyfikacji „Tome and Blood” ma wpływ na dostępność czaru
 „Lekkomyślne zaklęcie Nahala”.
 
 

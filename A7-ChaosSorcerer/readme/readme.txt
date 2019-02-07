@@ -36,8 +36,9 @@ Patch versions v1.3 and higher of BG:EE, BG2:EE and IWD:EE are supported.
 This mod should be compatible with all other mods as long as they don't make substantial changes to 
 Wild Magic spells.
 
-The component "Revised Specialists" of "Tome and Blood" is known to interfere with the availability 
-of the spell "Nahal's Reckless Dweomer".
+The component "Spell Select Dialog" of "Tome and Blood" is known to be incompatible with this mod.
+The component "Level 1 Cantrips" of "Tome and Blood" will interfere with the availability of the
+spell "Nahal's Reckless Dweomer".
 
 
 Components

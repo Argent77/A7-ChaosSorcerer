@@ -37,7 +37,8 @@ Spielversionen v1.3 und höher von BG:EE, BG2:EE und IWD:EE werden unterstützt.
 Die Mod sollte mit allen anderen Mods auskommen, sofern sie keinen tiefgreifenden Änderungen an 
 den Zaubern für Hasadeure vornehmen.
 
-Die Komponente "Revised Specialists" von "Tome and Blood" verursacht Probleme mit der Verfügbarkeit 
+Die Komponente "Spell Select Dialog" von "Tome and Blood" ist nicht mit dieser Mod kompatibel.
+Die Komponente "Level 1 Cantrips" von "Tome and Blood" verursacht Probleme mit der Verfügbarkeit
 des Zaubers „Nahals gewagte Hexerei“.
 
 
