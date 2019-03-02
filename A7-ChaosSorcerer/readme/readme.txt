@@ -205,6 +205,7 @@ Credits
 Writing, coding and testing: Argent77
 
 Polish translation: Cahir
+Russian translation: Saigon1983
 
 Additional help with projectiles: kjeron
 
@@ -218,6 +219,9 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.5
+- Added Russian translation (thanks Saigon1983)
 
 2.4
 - Rebalanced duration of "Chaos Shield"
