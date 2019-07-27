@@ -37,6 +37,13 @@ LANGUAGE ~Russian (by Saigon1983)~
          ~%MOD_FOLDER%/languages/russian/spells.tra~
          ~%MOD_FOLDER%/languages/russian/misc.tra~
          ~%MOD_FOLDER%/languages/russian/items.tra~
+LANGUAGE ~Francais (by Deratiseur)~
+         ~french~
+         ~%MOD_FOLDER%/languages/french/setup.tra~
+         ~%MOD_FOLDER%/languages/french/kit.tra~
+         ~%MOD_FOLDER%/languages/french/spells.tra~
+         ~%MOD_FOLDER%/languages/french/misc.tra~
+         ~%MOD_FOLDER%/languages/french/items.tra~
 
 
 BEGIN @0  // "Chaos Sorcerer" kit

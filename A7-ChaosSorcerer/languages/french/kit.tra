@@ -1,0 +1,72 @@
+// -*- coding: utf-8 -*- 
+// Kit (index 1000..1999)
+
+@1000 = ~ensorceleur du chaos~
+@1001 = ~Ensorceleur du Chaos~
+@1002 = ~ENSORCELEUR DU CHAOS : Au contraire des entropistes, qui luttent pour comprendre la magie chaotique des parties endommagées et distordues de la toile, l'ensorceleur du chaos apprennent à tirer leur pouvoir du Chaos Élémentaire lui même - un plan qui est largement méconnu de la plupart des habitants de Toril.
+
+Le Chaos Élémentaire est une zone d’entropie primaire et de discorde, et même les praticiens les plus aguerris ne peuvent expliquer l'imprévisibilité inhérente à de telles forces. En conséquence, les ensorceleurs du chaos doivent compter sur leur agilité et leurs bons réflexes pour échapper à leurs propres sorts, souvent imprévisibles. Être exposé à ce type de magie particulière augmente progressivement la résistance du lanceur de sort à toute forme d’énergie magique. Une compréhension basique de la nature du Chaos est nécessaire pour emprunter ce chemin dangereux.
+
+Avantages:
+– Peut lancer les sorts de niveau 1 Onde chaotique et Contrôle des hiatus (ajoutés automatiquement à la liste de sorts).
+– Peut lancer le sort de niveau 2 Malchance (ajouté automatiquement à la liste de sorts).
+– Peut lancer le sort de niveau 3 Bouclier du Chaos (ajouté automatiquement à la liste de sorts).
+– Peut lancer le sort de niveau 5 Conjuration d'élémental de Chaos (ajouté automatiquement à la liste de sorts).
+– Peut lancer les sorts de niveau 7 Frappe Sauvage de Nahal et Conjuration d'élémental de Chaos majeur (ajoutés automatiquement à la liste de sorts).
+– Niveau 1 : jet de sauvegarde contre les sorts : +1.
+– Niveau 5 : dextérité : +1.
+– Niveau 6 : jet de sauvegarde contre les sorts : +1.
+– Niveau 8 : résistance à la magie : +5%.
+– Niveau 11  jet de sauvegarde contre les sorts : +1.
+– Niveau 15 : bonus à la Dextérité : +1.
+– Niveau 16 : jet de sauvegarde contre les sorts : +1.
+– Niveau 16 : résistance à la magie : +5%.
+– Niveau 21 : jet de sauvegarde contre les sorts : +1.
+– Niveau 24 : résistance à la magie : +5%.
+
+Inconvénients :
+– Subit une pénalité de -2 à la force et à la constitution.
+– Alignement limité à chaotique bon, chaotique neutre et chaotique mauvais.
+– Peut lancer moins de sorts par jour.
+– Chaque fois qu'il lance un sort, 5% de chance de subir un hiatus entropique.
+
+HIATUS ENTROPIQUE : un Hiatus entropique génère un effet magique totalement aléatoire pour le sort qui est lancé. Cet effet peut être bénéfique ou néfaste pour l'ensorceleur du Chaos et/ou ses alliés.
+
+– Le niveau de lanceur de sort varie chaque fois que l'ensorceleur du Chaos lance un sort, variant entre cinq niveaux en dessous et 5 niveaux au dessus du niveau réel de l'ensorceleur du Chaos.~
+
+// BG:EE/BG2:EE Wild Mage description
+@1100 = ~ENTROPISTE : La magie entropique est un nouveau type de magie caractérisée par de puissants et dangereux sursauts de magie imprévisible. Généralement considérée comme une conséquence malheureuse du Temps des Troubles, la magie entropique a récemment commencé à attirer l'attention de nombreux curieux ou mages érudits.
+
+Les entropistes sont des mages qui se spécialisent dans l'étude de l'entropie. Ils ont accès à des sorts leur permettent de se protéger de la magie entropique et de la façonner selon leur volonté. La magie entropique est très imprévisible et devrait être utilisée avec prudence.
+
+CARACTÉRISTIQUES DE CLASSE :
+
+– Peut mémoriser un sort de plus par niveau de sort.
+– Peut lancer les sorts de niveau 1 Rupture hasardeuse de Nahal et Contrôle des hiatus (ajoutés automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 2 Malchance (ajouté automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 3 Bouclier du Chaos (ajouté automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 7 Frappe Sauvage de Nahal (ajouté automatiquement à son livre de sorts).
+– Chaque fois qu'il lance un sort, 5% de chance de subir un hiatus entropique.
+
+HIATUS ENTROPIQUE : un Hiatus entropique génère un effet magique totalement aléatoire pour le sort qui est lancé. Cet effet peut être bénéfique ou néfaste pour l'entropiste et/ou ses alliés.
+
+– Le niveau de lanceur de sort varie chaque fois que l'entropiste lance un sort, variant entre cinq niveaux en dessous et 5 niveaux au dessus du niveau réel de l'entropiste.~
+
+
+// IWD:EE Wild Mage description
+@1101 = ~ENTROPISTE : La magie entropique est un nouveau type de magie caractérisée par de puissants et dangereux sursauts de magie imprévisible. La magie entropique a récemment commencé à attirer l'attention de nombreux curieux ou mages érudits.
+
+Les entropistes sont des mages qui se spécialisent dans l'étude de l'entropie. Ils ont accès à des sorts leur permettent de se protéger de la magie entropique et de la façonner selon leur volonté. La magie entropique est très imprévisible et devrait être utilisée avec prudence.
+
+CARACTÉRISTIQUES DE CLASSE :
+
+– Peut mémoriser un sort de plus par niveau de sort.
+– Peut lancer les sorts de niveau 1 Rupture hasardeuse de Nahal et Contrôle des hiatus (ajoutés automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 2 Malchance (ajouté automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 3 Bouclier du Chaos (ajouté automatiquement à son livre de sorts).
+– Peut lancer le sort de niveau 7 Frappe Sauvage de Nahal (ajouté automatiquement à son livre de sorts).
+– Chaque fois qu'il lance un sort, 5% de chance de subir un hiatus entropique.
+
+HIATUS ENTROPIQUE : un Hiatus entropique génère un effet magique totalement aléatoire pour le sort qui est lancé. Cet effet peut être bénéfique ou néfaste pour l'entropiste et/ou ses alliés.
+
+– Le niveau de lanceur de sort varie chaque fois que l'entropiste lance un sort, variant entre cinq niveaux en dessous et 5 niveaux au dessus du niveau réel de l'entropiste.~

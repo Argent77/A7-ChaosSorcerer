@@ -1,0 +1,9 @@
+// -*- coding: utf-8 -*- 
+// Misc. strings (index 10000..19999)
+
+@10000 = ~Élémental de Chaos~
+@10001 = ~Élémental de Chaos majeur~
+@10002 = ~Un Élémental de Chaos a réussi à glisser à travers la faille.~
+@10003 = ~Un Élémental de Chaos majeur a réussi à glisser à travers la faille.~
+@10004 = ~Élémental de Chaos invoqué~
+@10005 = ~Oups, une faille... Est ce que c'est une créature du chaos ?!~

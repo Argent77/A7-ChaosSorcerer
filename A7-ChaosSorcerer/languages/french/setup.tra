@@ -1,0 +1,12 @@
+// -*- coding: us-ascii -*- 
+// Setup (index 0..999)
+
+@0 = ~Kit d'Ensorceleur du Chaos~
+@10 = ~Recréer la liste de sélection de sorts de "Onde chaotique"~
+@20 = ~Supprimer le kit d'entropiste des classes pouvant être choisies lors de la création de personnage~
+@30 = ~Ajouter des artefacts primordiaux~
+
+@500 = ~Ce composant nécessite que BG:EE, BG2:EE, EET ou IWD:EE soit installé.~
+@501 = ~Ce composant nécessite que le composant principal soit installé.~
+@502 = ~Ce composant est prévu pour être appelé indépendamment si nécessaire.~
+@503 = ~Ce composant n'est pas supporté par ce jeu.~

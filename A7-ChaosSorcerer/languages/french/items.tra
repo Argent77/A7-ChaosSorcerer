@@ -1,0 +1,403 @@
+// -*- coding: utf-8 -*- 
+// Items (index 20000..29999)
+
+// Items
+@20000 = ~Cape de mouvements fluides d'Akadis~
+@20001 = ~L'origine de cette cape s'est perdu dans les brumes du temps. Si bien que les matériaux qui la composent semblent venir d'ailleurs. En fait, l'objet à probablement été crée sur un autre plan d’existence, puisque ses enchantements principaux sont alimentés par la puissance d'Adaki, Reine de l'eau - et par nature, Primordiale. La cape reflète la nature d'Akadi. Elle protège contre les dégâts électriques et permet à son porteur de se mouvoir et d'agir plus rapidement pendant un tour, une fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance à l'électricité : +25%
+
+Capacité de charge :
+– Hâte (sur soi même) une fois par jour
+
+– Éclat Primitif une fois par jour
+  Onde chargée : dégâts électriques sur tout le monde sur 10 mètres de rayon.
+
+Poids : 3~
+@20002 = ~L'origine de cette cape s'est perdu dans les brumes du temps. Si bien que les matériaux qui la composent semblent venir d'ailleurs. En fait, l'objet à probablement été crée sur un autre plan d’existence, puisque ses enchantements principaux sont alimentés par la puissance d'Adaki, Reine de l'eau - et par nature, Primordiale. La cape reflète la nature d'Akadi. Elle protège contre les dégâts électriques et permet à son porteur de se mouvoir et d'agir plus rapidement pendant un tour, deux fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance à l'électricité : +33%
+
+Capacité de charge :
+– Hâte (sur soi même)deux fois par jour
+
+– Éclat Primitif deux fois par jour
+  Choix entre Onde chargée et un autre sort. Le type dépend de l'origine des artefacts combinés.
+  Onde chargée : dégâts électriques sur tout le monde sur 10 mètres de rayon.
+
+Poids : 3~
+@20003 = ~L'origine de cette cape s'est perdu dans les brumes du temps. Si bien que les matériaux qui la composent semblent venir d'ailleurs. En fait, l'objet à probablement été crée sur un autre plan d’existence, puisque ses enchantements principaux sont alimentés par la puissance d'Adaki, Reine de l'eau - et par nature, Primordiale. La cape reflète la nature d'Akadi. Elle protège contre les dégâts électriques et permet à son porteur de se mouvoir et d'agir plus rapidement pendant un tour, trois fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance à l'électricité : +50%
+
+Capacité de charge :
+– Hâte (sur soi même)trois fois par jour
+
+– Éclat Primitif trois fois par jour
+  Choix entre Onde chargée et trois autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Onde chargée : dégâts électriques sur tout le monde sur 10 mètres de rayon.
+
+Poids : 3~
+@20004 = ~L'origine de cette cape s'est perdu dans les brumes du temps. Si bien que les matériaux qui la composent semblent venir d'ailleurs. En fait, l'objet à probablement été crée sur un autre plan d’existence, puisque ses enchantements principaux sont alimentés par la puissance d'Adaki, Reine de l'eau - et par nature, Primordiale. La cape reflète la nature d'Akadi. Elle protège contre les dégâts électriques et permet à son porteur de se mouvoir et d'agir plus rapidement pendant un tour, quatre fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance à l'électricité : +66%
+
+Capacité de charge :
+– Hâte (sur soi même)quatre fois par jour
+
+– Éclat Primitif quatre fois par jour
+  Choix entre Onde chargée et sept autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Onde chargée : dégâts électriques sur tout le monde sur 10 mètres de rayon.
+
+Poids : 3~
+
+@20050 = ~Bouclier psychique d'Istishia~
+@20051 = ~Cet artefact semble contenir certains pouvoirs du primordial Istishia, aussi connu en tant que Seigneur de l'Eau. On en sait pas plus sur l'origine de cet objet. Il semble qu'il ai été crée sur Abeir – la planète jumelle de Toril et résidence des primordiaux, en grande partie inconnue des habitants de ce monde. Le serre-tête offre offre une résistance au froid et de multiples protections contre les manipulations de l'esprit.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au froid : +33%
+– Immunité au charme
+
+Capacité de charge :
+– Éclat Primitif une fois par jour
+  Vaporisation glacée : dégâts de froid sur tout le monde sur 10 mètres de rayon.
+
+Poids : 1~
+@20052 = ~Cet artefact semble contenir certains pouvoirs du primordial Istishia, aussi connu en tant que Seigneur de l'Eau. On en sait pas plus sur l'origine de cet objet. Il semble qu'il ai été crée sur Abeir – la planète jumelle de Toril et résidence des primordiaux, en grande partie inconnue des habitants de ce monde. Le serre-tête offre offre une résistance au froid et de multiples protections contre les manipulations de l'esprit.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au froid : +50%
+– Immunité au charme et à la confusion
+
+Capacité de charge :
+– Éclat Primitif deux fois par jour
+  Choix entre Vaporisation glacée et un autre sort. Le type dépend de l'origine des artefacts combinés.
+  Vaporisation glacée : dégâts de froid sur tout le monde sur 10 mètres de rayon.
+
+Poids : 1~
+@20053 = ~Cet artefact semble contenir certains pouvoirs du primordial Istishia, aussi connu en tant que Seigneur de l'Eau. On en sait pas plus sur l'origine de cet objet. Il semble qu'il ai été crée sur Abeir – la planète jumelle de Toril et résidence des primordiaux, en grande partie inconnue des habitants de ce monde. Le serre-tête offre offre une résistance au froid et de multiples protections contre les manipulations de l'esprit.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au froid : +66%
+– Immunité au charme et à la confusion
+
+Capacité de charge :
+– Éclat Primitif trois fois par jour
+
+Éclat Primitif trois fois par jour
+  Choix entre Vaporisation glacée et trois autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Vaporisation glacée : dégâts de froid sur tout le monde sur 10 mètres de rayon.
+
+Poids : 1~
+@20054 = ~Cet artefact semble contenir certains pouvoirs du primordial Istishia, aussi connu en tant que Seigneur de l'Eau. On en sait pas plus sur l'origine de cet objet. Il semble qu'il ai été crée sur Abeir – la planète jumelle de Toril et résidence des primordiaux, en grande partie inconnue des habitants de ce monde. Le serre-tête offre offre une résistance au froid et de multiples protections contre les manipulations de l'esprit.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au froid : +75%
+– Immunité au charme, à la confusion et au Souffle psionique
+
+Capacité de charge :
+– Éclat Primitif quatre fois par jour
+  Choix entre Vaporisation glacée et sept autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Vaporisation glacée : dégâts de froid sur tout le monde sur 10 mètres de rayon.
+
+Poids : 1~
+
+@20060 = ~Serre-tête~
+@20061 = ~Ce fin serre-tête semble trop simple pour être une couronne. Il y a des symboles arcaniques énigmatiques qui courent le long de la face interne de l'anneau.
+
+PARAMÈTRES :
+
+Poids : 1~
+
+@20100 = ~Défense de Grumbar +1~
+@20101 = ~À  première vue ce bouclier semble plutôt ordinaire, mais en vérité c'est un objet d'origine inhabituelle. La rumeur dit qu'il a été crée il y a des siècles par un clan de nains originaires d'Abeir, la planète jumelle de Toril, venus s'installer dans les profondes cavernes de ce monde. Cette histoire ne semble pas invraisemblable, puisque qu'il est en fait alimenté par la puissance de Grumbar, le Seigneur de la Terre, un être d'origine primordiale. Le bouclier, malgré qu'il soit petit et léger, offre une protection exceptionnelle contre les dommages physiques, spécialement contre les gros rochers et les armes contondantes.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Classe d'Armure : +2
+– Résistance aux dégâts contondants : +33%
+- Ne protège pas contre les attaques perforantes ou les projectiles
+
+Capacité de charge :
+– Éclat Primitif une fois par jour
+  Pierres acérées : dégâts contondants sur tout le monde sur 10 mètres de rayon.
+
+Force nécessaire : 4
+
+Poids : 2~
+@20102 = ~À  première vue ce bouclier semble plutôt ordinaire, mais en vérité c'est un objet d'origine inhabituelle. La rumeur dit qu'il a été crée il y a des siècles par un clan de nains originaires d'Abeir, la planète jumelle de Toril, venus s'installer dans les profondes cavernes de ce monde. Cette histoire ne semble pas invraisemblable, puisque qu'il est en fait alimenté par la puissance de Grumbar, le Seigneur de la Terre, un être d'origine primordiale. Le bouclier, malgré qu'il soit petit et léger, offre une protection exceptionnelle contre les dommages physiques, spécialement contre les gros rochers et les armes contondantes.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Classe d'Armure : +3
+– Résistance aux dégâts contondants : +50%
+- Ne protège pas contre les attaques perforantes ou les projectiles
+
+Capacité de charge :
+– Éclat Primitif deux fois par jour
+  Choix entre Pierres acérées et un autre sort. Le type dépend de l'origine des artefacts combinés.
+  Pierres acérées : dégâts contondants sur tout le monde sur 10 mètres de rayon.
+
+Force nécessaire : 4
+
+Poids : 2~
+@20103 = ~À  première vue ce bouclier semble plutôt ordinaire, mais en vérité c'est un objet d'origine inhabituelle. La rumeur dit qu'il a été crée il y a des siècles par un clan de nains originaires d'Abeir, la planète jumelle de Toril, venus s'installer dans les profondes cavernes de ce monde. Cette histoire ne semble pas invraisemblable, puisque qu'il est en fait alimenté par la puissance de Grumbar, le Seigneur de la Terre, un être d'origine primordiale. Le bouclier, malgré qu'il soit petit et léger, offre une protection exceptionnelle contre les dommages physiques, spécialement contre les gros rochers et les armes contondantes.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Classe d'Armure : +3
+– Résistance aux dégâts contondants : +66%
+- Ne protège pas contre les attaques perforantes ou les projectiles
+
+Capacité de charge :
+– Éclat Primitif trois fois par jour
+  Choix entre Pierres acérées et trois autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Pierres acérées : dégâts contondants sur tout le monde sur 10 mètres de rayon.
+
+Force nécessaire : 4
+
+Poids : 2~
+@20104 = ~À  première vue ce bouclier semble plutôt ordinaire, mais en vérité c'est un objet d'origine inhabituelle. La rumeur dit qu'il a été crée il y a des siècles par un clan de nains originaires d'Abeir, la planète jumelle de Toril, venus s'installer dans les profondes cavernes de ce monde. Cette histoire ne semble pas invraisemblable, puisque qu'il est en fait alimenté par la puissance de Grumbar, le Seigneur de la Terre, un être d'origine primordiale. Le bouclier, malgré qu'il soit petit et léger, offre une protection exceptionnelle contre les dommages physiques, spécialement contre les gros rochers et les armes contondantes.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Classe d'Armure : +4
+– Résistance aux dégâts contondants : +75%
+- Ne protège pas contre les attaques perforantes ou les projectiles
+
+Capacité de charge :
+– Éclat Primitif quatre fois par jour
+  Choix entre Pierres acérées et sept autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Pierres acérées : dégâts contondants sur tout le monde sur 10 mètres de rayon.
+
+Force nécessaire : 4
+
+Poids : 2~
+@20105 = ~Défense de Grumbar +2~
+@20106 = ~Défense de Grumbar +3~
+
+@20150 = ~Le Brûleur de Kossuth +3~
+@20151 = ~Kossuth, le Seigneur de la flamme, est probablement le primordial le plus connu sur Faerûn. Cette dague semble déborder du pouvoir du feu. Non seulement elle brûle tout ce qu'elle touche, mais son porteur est en plus capable d'invoquer les puissants serviteurs du seigneur de la flamme lui-même une fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au feu : +50%
+
+Capacité de charge :
+– Conjuration d'élémental du feu majeur une fois par jour
+  Invoque un élémental du feu majeur pendant un tour.
+
+– Éclat Primitif une fois par jour
+  Déflagration : dégâts de feu sur tout le monde sur 10 mètres de rayon.
+
+TAC0 :
+Dégâts : 1d4+3, +1d2 dégâts de feu
+Type de dégâts : Perforant
+Facteur de vitesse : 0
+Type de compétence : Dague
+Type : Arme à 1 main
+Force nécessaire : 3
+
+Poids : 1~
+@20152 = ~Kossuth, le Seigneur de la flamme, est probablement le primordial le plus connu sur Faerûn. Cette dague semble déborder du pouvoir du feu. Non seulement elle brûle tout ce qu'elle touche, mais son porteur est en plus capable d'invoquer les puissants serviteurs du seigneur de la flamme lui-même une fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au feu : +66%
+
+Capacité de charge :
+– Conjuration d'élémental du feu majeur une fois par jour
+  Invoque un élémental du feu majeur avec 25% d'invoquer un second élémental du feu majeur pendant un tour.
+
+– Éclat Primitif deux fois par jour
+  Choix entre Déflagration et un autre sort. Le type dépend de l'origine des artefacts combinés.
+  Déflagration : dégâts de feu sur tout le monde sur 10 mètres de rayon.
+
+TAC0 : +4
+Dégâts : 1d4+4, +1d4 dégâts de feu
+Type de dégâts : Perforant
+Facteur de vitesse : 0
+Type de compétence : Dague
+Type : Arme à 1 main
+Force nécessaire : 3
+
+Poids : 1~
+@20153 = ~Kossuth, le Seigneur de la flamme, est probablement le primordial le plus connu sur Faerûn. Cette dague semble déborder du pouvoir du feu. Non seulement elle brûle tout ce qu'elle touche, mais son porteur est en plus capable d'invoquer les puissants serviteurs du seigneur de la flamme lui-même une fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact. La rumeur dit qu'il y aurait d'autres artefacts d'origine similaire, qui peuvent être combinés pour créer des enchantements encore plus puissants.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au feu : +75%
+
+Capacité de charge :
+– Conjuration d'élémental de feu majeur une fois par jour
+  Invoque un élémental du feu majeur avec 50% d'invoquer un second élémental du feu majeur pendant un tour.
+
+– Éclat Primitif trois fois par jour
+  Choix entre Déflagration et trois autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Déflagration : dégâts de feu sur tout le monde sur 10 mètres de rayon.
+
+TAC0 : +5
+Dégâts : 1d4+5, +1d6 dégâts de feu
+Type de dégâts : Perforant
+Facteur de vitesse : 0
+Type de compétence : Dague
+Type : Arme à 1 main
+Force nécessaire : 3
+
+Poids : 1~
+@20154 = ~Kossuth, le Seigneur de la flamme, est probablement le primordial le plus connu sur Faerûn. Cette dague semble déborder du pouvoir du feu. Non seulement elle brûle tout ce qu'elle touche, mais son porteur est en plus capable d'invoquer les puissants serviteurs du seigneur de la flamme lui-même une fois par jour.
+
+Un pratiquant des arts magiques, s'il est capable d’accéder au chaos élémentaire, peut aussi canaliser de l’énergie au travers des enchantement pour produire un effet qui reflète la nature de l'artefact.
+
+PARAMÈTRES :
+
+Capacité d'équipement :
+– Résistance au feu : +95%
+
+Capacité de charge :
+– Conjuration d'élémental du feu majeur une fois par jour
+  Invoque deux élémentaux du feu majeurs pendant un tour.
+
+– Éclat Primitif quatre fois par jour
+  Choix entre Déflagration et sept autres sorts. Les types dépendent de l'origine des artefacts combinés.
+  Déflagration : dégâts de feu sur tout le monde sur 10 mètres de rayon.
+
+TAC0 : +5
+Dégâts : 1d4+5, +1d8 dégâts de feu
+Type de dégâts : Perforant
+Facteur de vitesse : 0
+Type de compétence : Dague
+Type : Arme à 1 main
+Force nécessaire : 3
+
+Poids : 1~
+@20155 = ~Le Brûleur de Kossuth +4~
+@20156 = ~Le Brûleur de Kossuth +5~
+
+@20160 = ~Conjuration d'Élémental du feu majeur~
+@20161 = ~Élémental du feu majeur~
+
+
+// Spell effects
+@21000 = ~Éclat Primitif~
+
+@21010 = ~Onde chargée~
+@21020 = ~Vaporisation glacée~
+@21030 = ~Pierres acérées~
+@21040 = ~Déflagration~
+
+@21110 = ~Brume empoisonnée~
+@21120 = ~Tempête de sable~
+@21130 = ~Tempête de feu~
+@21140 = ~Glissement de terrain~
+@21150 = ~Nuage corrosif~
+@21160 = ~Inferno~
+
+@21210 = ~Éclats corrosifs~
+@21220 = ~Explosion acide~
+@21230 = ~Lance de chaleur chargée~
+@21240 = ~Explosion de magma~
+
+@21310 = ~Armageddon~
+
+
+// Conversation lines
+@22000 = ~(Vous tenez la cape dans vos mains et regardez si un autre artefact peut être combiné avec...)~
+@22001 = ~(Vous tenez le serre-tête dans vos mains et regardez si un autre artefact peut être combiné avec...)~
+@22002 = ~(Vous tenez la targe dans vos mains et regardez si un autre artefact peut être combiné avec...)~
+@22003 = ~(Vous tenez la dague dans vos mains et regardez si un autre artefact peut être combiné avec...)~
+@22006 = ~(Sans la capacité d’accéder au Chaos élémentaire vous n'êtes pas capable de libérer le vrai potentiel de l'objet...)~
+@22007 = ~(L'objet semble déborder de pouvoirs venus d’ailleurs scellés par d'anciens enchantements...)~
+@22008 = ~Examiner~
+
+@22010 = ~(Combiner la cape avec le serre-tête.)~
+@22011 = ~(Combiner la cape avec la targe.)~
+@22012 = ~(Combiner la cape avec la dague..)~
+
+@22015 = ~(Combiner le serre-tête avec la cape..)~
+@22016 = ~(Combiner le serre-tête avec la targe.)~
+@22017 = ~(Combiner le serre-tête avec la dague..)~
+
+@22020 = ~(Combiner la targe avec la cape..)~
+@22021 = ~(Combiner la targe avec le serre-tête.)~
+@22022 = ~(Combiner la targe avec la dague..)~
+
+@22025 = ~(Combiner la dague avec la cape..)~
+@22026 = ~(Combiner la dague avec le serre-tête.)~
+@22027 = ~(Combiner la dague avec la targe.)~
+
+@22030 = ~(Vous prenez la cape et vous vous concentrez sur votre tâche)~
+@22031 = ~(Vous prenez le serre-tête et vous vous concentrez sur votre tâche)~
+@22032 = ~(Vous prenez la targe et vous vous concentrez sur votre tâche)~
+@22033 = ~(Vous prenez la dague et vous vous concentrez sur votre tâche)~
+
+@22040 = ~(ne rien faire.)~
+@22041 = ~(Channelling raw energy from the Elemental Chaos directly into the items causes them to lose their form, only to re-emerge moments later as a new, more powerful item.)~
+
+@22050 = ~Transformer en cape~
+@22051 = ~Transformer en serre-tête~
+@22052 = ~Transformer en targue~
+@22053 = ~Transformer en dague~
+
+@22060 = ~Transformé en cape~
+@22061 = ~Transformé en serre-tête~
+@22062 = ~Transformé en targue~
+@22063 = ~Transformé en dague~

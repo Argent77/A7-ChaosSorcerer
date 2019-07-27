@@ -206,6 +206,7 @@ Writing, coding and testing: Argent77
 
 Polish translation: Cahir
 Russian translation: Saigon1983
+French translation: Deratiseur
 
 Additional help with projectiles: kjeron
 
@@ -222,6 +223,7 @@ History
 
 2.5
 - Added Russian translation (thanks Saigon1983)
+- Added French translation (thanks Deratiseur)
 
 2.4
 - Rebalanced duration of "Chaos Shield"

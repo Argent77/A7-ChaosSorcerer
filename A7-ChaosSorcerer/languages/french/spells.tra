@@ -1,0 +1,167 @@
+// -*- coding: utf-8 -*- 
+// Spells (index 2000..9999)
+
+@2000 = ~Onde chaotique~
+@2001 = ~Onde chaotique
+(Invocation/Évocation)
+
+Niveau : 1
+Portée : spécial
+Durée : spécial
+Temps d'incantation : spécial
+Zone d'effet : spécial
+Jet de sauvegarde : spécial
+
+Ce sort ouvre une petite faille vers le Chaos élémentaire pour y puiser de l’énergie magique brute, que l'ensorceleur peut tenter de modeler en l'effet de sort désiré. La tentative échoue généralement mais quelque chose se passe presque toujours dans le processus.
+
+Pour utiliser Onde chaotique lancez le, et choisissez parmi une liste de sorts pris aléatoirement. Une bouffée d'énergie magique est libérée, que l'ensorceleur du Chaos va tenter de modeler en la forme désirée. L'effet du sort est déterminé aléatoirement en lançant un dé sur la table des hiatus entropique (lisez le manuel pour plus de détails). La liste des sorts potentiels à choisir devient plus grande et plus régulière à hauts niveaux.
+
+Puisque la libération d’énergie est prévue par l'ensorceleur, son niveau est ajouté au lancé de dé. Si le résultat indique un succès, l'ensorceleur à modelé l’énergie magique en l’effet désiré. Autrement, le résultat est complètement inattendu. Le résultat peut être bénéfique pour l'ensorceleur, ou au contraire complètement désastreux : c'est le risque que prend l'ensorceleur en s'appuyant sur les énergies du Chaos élémentaire.~
+
+
+@2050 = ~Conjuration d'Élémental de chaos~
+@2051 = ~Conjuration d'Élémental de chaos
+(Conjuration/Convocation)
+
+Niveau : 5
+Portée : 15 mètres
+Durée : 1 tour + 1 round/niveau
+Temps d'incantation : 9
+Zone d'effet : spécial
+Jet de sauvegarde : Non
+
+Les Ensorceleur du chaos sont capables d'appeler les êtres du Chaos élémentaire pour répondre à leurs besoins. L'élémental du chaos ressemble à un nuage de matière amorphe, tourbillonnant sans motif distinct. Il a 8 Dés de vie et servira chaque caprice du lanceur de sorts jusqu'à ce qu'il soit banni dans son plan d'origine, que la durée du sortilège soit écoulée ou que l'élémental meure.
+Par contre, chaque fois que ce sort est lancé, il y a 15% de chance que l'éléméntal échappe aux instructions du lanceur de sort et attaque tout le monde dans son champ de vision. Cet élémental berserker restera aussi pour le temps de la durée du sort ou jusqu'à ce qu'il soit tué. L'élémental est bloqué dans un combat psychique avec le lanceur de sort pendant 3 rounds après avoir été conjuré. A la fin de ce temps, si le lanceur de sort à gagné il contrôle l'élémental. Par contre, si le lanceur de sort à perdu, l'élémental devient berserk et attaque tout le monde autour de lui.
+
+Élémental de chaos (8 dés de vie) :
+FOR 14, DEX 10, CON 9, INT 10, SAG 11, CHA 10; AL Chaotique neutre
+PV 64, CA 4, TAC0 10, Jets de sauvegarde 9/12/8/12/10
+2 Attaques par round, 1d12 Contondant (Poing +3)
+
+Capacités de combat :
+Chaos : rend une cible confuse pour deux rounds (jet de sauvegarde contre les sorts pour annuler)
+
+Capacités innées :
+Déplacement plus rapide
+Peut se soigner lui même quand il est blessé
+Immunisé au charme, à la confusion, à l'immobilisation, au poison, au sommeil, à la peur, à la métamorphose et à l'étourdissement
+Résistances au feu, au froid, à l'électricité et à l'acide : 100%
+Résistance aux projectiles et aux attaques perçantes : 75%
+Résistance aux attaques tranchante  : 25%
+
+Même un Élémental de chaos totalement contrôlé par le lanceur de sort est incapable de rester fixe un moment et se déplacera en permanence, à moins que des ordres spécifiques ne lui soient donnés. Cependant il reviendra toujours vers le lanceur de sort s'il s'éloigne trop.~
+
+
+@2100 = ~Éruption Chaotique~
+@2101 = ~Éruption Chaotique
+(Évocation)
+
+Niveau : 10
+Portée : 13 mètres
+Durée : 2 rounds
+Temps d'incantation : 5
+Zone d'effet : 1 créature
+Jet de sauvegarde : spécial
+
+Avec ce sort le lanceur de sort crée une faille dans le sol sous la cible et la connecte au Chaos élementaire pendant un bref moment. Le procédé résulte en une éruption massive de différentes énergies qui brûlent, gèlent et électrocutent la cible, et la retiennent pour un round. Le sort inflige 10D10 points de dégâts contondants et 10D10 points de dégâts de feu ou de froid, avec 50% de chance d'infliger en plus D1010 points de dégâts électriques. la victime peut tenter un jet de sauvegarde contre les sorts pour éviter le moitié des dégâts.
+
+Enfin, la faille vers le Chaos élémentaire attire l'attention d'une créature native de ce plan. Il y a une petite chance pour qu'un Élémental de chaos glisse à travers la faille et vienne attaquer tout le monde à vue.~
+
+
+@2150 = ~Conjuration d'Élémental de chaos majeur~
+@2151 = ~Conjuration d'Élémental de chaos majeur
+(Conjuration/Convocation)
+
+Niveau : 7
+Portée : 15 mètres
+Durée : 1 tour/level
+Temps d'incantation : 9
+Zone d'effet : spécial
+Jet de sauvegarde : Non
+
+Les Ensorceleurs du chaos sont capables d'appeler les êtres du Chaos élémentaire pour répondre à leurs besoins. L'élémental du chaos majeur ressemble à un nuage de matière amorphe, tourbillonnant sans motif distinct. Il a 16 Dés de vie et servira chaque caprice du lanceur de sorts jusqu'à ce qu'il soit banni dans son plan d'origine, que la durée du sortilège soit écoulée ou que l'élémental meure.
+Par contre, chaque fois que ce sort est lancé, il y a 15% de chance que l'éléméntal échappe aux instructions du lanceur de sort et attaque tout le monde dans son champ de vision. Cet élémental berserker restera aussi pour le temps de la durée du sort ou jusqu'à ce qu'il soit tué. L'élémental est bloqué dans un combat psychique avec le lanceur de sort pendant 3 rounds après avoir été conjuré. A la fin de ce temps, si le lanceur de sort à gagné il contrôle l'élémental. Par contre, si le lanceur de sort à perdu, l'élémental devient berserk et attaque tout le monde autour de lui.
+
+Élémental de chaos majeur (16 dés de vie) :
+FOR 18, DEX 10, CON 12, INT 10, SAG 11, CHA 10; AL Chaotique neutre
+PV 128, CA 1, TAC0 6, Jets de sauvegarde 6/9/5/9/7
+3 Attaques par round, 1d12 Contondant (Poing +3)
+
+Capacités de combat :
+Chaos : rend une cible confuse pour deux rounds (jet de sauvegarde contre les sorts à -2 pour annuler)
+
+Capacités innées :
+Déplacement plus rapide
+Peut se soigner lui même quand il est blessé
+Immunisé aux armes non-magiques
+Immunisé au charme, à la confusion, à l'immobilisation, au poison, au sommeil, à la peur, à la métamorphose et à l'étourdissement
+Résistances au feu, au froid, à l'électricité et à l'acide : 100%
+Résistance à la magie : 25%
+Résistance aux projectiles et aux attaques perçantes : 100%
+Résistance aux attaques tranchante  : 50%
+
+Même un Élémental de chaos majeur totalement contrôlé par le lanceur de sort est incapable de rester fixe un moment et se déplacera en permanence, à moins que des ordres spécifiques ne lui soient donnés. Cependant il reviendra toujours vers le lanceur de sort s'il s'éloigne trop.~
+
+
+// Remplacement des sorts de l'entropiste
+@2500 = ~Contrôle des hiatus~
+@2501 = ~Contrôle des hiatus
+(Abjuration)
+
+Niveau : 1
+Portée : 0
+Durée : Spécial
+Temps d'incantation : 2
+Zone d'effet : Le lanceur de sort
+Jet de sauvegarde : Non
+
+Le Contrôle des hiatus érige une barrière invisible autour du lanceur de sort qui tente de détourner le prochain hiatus entropique. La chance d'éviter un hiatus est de 10% +1% par niveau, jusqu'à 30% au niveau 20.
+Un hiatus entropique détourné avec succès neutralise la barrière, sinon elle disparaît après 5 rounds. La barrière ne se cumule pas avec d'autres sorts qui augmentent les chances d'effets favorables sur la table des hiatus.~
+
+@2550 = ~Malchance~
+@2551 = ~Malchance
+(Évocation)
+
+Niveau : 2
+Portée : Champ de vision
+Durée : 5 rounds
+Temps d'incantation : 5
+Zone d'effet : 1 créature
+Jet de sauvegarde : Aucun
+
+Ce sort affecte les forces du hasard autour de la cible, lui donnant un coup de malchance pour la durée du sort. La cible reçoit un malus de -1 à ses jets de sauvegarde, ses jets de toucher et ses dommages minimaux, ainsi qu'un malus de-5% à ses compétences de voleur. En outre, les dés de dommages reçus pour tous les effets en dehors de ceux de la base d'une arme sont augmentés de 1. Par exemple une boule de feu de 6D6 fera 7D6, et une épée longue de flammes qui fait 1D8+2 tranchant plus 1D3 de feu fera 1D8 tranchant plus 1D4 de feu à la place. Il n'y a pas de jet de sauvegarde contre ce sort, mais la résistance à la magie permet d'y résister.~
+
+@2600 = ~Frappe Sauvage de Nahal~
+@2601 = ~Frappe Sauvage de Nahal
+(Altération)
+
+Niveau : 7
+Portée : Champ de vision
+Durée : 5 rounds + 1 round/3 niveaux
+Temps d'incantation : 5
+Zone d'effet : 1 créature
+Jet de sauvegarde : Annule
+
+Ce sort entoure la cible d'une aura d'énergies chaotiques qui se verrouille sur chaque sort que la cible tente de lancer. Pour la durée du sort, chaque fois que la cible lance un sort il déclenche aussi un hiatus entropique avec des résultats imprévisibles. La cible peut tenter un jet de sauvegarde à -4 pour éviter l'effet de ce sort.~
+
+// @2650 = ~Chaos Shield~   // no need to translate
+@2651 = ~Bouclier du chaos
+(Abjuration)
+
+Niveau : 3
+Portée : 0
+Durée : 1 tour + 1 round/3 niveaux
+Temps d'incantation : 5
+Zone d'effet : Le lanceur de sort
+Jet de sauvegarde : Non
+
+Le Bouclier du chaos augmente les chances de l'entropiste d'obtenir un résultat favorable en cas de hiatus entropique. À chaque fois qu'un jet est fait sur la table, un bonus supplémentaire est ajouté. Le bonus commence à +15 et augmente à +20 au niveau 12 et +25 au niveau 18. Le bonus du Bouclier du chaos se cumule avec le niveau du lanceur de sort.~
+
+
+@5000 = ~Confusion~
+@5001 = ~Confusion
+Cette capacité cause la confusion chez la créature ciblée, créant l’indécision et l’incapacité d'effectuer des actions réfléchies. La cible à droit à un jet de sauvegarde contre les sorts pour éviter l'effet. La cible peut devenir berserk, rester confuse, ou errer au hasard pour la durée de l'effet. Une créature confuse qui est attaquée perçoit l'attaquant comme un ennemi et agit en rapport avec sa nature profonde. L'effet dure 2 rounds.~
+
+@5050 = ~Confusion de masse~
+@5051 = ~Confusion de masse
+Cette capacité cause la confusion chez une ou plusieurs créatures créatures dans la zone, créant l’indécision et l’incapacité d'effectuer des actions réfléchies. Toutes les créatures dans la zone d'effet ont droit à un jet de sauvegarde contre les sort à -2 pour éviter l'effet. Celles qui réussissent le jet ne sont pas affectées par l'effet, alors que celles qui ratent le jet deviennent berserk, sont confuses ou errent au hasard pour le durée de l'effet. Une créature confuse qui est attaquée perçoit l'attaquant comme un ennemi et agit en rapport avec sa nature profonde. L'effet dure 2 rounds.~
