@@ -120,7 +120,7 @@ INT_VAR
   code      = 0
   new_code  = 0
 BEGIN
-  PATCH_IF (code >= 1000 && code < 5000 && 
+  PATCH_IF (code >= 1000 && code < 5000 &&
             new_code >= 1000 && new_code < 5000) BEGIN
     SET ofs = 0
     WHILE (ofs >= 0) BEGIN
@@ -280,9 +280,9 @@ END
 
 // Automates adding spell effects to items or spells, based on a code sequence
 // Code format per effect: "name1=value1,name2=value2;...second effect..."
-// Supported parameters:   op (Opcode), tgt (Target), tmg (Timing), pwr (Power), p1 (Parameter1), p2 (Parameter2), 
-//                         rd (Resist/Dispel), dur (Duration), pro1 (Probability1), pro2 (Probability2), res (Resource), 
-//                         dnum (Dice Number), dsize (Dice Size), stype (Save Type), sbonus (Save Bonus), spec (Special), 
+// Supported parameters:   op (Opcode), tgt (Target), tmg (Timing), pwr (Power), p1 (Parameter1), p2 (Parameter2),
+//                         rd (Resist/Dispel), dur (Duration), pro1 (Probability1), pro2 (Probability2), res (Resource),
+//                         dnum (Dice Number), dsize (Dice Size), stype (Save Type), sbonus (Save Bonus), spec (Special),
 //                         ip (Insert Point), hdr (Header), type (Type)
 //                         All parameters except opcode are optional.
 // Example:                "op=139,tgt=2,tmg=1,p1=8203;op=215,tgt=2,tmg=1,dur=2,p2=1,res=ICARMOR" adds two effects (139 and 215 with their respective parameters)

@@ -158,7 +158,7 @@ ACTION_IF (slot >= 0) BEGIN
   COPY_EXISTING ~a7_csrc.2da~ ~override~
     REPLACE_TEXTUALLY ~GA_A7_SP02~ ~GA_%spell_chaos_shield_resref%~
   BUT_ONLY
-  
+
   // spell should appear on character spell selection screen
   COPY_EXISTING ~hidespl.2da~ ~override~
     LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_chaos_shield_resref%~ END

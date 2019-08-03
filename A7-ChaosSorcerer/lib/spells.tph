@@ -219,7 +219,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
     // Specific Wild Surge 50: Summon Chaos Elemental (controllable)
     COPY ~%MOD_FOLDER%/spells/a7_wm01.spl~ ~override~
       LPF a7_update_effect_params
-      INT_VAR 
+      INT_VAR
         opcode            = 177
         match_parameter1  = 1
         parameter1        = 9999
@@ -252,7 +252,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
     // Specific Wild Surge 54: Call forth Greater Chaos Elemental (hostile)
     COPY ~%MOD_FOLDER%/spells/a7_wm02.spl~ ~override~
       LPF a7_update_effect_params
-      INT_VAR 
+      INT_VAR
         opcode            = 177
         match_parameter1  = 1
         parameter1        = 9999

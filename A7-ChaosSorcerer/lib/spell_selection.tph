@@ -69,7 +69,7 @@ END
 
 
 // Initializes the array "struct" with spell names.
-// "struct" is the prefix for the structure containing available spells. 
+// "struct" is the prefix for the structure containing available spells.
 // First index indicates spell level, second index indicates spell name.
 // Example: struct_1 = number of level 1 spells, struct_1_0 contains spell name of first available level 1 spell, ...
 // Parameters: STR_VAR struct
@@ -202,7 +202,7 @@ STR_VAR
   // output filename
   file_name   = ~~
 BEGIN
-  ACTION_IF (NOT ~%spell_table%~ STR_EQ ~~ && 
+  ACTION_IF (NOT ~%spell_table%~ STR_EQ ~~ &&
              NOT ~%file_name%~ STR_EQ ~~) BEGIN
 <<<<<<<< .../inlined/spell_table.2da
 2DA V1.0
@@ -243,7 +243,7 @@ BEGIN
         OUTER_SET chance = RANDOM(0 99)
         OUTER_SET max = cur_list - 1
         OUTER_SET index = RANDOM(0 max)
-        ACTION_IF (chance < EVAL ~level_%level%~ && 
+        ACTION_IF (chance < EVAL ~level_%level%~ &&
                    NOT EVAL ~%cur_list_%index%%~ STR_EQ ~~) BEGIN
           OUTER_SET value = EVAL ~spell_list_%level%~
           OUTER_TEXT_SPRINT EVAL ~spell_list_%level%_%value%~ EVAL ~%cur_list_%index%%~

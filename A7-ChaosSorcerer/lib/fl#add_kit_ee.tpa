@@ -393,7 +393,7 @@ BEGIN
     END
 
     APPEND clastext.2da "%clastext%" UNLESS "%kit_name%"
-    
+
     ACTION_IF FILE_EXISTS_IN_GAME ~%sod_clastext%.2da~ BEGIN
       APPEND ~%sod_clastext%.2da~ "%clastext%" UNLESS "%kit_name%"
     END
