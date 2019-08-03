@@ -1,6 +1,6 @@
 BACKUP ~A7-ChaosSorcerer/backup~
 SUPPORT ~https://forums.beamdog.com/discussion/66390~
-VERSION ~2.4~
+VERSION ~2.5~
 
 ALWAYS
   OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0

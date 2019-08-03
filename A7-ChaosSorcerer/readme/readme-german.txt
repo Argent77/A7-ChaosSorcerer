@@ -1,7 +1,7 @@
 Der Chaos Hexenmeister: Unbändige Magie für Hexenmeister
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    2.4
+Version:    2.5
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
