@@ -97,7 +97,12 @@ COPY ~%MOD_FOLDER%/spells/a7_sp01b.bam~ ~override~
 
 
 // HLA: Chaotic Eruption
-COPY ~%MOD_FOLDER%/spells/a7_sp10.spl~ ~override~
+ACTION_IF (EE_V2) BEGIN
+  OUTER_TEXT_SPRINT A7_SP10_SPL ~%MOD_FOLDER%/spells/a7_sp10.spl~
+END ELSE BEGIN
+  OUTER_TEXT_SPRINT A7_SP10_SPL ~%MOD_FOLDER%/spells/pre20/a7_sp10.spl~
+END
+COPY ~%A7_SP10_SPL%~ ~override~
   SAY NAME1 @2100 // Chaotic Eruption
   SAY UNIDENTIFIED_DESC @2101 // Chaotic Eruption description
 
@@ -106,11 +111,15 @@ COPY ~%MOD_FOLDER%/spells/a7_sp10b.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs1a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs1b.bmp~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1c.bmp~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2b.bmp~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2c.bmp~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs1a.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs1b.vvc~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs1c.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2a.vvc~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs2b.vvc~ ~override~
+     ~%MOD_FOLDER%/spells/a7_cs2c.vvc~ ~override~
 
 COPY ~%MOD_FOLDER%/creatures/a7_cel1a.cre~ ~override~
   SAY NAME1 @10000  // Chaos Elemental

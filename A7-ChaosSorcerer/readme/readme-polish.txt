@@ -235,6 +235,9 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 History
 ~~~~~~~
 
+2.6
+- Improved effects of HLA "Chaotic Eruption"
+
 2.5
 - Added Russian translation (thanks Saigon1983)
 - Added French translation (thanks Deratiseur)

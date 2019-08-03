@@ -3,6 +3,7 @@ SUPPORT ~https://forums.beamdog.com/discussion/66390~
 VERSION ~2.5~
 
 ALWAYS
+  OUTER_SET EE_V2 = (FILE_EXISTS ~engine.lua~ && FILE_EXISTS_IN_GAME ~ui.menu~) ? 1 : 0
   OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
 END
