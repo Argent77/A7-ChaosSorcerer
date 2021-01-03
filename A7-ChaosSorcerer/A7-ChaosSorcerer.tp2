@@ -12,39 +12,39 @@ README ~%MOD_FOLDER%/readme/readme-%LANGUAGE%.txt~ ~%MOD_FOLDER%/readme/readme.t
 
 LANGUAGE ~English~
          ~english~
-         ~%MOD_FOLDER%/languages/english/setup.tra~
-         ~%MOD_FOLDER%/languages/english/kit.tra~
-         ~%MOD_FOLDER%/languages/english/spells.tra~
-         ~%MOD_FOLDER%/languages/english/misc.tra~
-         ~%MOD_FOLDER%/languages/english/items.tra~
+         ~A7-ChaosSorcerer/languages/english/setup.tra~
+         ~A7-ChaosSorcerer/languages/english/kit.tra~
+         ~A7-ChaosSorcerer/languages/english/spells.tra~
+         ~A7-ChaosSorcerer/languages/english/misc.tra~
+         ~A7-ChaosSorcerer/languages/english/items.tra~
 LANGUAGE ~Deutsch~
          ~german~
-         ~%MOD_FOLDER%/languages/german/setup.tra~
-         ~%MOD_FOLDER%/languages/german/kit.tra~
-         ~%MOD_FOLDER%/languages/german/spells.tra~
-         ~%MOD_FOLDER%/languages/german/misc.tra~
-         ~%MOD_FOLDER%/languages/german/items.tra~
+         ~A7-ChaosSorcerer/languages/german/setup.tra~
+         ~A7-ChaosSorcerer/languages/german/kit.tra~
+         ~A7-ChaosSorcerer/languages/german/spells.tra~
+         ~A7-ChaosSorcerer/languages/german/misc.tra~
+         ~A7-ChaosSorcerer/languages/german/items.tra~
 LANGUAGE ~Polski (by Cahir)~
          ~polish~
-         ~%MOD_FOLDER%/languages/polish/setup.tra~
-         ~%MOD_FOLDER%/languages/polish/kit.tra~
-         ~%MOD_FOLDER%/languages/polish/spells.tra~
-         ~%MOD_FOLDER%/languages/polish/misc.tra~
-         ~%MOD_FOLDER%/languages/polish/items.tra~
+         ~A7-ChaosSorcerer/languages/polish/setup.tra~
+         ~A7-ChaosSorcerer/languages/polish/kit.tra~
+         ~A7-ChaosSorcerer/languages/polish/spells.tra~
+         ~A7-ChaosSorcerer/languages/polish/misc.tra~
+         ~A7-ChaosSorcerer/languages/polish/items.tra~
 LANGUAGE ~Russian (by Saigon1983)~
          ~russian~
-         ~%MOD_FOLDER%/languages/russian/setup.tra~
-         ~%MOD_FOLDER%/languages/russian/kit.tra~
-         ~%MOD_FOLDER%/languages/russian/spells.tra~
-         ~%MOD_FOLDER%/languages/russian/misc.tra~
-         ~%MOD_FOLDER%/languages/russian/items.tra~
+         ~A7-ChaosSorcerer/languages/russian/setup.tra~
+         ~A7-ChaosSorcerer/languages/russian/kit.tra~
+         ~A7-ChaosSorcerer/languages/russian/spells.tra~
+         ~A7-ChaosSorcerer/languages/russian/misc.tra~
+         ~A7-ChaosSorcerer/languages/russian/items.tra~
 LANGUAGE ~Francais (by Deratiseur)~
          ~french~
-         ~%MOD_FOLDER%/languages/french/setup.tra~
-         ~%MOD_FOLDER%/languages/french/kit.tra~
-         ~%MOD_FOLDER%/languages/french/spells.tra~
-         ~%MOD_FOLDER%/languages/french/misc.tra~
-         ~%MOD_FOLDER%/languages/french/items.tra~
+         ~A7-ChaosSorcerer/languages/french/setup.tra~
+         ~A7-ChaosSorcerer/languages/french/kit.tra~
+         ~A7-ChaosSorcerer/languages/french/spells.tra~
+         ~A7-ChaosSorcerer/languages/french/misc.tra~
+         ~A7-ChaosSorcerer/languages/french/items.tra~
 
 
 BEGIN @0  // "Chaos Sorcerer" kit
@@ -67,7 +67,7 @@ marker
 
 
 BEGIN @10 // Recreate "Chaos Weave" spell selection lists
-  REQUIRE_COMPONENT ~setup-A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
+  REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
   REQUIRE_PREDICATE (NOT FILE_EXISTS ~override/a7_csmain.mrk~) @502 // This component is intended to be called separately if needed.
   NO_LOG_RECORD
   DESIGNATED 10
@@ -76,7 +76,7 @@ BEGIN @10 // Recreate "Chaos Weave" spell selection lists
 
 
 BEGIN @20 // Make "Wild Mage" unavailable to character creation
-  REQUIRE_COMPONENT ~setup-A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
+  REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
   REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~K_M_H.2DA~) @503  // This component is not supported by the game.
   DESIGNATED 20
 
@@ -84,7 +84,7 @@ BEGIN @20 // Make "Wild Mage" unavailable to character creation
 
 
 BEGIN @30 // Add "Primordial Artifacts"
-  REQUIRE_COMPONENT ~setup-A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
+  REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
   DESIGNATED 30
 
   INCLUDE ~%MOD_FOLDER%/lib/items.tph~
