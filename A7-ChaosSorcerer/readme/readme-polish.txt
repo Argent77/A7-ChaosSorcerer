@@ -1,7 +1,7 @@
 Czarownik chaosu: podklasa dla czarowników posługujących się dziką magią
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wersja:     2.5
+Wersja:     2.6
 Autor:      Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -221,6 +221,7 @@ Writing, coding and testing: Argent77
 
 Polish translation: Cahir
 Russian translation: Saigon1983
+French translation: Deratiseur
 
 Additional help with projectiles: kjeron
 
@@ -237,6 +238,8 @@ History
 
 2.6
 - Improved effects of HLA "Chaotic Eruption"
+- Added Project Infinity metadata
+- Fixed potential display issues with component names in WeiDU.log and Project Infinity
 
 2.5
 - Added Russian translation (thanks Saigon1983)

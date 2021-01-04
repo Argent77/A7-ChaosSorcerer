@@ -1,6 +1,6 @@
 BACKUP ~A7-ChaosSorcerer/backup~
 SUPPORT ~https://forums.beamdog.com/discussion/66390~
-VERSION ~2.5~
+VERSION ~2.6~
 
 ALWAYS
   OUTER_SET EE_V2 = (FILE_EXISTS ~engine.lua~ && FILE_EXISTS_IN_GAME ~ui.menu~) ? 1 : 0
