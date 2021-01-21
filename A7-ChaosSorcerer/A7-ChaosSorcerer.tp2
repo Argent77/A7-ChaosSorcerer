@@ -1,14 +1,19 @@
-BACKUP ~A7-ChaosSorcerer/backup~
+BACKUP ~weidu_external/backup/A7-ChaosSorcerer~
 SUPPORT ~https://forums.beamdog.com/discussion/66390~
 VERSION ~2.6~
 
 ALWAYS
+  // required because of non-standard BACKUP path
+  OUTER_TEXT_SPRINT MOD_FOLDER ~A7-ChaosSorcerer~
+  // root folder for mutable data
+  OUTER_TEXT_SPRINT WORK_FOLDER ~weidu_external~
+
   OUTER_SET EE_V2 = (FILE_EXISTS ~engine.lua~ && FILE_EXISTS_IN_GAME ~ui.menu~) ? 1 : 0
   OUTER_SET SPELL_REV = (MOD_IS_INSTALLED ~setup-spell_rev.tp2~ 0) ? 1 : 0
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
 END
 
-README ~%MOD_FOLDER%/readme/readme-%LANGUAGE%.txt~ ~%MOD_FOLDER%/readme/readme.txt~
+README ~A7-ChaosSorcerer/readme/readme-%LANGUAGE%.txt~ ~A7-ChaosSorcerer/readme/readme.txt~
 
 LANGUAGE ~English~
          ~english~
@@ -19,6 +24,11 @@ LANGUAGE ~English~
          ~A7-ChaosSorcerer/languages/english/items.tra~
 LANGUAGE ~Deutsch~
          ~german~
+         ~A7-ChaosSorcerer/languages/english/setup.tra~
+         ~A7-ChaosSorcerer/languages/english/kit.tra~
+         ~A7-ChaosSorcerer/languages/english/spells.tra~
+         ~A7-ChaosSorcerer/languages/english/misc.tra~
+         ~A7-ChaosSorcerer/languages/english/items.tra~
          ~A7-ChaosSorcerer/languages/german/setup.tra~
          ~A7-ChaosSorcerer/languages/german/kit.tra~
          ~A7-ChaosSorcerer/languages/german/spells.tra~
@@ -26,6 +36,11 @@ LANGUAGE ~Deutsch~
          ~A7-ChaosSorcerer/languages/german/items.tra~
 LANGUAGE ~Polski (by Cahir)~
          ~polish~
+         ~A7-ChaosSorcerer/languages/english/setup.tra~
+         ~A7-ChaosSorcerer/languages/english/kit.tra~
+         ~A7-ChaosSorcerer/languages/english/spells.tra~
+         ~A7-ChaosSorcerer/languages/english/misc.tra~
+         ~A7-ChaosSorcerer/languages/english/items.tra~
          ~A7-ChaosSorcerer/languages/polish/setup.tra~
          ~A7-ChaosSorcerer/languages/polish/kit.tra~
          ~A7-ChaosSorcerer/languages/polish/spells.tra~
@@ -33,6 +48,11 @@ LANGUAGE ~Polski (by Cahir)~
          ~A7-ChaosSorcerer/languages/polish/items.tra~
 LANGUAGE ~Russian (by Saigon1983)~
          ~russian~
+         ~A7-ChaosSorcerer/languages/english/setup.tra~
+         ~A7-ChaosSorcerer/languages/english/kit.tra~
+         ~A7-ChaosSorcerer/languages/english/spells.tra~
+         ~A7-ChaosSorcerer/languages/english/misc.tra~
+         ~A7-ChaosSorcerer/languages/english/items.tra~
          ~A7-ChaosSorcerer/languages/russian/setup.tra~
          ~A7-ChaosSorcerer/languages/russian/kit.tra~
          ~A7-ChaosSorcerer/languages/russian/spells.tra~
@@ -40,6 +60,11 @@ LANGUAGE ~Russian (by Saigon1983)~
          ~A7-ChaosSorcerer/languages/russian/items.tra~
 LANGUAGE ~Francais (by Deratiseur)~
          ~french~
+         ~A7-ChaosSorcerer/languages/english/setup.tra~
+         ~A7-ChaosSorcerer/languages/english/kit.tra~
+         ~A7-ChaosSorcerer/languages/english/spells.tra~
+         ~A7-ChaosSorcerer/languages/english/misc.tra~
+         ~A7-ChaosSorcerer/languages/english/items.tra~
          ~A7-ChaosSorcerer/languages/french/setup.tra~
          ~A7-ChaosSorcerer/languages/french/kit.tra~
          ~A7-ChaosSorcerer/languages/french/spells.tra~
