@@ -1,14 +1,15 @@
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Argent77/A7-ChaosSorcerer?color=darkred&include_prereleases&label=latest%20release)](https://GitHub.com/Argent77/A7-ChaosSorcerer/releases/latest)
-[![GitHub release date (latest by date)](https://img.shields.io/github/release-date/Argent77/A7-ChaosSorcerer?color=gold)](https://GitHub.com/Argent77/A7-ChaosSorcerer/releases/latest)
-[![Github downloads (all releases)](https://img.shields.io/github/downloads/Argent77/A7-ChaosSorcerer/total.svg?color=blueviolet)](https://GitHub.com/Argent77/A7-ChaosSorcerer/releases)
-[![Platform](https://img.shields.io/static/v1?label=platform&message=Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Project%20Infinity&color=informational)](https://GitHub.com/Argent77/A7-ChaosSorcerer/releases/latest)
-[![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Polish%20%7C%20Russian&color=limegreen)]()
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Argent77/A7-ChaosSorcerer?color=darkred&include_prereleases&label=latest%20release)](https://github.com/Argent77/A7-ChaosSorcerer/releases/latest)
+[![Github downloads (all releases)](https://img.shields.io/github/downloads/Argent77/A7-ChaosSorcerer/total.svg?color=gold)](https://github.com/Argent77/A7-ChaosSorcerer/releases)
+[![Platform](https://img.shields.io/static/v1?label=platform&message=Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Project%20Infinity&color=informational)](https://github.com/Argent77/A7-ChaosSorcerer/releases/latest)
+[![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20SoD%20%7C%20BG2%3AEE%20%7C%20EET%20%7C%20IWD%3AEE&color=indigo)](https://github.com/Argent77/A7-ChaosSorcerer)
+[![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Polish%20%7C%20Russian&color=limegreen)](https://github.com/Argent77/A7-ChaosSorcerer)
 
 # The Chaos Sorcerer: A Wild Magic Kit for Sorcerers
 *A mod for BG:EE, BG2:EE, EET and IWD:EE.*
 
-[![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=flat)](https://forums.beamdog.com/discussion/66390/)
-[![SHS Forums](https://img.shields.io/static/v1?label=Discussion&message=SHS%20Forums&color=951514&labelColor=eee&style=flat)](http://www.shsforums.net/topic/59482-mod-the-chaos-sorcerer-a-wild-magic-kit-for-sorcerers/)
+[![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=for-the-badge)](https://forums.beamdog.com/discussion/66390/ "Beamdog Forums")
+&nbsp;&nbsp;
+[![SHS Forums](https://img.shields.io/static/v1?label=Discussion&message=SHS%20Forums&color=951514&labelColor=eee&style=for-the-badge)](http://www.shsforums.net/topic/59482-mod-the-chaos-sorcerer-a-wild-magic-kit-for-sorcerers/ "Spellhold Studios Forums")
 
 ## Overview
 
