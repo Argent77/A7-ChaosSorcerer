@@ -75,6 +75,7 @@ LANGUAGE ~Francais (by Deratiseur)~
 BEGIN @0  // "Chaos Sorcerer" kit
   REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @500 // This component requires BG:EE, BG2:EE, EET or IWD:EE to be installed.
   DESIGNATED 0
+  LABEL ~A7-CHAOSSORCERER-MAIN~
 
   INCLUDE ~%MOD_FOLDER%/lib/kit.tph~
   INCLUDE ~%MOD_FOLDER%/lib/spells.tph~
@@ -96,6 +97,7 @@ BEGIN @10 // Recreate "Chaos Weave" spell selection lists
   REQUIRE_PREDICATE (NOT FILE_EXISTS ~override/a7_csmain.mrk~) @502 // This component is intended to be called separately if needed.
   NO_LOG_RECORD
   DESIGNATED 10
+  LABEL ~A7-CHAOSSORCERER-RECREATE_SPELL_LIST~
 
   INCLUDE ~%MOD_FOLDER%/lib/spell_selection.tph~
 
@@ -104,6 +106,7 @@ BEGIN @20 // Make "Wild Mage" unavailable to character creation
   REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
   REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~K_M_H.2DA~) @503  // This component is not supported by the game.
   DESIGNATED 20
+  LABEL ~A7-CHAOSSORCERER-HIDE_WILDMAGE~
 
   INCLUDE ~%MOD_FOLDER%/lib/disable_wildmage.tph~
 
@@ -111,5 +114,6 @@ BEGIN @20 // Make "Wild Mage" unavailable to character creation
 BEGIN @30 // Add "Primordial Artifacts"
   REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 0 @501 // This component requires the main component to be installed.
   DESIGNATED 30
+  LABEL ~A7-CHAOSSORCERER-PRIMORDIAL_ARTIFACTS~
 
   INCLUDE ~%MOD_FOLDER%/lib/items.tph~
