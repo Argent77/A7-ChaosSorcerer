@@ -27,6 +27,12 @@ Jest to modyfikacja WeiDU, co oznacza, iż jest bardzo prosta w instalacji. Wyst
 pobrane archiwum do katalogu z grą, a następnie uruchomić plik „setup-A7-ChaosSorcerer.exe”.
 Następnie wystarczy postękować zgodnie z dalszymi instrukcjami.
 
+Informacja dla osób grających w Siege of Dragonspear (SoD):
+GOG i Steam instalują „Siege of Dragonspear” w sposób, który nie pozwala na bezpośrednie
+modowanie gry. Aby można było instalować jakiekolwiek modyfikacje oparte na WeiDU, niezbędne
+jest zainstalowanie w folderze SoD modyfikacji o nazwie „DLC Merger”.
+Można ją pobrać stąd: https://github.com/Argent77/A7-DlcMerger/releases/latest
+
 
 Kompatybilność
 ~~~~~~~~~~~~~~
