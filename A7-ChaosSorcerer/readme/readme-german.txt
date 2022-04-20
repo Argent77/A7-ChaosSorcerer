@@ -41,8 +41,10 @@ Kompatibilität
 
 Spielversionen v1.3 und höher von BG:EE, BG2:EE und IWD:EE werden unterstützt.
 
-Die Mod sollte mit allen anderen Mods auskommen, sofern sie keinen tiefgreifenden Änderungen an
-den Zaubern für Hasadeure vornehmen.
+Die Mod kann Probleme bereiten, wenn die Klassen Hasardeur oder Chaos Hexenmeister als Teil
+spezieller Klassenkombinationen in anderen Mods erstellt werden. Ansonsten sollte die Mod mit allen
+anderen Mods auskommen, sofern sie keine tiefgreifenden Änderungen an den Zaubern für Hasadeure
+vornehmen.
 
 Die Komponente "Spell Select Dialog" von "Tome and Blood" ist nicht mit dieser Mod kompatibel.
 Die Komponente "Level 1 Cantrips" von "Tome and Blood" verursacht Probleme mit der Verfügbarkeit
