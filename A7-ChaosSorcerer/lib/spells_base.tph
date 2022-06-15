@@ -238,7 +238,7 @@ BUT_ONLY
 
 
 // Required Wild Mage adjustments
-ACTION_IF (NOT FILE_EXISTS ~clabma01.2da~) BEGIN
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~clabma01.2da~) BEGIN
   // Generate clabma01.2da if needed
   COPY_EXISTING - ~clabfi01.2da~ ~override~
     COUNT_2DA_COLS numCols
