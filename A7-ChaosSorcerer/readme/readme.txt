@@ -1,7 +1,7 @@
 The Chaos Sorcerer: A Wild Magic Kit for Sorcerers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    2.6
+Version:    2.7
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -227,6 +227,13 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.7
+- Fixed a compatibility issue with the Tome and Blood mod
+- Fixed a potential overflow of spell slots
+- Updated readme with DLC Merger information and additional compatibility notes
+- Added component labels for Project Infinity
+- Internal optimizations and improvements
 
 2.6
 - Improved effects of HLA "Chaotic Eruption"

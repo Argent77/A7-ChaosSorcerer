@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/A7-ChaosSorcerer~
 SUPPORT ~https://forums.beamdog.com/discussion/66390~
-VERSION ~2.6~
+VERSION ~2.7~
 
 ALWAYS
   // required because of non-standard BACKUP path
