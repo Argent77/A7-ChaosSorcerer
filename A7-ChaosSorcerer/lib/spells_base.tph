@@ -87,27 +87,37 @@ END
 
 // Install new revision of Chaos Shield (former SPWI222)
 // Spell slots might have been changed by another mod
-OUTER_SET old_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_CHAOS_SHIELD~)
-LAF a7_resref_of_spell_code INT_VAR code = old_slot RET resref END
+OUTER_SET old_spell_chaos_shield_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_CHAOS_SHIELD~)
+LAF a7_resref_of_spell_code INT_VAR code = old_spell_chaos_shield_slot RET resref END
 OUTER_TEXT_SPRINT old_spell_chaos_shield_resref ~%resref%~
-OUTER_SET old_slot2 = IDS_OF_SYMBOL(~spell~ ~WIZARD_IMPROVED_CHAOS_SHIELD~)
-LAF a7_resref_of_spell_code INT_VAR code = old_slot2 RET resref END
+OUTER_SET old_spell_improved_chaos_shield_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_IMPROVED_CHAOS_SHIELD~)
+LAF a7_resref_of_spell_code INT_VAR code = old_spell_improved_chaos_shield_slot RET resref END
 OUTER_TEXT_SPRINT old_spell_improved_chaos_shield_resref ~%resref%~
 
-ACTION_IF (old_slot < 2300 || old_slot >= 2400) BEGIN
-  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET slot resref END
+ACTION_IF (old_spell_chaos_shield_slot < 2300 || old_spell_chaos_shield_slot >= 2400) BEGIN
+  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET spell_chaos_shield_slot = slot resref END
   OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%resref%~
 END ELSE BEGIN
-  OUTER_SET slot = old_slot
+  OUTER_SET spell_chaos_shield_slot = old_spell_chaos_shield_slot
   OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%old_spell_chaos_shield_resref%~
 END
 
-ACTION_IF (slot >= 0) BEGIN
+ACTION_IF (spell_chaos_shield_slot >= 0) BEGIN
+  // updating spell references to the old (Improved) Chaos Shield
+  COPY_EXISTING_REGEXP ~.+\.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY CASE_SENSITIVE ~WIZARD_\(IMPROVED_\)?CHAOS_SHIELD~ ~%spell_chaos_shield_slot%~
+    END
+  BUT_ONLY
+
   // updating SPELL.IDS entries
   COPY_EXISTING ~SPELL.IDS~ ~override~
-    LPF a7_update_spell_ids_code INT_VAR code = old_slot new_code = slot END
+    LPF a7_update_spell_ids_code INT_VAR code = old_spell_chaos_shield_slot new_code = spell_chaos_shield_slot END
     // Improved Chaos Shield is redirected to Chaos Shield
-    LPF a7_update_spell_ids_code INT_VAR code = old_slot2 new_code = slot END
+    LPF a7_update_spell_ids_code INT_VAR code = old_spell_improved_chaos_shield_slot new_code = spell_chaos_shield_slot END
+  BUT_ONLY
+
+  CLEAR_IDS_MAP
 
   COPY_EXISTING - ~%old_spell_chaos_shield_resref%.spl~ ~override~
     READ_LONG NAME1 strref_name
