@@ -1,6 +1,6 @@
 // *** Installs kit "Chaos Sorcerer" ***
 
-INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
 
 
 // find first unoccupied Sorcerer lu abbreviation
@@ -23,28 +23,7 @@ ACTION_IF (maxRev > 0) BEGIN
 END
 OUTER_TEXT_SPRINT lu_file ~lu%lu_ref%.2da~
 
-
-// applying base kit properties
-ADD_KIT ~A7_CHAOS_SORCERER~
-        ~A7_CHAOS_SORCERER 1 1 1 1 1 0 0 0~  // clasweap.2da
-        ~A7_CHAOS_SORCERER 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~  // weapprof.2da
-        ~A7_CHAOS_SORCERER 0 12 0 9 0 9~  // abclasrq.2da
-        ~A7_CHAOS_SORCERER -2 0 -2 0 0 0~  // abclsmod.2da
-        ~A7_CHAOS_SORCERER 0 17 0 17 0 17~  // abdcdsrq.2da
-        ~A7_CHAOS_SORCERER 0 15 0 15 0 15~  // abdcscrq.2da
-        ~A7_CHAOS_SORCERER 0 0 0 0 0 0 1 1 1~  // alignmnt.2da
-        ~A7_CHAOS_SORCERER 0 0 0 0 0 0~  // dualclas.2da
-        ~%MOD_FOLDER%/tables/a7_csrc.2da~  // path to kit clabxxx.2da
-        ~K_S_H K_S_D K_S_G K_S_E K_S_HE K_S_HL K_S_HO~  // class/race combinations for kittable.2da
-        ~0x80000000 19~  // unusability and parent class info for kitlist.2da
-        ~%lu_ref%~  // luabbr.2da
-        ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~  // 25stweap.2da
-        SAY @1000   // lower name
-        SAY @1001   // mixed name
-        SAY @1002   // kit description
-
-
-// applying extended kit properties
+// ee-specific kit properties
 ACTION_IF (GAME_IS ~bgee~) BEGIN
   OUTER_SET biography = 31495
   OUTER_SET briefdesc = 32300
@@ -56,18 +35,37 @@ END ELSE BEGIN
   OUTER_SET briefdesc = 102508
 END
 
-LAF fl#add_kit_ee
+// installing kit
+LAF ADD_KIT_EX
 INT_VAR
-  biography = biography
-  briefdesc = briefdesc
+  kit_class = 19  // SORCERER
+  lower     = RESOLVE_STR_REF(@1000)
+  mixed     = RESOLVE_STR_REF(@1001)
+  help      = RESOLVE_STR_REF(@1002)
+  biography
+  briefdesc
 STR_VAR
-    kit_name = "A7_CHAOS_SORCERER"
-    clsrcreq = "1 1 1 0 0 0 0"
-    clswpbon = "0 0 5"
-    hpclass = "HPWIZ"
-    numwslot = "2"
-    clascolr = "34 35 34  196 34" // using Wild Mage colors
-    bdstweap = "CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02"
+  kit_name  = ~A7_CHAOS_SORCERER~
+  clasweap  = ~1 1 1 1 1 0 0 0~
+  weapprof  = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1~
+  abclasrq  = ~0 12 0 9 0 9~
+  abclsmod  = ~-2 0 -2 0 0 0~
+  abdcdsrq  = ~0 17 0 17 0 17~
+  abdcscrq  = ~0 15 0 15 0 15~
+  alignmnt  = ~0 0 0 0 0 0 1 1 1~
+  dualclas  = ~0~ // dual-classing not allowed
+  clab_path = EVAL ~%MOD_FOLDER%/tables/a7_csrc.2da~
+  unusable  = ~0x80000000~  // WILDMAGE
+  luabbr    = EVAL ~%lu_ref%~
+  stweap    = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+  clsrcreq  = ~1 1 1 0 0 0 0~
+  clswpbon = ~0 0 5~
+  hpclass = ~HPWIZ~
+  numwslot = ~2~
+  clascolr = ~34 35 34  196 34~ // using Wild Mage colors
+  bdstweap = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02~
+RET
+  A7_CHAOS_SORCERER = kit_id
 END
 
 
