@@ -153,6 +153,20 @@ Saving Throw: None
 
 Chaos Shield increases the chance of a Wild Magic practitioner to gain a favorable result when a Wild Surge occurs. Every time a roll is made on the Wild Surge chart, an extra bonus is added to the dice roll. Bonus starts at +15 and increases to +20 at level 12 and +25 at level 18. The bonus from Chaos Shield stacks with the caster's level bonus.~
 
+@2700 = ~Stabilize~
+@2701 = ~Stabilize
+(Alteration)
+
+Level: 9
+Range: 0
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+A true master of chaos does not only take advantage of the unpredictable nature of the Elemental Chaos but also know how to shield <PRO_HIMHER>self from it. This spell negates the effects of wild magic zones, allowing the caster and everyone else within the area of effect to cast spells or use magical items without unpredictable side effects. Furthermore, wild surges are nullified for all spells cast by Chaos Sorcerers or Wild Mages while the spell is in effect.~
+@2702 = ~Surge Protection~
+
 
 @5000 = ~Confusion~
 @5001 = ~Confusion

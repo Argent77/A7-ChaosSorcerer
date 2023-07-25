@@ -153,6 +153,20 @@ Rettungswurf: Nein
 
 Der Chaosschild erhöht die Chance des Zauberers auf ein für ihn positives Ergebnis, wenn es zu einer „Unbändigen Woge“ kommt. Jedes Mal, wenn ein Wurf auf der Tabelle für die „Unbändige Woge“ gemacht wird, erhält der Zauberer einen Bonus auf den Wurf. Der Bonus beträgt anfangs +15 und erhöht sich auf +20 ab Stufe 12 und +25 ab Stufe 18. Der Bonus vom Chaosschild wird zum Bonus für die Stufe des Zauberers hinzuaddiert.~
 
+@2700 = ~Stabilisieren~
+@2701 = ~Stabilisieren
+
+Grad: 9
+Schule: Veränderung
+Reichweite: Anwender
+Dauer: 4 Runden
+Zeitaufwand: 9
+Bereich: 4,5 m Radius
+Rettungswurf: Nein
+
+Ein wahrer Meister des Chaos macht sich nicht nur die unberechenbare Natur des Elementaren Chaos zunutze, sondern weiß auch, wie man sich davor schützen kann. Dieser Zauber negiert die Effekte von Zonen unbändiger Magie und erlaubt dem Zauberer und allen anderen Personen im Wirkungsbereich Zauber zu sprechen oder magische Gegenstände zu benutzen, ohne unvorhersehbare Nebenwirkungen befürchten zu müssen. Außerdem werden für alle Zauber des Chaos Hexenmeisters oder Hasardeurs unbändige Wogen verhindert, während der Zauber aktiv ist.~
+@2702 = ~Schutz vor Unbändigen Wogen~
+
 
 @5000 = ~Verwirrung~
 @5001 = ~Verwirrung

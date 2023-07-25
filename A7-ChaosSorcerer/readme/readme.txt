@@ -116,6 +116,7 @@ Advantages:
 – May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
 – May cast the 7th-level spells Nahal's Wildstrike and Conjure Greater Chaos Elemental
   (automatically added to spell list).
+– May cast the 9th-level spell Stabilize (automatically added to spell list).
 – Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower
   and five levels higher than the Chaos Sorcerer's true level.
 – 1st level: +1 bonus to Saves vs. Spell.
@@ -204,6 +205,28 @@ Sorcerer level 16 to 19:
 
 Sorcerer level 20 or higher:
 – 100% chance to get 100/100/100/100/100/100/100/100/100 percent of spells per level
+
+
+Spell Description: Stabilize
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Level: 9
+School: Alteration
+Range: 0
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+A true master of chaos does not only take advantage of the unpredictable nature of the Elemental
+Chaos but also know how to shield <PRO_HIMHER>self from it. This spell negates the effects of
+wild magic zones, allowing the caster and everyone else within the area of effect to cast spells
+or use magical items without unpredictable side effects.
+
+Furthermore, wild surges are nullified for all spells cast by Chaos Sorcerers or Wild Mages while
+the spell is in effect.
+
+This spell is also available for Wild Mages of chaotic alignments.
 
 
 Credits

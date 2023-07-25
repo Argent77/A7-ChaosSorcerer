@@ -123,6 +123,7 @@ Vorteile:
 – einzigartiger Zauber des 3. Grades: „Chaosschild“
 – einzigartiger Zauber des 5. Grades: „Chaoselementar beschwören“
 – einzigartige Zauber des 7. Grades: „Nahals Wilder Schlag“ und „Höheren Chaoselementar beschwören“
+– einzigartiger Zauber des 9. Grades: „Stabilisieren“
 – bei jedem Wirken eines Zaubers variiert die Zauberstufe des Chaos Hexenmeisters ein wenig –
   irgendwo zwischen 5 Stufen über und 5 Stufen unter der tatsächlichen Stufe des Chaos Hexenmeisters
 – 1. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
@@ -216,6 +217,29 @@ Hexenmeister Stufe 16 bis 19:
 
 Hexenmeister Stufe 20 und höher:
 – 100% Chance auf 100/100/100/100/100/100/100/100/100 Prozent aller Zauber pro Zaubergrad
+
+
+Zauberbeschreibung: Stabilisieren
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Grad: 9
+Schule: Veränderung
+Reichweite: Anwender
+Dauer: 4 Runden
+Zeitaufwand: 9
+Bereich: 4,5 m Radius
+Rettungswurf: Nein
+
+Ein wahrer Meister des Chaos macht sich nicht nur die unberechenbare Natur des Elementaren Chaos
+zunutze, sondern weiß auch, wie man sich davor schützen kann. Dieser Zauber negiert die Effekte
+von Zonen unbändiger Magie und erlaubt dem Zauberer und allen anderen Personen im Wirkungsbereich
+Zauber zu sprechen oder magische Gegenstände zu benutzen, ohne unvorhersehbare Nebenwirkungen
+befürchten zu müssen.
+
+Außerdem werden für alle Zauber des Chaos Hexenmeisters oder Hasardeurs unbändige Wogen verhindert,
+während der Zauber aktiv ist.
+
+Dieser Zauber steht auch Hasadeuren chaotischer Gesinnung zur Verfügung.
 
 
 Credits

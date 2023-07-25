@@ -38,6 +38,7 @@ END
 // installing kit
 LAF ADD_KIT_EX
 INT_VAR
+  suppress_warnings = 1
   kit_class = 19  // SORCERER
   lower     = RESOLVE_STR_REF(@1000)
   mixed     = RESOLVE_STR_REF(@1001)

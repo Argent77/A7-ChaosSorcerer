@@ -204,6 +204,67 @@ COPY ~%MOD_FOLDER%/spells/a7_sp04a.bam~ ~override~
      ~%MOD_FOLDER%/spells/a7_sp04.eff~ ~override~
 
 
+// Spell: Stabilize
+// installing status icon
+OUTER_SET stat_index = 0
+COPY_EXISTING ~statdesc.2da~ ~override~
+  READ_2DA_ENTRIES_NOW statdesc 1
+  FOR (row = 3; row < statdesc; ++row) BEGIN
+    READ_2DA_ENTRY_FORMER statdesc row 0 value
+    PATCH_IF (IS_AN_INT ~value~ && value > stat_index) BEGIN
+      stat_index = value
+    END
+  END
+  SET stat_index += 1
+BUT_ONLY
+OUTER_SET stat_strref = RESOLVE_STR_REF(@2702)  // Surge Protection
+APPEND ~statdesc.2da~ ~%stat_index%         %stat_strref%      A7_SP05D~ UNLESS ~A7_SP05D~
+
+// installing projectile
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/a7_wrdbl.pro~
+// Cosmetic adjustment: more descriptive name for missile entry
+COPY_EXISTING ~missile.ids~ ~override~
+  REPLACE_TEXTUALLY ~%a7_wrdbl%[ %TAB%]+a7_wrdbl~ ~%a7_wrdbl% Weird_Field_Blue~
+BUT_ONLY
+
+// installing spell
+COPY ~%MOD_FOLDER%/spells/a7_sp05.spl~ ~override~
+  SAY NAME1 @2700 // Stabilize
+  SAY UNIDENTIFIED_DESC @2701 // Stabilize description
+  LPF ALTER_SPELL_EFFECT
+    INT_VAR
+      match_opcode = 142  // Display portrait icon
+      parameter2 = stat_index
+  END
+  LPF ALTER_SPELL_HEADER
+    INT_VAR
+      projectile = a7_wrdbl
+  END
+
+// installing spell scroll
+COPY ~%MOD_FOLDER%/spells/a7_sc01.itm~ ~override~
+  SAY NAME2 @2700 // Stabilize
+  SAY IDENTIFIED_DESC @2701 // Stabilize description
+
+COPY ~%MOD_FOLDER%/spells/a7_sp05a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp05b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp05c.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp05d.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_wrdbl.bam~ ~override~
+
+ACTION_IF (GAME_INCLUDES ~tob~) BEGIN
+  // Add spell scroll to Chromatic Demon in Watcher's Keep
+  COPY_EXISTING ~gorchr.cre~ ~override~
+    ADD_CRE_ITEM ~a7_sc01~ #0 #0 #0 ~none~ ~inv~
+  BUT_ONLY
+END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  // Add spell scroll to the drow mage Malavon
+  COPY_EXISTING ~malavon.cre~ ~override~
+    ADD_CRE_ITEM ~a7_sc01~ #0 #0 #0 ~none~ ~inv~
+  BUT_ONLY
+END
+
+
 // Adding Chaos Sorcerer specific wild surges
 ACTION_IF (FILE_EXISTS_IN_GAME ~wildmag.2da~) BEGIN
   OUTER_SET kit_id = IDS_OF_SYMBOL(~kit~ ~A7_CHAOS_SORCERER~)

@@ -7,7 +7,7 @@
  * Date: 2019-08-19
  */
 
-OUTER_SPRINT ADD_KIT_EX_VERSION ~0.5.1~
+OUTER_SPRINT ADD_KIT_EX_VERSION ~0.6.0~
 
 <<<<<<<< .../a7-add_kit_ex/inlined/blank.file
 >>>>>>>>
@@ -19,7 +19,10 @@ INT_VAR severity = 1  // 0=LOG, 1=PRINT, 2=WARN, 3=FAIL
 STR_VAR msg = ~~
 BEGIN
   ACTION_IF (NOT ~%msg%~ STR_EQ ~~) BEGIN
-    ACTION_IF (severity = 0) BEGIN
+    ACTION_IF (suppress_warnings && severity = 2) BEGIN
+      OUTER_SET severity = 1
+    END
+    ACTION_IF (severity < 1) BEGIN
       LOG ~%msg%~
     END ELSE ACTION_IF (severity = 1) BEGIN
       PRINT ~%msg%~
@@ -1616,6 +1619,8 @@ INT_VAR
   fallen        = "-1"
   fallen_notice = "-2"
   prettify      = 1
+  // Diagnostic arguments
+  suppress_warnings     = 0
   // For testing purposes only
   __kits_limit_override = 0
   __kits_base_value     = 0x4000
