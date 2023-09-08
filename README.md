@@ -55,6 +55,7 @@ The component does also apply several changes to the Wild Mage kit:
 2. New level 2 spell "Unluck" can be seen as the negative counterpart of the "Luck" spell.
 3. "Chaos Shield" merges with "Improved Chaos Shield" and becomes a level 3 spell that starts with a +15 wild surge bonus and improves to +20 and +25 at higher levels.
 4. New level 7 spell "Nahal's Wildstrike" surrounds the target with an aura of chaotic energies. Each time the target casts a spell will trigger a wild surge with unpredictable results.
+5. New level 9 spell "Stabilize" temporarily negates the effects of wild magic zones and wild surges.
 
 The Wild Mage additions are also available to the Chaos Sorcerer. However, "Nahal's Reckless Dweomer" is replaced by "Chaotic Weave".
 

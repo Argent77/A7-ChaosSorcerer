@@ -1,7 +1,7 @@
 The Chaos Sorcerer: A Wild Magic Kit for Sorcerers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    2.7
+Version:    2.8
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -250,6 +250,11 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.8
+- Added new level 9 spell "Stabilize" to the Chaos Sorcerer kit and spell scrolls for Wild Mages
+- Fixed symbolic spell name references in combat scripts
+- Switched to ADD_KIT_EX for installing the kit
 
 2.7
 - Fixed a compatibility issue with the Tome and Blood mod
