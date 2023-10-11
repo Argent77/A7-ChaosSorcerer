@@ -236,7 +236,7 @@ Writing, coding and testing: Argent77
 
 Polish translation: Cahir
 Russian translation: Saigon1983
-French translation: Deratiseur
+French translation: Deratiseur, JohnBob
 
 Additional help with projectiles: kjeron
 
