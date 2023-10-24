@@ -157,6 +157,19 @@ Jet de sauvegarde : Non
 
 Le Bouclier du chaos augmente les chances de l'entropiste d'obtenir un résultat favorable en cas de hiatus entropique. À chaque fois qu'un jet est fait sur la table, un bonus supplémentaire est ajouté. Le bonus commence à +15 et augmente à +20 au niveau 12 et +25 au niveau 18. Le bonus du Bouclier du chaos se cumule avec le niveau du lanceur de sort.~
 
+@2700 = ~Stabilisation~
+@2701 = ~Stabilisation (Altération)
+
+Niveau : 9
+Portée : 0
+Durée : 4 rounds
+Temps d'incantation : 9
+Zone d'effet : 10 mètres de rayon
+Jets de sauvegarde : non
+
+Un véritable maître du chaos ne se contente pas de tirer parti de la nature imprévisible du Chaos élémentaire, il sait aussi comment s'en protéger. Ce sort annule les effets des zones de magie sauvage, permettant au lanceur et à tous ceux qui se trouvent dans la zone d'effet de lancer des sorts ou d'utiliser des objets magiques sans effets secondaires imprévisibles. De plus, les hiatus sont annulées pour tous les sorts lancés par les Sorciers du Chaos ou les Entropistes pendant que le sort agit.~
+@2702 = ~Protection contre les hiatus~
+
 
 @5000 = ~Confusion~
 @5001 = ~Confusion
