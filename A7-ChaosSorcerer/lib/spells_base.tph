@@ -80,6 +80,17 @@ ACTION_IF (slot >= 0) BEGIN
   END ELSE BEGIN
     APPEND ~hidespl.2da~ ~%spell_nrd_resref% 1     0~ UNLESS ~%spell_nrd_resref%~
   END
+
+  // Compatibility code for 5e Spellcasting mod by SubtleDoctor
+  WITH_SCOPE BEGIN
+    INCLUDE ~%MOD_FOLDER%/lib/add_semi_spells.tpa~
+    LAF add_semi_spells
+      STR_VAR
+        new_spell  = EVAL ~%spell_nrd_resref%~
+        cast_spell = EVAL ~%spell_nrd_resref%~
+        spell_type = ~arcane~
+    END
+  END
 END ELSE BEGIN
   FAIL ~Failed to find unoccupied level 1 spell slot.~
 END

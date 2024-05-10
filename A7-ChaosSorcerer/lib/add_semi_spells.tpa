@@ -1,0 +1,177 @@
+// This library provides compatibility with SubtleMods: D&D 5e Edition-style Spellcasting
+// https://github.com/UnearthedArcana/5E_spellcasting
+
+// v1.19
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+DEFINE_ACTION_FUNCTION add_semi_spells STR_VAR new_spell = ~x~ cast_spell = ~x~ spell_type = ~x~ BEGIN
+
+// add them to zclons.2da
+
+  ACTION_IF !(FILE_EXISTS_IN_GAME ~d5zclons.2da~) BEGIN
+
+<<<<<<<< d5/d5zclons.2da
+2DA V1.0 
+IND
+		MEM 		CAST 		TYPE 	PROCESSED
+100		#			#			#		#
+>>>>>>>> 
+
+    COPY ~d5/d5zclons.2da~ ~override/d5zclons.2da~ 
+
+  END
+
+  ACTION_IF (FILE_EXISTS_IN_GAME ~d5zclons.2da~) BEGIN
+  
+    COPY_EXISTING ~d5zclons.2da~ ~override~
+      COUNT_2DA_COLS cols
+      COUNT_2DA_ROWS cols rows
+      READ_2DA_ENTRY (rows - 1) 0 cols last_ind
+    BUT_ONLY
+    OUTER_SET spl_ind = (last_ind + 1)
+  
+    APPEND ~d5zclons.2da~ ~%spl_ind% 	%new_spell% 	%cast_spell% 	%spell_type% 	no ~ UNLESS ~%new_spell% 	%cast_spell%~
+  
+  END
+
+END		//	end function
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+DEFINE_ACTION_FUNCTION free_cast_spells STR_VAR free_spell = ~~ list_spell = ~~ BEGIN
+
+  ACTION_IF (FILE_CONTAINS_EVALUATED (~d5zclons.2da~ ~%free_spell%~)) BEGIN
+    ACTION_IF !(FILE_EXISTS_IN_GAME ~%list_spell%.spl~) BEGIN
+      CREATE SPL ~%list_spell%~
+        WRITE_SHORT 0x1c 4
+        WRITE_LONG 0x34 1
+        LPF QD_ADD_EMPTY_SPELL_HEADER INT_VAR type = 1 location = 4 target = 5 required_level = 1 END
+    END
+    COPY_EXISTING ~d5zclons.2da~ ~override~
+      COUNT_2DA_COLS cols
+      READ_2DA_ENTRIES_NOW ~r2en_zclons~ cols
+      SET free_spell_ind = 0
+      FOR (row = 0; row < r2en_zclons; ++row) BEGIN
+        READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 0 z_ind
+        READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 1 mem_spell
+        PATCH_IF (~%mem_spell%~ STRING_EQUAL_CASE ~%free_spell%~) BEGIN
+          SET free_spell_ind = %z_ind%
+        END 
+      END
+    BUT_ONLY  
+    ACTION_IF (free_spell_ind > 0) BEGIN
+      COPY_EXISTING ~%list_spell%.spl~ ~override~
+   	  LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 9 STR_VAR resource = EVAL ~d5z%free_spell_ind%b~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 parameter1 = (0 - 1) timing = 9 STR_VAR resource = EVAL ~d5z%free_spell_ind%b~ END
+      BUT_ONLY
+    END
+  END
+
+END		//	end function
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+DEFINE_ACTION_FUNCTION find_zclons_spell STR_VAR spell_to_find = ~~ RET zclons_ind spell_to_cast type_of_spell BEGIN
+
+  COPY_EXISTING ~d5zclons.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW ~r2en_zclons~ cols
+    FOR (row = 0; row < r2en_zclons; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 0 z_ind
+      READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 1 mem_spell
+      READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 2 cast_spell
+      READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 3 spell_type
+      READ_2DA_ENTRY_FORMER ~r2en_zclons~ row 4 spell_proc
+      PATCH_IF (~%mem_spell%~ STRING_EQUAL_CASE ~%spell_to_find%~) BEGIN
+        SET zclons_ind = %z_ind%
+        SPRINT spell_to_cast ~%cast_spell%~
+        SPRINT type_of_spell ~%spell_type%~
+      END
+    END
+  BUT_ONLY
+
+END		//	end function
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+DEFINE_PATCH_FUNCTION QD_ADD_EMPTY_SPELL_HEADER
+  INT_VAR
+    type            = 1
+    location        = 4
+    target          = 1
+    target_count    = 0
+    range           = 0
+    required_level  = 1
+    speed           = 0
+    projectile      = 1
+    copy_header     = 0
+    insert_point    = ~-1~
+  STR_VAR
+    icon            = ~~
+  RET
+    insert_point
+BEGIN
+  SET hs = 0x28
+  READ_LONG 0x64 ho
+  READ_SHORT 0x68 hc
+  READ_LONG 0x6a eo
+  SET insert_point = (insert_point > hc || insert_point < 0) ? hc : insert_point
+  SET copy_header = (copy_header < 0) ? 0 : copy_header
+  PATCH_IF (copy_header > hc) BEGIN
+    PATCH_WARN ~WARNING: Unable to copy %copy_header%th header, %SOURCE_FILE% contains only %hc% headers!~
+  END ELSE BEGIN
+    INSERT_BYTES (ho + insert_point * hs) hs
+    SET hc += 1
+    SET eo += hs
+    PATCH_IF (copy_header) BEGIN
+      READ_SHORT (ho + (copy_header - 1) * hs + 0x1e) ec
+      READ_SHORT (ho + (copy_header - 1) * hs + 0x20) ei
+      READ_ASCII (eo + ei * 0x30) effs (ec * 0x30)
+      READ_ASCII (ho + (copy_header - 1) * hs) copy (hs)
+      WRITE_ASCIIE (ho + insert_point * hs) ~%copy%~ (hs)
+    END
+    WRITE_SHORT 0x68 hc
+    WRITE_LONG 0x6a eo
+    READ_SHORT 0x70 ei // technically, it is a counter
+    FOR (i = ho; i < ho + hc * hs; i += hs) BEGIN
+      READ_SHORT (i + 0x1e) ec
+      WRITE_SHORT (i + 0x20) ei
+      SET ei += ec
+    END
+    PATCH_IF (copy_header) BEGIN
+      READ_SHORT (ho + insert_point * hs + 0x1e) ec
+      READ_SHORT (ho + insert_point * hs + 0x20) ei
+      INSERT_BYTES (eo + ei * 0x30) (ec * 0x30)
+      WRITE_ASCIIE (eo + ei * 0x30) ~%effs%~ (ec * 0x30)
+    END ELSE BEGIN
+      SET off = ho + insert_point * hs
+      WRITE_BYTE off type
+      WRITE_BYTE (off + 0x2) location
+      WRITE_ASCIIE (off + 0x4) ~%icon%~ (8)
+      WRITE_BYTE (off + 0xc) target
+      WRITE_BYTE (off + 0xd) target_count
+      WRITE_SHORT (off + 0xe) range
+      WRITE_SHORT (off + 0x10) required_level
+      WRITE_LONG (off + 0x12) speed
+      WRITE_SHORT (off + 0x26) projectile
+    END
+  END
+END
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
