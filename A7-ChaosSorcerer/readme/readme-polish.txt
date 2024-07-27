@@ -1,7 +1,7 @@
 Czarownik chaosu: podklasa dla czarowników posługujących się dziką magią
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wersja:     2.9
+Wersja:     2.10
 Autor:      Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -241,6 +241,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.10
+- Added compatibility with SubtleDoctor's 5e Spellcasting mod
+- Fixed usability flags of the "Stabilize" spell scroll
 
 2.9
 - Updated French translation (thanks JohnBob)
