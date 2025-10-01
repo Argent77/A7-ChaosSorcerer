@@ -11,7 +11,7 @@ COPY_EXISTING - ~kittable.2da~ ~override~
       FOR (col = 1; col < numCols; ++col) BEGIN
         READ_2DA_ENTRY row col numCols value
         PATCH_IF (FILE_EXISTS_IN_GAME ~%value%.2DA~) BEGIN
-          TEXT_SPRINT EVAL ~combi_%combi%~ ~%value%.2DA~
+          SPRINT $combi(~%combi%~) ~%value%~
           SET combi += 1
         END
       END
@@ -36,8 +36,8 @@ ACTION_IF (combi > 0) BEGIN
   // disabling Wild Mage kit for each race/class combo
   ACTION_IF (kit_id > 0) BEGIN
     OUTER_FOR (idx = 0; idx < combi; ++idx) BEGIN
-      OUTER_TEXT_SPRINT file EVAL ~%combi_%idx%%~
-      COPY_EXISTING ~%file%~ ~override~
+      OUTER_SPRINT resref $combi(~%idx%~)
+      COPY_EXISTING ~%resref%.2DA~ ~override~
         COUNT_2DA_COLS numCols
         COUNT_2DA_ROWS numCols numRows
         PATCH_IF (numCols >= 2) BEGIN

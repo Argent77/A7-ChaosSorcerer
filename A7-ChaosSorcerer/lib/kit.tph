@@ -4,24 +4,26 @@ INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
 
 
 // find first unoccupied Sorcerer lu abbreviation
-OUTER_TEXT_SPRINT lu_ref ~So2~
-OUTER_SET maxRev = 0
-COPY_EXISTING - ~luabbr.2da~ ~override~
-  COUNT_2DA_ROWS 2 numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 2 value
-    PATCH_IF (~%value%~ STRING_MATCHES_REGEXP ~[Ss][Oo][0-9]+~ = 0) BEGIN
-      INNER_PATCH_SAVE number ~%value%~ BEGIN REPLACE_TEXTUALLY ~[Ss][Oo]\([0-9]+\)~ ~\1~ END
-      PATCH_IF (number > maxRev) BEGIN SET maxRev = number END
-    END
-  END
-  SET maxRev += 1
-IF_EXISTS
+COPY_EXISTING ~luabbr.2da~ ~override~
+  READ_2DA_ENTRIES_NOW luabbr_table 1
+BUT_ONLY
 
-ACTION_IF (maxRev > 0) BEGIN
-  OUTER_TEXT_SPRINT lu_ref ~so%maxRev%~
+OUTER_SET max_rev = 0
+OUTER_FOR (row = 3; row < luabbr_table; ++row) BEGIN
+  OUTER_SPRINT value $luabbr_table(~%row%~ ~1~)
+  OUTER_PATCH ~%value%~ BEGIN
+    REPLACE_EVALUATE CASE_INSENSITIVE ~^so\([0-9]+\)~ BEGIN
+      SET max_rev = (MATCH1 > max_rev) ? MATCH1 : max_rev
+    END ~%MATCH0%~
+  END
 END
-OUTER_TEXT_SPRINT lu_file ~lu%lu_ref%.2da~
+OUTER_SET max_rev += 1
+
+OUTER_SPRINT lu_ref ~So2~
+ACTION_IF (max_rev > 0) BEGIN
+  OUTER_SPRINT lu_ref ~so%max_rev%~
+END
+OUTER_SPRINT lu_resref ~lu%lu_ref%~
 
 // ee-specific kit properties
 ACTION_IF (GAME_IS ~bgee~) BEGIN
@@ -60,11 +62,11 @@ STR_VAR
   luabbr    = EVAL ~%lu_ref%~
   stweap    = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
   clsrcreq  = ~1 1 1 0 0 0 0~
-  clswpbon = ~0 0 5~
-  hpclass = ~HPWIZ~
-  numwslot = ~2~
-  clascolr = ~34 35 34  196 34~ // using Wild Mage colors
-  bdstweap = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02~
+  clswpbon  = ~0 0 5~
+  hpclass   = ~HPWIZ~
+  numwslot  = ~2~
+  clascolr  = ~34 35 34  196 34~ // using Wild Mage colors
+  bdstweap  = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 * SLNG02 DAGG05,40 STAF02~
 RET
   A7_CHAOS_SORCERER = kit_id
 END
@@ -72,40 +74,40 @@ END
 
 // installing HLA table
 // for max. compatibility table is based on trueclass sorcerer table
-OUTER_TEXT_SPRINT lu_base ~luso0~
-COPY_EXISTING - ~luabbr.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 0 numCols value
-    PATCH_IF (~%value%~ STR_EQ ~SORCERER~) BEGIN
-      READ_2DA_ENTRY row 1 numCols value
-      PATCH_IF (FILE_EXISTS_IN_GAME ~lu%value%.2da~) BEGIN
-        TEXT_SPRINT lu_base ~lu%value%~
-        TO_LOWER ~lu_base~
-      END
-      SET row = numRows
+OUTER_SPRINT lu_base ~luso0~
+OUTER_FOR (row = 3; row < luabbr_table; ++row) BEGIN
+  OUTER_SPRINT key $luabbr_table(~%row%~ ~0~)
+  ACTION_IF (~%key%~ STR_EQ ~SORCERER~) BEGIN
+    OUTER_SPRINT value $luabbr_table(~%row%~ ~1~)
+    ACTION_IF (FILE_EXISTS_IN_GAME ~lu%value%.2da~) BEGIN
+      OUTER_SPRINT lu_base ~lu%value%~
+      ACTION_TO_LOWER ~lu_base~
     END
+    OUTER_SET row = luabbr_table
   END
-COPY_EXISTING ~%lu_base%.2da~ ~override/%lu_file%~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  SET patched = 0
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 numCols value
-    PATCH_IF (~%value%~ STR_EQ ~*~) BEGIN
-      SET_2DA_ENTRY row 1 numCols ~GA_A7_SP10~
-      SET_2DA_ENTRY row 4 numCols ~1~
-      SET_2DA_ENTRY row 5 numCols ~99~
-      SET_2DA_ENTRY row 6 numCols ~1~
+END
+
+COPY_EXISTING ~%lu_base%.2da~ ~override/%lu_resref%.2da~
+  READ_2DA_ENTRIES_NOW lu_cs_table 1
+  SPRINT def_value $lu_cs_table(~1~ ~0~)
+  FOR (row = 3 patched = 0; row < lu_cs_table; ++row) BEGIN
+    SPRINT value $lu_cs_table(~%row%~ ~1~)
+    PATCH_IF (~%value%~ STR_EQ ~%def_value%~) BEGIN
+      SET_2DA_ENTRY_LATER lu_cs_table_out row 1 ~GA_A7_SP10~
+      SET_2DA_ENTRY_LATER lu_cs_table_out row 4 ~1~
+      SET_2DA_ENTRY_LATER lu_cs_table_out row 5 ~99~
+      SET_2DA_ENTRY_LATER lu_cs_table_out row 6 ~1~
+      SET_2DA_ENTRIES_NOW lu_cs_table_out 1
       SET patched = 1
-      SET row = numRows
+      SET row = lu_cs_table
     END
   END
+
   PATCH_IF (NOT patched) BEGIN
-    SET idx = row + 1
-    INSERT_2DA_ROW row numCols ~%idx% GA_A7_SP10 * * 1 99 1 * * *~
+    SET idx = lu_cs_table - 2
+    INSERT_2DA_ROW lu_cs_table 1 ~%idx%  GA_A7_SP10  %def_value%  %def_value%  1  99  1  %def_value%  %def_value%  %def_value%~
   END
+
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -118,64 +120,55 @@ COPY ~%MOD_FOLDER%/spells/a7_cs01.spl~ ~override~
 
 
 // Updating Wild Mage kit description
-ACTION_IF (GAME_IS ~iwdee~) BEGIN
-  OUTER_SET strref = RESOLVE_STR_REF(@1101)
-END ELSE BEGIN
-  OUTER_SET strref = RESOLVE_STR_REF(@1100)
-END
+OUTER_SET strref = (GAME_IS ~iwdee~) ? RESOLVE_STR_REF(@1101) : RESOLVE_STR_REF(@1100)
 
 // Updating enginest.2da
 COPY_EXISTING ~enginest.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 0 numCols label
+  READ_2DA_ENTRIES_NOW enginest_table 1
+  FOR (row = 3; row < enginest_table; ++row) BEGIN
+    SPRINT label $enginest_table(~%row%~ ~0~)
     PATCH_IF (~%label%~ STR_EQ ~STRREF_GUI_HELP_WILDMAGE~) BEGIN
-      SET_2DA_ENTRY row 1 numCols ~%strref%~
+      SET_2DA_ENTRY row 1 1 ~%strref%~
+      SET row = enginest_table
+      PRETTY_PRINT_2DA
     END
   END
 BUT_ONLY IF_EXISTS
 
 // Updating kitlist table
 COPY_EXISTING ~kitlist.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 numCols kit
-    PATCH_IF (~%kit%~ STRING_MATCHES_REGEXP ~WILD_?MAGE~ = 0) BEGIN
-      SET_2DA_ENTRY row 4 numCols ~%strref%~
+  READ_2DA_ENTRIES_NOW kitlist_table 1
+  FOR (row = 4; row < kitlist_table; ++row) BEGIN
+    SPRINT kit_value $kitlist_table(~%row%~ ~9~)
+    PATCH_IF (~%kit_value%~ STR_EQ ~2147483648~ || (IS_AN_INT ~kit_value~ && kit_value == 0x80000000)) BEGIN
+      SET_2DA_ENTRY row 4 1 ~%strref%~
+      SET row = kitlist_table
+      PRETTY_PRINT_2DA
     END
+  END
+BUT_ONLY
+
+// Updating default and campaign-specific class text tables
+OUTER_SET $campaigns(~CLASTEXT~) = 1
+COPY_EXISTING ~campaign.2da~ ~override~
+  READ_2DA_ENTRIES_NOW campaign_table 1
+  FOR (row = 3; row < campaign_table; ++row) BEGIN
+    SPRINT resref $campaign_table(~%row%~ ~30~)
+    TO_UPPER ~resref~
+    SET $campaigns(~%resref%~) = 1
   END
 BUT_ONLY IF_EXISTS
 
-// Updating default and campaign-specific class text tables
-OUTER_SET campaigns = 1
-OUTER_TEXT_SPRINT campaigns_0 ~CLASTEXT.2DA~
-COPY_EXISTING - ~campaign.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  PATCH_IF (numCols > 31) BEGIN
-    COUNT_2DA_ROWS numCols numRows
-    FOR (row = 0; row < numRows; ++row) BEGIN
-      READ_2DA_ENTRY row 30 numCols resref
-      PATCH_IF (FILE_EXISTS_IN_GAME ~%resref%.2DA~) BEGIN
-        TEXT_SPRINT EVAL ~campaigns_%campaigns%~ ~%resref%.2DA~
-        SET campaigns += 1
+ACTION_PHP_EACH campaigns AS resref => _ BEGIN
+  COPY_EXISTING ~%resref%.2DA~ ~override~
+    READ_2DA_ENTRIES_NOW ~%resref%_table~ 1
+    FOR (row = EVAL ~%resref%_table~ - 1; row >= 3; --row) BEGIN
+      SPRINT kit_value $EVAL ~%resref%_table~(~%row%~ ~2~)
+      PATCH_IF (~%kit_value%~ STR_EQ ~2147483648~ || (IS_AN_INT ~kit_value~ && kit_value == 0x80000000)) BEGIN
+        SET_2DA_ENTRY row 4 1 ~%strref%~
+        SET row = 0
+        PRETTY_PRINT_2DA
       END
     END
-  END
-IF_EXISTS
-
-OUTER_FOR (idx = 0; idx < campaigns; ++idx) BEGIN
-  OUTER_TEXT_SPRINT resref EVAL ~%campaigns_%idx%%~
-  COPY_EXISTING ~%resref%~ ~override~
-    COUNT_2DA_COLS numCols
-    COUNT_2DA_ROWS numCols numRows
-    FOR (row = 0; row < numRows; ++row) BEGIN
-      READ_2DA_ENTRY row 0 numCols kit
-      PATCH_IF (~%kit%~ STRING_MATCHES_REGEXP ~WILD_?MAGE~ = 0) BEGIN
-        SET_2DA_ENTRY row 4 numCols ~%strref%~
-      END
-    END
-    PRETTY_PRINT_2DA
   BUT_ONLY IF_EXISTS
 END

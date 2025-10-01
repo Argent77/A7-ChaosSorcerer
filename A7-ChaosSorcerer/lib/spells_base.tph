@@ -5,19 +5,22 @@
 OUTER_SET old_slot = 2124
 ACTION_FOR_EACH symbol IN ~WIZARD_NAHALS_RECKLESS_DWEOMER~ ~WIZARD_ALARM~ BEGIN
   OUTER_SET code = IDS_OF_SYMBOL(~spell~ ~%symbol%~)
-  ACTION_IF (code > 0 && code != old_slot) BEGIN
-    OUTER_SET old_slot = code
-  END
+  OUTER_SET old_slot = (code > 0) ? code : old_slot
 END
-LAF a7_resref_of_spell_code INT_VAR code = old_slot RET resref END
-OUTER_TEXT_SPRINT old_spell_nrd_resref ~%resref%~
+LAF RES_NAME_OF_SPELL_NUM INT_VAR spell_num = old_slot RET old_spell_nrd_resref = spell_res END
 
 ACTION_IF (old_slot = 2124 || old_slot < 2100 || old_slot >= 2200) BEGIN
-  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 1 RET slot resref END
-  OUTER_TEXT_SPRINT spell_nrd_resref ~%resref%~
+  LAF a7_find_free_spell_slot
+    INT_VAR
+      type = 2
+      level = 1
+    RET
+      slot
+      spell_nrd_resref = resref
+  END
 END ELSE BEGIN
   OUTER_SET slot = old_slot
-  OUTER_TEXT_SPRINT spell_nrd_resref ~%old_spell_nrd_resref%~
+  OUTER_SPRINT spell_nrd_resref ~%old_spell_nrd_resref%~
 END
 
 ACTION_IF (slot >= 0) BEGIN
@@ -27,7 +30,7 @@ ACTION_IF (slot >= 0) BEGIN
     ACTION_IF (NOT ~%spell_name%~ STR_EQ ~%old_slot%~) BEGIN
       COPY_EXISTING_REGEXP ~.+\.bcs~ ~override~
         DECOMPILE_AND_PATCH BEGIN
-          REPLACE_TEXTUALLY ~%spell_name%~ ~%slot%~
+          REPLACE_TEXTUALLY CASE_SENSITIVE ~%spell_name%~ ~%slot%~
         END
       BUT_ONLY
     END
@@ -35,6 +38,9 @@ ACTION_IF (slot >= 0) BEGIN
     // updating SPELL.IDS entries
     COPY_EXISTING ~SPELL.IDS~ ~override~
       LPF a7_update_spell_ids_code INT_VAR code = old_slot new_code = slot END
+    BUT_ONLY
+
+    CLEAR_IDS_MAP
   END
 
   COPY_EXISTING ~%old_spell_nrd_resref%.SPL~ ~override/%spell_nrd_resref%.SPL~
@@ -56,7 +62,7 @@ ACTION_IF (slot >= 0) BEGIN
 
   // updating references in game resources
   COPY_EXISTING ~CONTINGX.2DA~ ~override~
-                ~BGEE.LUA~ ~override~
+                ~BGEE.LUA~     ~override~
     LPF a7_update_resref STR_VAR resref_src = EVAL ~%old_spell_nrd_resref%~ resref_dst = EVAL ~%spell_nrd_resref%~ END
   BUT_ONLY IF_EXISTS
 
@@ -73,7 +79,7 @@ ACTION_IF (slot >= 0) BEGIN
   BUT_ONLY
 
   // spell should appear on character spell selection screen, except on pre-2.0 games
-  ACTION_IF (FILE_EXISTS_IN_GAME ~engine.lua~) BEGIN
+  ACTION_IF (EE_V2) BEGIN
     COPY_EXISTING ~hidespl.2da~ ~override~
       LPF a7_remove_2da_row INT_VAR column = 0 STR_VAR match = EVAL ~%spell_nrd_resref%~ END
     BUT_ONLY
@@ -99,18 +105,15 @@ END
 // Install new revision of Chaos Shield (former SPWI222)
 // Spell slots might have been changed by another mod
 OUTER_SET old_spell_chaos_shield_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_CHAOS_SHIELD~)
-LAF a7_resref_of_spell_code INT_VAR code = old_spell_chaos_shield_slot RET resref END
-OUTER_TEXT_SPRINT old_spell_chaos_shield_resref ~%resref%~
+LAF RES_NAME_OF_SPELL_NUM INT_VAR spell_num = old_spell_chaos_shield_slot RET old_spell_chaos_shield_resref = spell_res END
 OUTER_SET old_spell_improved_chaos_shield_slot = IDS_OF_SYMBOL(~spell~ ~WIZARD_IMPROVED_CHAOS_SHIELD~)
-LAF a7_resref_of_spell_code INT_VAR code = old_spell_improved_chaos_shield_slot RET resref END
-OUTER_TEXT_SPRINT old_spell_improved_chaos_shield_resref ~%resref%~
+LAF RES_NAME_OF_SPELL_NUM INT_VAR spell_num = old_spell_improved_chaos_shield_slot RET old_spell_improved_chaos_shield_resref = spell_res END
 
 ACTION_IF (old_spell_chaos_shield_slot < 2300 || old_spell_chaos_shield_slot >= 2400) BEGIN
-  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET spell_chaos_shield_slot = slot resref END
-  OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%resref%~
+  LAF a7_find_free_spell_slot INT_VAR type = 2 level = 3 RET spell_chaos_shield_slot = slot spell_chaos_shield_resref = resref END
 END ELSE BEGIN
   OUTER_SET spell_chaos_shield_slot = old_spell_chaos_shield_slot
-  OUTER_TEXT_SPRINT spell_chaos_shield_resref ~%old_spell_chaos_shield_resref%~
+  OUTER_SPRINT spell_chaos_shield_resref ~%old_spell_chaos_shield_resref%~
 END
 
 ACTION_IF (spell_chaos_shield_slot >= 0) BEGIN
@@ -130,8 +133,9 @@ ACTION_IF (spell_chaos_shield_slot >= 0) BEGIN
 
   CLEAR_IDS_MAP
 
-  COPY_EXISTING - ~%old_spell_chaos_shield_resref%.spl~ ~override~
+  COPY_EXISTING ~%old_spell_chaos_shield_resref%.spl~ ~override~
     READ_LONG NAME1 strref_name
+  BUT_ONLY
 
   COPY ~%MOD_FOLDER%/spells/spwi2xx.spl~ ~override/%spell_chaos_shield_resref%.SPL~
     WRITE_LONG NAME1 strref_name  // use original name
@@ -208,7 +212,7 @@ COPY ~%MOD_FOLDER%/spells/spwi124d.spl~ ~override~
      ~%MOD_FOLDER%/spells/spwi124c.bam~ ~override~
 
 // spell does not appear on character spell selection screen, except on pre-2.0 games
-ACTION_IF (FILE_EXISTS ~engine.lua~) BEGIN
+ACTION_IF (EE_V2) BEGIN
   APPEND ~hidespl.2da~ ~SPWI124 1     0          0~ UNLESS ~SPWI124~
 END ELSE BEGIN
   COPY_EXISTING ~hidespl.2da~ ~override~
@@ -261,38 +265,8 @@ BUT_ONLY
 // Required Wild Mage adjustments
 ACTION_IF (NOT FILE_EXISTS_IN_GAME ~clabma01.2da~) BEGIN
   // Generate clabma01.2da if needed
-  COPY_EXISTING - ~clabfi01.2da~ ~override~
-    COUNT_2DA_COLS numCols
-
-<<<<<<<< .../inlined/tables/stub.2da
-2DA V1.0
-****
->>>>>>>>
-  COPY ~.../inlined/tables/stub.2da~ ~override/clabma01.2da~
-
-  // table header
-  OUTER_TEXT_SPRINT line ~ ~
-  OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
-    ACTION_IF (idx < 10) BEGIN
-      OUTER_TEXT_SPRINT line ~%line%           %idx%~
-    END ELSE BEGIN
-      OUTER_TEXT_SPRINT line ~%line%          %idx%~
-    END
-  END
-  APPEND ~clabma01.2da~ ~%line%~
-
-  // table content
-  OUTER_FOR (abil = 1; abil < 7; ++abil) BEGIN
-    OUTER_TEXT_SPRINT line ~ABILITY%abil%~
-    OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
-      ACTION_IF (idx = 1) BEGIN
-        OUTER_TEXT_SPRINT line ~%line%    ****~
-      END ELSE BEGIN
-        OUTER_TEXT_SPRINT line ~%line%        ****~
-      END
-    END
-    APPEND ~clabma01.2da~ ~%line%~
-  END
+  COPY_EXISTING ~clabfi01.2da~ ~override/clabma01.2da~
+    REPLACE_TEXTUALLY CASE_SENSITIVE ~\(GA\|AP\)_[^ %TAB%]+~ ~****~
 END
 
 COPY ~%MOD_FOLDER%/spells/a7_cs05.eff~ ~override~
@@ -305,45 +279,41 @@ COPY ~%MOD_FOLDER%/spells/a7_cs05.spl~ ~override~
      ~%MOD_FOLDER%/spells/a7_cs06.spl~ ~override~
 
 // These spells have to be added manually
-OUTER_TEXT_SPRINT give_abil_0 ~AP_A7_CS05~
-OUTER_TEXT_SPRINT give_abil_1 ~AP_A7_CS06~
+OUTER_SPRINT $give_abil(~0~) ~AP_A7_CS05~
+OUTER_SPRINT $give_abil(~1~) ~AP_A7_CS06~
 OUTER_SET give_abil = 2
-OUTER_SET abilIdx = 0
+OUTER_SET abil_idx = 0
 
 // Adding custom abilities
 COPY_EXISTING ~clabma01.2da~ ~override~
-  COUNT_2DA_COLS numCols
-  COUNT_2DA_ROWS numCols numRows
-  FOR (row = 0; row < numRows; ++row) BEGIN
-    READ_2DA_ENTRY row 1 numCols value
+  READ_2DA_ENTRIES_NOW clabma01_table 1
+  FOR (row = 3; row < clabma01_table; ++row) BEGIN
+    SPRINT value $clabma01_table(~%row%~ ~1~)
     PATCH_IF (~%value%~ STR_EQ ~****~) BEGIN
-      TEXT_SPRINT entry EVAL ~%give_abil_%abilIdx%%~
-      SET_2DA_ENTRY row 1 numCols ~%entry%~
-      SET abilIdx += 1
+      SPRINT entry $give_abil(~%abil_idx%~)
+      SET_2DA_ENTRY_LATER clabma01_table_out row 1 ~%entry%~
+      SET abil_idx += 1
     END
-    PATCH_IF (abilIdx = give_abil) BEGIN
-      SET row = numRows
+    PATCH_IF (abil_idx = give_abil) BEGIN
+      SET row = clabma01_table
     END
   END
+  SET_2DA_ENTRIES_NOW clabma01_table_out 1
 BUT_ONLY
 
-// In the unlikely case all slots are occupied already
-OUTER_WHILE (abilIdx < give_abil) BEGIN
-  OUTER_SET idx = numRows + 1
-  OUTER_TEXT_SPRINT line ~ABILITY%idx%~
-  OUTER_FOR (idx = 1; idx < numCols; ++idx) BEGIN
-    ACTION_IF (idx = 1) BEGIN
-      OUTER_TEXT_SPRINT entry EVAL ~%give_abil_%abilIdx%%~
-      OUTER_TEXT_SPRINT line ~%line%    %entry%~
-    END ELSE ACTION_IF (idx = 2) BEGIN
-      OUTER_TEXT_SPRINT line ~%line%  ****~
+// In the unlikely case all slots are occupied
+OUTER_FOR (idx = clabma01_table - 2; abil_idx < give_abil; ++idx) BEGIN
+  OUTER_SPRINT line ~ABILITY%idx%~
+  OUTER_FOR (idx = 0; VARIABLE_IS_SET $clabma01_table(~2~ ~%idx%~); ++idx) BEGIN
+    ACTION_IF (idx == 0) BEGIN
+      OUTER_SPRINT entry $give_abil(~%abil_idx%~)
     END ELSE BEGIN
-      OUTER_TEXT_SPRINT line ~%line%        ****~
+      OUTER_SPRINT entry ~****~
     END
+    OUTER_SPRINT line ~%line% %entry%~
   END
   APPEND ~clabma01.2da~ ~%line%~
-  OUTER_SET abilIdx += 1
-  OUTER_SET numRows += 1
+  OUTER_SET abil_idx += 1
 END
 
 COPY_EXISTING ~clabma01.2da~ ~override~

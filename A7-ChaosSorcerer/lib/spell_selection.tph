@@ -1,119 +1,79 @@
 // *** Generates lists of spell selections for spell "Chaotic Weave" ***
 
-// Initializes array "preset" from values of the file "%ini_file%"
-DEFINE_ACTION_MACRO a7_load_presets
+// Initializes an array "preset" with values from a spell presets map
+DEFINE_DIMORPHIC_FUNCTION a7_load_presets
+STR_VAR
+  presets_array = ~spell_presets~
+RET_ARRAY
+  preset
 BEGIN
-  LOCAL_SET ofs = 0
-  LOCAL_SET ofs2 = 0
-  LOCAL_SET level = 0
-  LOCAL_SET value = 0
-  LOCAL_SET spell_level = 0
-  LOCAL_SET spell_index = 0
-  LOCAL_SPRINT line ~~
-  LOCAL_SPRINT resref ~~
-
-  OUTER_FOR (index = 1; index < 10; ++index) BEGIN
-    OUTER_SET EVAL ~preset_%index%~ = 0
-  END
-
-  COPY - ~%ini_file%~ ~%ini_file%~
-    SET ofs = 0
-    SET ofs2 = 0
-    WHILE (ofs >= 0) BEGIN
-      SET ofs2 = INDEX_BUFFER(~%LNL%~ ofs)
-      PATCH_IF (ofs2 < 0) BEGIN SET ofs2 = BUFFER_LENGTH END
-      PATCH_IF (ofs2 > ofs) BEGIN
-        // preparing line
-        READ_ASCII ofs line (ofs2 - ofs)
-
-        // removing comments and whitespace
-        INNER_PATCH_SAVE line ~%line%~ BEGIN REPLACE_TEXTUALLY ~\([^;]*\)\(;.*\)?%MNL%?~ ~\1~ END
-        LPF a7_trim STR_VAR line = EVAL ~%line%~ RET line END
-
-        // parsing line content
-        PATCH_IF (~%line%~ STRING_MATCHES_REGEXP ~[1-9]_[0-9]+[ %TAB%]*=[ %TAB%]*.+~ = 0) BEGIN
-          INNER_PATCH_SAVE level ~%line%~ BEGIN REPLACE_TEXTUALLY ~\([1-9]\).*~ ~\1~ END
-          INNER_PATCH_SAVE resref ~%line%~ BEGIN REPLACE_TEXTUALLY ~[1-9]_[0-9]+[ %TAB%]*=[ %TAB%]*\(.+\)~ ~\1~ END
-          TO_UPPER ~resref~
-
-          // resolve symbolic spell name
-          SET value = IDS_OF_SYMBOL(~spell~ ~%resref%~)
-          PATCH_IF (value >= 2100 && value < 2950) BEGIN
-            SET value -= 2000
-            SET spell_level = value / 100
-            PATCH_IF (level = spell_level) BEGIN
-              SET spell_index = value - (spell_level * 100)
-              PATCH_IF (spell_index < 10) BEGIN
-                SPRINT resref ~SPWI%spell_level%0%spell_index%~
-              END ELSE BEGIN
-                SPRINT resref ~SPWI%spell_level%%spell_index%~
-              END
-            END
-          END
-
-          // add spell to list
-          PATCH_IF (IS_AN_INT ~level~ && FILE_EXISTS_IN_GAME ~%resref%.SPL~) BEGIN
-            SET index = EVAL ~preset_%level%~
-            TEXT_SPRINT EVAL ~preset_%level%_%index%~ ~%resref%~
-            SET EVAL ~preset_%level%~ += 1
-          END ELSE BEGIN
-            PATCH_LOG ~Skipping preset level %level% spell: "%resref%" does not exist.~
-          END
+  OUTER_FOR (level = 1; level <= 9; ++level) BEGIN
+    OUTER_SET $preset(~%level%~) = 0
+    OUTER_FOR (src_idx = 0 dst_idx = 0; dst_idx < 3 && VARIABLE_IS_SET $EVAL ~%presets_array%~(~%level%~ ~%src_idx%~); ++src_idx) BEGIN
+      // resolving spell definition
+      OUTER_SPRINT value $EVAL ~%presets_array%~(~%level%~ ~%src_idx%~)
+      OUTER_SPRINT resref ~~
+      ACTION_IF (IS_AN_INT ~value~) BEGIN
+        LAF RES_NAME_OF_SPELL_NUM INT_VAR spell_num = value RET resref = spell_res END
+      END ELSE BEGIN
+        OUTER_SET spell_num = IDS_OF_SYMBOL(~spell~ ~%value%~)
+        ACTION_IF (spell_num > 0) BEGIN
+          LAF RES_NAME_OF_SPELL_NUM INT_VAR spell_num RET resref = spell_res END
+        END ELSE ACTION_IF (FILE_EXISTS_IN_GAME ~%value%.SPL~) BEGIN
+          OUTER_SPRINT resref ~%value%~
         END
       END
 
-      SET ofs = (ofs2 < BUFFER_LENGTH) ? (ofs2 + 1) : "-1"
+      // storing resolved spell resref
+      ACTION_IF (NOT ~%resref%~ STR_EQ ~~) BEGIN
+        OUTER_SPRINT $preset(~%level%~ ~%dst_idx%~) ~%resref%~
+        OUTER_SET dst_idx += 1
+        OUTER_SET $preset(~%level%~) = dst_idx
+      END
     END
-  IF_EXISTS
+  END
 END
 
 
-// Initializes the array "struct" with spell names.
-// "struct" is the prefix for the structure containing available spells.
+// Initializes the array "spell_table" with spell names.
+// "spell_table" is the prefix for the structure containing available spells.
 // First index indicates spell level, second index indicates spell name.
-// Example: struct_1 = number of level 1 spells, struct_1_0 contains spell name of first available level 1 spell, ...
-// Parameters: STR_VAR struct
-DEFINE_ACTION_MACRO a7_create_spell_list
+// Example: $spell_table(~1~) = number of level 1 spells, $spell_table(~1~ ~0~) contains spell name of first available level 1 spell, ...
+DEFINE_ACTION_FUNCTION a7_create_spell_list
+RET_ARRAY
+  spell_table
 BEGIN
-  LOCAL_SET index = 0
-  LOCAL_SET level = 0
-  LOCAL_SET row = 0
-  LOCAL_SET value = 0
-  LOCAL_SET valid = 0
-  LOCAL_SPRINT code ~~
-  LOCAL_SPRINT resref ~~
-
   // "exclude" array containst list of spells to exclude
   OUTER_SET exclude = 0
-  COPY_EXISTING - ~hidespl.2da~ ~override~
+  COPY_EXISTING ~hidespl.2da~ ~override~
     READ_2DA_ENTRIES_NOW hide 4
     FOR (row = 0; row < hide; ++row) BEGIN
       READ_2DA_ENTRY_FORMER hide row 0 resref
       READ_2DA_ENTRY_FORMER hide row 1 value
       PATCH_IF (value != 0 && ~%resref%~ STRING_MATCHES_REGEXP ~SPWI[1-9].*~ = 0) BEGIN
         // only list valid mage spells
-        TEXT_SPRINT EVAL ~exclude_%exclude%~ ~%resref%~
+        SPRINT $exclude(~%exclude%~) ~%resref%~
         SET exclude += 1
       END
     END
-  IF_EXISTS
+  BUT_ONLY IF_EXISTS
 
   OUTER_FOR (level = 1; level < 10; ++level) BEGIN
-    OUTER_SET EVAL ~%struct%_%level%~ = 0
+    OUTER_SET $spell_table(~%level%~) = 0
   END
 
   // adding special spells
   ACTION_FOR_EACH resref IN ~SPWI222~ ~A7_SP03~ ~SPWI723~ ~A7_SP04~ BEGIN
-    COPY - ~%MOD_FOLDER%/spells/%resref%.spl~ ~override~
+    COPY ~%MOD_FOLDER%/spells/%resref%.spl~ ~override~
       READ_LONG 0x34 level
     BUT_ONLY
-    OUTER_SET index = EVAL ~%struct%_%level%~
-    OUTER_TEXT_SPRINT EVAL ~%struct%_%level%_%index%~ ~%resref%~
-    OUTER_SET EVAL ~%struct%_%level%~ = index + 1
+    OUTER_SET index = $spell_table(~%level%~)
+    OUTER_SPRINT $spell_table(~%level%~ ~%index%~) ~%resref%~
+    OUTER_SET $spell_table(~%level%~) = index + 1
   END
 
   // scanning available spells
-  COPY_EXISTING - ~spell.ids~ ~override~
+  COPY_EXISTING ~spell.ids~ ~override~
     READ_2DA_ENTRIES_NOW table 2
     FOR (row = 0; row < table; ++row) BEGIN
       READ_2DA_ENTRY_FORMER table row 0 code
@@ -136,22 +96,24 @@ BEGIN
           PATCH_IF (valid) BEGIN
             // validate spell properties
             INNER_ACTION BEGIN
-              COPY_EXISTING - ~%resref%.spl~ ~override~
+              SILENT
+              COPY_EXISTING ~%resref%.spl~ ~override~
                 PATCH_IF ((SHORT_AT 0x1c) != 1 ||             // Wizard spell?
                           (LONG_AT 0x1e) BAND BIT14 ||        // Generalist mage not excluded?
                           (LONG_AT NAME1) <= 0 ||             // valid spell name?
                           (LONG_AT 0x34) != level) BEGIN      // spell level matches?
                   SET valid = 0
                 END
-              IF_EXISTS
+              BUT_ONLY IF_EXISTS
+              VERBOSE
             END
           END
 
           // check if resref already exists
           PATCH_IF (valid) BEGIN
-            SET value = EVAL ~%struct%_%level%~
+            SET value = $spell_table(~%level%~)
             FOR (index = 0; index < value; ++index) BEGIN
-              PATCH_IF (EVAL ~%%struct%_%level%_%index%%~ STR_EQ ~%resref%~) BEGIN
+              PATCH_IF ($spell_table(~%level%~ ~%index%~) STR_EQ ~%resref%~) BEGIN
                 SET index = value
                 SET valid = 0
               END
@@ -161,7 +123,7 @@ BEGIN
           PATCH_IF (valid) BEGIN
             // check if resref is excluded
             FOR (index = 0; index < exclude; ++index) BEGIN
-              PATCH_IF (EVAL ~%exclude_%index%%~ STR_EQ ~%resref%~) BEGIN
+              PATCH_IF ($exclude(~%index%~) STR_EQ ~%resref%~) BEGIN
                 SET index = exclude
                 SET valid = 0
               END
@@ -170,14 +132,14 @@ BEGIN
 
           PATCH_IF (valid) BEGIN
             // adding spell name
-            SET index = EVAL ~%struct%_%level%~
-            TEXT_SPRINT EVAL ~%struct%_%level%_%index%~ ~%resref%~
-            SET EVAL ~%struct%_%level%~ = index + 1
+            SET index = $spell_table(~%level%~)
+            SPRINT $spell_table(~%level%~ ~%index%~) ~%resref%~
+            SET $spell_table(~%level%~) = index + 1
           END
         END
       END
     END
-  IF_EXISTS
+  BUT_ONLY IF_EXISTS
 END
 
 
@@ -210,30 +172,31 @@ BEGIN
         ResRef  Type
 >>>>>>>>
   END
-  COPY ~.../inlined/spell_table.2da~ ~override/%file_name%~
+  PRINT ~Generating spell list: %file_name%~
+  SILENT COPY ~.../inlined/spell_table.2da~ ~override/%file_name%~ VERBOSE
 
   // generating list of spells to add: spell_list
-  OUTER_FOR (level = 1; level < 10; ++level) BEGIN
-    OUTER_SET EVAL ~spell_list_%level%~ = 0
-    ACTION_IF (EVAL ~level_%level%~ > 0) BEGIN
-      OUTER_SET numSpells = (EVAL ~%spell_table%_%level%~ * EVAL ~level_%level%~) / 100
-      OUTER_SET numFixed = (~%fixed_table%~ STR_EQ ~~) ? 0 : EVAL ~%fixed_table%_%level%~
+  OUTER_FOR (level = 1; level <= 9; ++level) BEGIN
+    OUTER_SET $spell_list(~%level%~) = 0
+    ACTION_IF ($level(~%level%~) > 0) BEGIN
+      OUTER_SET numSpells = ($EVAL ~%spell_table%~(~%level%~) * $level(~%level%~)) / 100
+      OUTER_SET numFixed = (~%fixed_table%~ STR_EQ ~~) ? 0 : $EVAL ~%fixed_table%~(~%level%~)
       OUTER_SET numSpells = (numSpells > numFixed) ? (numSpells - numFixed) : 0
 
       // fill local list with spells of current level
       OUTER_SET cur_list = 0
-      OUTER_FOR (idx = 0; idx < EVAL ~%spell_table%_%level%~; ++idx) BEGIN
-        OUTER_TEXT_SPRINT resref EVAL ~%%spell_table%_%level%_%idx%%~
-        OUTER_TEXT_SPRINT EVAL ~cur_list_%idx%~ ~%resref%~
+      OUTER_FOR (idx = 0; idx < $EVAL ~%spell_table%~(~%level%~); ++idx) BEGIN
+        OUTER_SPRINT resref $EVAL ~%spell_table%~(~%level%~ ~%idx%~)
+        OUTER_SPRINT $cur_list(~%idx%~) ~%resref%~
         OUTER_SET cur_list += 1
 
         // always add preset spells
         OUTER_FOR (idx2 = 0; idx2 < numFixed; ++idx2) BEGIN
-          ACTION_IF (EVAL ~%%fixed_table%_%level%_%idx2%%~ STR_EQ ~%resref%~) BEGIN
-            OUTER_SET value = EVAL ~spell_list_%level%~
-            OUTER_TEXT_SPRINT EVAL ~spell_list_%level%_%value%~ ~%resref%~
-            OUTER_TEXT_SPRINT EVAL ~cur_list_%idx%~ ~~
-            OUTER_SET EVAL ~spell_list_%level%~ += 1
+          ACTION_IF ($EVAL ~%fixed_table%~(~%level%~ ~%idx2%~) STR_EQ ~%resref%~) BEGIN
+            OUTER_SET value = $spell_list(~%level%~)
+            OUTER_SPRINT $spell_list(~%level%~ ~%value%~) ~%resref%~
+            OUTER_SPRINT $cur_list(~%idx%~) ~~
+            OUTER_SET $spell_list(~%level%~) += 1
           END
         END
       END
@@ -243,12 +206,12 @@ BEGIN
         OUTER_SET chance = RANDOM(0 99)
         OUTER_SET max = cur_list - 1
         OUTER_SET index = RANDOM(0 max)
-        ACTION_IF (chance < EVAL ~level_%level%~ &&
-                   NOT EVAL ~%cur_list_%index%%~ STR_EQ ~~) BEGIN
-          OUTER_SET value = EVAL ~spell_list_%level%~
-          OUTER_TEXT_SPRINT EVAL ~spell_list_%level%_%value%~ EVAL ~%cur_list_%index%%~
-          OUTER_TEXT_SPRINT EVAL ~cur_list_%index%~ ~~
-          OUTER_SET EVAL ~spell_list_%level%~ += 1
+        ACTION_IF (chance < $level(~%level%~) &&
+                   NOT $cur_list(~%index%~) STR_EQ ~~) BEGIN
+          OUTER_SET value = $spell_list(~%level%~)
+          OUTER_SPRINT $spell_list(~%level%~ ~%value%~) $cur_list(~%index%~)
+          OUTER_SPRINT $cur_list(~%index%~) ~~
+          OUTER_SET $spell_list(~%level%~) += 1
           OUTER_SET numSpells -= 1
         END
       END
@@ -256,28 +219,32 @@ BEGIN
   END
 
   // Add selected spells to 2da file
-  OUTER_FOR (level = 1; level < 10; ++level) BEGIN
-    OUTER_SET numSpells = EVAL ~spell_list_%level%~
+  OUTER_FOR (level = 1; level <= 9; ++level) BEGIN
+    OUTER_SET numSpells = $spell_list(~%level%~)
     OUTER_FOR (idx = 0; idx < numSpells; ++idx) BEGIN
-      OUTER_TEXT_SPRINT resref EVAL ~%spell_list_%level%_%idx%%~
-      OUTER_TEXT_SPRINT line ~level%level%_%idx%   %resref%  3~
-      APPEND ~%file_name%~ ~%line%~
+      OUTER_SPRINT resref $spell_list(~%level%~ ~%idx%~)
+      OUTER_SPRINT line ~level%level%_%idx%   %resref%  3~
+      SILENT APPEND ~%file_name%~ ~%line%~ VERBOSE
     END
   END
+
+  SILENT
+  COPY_EXISTING ~%file_name%~ ~override~
+    PRETTY_PRINT_2DA
+  BUT_ONLY
+  VERBOSE
 END
 
 
 // defining preset list of important spells
 ACTION_IF (SPELL_REV) BEGIN
-  OUTER_TEXT_SPRINT ini_file "%MOD_FOLDER%/lib/presets_spellrev.ini"
+  INCLUDE ~%MOD_FOLDER%/lib/presets_spellrev.tpa~
 END ELSE BEGIN
-  OUTER_TEXT_SPRINT ini_file "%MOD_FOLDER%/lib/presets.ini"
+  INCLUDE ~%MOD_FOLDER%/lib/presets.tpa~
 END
-LAM a7_load_presets
+LAF a7_load_presets RET_ARRAY preset END
 
-
-OUTER_TEXT_SPRINT struct ~spellTable~
-LAM a7_create_spell_list
+LAF a7_create_spell_list RET_ARRAY spell_table END
 
 // generate spell lists for each tier
 RANDOM_SEED ~now~   // force to use current time
@@ -288,93 +255,120 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY spell_def BEGIN
   ~a7_sp1a~, ~75~, ~50~, ~25~ => ~1~
   ~a7_sp1b~, ~75~, ~50~, ~25~ => ~2~
   ~a7_sp1c~, ~75~, ~50~, ~25~ => ~3~
-  ~a7_sp1d~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp1d~, ~75~, ~50~, ~25~ => ~4~
   ~a7_sp1e~, ~100~, ~75~, ~50~, ~25~ => ~5~
   ~a7_sp1f~, ~100~, ~75~, ~50~, ~25~ => ~6~
-  ~a7_sp1g~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
-  ~a7_sp1h~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
-  ~a7_sp1i~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
-  ~a7_sp1j~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
-  ~a7_sp1k~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
-  ~a7_sp1l~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
-  ~a7_sp1m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
-  ~a7_sp1n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  ~a7_sp1g~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp1h~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp1i~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp1j~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp1k~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp1l~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp1m~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
+  ~a7_sp1n~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  ~a7_sp1o~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~15~
+  ~a7_sp1p~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~16~
+  ~a7_sp1q~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~17~
+  ~a7_sp1r~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~18~
+  ~a7_sp1s~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~19~
+  ~a7_sp1t~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~20~
   // Tier 2
   ~a7_sp2a~, ~100~, ~75~, ~50~, ~25~ => ~1~
   ~a7_sp2b~, ~100~, ~75~, ~50~, ~25~ => ~2~
   ~a7_sp2c~, ~100~, ~75~, ~50~, ~25~ => ~3~
-  ~a7_sp2d~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp2d~, ~100~, ~75~, ~50~, ~25~ => ~4~
   ~a7_sp2e~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~5~
   ~a7_sp2f~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~6~
-  ~a7_sp2g~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
-  ~a7_sp2h~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
-  ~a7_sp2i~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
-  ~a7_sp2j~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
-  ~a7_sp2k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
-  ~a7_sp2l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
-  ~a7_sp2m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
-  ~a7_sp2n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  ~a7_sp2g~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp2h~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp2i~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp2j~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp2k~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp2l~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp2m~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
+  ~a7_sp2n~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  ~a7_sp2o~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~15~
+  ~a7_sp2p~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~16~
+  ~a7_sp2q~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~17~
+  ~a7_sp2r~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~18~
+  ~a7_sp2s~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~19~
+  ~a7_sp2t~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~20~
   // Tier 3
   ~a7_sp3a~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~1~
   ~a7_sp3b~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~2~
   ~a7_sp3c~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~3~
-  ~a7_sp3d~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
+  ~a7_sp3d~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
   ~a7_sp3e~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~5~
   ~a7_sp3f~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~6~
-  ~a7_sp3g~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
-  ~a7_sp3h~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
-  ~a7_sp3i~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
-  ~a7_sp3j~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
-  ~a7_sp3k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
-  ~a7_sp3l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
-  ~a7_sp3m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~13~
-  ~a7_sp3n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~14~
+  ~a7_sp3g~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~7~
+  ~a7_sp3h~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~8~
+  ~a7_sp3i~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~9~
+  ~a7_sp3j~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~10~
+  ~a7_sp3k~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~11~
+  ~a7_sp3l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~12~
+  ~a7_sp3m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~13~
+  ~a7_sp3n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~14~
+  ~a7_sp3o~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~15~
+  ~a7_sp3p~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~16~
+  ~a7_sp3q~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~17~
+  ~a7_sp3r~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~18~
+  ~a7_sp3s~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~19~
+  ~a7_sp3t~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~20~
   // Tier 4
   ~a7_sp4a~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~1~
   ~a7_sp4b~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~2~
   ~a7_sp4c~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~3~
-  ~a7_sp4d~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~4~
+  ~a7_sp4d~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~, ~25~ => ~4~
   ~a7_sp4e~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~5~
   ~a7_sp4f~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~6~
-  ~a7_sp4g~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~7~
-  ~a7_sp4h~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~8~
-  ~a7_sp4i~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~9~
-  ~a7_sp4j~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~10~
-  ~a7_sp4k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~11~
-  ~a7_sp4l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~12~
-  ~a7_sp4m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~ => ~13~
+  ~a7_sp4g~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~7~
+  ~a7_sp4h~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~8~
+  ~a7_sp4i~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~9~
+  ~a7_sp4j~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~10~
+  ~a7_sp4k~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~11~
+  ~a7_sp4l~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~12~
+  ~a7_sp4m~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~13~
+  ~a7_sp4n~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~, ~25~ => ~14~
+  ~a7_sp4o~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~15~
+  ~a7_sp4p~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~16~
+  ~a7_sp4q~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~50~ => ~17~
+  ~a7_sp4r~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~ => ~18~
+  ~a7_sp4s~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~ => ~19~
   // Tier 5
   ~a7_sp5a~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~25~ => ~1~
   ~a7_sp5b~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~25~ => ~2~
-  ~a7_sp5c~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~3~
+  ~a7_sp5c~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~75~, ~25~ => ~3~
   ~a7_sp5d~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~4~
-  ~a7_sp5e~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~ => ~5~
+  ~a7_sp5e~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~5~
+  ~a7_sp5f~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~50~ => ~6~
+  ~a7_sp5g~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~ => ~7~
   // Tier 6
   ~a7_sp6a~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~, ~100~ => ~1~
 END
 
 ACTION_PHP_EACH spell_def AS data => _ BEGIN
   OUTER_FOR (idx = 1; idx <= 9; ++idx) BEGIN
-    ACTION_IF (VARIABLE_IS_SET EVAL ~data_%idx%~) BEGIN
-      OUTER_SET EVAL ~l_%idx%~ = EVAL ~data_%idx%~
+    ACTION_IF (VARIABLE_IS_SET $data(~%idx%~)) BEGIN
+      OUTER_SET $lvl(~%idx%~) = $data(~%idx%~)
     END ELSE BEGIN
-      OUTER_SET EVAL ~l_%idx%~ = 0
+      OUTER_SET $lvl(~%idx%~) = 0
     END
   END
+  OUTER_SPRINT resref $data(~0~)
   LAF a7_create_spell_list_file
-  INT_VAR
-    level_1 = l_1
-    level_2 = l_2
-    level_3 = l_3
-    level_4 = l_4
-    level_5 = l_5
-    level_6 = l_6
-    level_7 = l_7
-    level_8 = l_8
-    level_9 = l_9
-  STR_VAR
-    fixed_table = ~preset~
-    spell_table = ~spellTable~
-    file_name   = EVAL ~%data_0%.2da~
+    INT_VAR
+      level_1 = $lvl(~1~)
+      level_2 = $lvl(~2~)
+      level_3 = $lvl(~3~)
+      level_4 = $lvl(~4~)
+      level_5 = $lvl(~5~)
+      level_6 = $lvl(~6~)
+      level_7 = $lvl(~7~)
+      level_8 = $lvl(~8~)
+      level_9 = $lvl(~9~)
+    STR_VAR
+      fixed_table = ~preset~
+      spell_table = ~spell_table~
+      file_name   = EVAL ~%resref%.2da~
   END
 END

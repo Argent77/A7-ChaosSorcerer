@@ -56,9 +56,9 @@ WITH_SCOPE BEGIN
     END
     // adding game-dependent effects to item
     PATCH_IF (GAME_IS ~iwdee~) BEGIN
-      TEXT_SPRINT codes ~op=215,tmg=1,res=ALTERH;op=174,tmg=1,res=#EFF_M08;op=174,tmg=4,dur=60,res=#EFF_E01~
+      SPRINT codes ~op=215,tmg=1,res=ALTERH;op=174,tmg=1,res=#EFF_M08;op=174,tmg=4,dur=60,res=#EFF_E01~
     END ELSE BEGIN
-      TEXT_SPRINT codes ~op=141,tmg=1,p2=4;op=174,tmg=1,res=EFF_M28;op=174,tmg=4,dur=60,res=EFF_M29~
+      SPRINT codes ~op=141,tmg=1,p2=4;op=174,tmg=1,res=EFF_M28;op=174,tmg=4,dur=60,res=EFF_M29~
     END
     LPF a7_auto_apply_spl_effect
     INT_VAR

@@ -1,0 +1,51 @@
+// Spells that should always be included in the spell lists available to "Chaotic Weave".
+// Specify either symbolic name (from SPELL.IDS) or resource name without extension.
+// Note: Only up to three (existing) spells per level will be considered.
+// Applied if no other supported spell enhancement mod has been detected.
+ACTION_DEFINE_ASSOCIATIVE_ARRAY spell_presets BEGIN
+  // spell level, index => numeric or symbolic spell identifier, or spl resref
+  // Level 1 spells
+  ~1~, ~0~ => ~WIZARD_CHARM_PERSON~
+  ~1~, ~1~ => ~WIZARD_BLINDNESS~
+  ~1~, ~2~ => ~WIZARD_MAGIC_MISSILE~
+
+  // Level 2 spells
+  ~2~, ~0~ => ~WIZARD_INVISIBILITY~
+  ~2~, ~1~ => ~WIZARD_MELF_ACID_ARROW~
+  ~2~, ~2~ => ~WIZARD_MIRROR_IMAGE~
+
+  // Level 3 spells
+  ~3~, ~0~ => ~WIZARD_FIREBALL~
+  ~3~, ~1~ => ~WIZARD_MINOR_SPELL_DEFLECTION~
+  ~3~, ~2~ => ~WIZARD_TRUE_DISPEL_MAGIC~
+
+  // Level 4 spells
+  ~4~, ~0~ => ~WIZARD_MINOR_GLOBE_OF_INVULNERABILITY~
+  ~4~, ~1~ => ~WIZARD_STONE_SKIN~
+  ~4~, ~2~ => ~WIZARD_EMOTION_HOPELESSNESS~
+
+  // Level 5 spells
+  ~5~, ~0~ => ~WIZARD_HOLD_MONSTER~
+  ~5~, ~1~ => ~WIZARD_BREACH~
+  ~5~, ~2~ => ~WIZARD_MINOR_SPELL_TURNING~
+
+  // Level 6 spells
+  ~6~, ~0~ => ~WIZARD_TRUE_SIGHT~
+  ~6~, ~1~ => ~WIZARD_IMPROVED_HASTE~
+  ~6~, ~2~ => ~WIZARD_SPELL_DEFLECTION~
+
+  // Level 7 spells
+  ~7~, ~0~ => ~WIZARD_RUBY_RAY_OF_REVERSAL~
+  ~7~, ~1~ => ~WIZARD_SPHERE_OF_CHAOS~
+  ~7~, ~2~ => ~WIZARD_FINGER_OF_DEATH~
+
+  // Level 8 spells
+  ~8~, ~0~ => ~WIZARD_SIMULACRUM~
+  ~8~, ~1~ => ~WIZARD_PIERCE_SHIELD~
+  ~8~, ~2~ => ~WIZARD_ABI_DALZIMS_HORRID_WILTING~
+
+  // Level 9 spells
+  ~9~, ~0~ => ~WIZARD_TIME_STOP~
+  ~9~, ~1~ => ~WIZARD_SHAPECHANGE~
+  ~9~, ~2~ => ~WIZARD_BIGBYS_CRUSHING_HAND~
+END
