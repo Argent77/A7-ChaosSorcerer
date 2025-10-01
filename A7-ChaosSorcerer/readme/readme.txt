@@ -116,7 +116,7 @@ Advantages:
 – May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
 – May cast the 7th-level spells Nahal's Wildstrike and Conjure Greater Chaos Elemental
   (automatically added to spell list).
-– May cast the 9th-level spell Stabilize (automatically added to spell list).
+– May cast the 9th-level spells Wildfire and Stabilize (automatically added to spell list).
 – Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower
   and five levels higher than the Chaos Sorcerer's true level.
 – 1st level: +1 bonus to Saves vs. Spell.
@@ -207,6 +207,24 @@ Sorcerer level 20 or higher:
 – 100% chance to get 100/100/100/100/100/100/100/100/100 percent of spells per level
 
 
+Spell Description: Wildfire
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Level: 9
+School: Invocation/Evocation
+Range: 0
+Duration: Special
+Casting Time: Special
+Area of Effect: Special
+Saving Throw: Special
+
+By means of this spell, the caster is able to channel raw magical energy through himself, shaping
+it into any form or effect he desires. As a result, he is able to recreate the effect of any
+wizard spell of 8th level or lower he has general knowledge of.
+Unlike Chaotic Weave or Nahal's Reckless Dweomer, however, the caster retains full control over
+the whole process and can therefore avoid the undesired side effects of wild surges.
+
+
 Spell Description: Stabilize
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -219,9 +237,9 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 A true master of chaos does not only take advantage of the unpredictable nature of the Elemental
-Chaos but also know how to shield <PRO_HIMHER>self from it. This spell negates the effects of
-wild magic zones, allowing the caster and everyone else within the area of effect to cast spells
-or use magical items without unpredictable side effects.
+Chaos but also know how to shield himself from it. This spell negates the effects of wild magic
+zones, allowing the caster and everyone else within the area of effect to cast spells or use
+magical items without unpredictable side effects.
 
 Furthermore, wild surges are nullified for all spells cast by Chaos Sorcerers or Wild Mages while
 the spell is in effect.

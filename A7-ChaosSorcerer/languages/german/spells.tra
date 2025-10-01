@@ -168,6 +168,20 @@ Ein wahrer Meister des Chaos macht sich nicht nur die unberechenbare Natur des E
 @2702 = ~Schutz vor Unbändigen Wogen~
 
 
+@2750 = ~Lauffeuer~
+@2751 = ~Lauffeuer
+
+Grad: 9
+Schule: Hervorrufung
+Reichweite: Speziell
+Dauer: Speziell
+Zeitaufwand: Speziell
+Bereich: Speziell
+Rettungswurf: Speziell
+
+Mithilfe dieses Zaubers ist der Anwender in der Lage, rohe magische Energien durch seinen eigenen Körper zu leiten und sie in jede gewünschte Form oder Wirkung zu lenken. Dadurch kann <PRO_HESHE> die Effekte eines beliebigen Zaubers des 8. oder eines niedrigeren Grades nachbilden, sofern <PRO_HESHE> allgemeine Kenntnisse über diesen Spruch verfügt. Im Gegensatz zu „Chaotisches Gefüge“ oder „Nahals gewagte Hexerei“ behält der Anwender jedoch die vollständige Kontrolle über den gesamten Verlauf und kann daher die unerwünschten Nebeneffekte von unbändigen Wogen vermeiden.~
+
+
 @5000 = ~Verwirrung~
 @5001 = ~Verwirrung
 Diese Fähigkeit führt bei dem Ziel zu Verwirrung. Es wird unschlüssig und kann nicht mehr effektiv agieren. Das Ziel erhält einen Rettungswurf gegen Zauber, um den Auswirkungen des Effekts zu entgehen. Scheitert der Rettungswurf, dann gerät das Ziel in einen Berserkerrausch, steht verwirrt herum oder irrt für die Dauer des Zaubers ziellos umher. Ein verwirrtes Wesen, das angegriffen wird, sieht in dem Angreifer einen Feind und handelt gemäß seinen Instinkten, um sich zu verteidigen. Der Effekt hält für 2 Runden an.~

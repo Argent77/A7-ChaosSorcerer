@@ -27,7 +27,7 @@ Advantages:
 - May cast the 3rd-level spell Chaos Shield (automatically added to spell list).
 - May cast the 5th-level spell Conjure Chaos Elemental (automatically added to spell list).
 - May cast the 7th-level spells Nahal's Wildstrike and Conjure Greater Chaos Elemental (automatically added to spell list).
-- May cast the 9th-level spell Stabilize (automatically added to spell list).
+- May cast the 9th-level spell Wildfire and Stabilize (automatically added to spell list).
 - Casting level varies slightly whenever he/she casts a spell—anywhere between five levels lower and five levels higher than the Chaos Sorcerer's true level.
 - 1st level: +1 bonus to Saves vs. Spell.
 - 5th level: +1 bonus to Dexterity.
@@ -56,6 +56,7 @@ The component does also apply several changes to the Wild Mage kit:
 3. "Chaos Shield" merges with "Improved Chaos Shield" and becomes a level 3 spell that starts with a +15 wild surge bonus and improves to +20 and +25 at higher levels.
 4. New level 7 spell "Nahal's Wildstrike" surrounds the target with an aura of chaotic energies. Each time the target casts a spell will trigger a wild surge with unpredictable results.
 5. New level 9 spell "Stabilize" temporarily negates the effects of wild magic zones and wild surges.
+6. New level 9 spell "Wildfire" allows to cast any spell up to level 8 without triggering wild surges.
 
 The Wild Mage additions are also available to the Chaos Sorcerer. However, "Nahal's Reckless Dweomer" is replaced by "Chaotic Weave".
 

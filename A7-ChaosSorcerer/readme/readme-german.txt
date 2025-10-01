@@ -123,7 +123,7 @@ Vorteile:
 – einzigartiger Zauber des 3. Grades: „Chaosschild“
 – einzigartiger Zauber des 5. Grades: „Chaoselementar beschwören“
 – einzigartige Zauber des 7. Grades: „Nahals Wilder Schlag“ und „Höheren Chaoselementar beschwören“
-– einzigartiger Zauber des 9. Grades: „Stabilisieren“
+– einzigartige Zauber des 9. Grades: „Lauffeuer“ und „Stabilisieren“
 – bei jedem Wirken eines Zaubers variiert die Zauberstufe des Chaos Hexenmeisters ein wenig –
   irgendwo zwischen 5 Stufen über und 5 Stufen unter der tatsächlichen Stufe des Chaos Hexenmeisters
 – 1. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
@@ -217,6 +217,26 @@ Hexenmeister Stufe 16 bis 19:
 
 Hexenmeister Stufe 20 und höher:
 – 100% Chance auf 100/100/100/100/100/100/100/100/100 Prozent aller Zauber pro Zaubergrad
+
+
+Zauberbeschreibung: Lauffeuer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Grad: 9
+Schule: Hervorrufung
+Reichweite: Speziell
+Dauer: Speziell
+Zeitaufwand: Speziell
+Bereich: Speziell
+Rettungswurf: Speziell
+
+Mithilfe dieses Zaubers ist der Anwender in der Lage, rohe magische Energien durch seinen eigenen
+Körper zu leiten und sie in jede gewünschte Form oder Wirkung zu lenken. Dadurch kann er die
+Effekte eines beliebigen Zaubers des 8. oder eines niedrigeren Grades nachbilden, sofern er
+allgemeine Kenntnisse über diesen Spruch verfügt.
+Im Gegensatz zu „Chaotisches Gefüge“ oder „Nahals gewagte Hexerei“ behält der Anwender jedoch die
+vollständige Kontrolle über den gesamten Verlauf und kann daher die unerwünschten Nebeneffekte
+von unbändigen Wogen vermeiden.
 
 
 Zauberbeschreibung: Stabilisieren

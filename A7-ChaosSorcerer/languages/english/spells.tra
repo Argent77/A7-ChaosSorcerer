@@ -168,6 +168,20 @@ A true master of chaos does not only take advantage of the unpredictable nature 
 @2702 = ~Surge Protection~
 
 
+@2750 = ~Wildfire~
+@2751 = ~Wildfire
+(Invocation/Evocation)
+
+Level: 9
+Range: Special
+Duration: Special
+Casting Time: Special
+Area of Effect: Special
+Saving Throw: Special
+
+By means of this spell, the caster is able to channel raw magical energy through <PRO_HIMHER>self, shaping it into any form or effect <PRO_HESHE> desires. As a result, <PRO_HESHE> is able to recreate the effect of any wizard spell of 8th level or lower <PRO_HESHE> has general knowledge of. Unlike Chaotic Weave or Nahal's Reckless Dweomer, however, the caster retains full control over the whole process and can therefore avoid the undesired side effects of wild surges.~
+
+
 @5000 = ~Confusion~
 @5001 = ~Confusion
 This ability causes confusion in the target creature, creating indecision and the inability to take effective action. The target is allowed a Saving Throw vs. Spell to avoid the effect. Otherwise, the target will either go berserk, stand confused, or wander about for the duration of the effect. A confused creature that is attacked perceives the attacker as an enemy and acts according to its basic nature. The effect lasts for 2 rounds.~

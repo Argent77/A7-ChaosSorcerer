@@ -1,10 +1,10 @@
 // *** Spells for Chaos Sorcerer ***
 
 INCLUDE ~%MOD_FOLDER%/lib/spells_base.tph~
+INCLUDE ~%MOD_FOLDER%/lib/spell_selection.tph~
 
 
 // spell: Chaotic Weave
-INCLUDE ~%MOD_FOLDER%/lib/spell_selection.tph~
 COPY ~%MOD_FOLDER%/spells/a7_sp01.spl~ ~override~
   SAY NAME1 @2000 // Chaotic Weave
   SAY UNIDENTIFIED_DESC @2001 // Chaotic Weave description
@@ -287,6 +287,64 @@ END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
   // Add spell scroll to the drow mage Malavon
   COPY_EXISTING ~malavon.cre~ ~override~
     ADD_CRE_ITEM ~a7_sc01~ #0 #0 #0 ~none~ ~inv~
+  BUT_ONLY
+END
+
+
+// Spell: Wildfire
+// installing spell
+COPY ~%MOD_FOLDER%/spells/a7_sp06.spl~ ~override~
+  SAY NAME1 @2750 // Wildfire
+  SAY UNIDENTIFIED_DESC @2751 // Wildfire description
+
+// creating spell table
+LAF a7_create_spell_list_file
+  INT_VAR
+    level_1 = ~100~
+    level_2 = ~100~
+    level_3 = ~100~
+    level_4 = ~100~
+    level_5 = ~100~
+    level_6 = ~100~
+    level_7 = ~100~
+    level_8 = ~100~
+    level_9 = ~0~
+  STR_VAR
+    fixed_table = ~~  // no fixed spells
+    spell_table = ~spell_table~
+    file_name = ~a7_sp06.2da~
+END
+
+// installing spell scroll
+COPY ~%MOD_FOLDER%/spells/a7_sc02.itm~ ~override~
+  SAY NAME2 @2750 // Wildfire
+  SAY IDENTIFIED_DESC @2751 // Wildfire description
+
+COPY ~%MOD_FOLDER%/spells/a7_sp06a.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp06b.bam~ ~override~
+     ~%MOD_FOLDER%/spells/a7_sp06c.bam~ ~override~
+
+ACTION_IF (GAME_INCLUDES ~tob~) BEGIN
+  // Add spell scroll to Odamaron's chamber in Sendai's Lair
+  COPY_EXISTING ~ar6110.are~ ~override~
+    LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 3
+        charges1 = 1
+      STR_VAR
+        item_to_add = ~a7_sc02~
+    END
+  BUT_ONLY
+END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  // Add spell scroll to upper story of Castle Maluradek
+  COPY_EXISTING ~ar9712.are~ ~override~
+    LPF ADD_AREA_ITEM
+      INT_VAR
+        container_to_add_to = 6
+        charges1 = 1
+      STR_VAR
+        item_to_add = ~a7_sc02~
+    END
   BUT_ONLY
 END
 
