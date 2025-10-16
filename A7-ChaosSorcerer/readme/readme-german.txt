@@ -123,7 +123,7 @@ Vorteile:
 – einzigartiger Zauber des 3. Grades: „Chaosschild“
 – einzigartiger Zauber des 5. Grades: „Chaoselementar beschwören“
 – einzigartige Zauber des 7. Grades: „Nahals Wilder Schlag“ und „Höheren Chaoselementar beschwören“
-– einzigartige Zauber des 9. Grades: „Lauffeuer“ und „Stabilisieren“
+– einzigartige Zauber des 9. Grades: „Stabilisieren“ und „Lauffeuer“
 – bei jedem Wirken eines Zaubers variiert die Zauberstufe des Chaos Hexenmeisters ein wenig –
   irgendwo zwischen 5 Stufen über und 5 Stufen unter der tatsächlichen Stufe des Chaos Hexenmeisters
 – 1. Stufe: erhält einen +1 Bonus auf Rettungswürfe gegen Zauber
