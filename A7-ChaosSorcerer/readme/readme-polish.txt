@@ -1,7 +1,7 @@
 Czarownik chaosu: podklasa dla czarowników posługujących się dziką magią
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wersja:     2.10
+Wersja:     2.11
 Autor:      Argent77
 
 Download:   https://github.com/Argent77/A7-ChaosSorcerer/releases
@@ -241,6 +241,12 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+2.11
+- Added more variations to the level-dependent "Chaotic Weave" spell selections
+- Added new level 9 spell "Wildfire" to the Chaos Sorcerer kit and spell scrolls for Wild Mages
+- Modernized and optimized installation script
+- Several bugfixes
 
 2.10
 - Added compatibility with SubtleDoctor's 5e Spellcasting mod
