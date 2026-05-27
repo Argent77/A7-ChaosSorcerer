@@ -252,7 +252,7 @@ Credits
 
 Writing, coding and testing: Argent77
 
-Polish translation: Cahir
+Polish translation: Cahir, Aristo
 Russian translation: Saigon1983
 French translation: Deratiseur, JohnBob
 
