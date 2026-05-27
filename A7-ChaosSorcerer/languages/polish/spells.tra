@@ -152,6 +152,35 @@ Rzut obronny: brak
 
 Tarcza chaosu zwiększa szansę osoby posługującej się dziką magią na osiągnięcie korzystnego rezultatu w przypadku wystąpienia fali dzikiej energii. Do każdego rzutu kostką w tabeli dzikiej energii dodawana jest premia. Wynosi ona na początku 15 punktów i wzrasta do 20 punktów na 12. poziomie i 25 punktów na 18. poziomie. Premia pochodząca z Tarczy chaosu dodawana jest do premii związanej z poziomem rzucającego czar.~
 
+@2700 = ~Stabilność~
+@2701 = ~Stabilność
+(Przemiany)
+
+Poziom: 9
+Zasięg: 0
+Czas działania: 4 rundy
+Czas rzucania: 9
+Obszar działania: w promieniu 5 metrów
+Rzut obronny: brak
+
+Prawdziwy mistrz chaosu nie tylko potrafi korzystać z nieprzewidywalnej natury Chaosu Żywiołów, ale wie też, jak się przed nią chronić. Czar ten eliminuje skutki oddziaływania stref dzikiej magii, pozwalając czarującemu oraz wszystkim znajdującym się w zasięgu działania czaru rzucać zaklęcia i używać magicznych przedmiotów bez wystąpienia nieprzewidzianych skutków ubocznych. Ponadto, w czasie działania czaru, zneutralizowane zostają wybuchy dzikiej energii dla zaklęć rzucanych przez czarownika chaosu i dzikich magów.~
+@2702 = ~Ochrona przed falą dzikiej energii~
+
+
+@2750 = ~Dziki ogień~
+@2751 = ~Dziki ogień
+(Wywoływanie)
+
+Poziom: 9
+Zasięg: specjalny
+Czas działania: specjalny
+Czas rzucania: specjalny
+Obszar działania: specjalny
+Rzut obronny: specjalny
+
+Przy pomocy tego zaklęcia czarujący jest w stanie skoncentrować w sobie czystą magiczną energię, po czym nadać jej dowolną formę i wyzwolić pożądane przez siebie efekty. Skutkiem tego może odtworzyć efekt każdego znanego mu zaklęcia magii wtajemniczeń do 8. poziomu włącznie. W odróżnieniu od Fali chaosu czy Lekkomyślnego zaklęcia Nahala rzucający zachowuje pełną kontrolę nad całym procesem, unikając dzięki temu niepożądanych skutków fali dzikiej energii.~
+
+
 @5000 = ~Zamęt~
 @5001 = ~Zamęt
 Zdolność ta wywołuje zamęt u istoty będącej celem, sprawiając, że staje się ona niezdecydowana i nie jest w stanie podjąć efektywnych działań. Ofiara może wykonać rzut obronny przeciw czarom, by uniknąć działania efektu, w przeciwnym razie wpadnie w szał, będzie stać bezczynnie lub chodzić w kółko przez cały czas trwania efektu. Jeśli będąca pod wpływem zamętu istota zostanie zaatakowana, będzie ona postrzegać atakującego za wroga i zareaguje zgodnie z pierwotnymi instynktami. Zdolność ta działa przez dwie rundy.~

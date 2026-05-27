@@ -123,14 +123,15 @@ Zalety:
 – Może rzucić 3. poziomowy czar Tarcza chaosu (automatycznie dodawany do listy czarów).
 – Może rzucić 5. poziomowy czar Sprowadzenie żywiołaka chaosu (automatycznie dodawany do listy
   czarów).
-– Może rzucić 7. poziomowe czary Dzikie uderzenie Nahala oraz CSprowadzenie większego żywiołaka
+– Może rzucić 7. poziomowe czary Dzikie uderzenie Nahala oraz Sprowadzenie większego żywiołaka
   chaosu (automatycznie dodawane do listy czarów).
+– Może rzucić 9. poziomowe czary Stabilność i Dziki ogień (automatycznie dodawane do listy czarów).
 – 1. poziom: +1 do rzutów obronnych przeciw czarom.
-– 5. poziom: +1 zo Zręczności.
+– 5. poziom: +1 do Zręczności.
 – 6. poziom: +1 do rzutów obronnych przeciw czarom.
 – 8. poziom: +5% do odporności na magię.
 – 11. poziom: +1 do rzutów obronnych przeciw czarom.
-– 15. poziom: +1 zo Zręczności.
+– 15. poziom: +1 do Zręczności.
 – 16. poziom: +1 do rzutów obronnych przeciw czarom.
 – 16. poziom: +5% do odporności na magię.
 – 21. poziom: +1 do rzutów obronnych przeciw czarom.
@@ -218,6 +219,46 @@ Czarownik poziomu 16-19:
 
 Czarownik poziomu 20 lub wyżej:
 – 100% szans na uzyskanie 100/100/100/100/100/100/100/100/100 procent czarów na poziom
+
+
+Opis czaru: Dziki ogień
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Poziom: 9
+Szkoła: Wywoływanie
+Zasięg: specjalny
+Czas działania: specjalny
+Czas rzucania: specjalny
+Obszar działania: specjalny
+Rzut obronny: specjalny
+
+Przy pomocy tego zaklęcia czarujący jest w stanie skoncentrować w sobie czystą magiczną energię,
+po czym nadać jej dowolną formę i wyzwolić pożądane przez siebie efekty. Skutkiem tego może odtworzyć
+efekt każdego znanego mu zaklęcia magii wtajemniczeń do 8. poziomu włącznie.
+W odróżnieniu od Fali chaosu czy Lekkomyślnego zaklęcia Nahala rzucający zachowuje pełną kontrolę
+nad całym procesem, unikając dzięki temu niepożądanych skutków fali dzikiej energii.
+
+
+Opis czaru: Stabilność
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Poziom: 9
+Szkoła: Przemiany
+Zasięg: 0
+Czas działania: 4 rundy
+Czas rzucania: 9
+Obszar działania: w promieniu 5 metrów
+Rzut obronny: brak
+
+Prawdziwy mistrz chaosu nie tylko potrafi korzystać z nieprzewidywalnej natury Chaosu Żywiołów,
+ale wie też, jak się przed nią chronić. Czar ten eliminuje skutki oddziaływania stref dzikiej
+magii, pozwalając czarującemu oraz wszystkim znajdującym się w zasięgu działania czaru rzucać
+zaklęcia i używać magicznych przedmiotów bez wystąpienia nieprzewidzianych skutków ubocznych.
+
+Ponadto, w czasie działania czaru, zneutralizowane zostają wybuchy dzikiej energii dla zaklęć
+rzucanych przez czarownika chaosu i dzikich magów.
+
+Zaklęcie to jest również dostępne dla dzikich magów o chaotycznych charakterach.
 
 
 Credits
