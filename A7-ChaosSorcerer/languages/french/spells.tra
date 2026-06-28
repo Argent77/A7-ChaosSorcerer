@@ -168,18 +168,19 @@ Zone d'effet : 10 mètres de rayon
 Jets de sauvegarde : non
 
 Un véritable maître du chaos ne se contente pas de tirer parti de la nature imprévisible du Chaos élémentaire, il sait aussi comment s'en protéger. Ce sort annule les effets des zones de magie sauvage, permettant au lanceur et à tous ceux qui se trouvent dans la zone d'effet de lancer des sorts et d'utiliser des objets magiques sans effets secondaires imprévisibles. De plus, les hiatus entropiques sont annulés pour tous les sortilèges lancés par les Sorciers du Chaos ou les Entropistes pendant que le sort agit.~
-        ~Stabilisation (Altération)
-
-Niveau : 9
-Portée : 0
-Durée : 4 rounds
-Temps d'incantation : 9
-Zone d'effet : 10 mètres de rayon
-Jets de sauvegarde : non
-
-Une véritable maîtresse du chaos ne se contente pas de tirer parti de la nature imprévisible du Chaos élémentaire, elle sait aussi comment s'en protéger. Ce sort annule les effets des zones de magie sauvage, permettant à la lanceuse et à tous ceux qui se trouvent dans la zone d'effet de lancer des sorts et d'utiliser des objets magiques sans effets secondaires imprévisibles. De plus, les hiatus entropiques sont annulés pour tous les sortilèges lancés par les Sorcières du Chaos ou les Entropistes pendant que le sort agit.~
 @2702 = ~Protection contre les hiatus~
 
+@2750 = ~Énergie sauvage~
+@2751 = ~Énergie sauvage
+(Invocation/Évocation)
+Niveau : 9
+Portée : spécial
+Durée : spécial
+Temps d'incantation : spécial
+Zone d'effet : spécial
+Jets de sauvegarde : spécial
+
+Grâce à ce sort, le lanceur est capable de canaliser de l'énergie magique brute à travers lui-même, en la modelant selon la forme ou l'effet qu'il souhaite. Il peut ainsi recréer l’effet de n’importe quel sort d'ensorceleur de niveau 8 ou inférieur dont il a une connaissance générale. Contrairement à Onde chaotique ou à Rupture hasardeuse de Nahal, le lanceur conserve toutefois le contrôle total du processus et peut ainsi éviter les effets secondaires indésirables liés aux sursauts de puissance incontrôlés.~
 
 @5000 = ~Confusion~
 @5001 = ~Confusion
