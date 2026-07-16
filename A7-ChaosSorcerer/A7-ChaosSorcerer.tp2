@@ -1,6 +1,7 @@
 BACKUP ~weidu_external/backup/A7-ChaosSorcerer~
 SUPPORT ~https://forums.beamdog.com/discussion/66390~
 VERSION ~2.11~
+ASK_EVERY_COMPONENT
 
 ALWAYS
   // root folder for mutable data
@@ -116,3 +117,11 @@ DESIGNATED 30
 LABEL ~A7-CHAOSSORCERER-PRIMORDIAL_ARTIFACTS~
 
 INCLUDE ~%MOD_FOLDER%/lib/items.tph~
+
+
+BEGIN @40 // Allow Wild Mages to use primordial artifacts
+REQUIRE_COMPONENT ~A7-ChaosSorcerer.tp2~ 30 @504 // This component requires "Primordial Artifacts" to be installed.
+DESIGNATED 40
+LABEL ~A7-CHAOSSORCERER-PRIMORDIAL_ARTIFACTS-WILD_MAGES~
+
+INCLUDE ~%MOD_FOLDER%/lib/items_wildmage.tph~

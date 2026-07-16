@@ -1,0 +1,55 @@
+// *** Unlocks Primordial Artifacts for Wild Mages ***
+
+// non-chaotic alignments and all classes except mages (single/dual/multi)
+OUTER_SET unusable = BIT4 | BIT5 | BIT6 | BIT7 | BIT9 | BIT10 | BIT11 | BIT12 | BIT14 | BIT17 | BIT20 | BIT21 | BIT22 | BIT29 | BIT30
+// all mage schools except wild magic
+OUTER_SET unusable_kit3 = BIT0 | BIT1 | BIT2 | BIT3 | BIT4 | BIT5 | BIT6
+OUTER_SET unusable_kit4 = BIT6 | BIT7
+
+COPY_EXISTING ~a7_clck1.itm~ ~override~
+              ~a7_clck3.itm~ ~override~
+              ~a7_clck5.itm~ ~override~
+              ~a7_clck7.itm~ ~override~
+              ~a7_clck9.itm~ ~override~
+              ~a7_clckb.itm~ ~override~
+              ~a7_clckd.itm~ ~override~
+              ~a7_clckf.itm~ ~override~
+              ~a7_dagg8.itm~ ~override~
+              ~a7_dagg9.itm~ ~override~
+              ~a7_dagga.itm~ ~override~
+              ~a7_daggb.itm~ ~override~
+              ~a7_daggc.itm~ ~override~
+              ~a7_daggd.itm~ ~override~
+              ~a7_dagge.itm~ ~override~
+              ~a7_daggf.itm~ ~override~
+              ~a7_helm2.itm~ ~override~
+              ~a7_helm3.itm~ ~override~
+              ~a7_helm6.itm~ ~override~
+              ~a7_helm7.itm~ ~override~
+              ~a7_helma.itm~ ~override~
+              ~a7_helmb.itm~ ~override~
+              ~a7_helme.itm~ ~override~
+              ~a7_helmf.itm~ ~override~
+              ~a7_shld4.itm~ ~override~
+              ~a7_shld5.itm~ ~override~
+              ~a7_shld6.itm~ ~override~
+              ~a7_shld7.itm~ ~override~
+              ~a7_shldc.itm~ ~override~
+              ~a7_shldd.itm~ ~override~
+              ~a7_shlde.itm~ ~override~
+              ~a7_shldf.itm~ ~override~
+  WRITE_LONG 0x1e (THIS | unusable)
+  WRITE_BYTE 0x2d (THIS | unusable_kit3)
+  WRITE_BYTE 0x2f (THIS | unusable_kit4)
+  LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 319 END
+BUT_ONLY
+
+// patching item dialogs
+ACTION_FOR_EACH dlg_resref IN
+  ~a7_clck1~ ~a7_clck3~ ~a7_clck5~ ~a7_clck7~ ~a7_clck9~ ~a7_clckb~ ~a7_clckd~
+  ~a7_dagg8~ ~a7_dagg9~ ~a7_dagga~ ~a7_daggb~ ~a7_daggc~ ~a7_daggd~ ~a7_dagge~
+  ~a7_helm2~ ~a7_helm3~ ~a7_helm6~ ~a7_helm7~ ~a7_helma~ ~a7_helmb~ ~a7_helme~
+  ~a7_shld4~ ~a7_shld5~ ~a7_shld6~ ~a7_shld7~ ~a7_shldc~ ~a7_shldd~ ~a7_shlde~
+BEGIN
+  COMPILE EVAL ~%MOD_FOLDER%/dialogs/items_wildmage.d~
+END

@@ -95,6 +95,12 @@ IWDEE:   The items are scattered all over the locations you can visit in the cou
          story.
 
 
+5. Allow Wild Mages to use "Primordial Artifacts" (requires the "Primordial Artifacts" subcomponent)
+
+This component allows Wild Mages to equip primordial artifacts. A chaotic alignment is still
+required, though.
+
+
 Kit Description
 ~~~~~~~~~~~~~~~
 
@@ -268,6 +274,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+3.0
+- Added new subcomponent: Allow Wild Mages to use "Primordial Artifacts"
+- Updated French and Polish translations
 
 2.11
 - Added more variations to the level-dependent "Chaotic Weave" spell selections

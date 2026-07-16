@@ -103,6 +103,13 @@ BG(2)EE: Die Gegenstände sind über die gesamte Spieleserie verteilt: BG1, BG1:
 IWDEE:   Die Gegenstände sind über alle Gebiete der Haupthandlung des Spiels verteilt.
 
 
+5. Hasardeure koennen „Artefakte der Urtitanen“ benutzen (benötigt die Unterkomponente "Artefakte
+                                                          der Urtitanen")
+
+Diese Komponente erlaubt es auch Hasardeuren, sich mit den Artefakten der Urtitanen auszurüsten.
+Eine chaotische Gesinnung ist Voraussetzung.
+
+
 Klassenbeschreibung
 ~~~~~~~~~~~~~~~~~~~
 
@@ -283,6 +290,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 History
 ~~~~~~~
+
+3.0
+- Added new subcomponent: Allow Wild Mages to use "Primordial Artifacts"
+- Updated French and Polish translations
 
 2.11
 - Added more variations to the level-dependent "Chaotic Weave" spell selections

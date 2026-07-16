@@ -283,6 +283,10 @@ International License" (http://creativecommons.org/licenses/by-sa/4.0/).
 History
 ~~~~~~~
 
+3.0
+- Added new subcomponent: Allow Wild Mages to use "Primordial Artifacts"
+- Updated French and Polish translations
+
 2.11
 - Added more variations to the level-dependent "Chaotic Weave" spell selections
 - Added new level 9 spell "Wildfire" to the Chaos Sorcerer kit and spell scrolls for Wild Mages
